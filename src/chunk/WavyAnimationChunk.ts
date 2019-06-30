@@ -5,7 +5,7 @@ import { IAnimatable, AnimationChunk } from "./AnimationChunk";
 /**
  * マテリアル用インターフェース
  */
-export interface IWaveAnimatable extends IAnimatable {
+export interface IWavyAnimatable extends IAnimatable {
   raisedBottom: number;
   waveFrequency: number;
   wavePow: number;
