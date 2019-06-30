@@ -1,0 +1,37 @@
+{
+  "name": "threejs-shader-materials",
+  "version": "0.1.0",
+  "main": "./bin/index.js",
+  "description": "Collection of shader materials for three.js",
+  "repository": "https://MasatoMakino@github.com/MasatoMakino/threejs-shader-materials.git",
+  "author": "MasatoMakino <unagiinu.g@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-loader": "^8.0.6",
+    "dat.gui": "^0.7.6",
+    "gulp": "^4.0.2",
+    "gulptask-dev-server": "https://github.com/MasatoMakino/gulptask-dev-server.git",
+    "gulptask-tsc": "https://github.com/MasatoMakino/gulptask-tsc.git",
+    "gulptask-tsdoc": "https://github.com/MasatoMakino/gulptask-tsdoc.git",
+    "gulptask-webpack": "https://github.com/MasatoMakino/gulptask-webpack.git",
+    "husky": "^2.7.0",
+    "prettier": "^1.18.2",
+    "three": "^0.106.2",
+    "typescript": "^3.5.2",
+    "webpack-glsl-loader": "^1.0.1"
+  },
+  "scripts": {
+    "start:dev": "gulp start_dev",
+    "build": "npm run prettier:src && gulp build && npm run doc:card",
+    "prettier:src": "prettier --write './!(bin|docs|coverage)/**/*.{js,ts,json}' ",
+    "doc:card": "repoimg -n MasatoMakino/threejs-shader-materials -o ./docs/card.png"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier:src"
+    }
+  },
+  "dependencies": {}
+}

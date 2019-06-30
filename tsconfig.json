@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "es6",
+    "module": "es2015",
+    "declaration": true /* Generates corresponding '.d.ts' file. */,
+    "declarationMap": true /* Generates a sourcemap for each corresponding '.d.ts' file. */,
+    "outDir": "./bin" /* Redirect output structure to the directory. */,
+    "rootDir": "./src",
+
+    /* Module Resolution Options */
+    "moduleResolution": "node",
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
