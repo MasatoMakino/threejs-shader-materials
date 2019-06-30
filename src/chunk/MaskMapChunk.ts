@@ -1,6 +1,5 @@
-import { Texture } from "three";
+import { Texture, IUniform, UniformsUtils } from "three";
 import { GLSLChunk } from "./GLSLChunk";
-import { IUniform } from "three";
 
 export interface IMaskable {
   uniforms: { [uniform: string]: IUniform };
