@@ -11,7 +11,7 @@ export class RepeatPatternChunk extends GLSLChunk {
     RepeatPatternFragmentChunk.registerChunk();
   }
 
-  static getUniform() {
+  public static getUniform():any {
     return {
       division: { value: 32.0 },
       divisionScaleX: { value: 1.0 }

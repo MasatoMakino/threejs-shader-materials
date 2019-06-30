@@ -1,27 +1,31 @@
 import { Texture, IUniform, UniformsUtils } from "three";
 import { GLSLChunk } from "./GLSLChunk";
+import { IRepeatablePattern, RepeatPatternChunk } from "./RepeatPatternChunk";
 
-export interface IMaskable {
+export interface IMaskable extends IRepeatablePattern {
   uniforms: { [uniform: string]: IUniform };
   maskTexture: Texture;
 }
 
 /**
  * Grid内のマスク値を利用するテクスチャ用Chunk。
- * IRepeatablePatternインターフェースを実装する必要がある。
  * 実行にはgridのid値、division、divisionScaleXが必要。
  */
-export class MaskMapChunk extends GLSLChunk {
+export class MaskMapChunk extends RepeatPatternChunk {
   public static registerChunk(): void {
+    super.registerChunk();
     MaskMapUniformChunk.registerChunk();
     MaskMapFragmentChunk.registerChunk();
   }
 
-  static getUniform() {
-    return {
-      hasMaskTexture: { value: false },
-      maskTexture: { value: null }
-    };
+  public static getUniform(): any {
+    return UniformsUtils.merge([
+      super.getUniform(),
+      {
+        hasMaskTexture: { value: false },
+        maskTexture: { value: null }
+      }
+    ]);
   }
 
   public static getMaskTexture(_self: IMaskable): Texture {
