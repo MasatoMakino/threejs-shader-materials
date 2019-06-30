@@ -65,7 +65,7 @@ export class ShaderPhongMaterial extends ShaderMaterial {
   }
 
   protected initChunks(): void {
-    MeshPhongChunk.add();
+    MeshPhongChunk.registerChunk();
   }
 
   /**

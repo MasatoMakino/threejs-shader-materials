@@ -1,12 +1,12 @@
 import { GLSLChunk } from "./GLSLChunk";
 
 export class MeshPhongChunk extends GLSLChunk {
-  public static add(): void {
-    MeshPhongUniformChunk.add();
-    MeshPhongDiffuseColorChunk.add();
-    MeshPhongSwitchingAlphaMapChunk.add();
-    MeshPositionVaryingChunk.add();
-    MeshPositionVertexChunk.add();
+  public static registerChunk(): void {
+    MeshPhongUniformChunk.registerChunk();
+    MeshPhongDiffuseColorChunk.registerChunk();
+    MeshPhongSwitchingAlphaMapChunk.registerChunk();
+    MeshPositionVaryingChunk.registerChunk();
+    MeshPositionVertexChunk.registerChunk();
   }
 
   public static getDefines(): Object {

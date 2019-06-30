@@ -18,7 +18,7 @@ export class GLSLChunk {
     return {};
   }
 
-  public static add(): void {
+  public static registerChunk(): void {
     if (ShaderChunk && ShaderChunk[this.getChunkName()] == null) {
       ShaderChunk[this.getChunkName()] = this.getChunk();
     }
