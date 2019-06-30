@@ -23,4 +23,8 @@ export class GLSLChunk {
       ShaderChunk[this.getChunkName()] = this.getChunk();
     }
   }
+
+  public static getUniform(): any {
+    return {};
+  }
 }
