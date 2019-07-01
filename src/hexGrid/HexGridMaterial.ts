@@ -129,9 +129,9 @@ export class HexGridMaterial extends ShaderPhongMaterial
     ReversibleChunk.registerChunk();
   }
 
-  public static getBasicUniforms(): any {
-    return UniformsUtils.merge([
-      super.getBasicUniforms(),
+  protected initUniforms(): void {
+    this.uniforms = UniformsUtils.merge([
+      ShaderPhongMaterial.getBasicUniforms(),
       ReversibleChunk.getUniform(),
       WavyAnimationChunk.getUniform(),
       MaskMapChunk.getUniform(),

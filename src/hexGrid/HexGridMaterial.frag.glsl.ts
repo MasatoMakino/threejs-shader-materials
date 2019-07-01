@@ -12,6 +12,7 @@ const shader: string = `
 varying vec2 uvPosition;
 
 //user settings
+#include <time_animation_uniform_chunk>
 #include <wavy_animation_uniform_chunk>
 #include <repeat_pattern_uniform_chunk>
 #include <mask_map_uniform_chunk>
