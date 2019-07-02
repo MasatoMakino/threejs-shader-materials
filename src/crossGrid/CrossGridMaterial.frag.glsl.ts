@@ -58,7 +58,7 @@ void main() {
     float w = gridWeight;
     w = clamp( w, 0.0, 1.0);
     
-    float margin = clamp ( w * 0.33, 0.03, 0.1 );
+    float margin = clamp ( w * 0.33, 0.00, 0.05 );
     
     //十字を描画
     float gridLine;
