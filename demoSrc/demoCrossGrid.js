@@ -11,9 +11,9 @@ import {
   TextureLoader
 } from "three";
 import { Directions } from "../bin/chunk/WavyAnimationChunk";
-import { SquareGridMaterial } from "../bin/squareGrid/SquareGridMaterial";
+import { CrossGridMaterial } from "../bin/crossGrid/CrossGridMaterial";
 
-export class StudySquareGrid {
+export class StudyCrossGrid {
   constructor() {
     const W = 640;
     const H = 480;
@@ -42,7 +42,7 @@ export class StudySquareGrid {
 
     const geo = new SphereGeometry(10, 64, 64);
 
-    const mat = new SquareGridMaterial({
+    const mat = new CrossGridMaterial({
       // side:DoubleSide,
       fog: scene.fog !== undefined
     });
@@ -75,6 +75,7 @@ export class StudySquareGrid {
     folder.add(mat, "waveFrequency", 0.0, 1.0);
     folder.add(mat, "raisedBottom", 0.0, 1.0);
     folder.add(mat, "gridWeight", 0.0, 0.5);
+    folder.add(mat, "radius", 0.0, 0.5);
     folder.add(mat, "isReversed");
     folder.add(mat, "division", 2.0, 256.0).step(1);
     folder.add(mat, "divisionScaleX", 0.0, 4.0).step(1);
@@ -117,5 +118,5 @@ export class StudySquareGrid {
 }
 
 window.onload = () => {
-  const study = new StudySquareGrid();
+  const study = new StudyCrossGrid();
 };
