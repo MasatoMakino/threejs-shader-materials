@@ -79,6 +79,7 @@ export class StudyHalftoneGrid {
     folder.add(mat, "divisionScaleX", 0.0, 4.0).step(1);
     folder.add(mat, "wavePow", 0.0, 4.0);
     folder.add(mat, "radius", 0.0, 1.0);
+    folder.add(mat, "isReversed");
     folder.add(mat, "direction", {
       horizontal: Directions.horizontal,
       vertical: Directions.vertical,

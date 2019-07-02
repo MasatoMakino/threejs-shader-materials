@@ -2,6 +2,7 @@
   "name": "threejs-shader-materials",
   "version": "0.1.0",
   "main": "./bin/index.js",
+  "types": "./bin/index.d.ts",
   "description": "Collection of shader materials for three.js",
   "repository": "https://MasatoMakino@github.com/MasatoMakino/threejs-shader-materials.git",
   "author": "MasatoMakino <unagiinu.g@gmail.com>",

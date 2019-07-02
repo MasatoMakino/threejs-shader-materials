@@ -15,6 +15,7 @@ varying vec2 uvPosition;
 #include <wavy_animation_uniform_chunk>
 #include <repeat_pattern_uniform_chunk>
 #include <mask_map_uniform_chunk>
+#include <reversible_uniform_chunk>
 uniform float radius;
 
 #include <common>
@@ -67,6 +68,10 @@ void main() {
     current = clamp( current, 0.0, 1.0 );
 
     float alpha = smoothstep ( 0.0, 0.1, current );
+    alpha = isReversed
+        ? 1.0 - alpha
+        : alpha;
+    
     diffuseColor.a *= alpha;
 
     #include <mesh_phong_switching_alpha_map>
