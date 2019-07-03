@@ -8,8 +8,8 @@ import {
   PointLightHelper,
   SphereGeometry
 } from "three";
-import { HexGridMaterial } from "../bin/hexGrid/HexGridMaterial";
-import { Directions } from "../bin/chunk/WavyAnimationChunk";
+import { HexGridMaterial } from "../bin";
+import { Directions } from "../bin";
 
 export class StudyHexGrid {
   constructor() {

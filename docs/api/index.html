@@ -66,6 +66,29 @@
 			<div class="tsd-panel tsd-typography">
 				<h1 id="threejs-shader-materials">threejs-shader-materials</h1>
 				<p>Collection of shader materials for three.js</p>
+				<p><a href="https://github.com/MasatoMakino/threejs-shader-materials">Github repository</a></p>
+				<h2 id="demo">Demo</h2>
+				<p><a href="https://masatomakino.github.io/threejs-shader-materials/demo/hexGrid.html">HexGrid</a></p>
+				<p><a href="https://masatomakino.github.io/threejs-shader-materials/demo/halftoneGrid.html">HalftoneGrid</a></p>
+				<p><a href="https://masatomakino.github.io/threejs-shader-materials/demo/squareGrid.html">SquareGrid</a></p>
+				<p><a href="https://masatomakino.github.io/threejs-shader-materials/demo/crossGrid.html">CrossGrid</a></p>
+				<p><a href="https://masatomakino.github.io/threejs-shader-materials/demo/contour.html">ContourMaterial</a></p>
+				<h2 id="getting-started">Getting Started</h2>
+				<h3 id="install">Install</h3>
+				<pre><code class="language-bash">npm install https://github.com/MasatoMakino/threejs-shader-materials.git --save-dev</code></pre>
+				<h3 id="import">Import</h3>
+				<p>threejs-shader-materials is composed of ES6 modules and TypeScript d.ts files.</p>
+				<p>At first, import classes,</p>
+				<pre><code class="language-js"><span class="hljs-keyword">import</span> { HexGridMaterial } <span class="hljs-keyword">from</span> <span class="hljs-string">"threejs-shader-materials"</span>;</code></pre>
+				<p>and set material.</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> geo = <span class="hljs-keyword">new</span> SphereGeometry(<span class="hljs-number">10</span>, <span class="hljs-number">64</span>, <span class="hljs-number">64</span>);
+<span class="hljs-keyword">const</span> mat = <span class="hljs-keyword">new</span> HexGridMaterial();
+<span class="hljs-keyword">const</span> mesh = <span class="hljs-keyword">new</span> Mesh(geo, mat);
+scene.add(mesh);</code></pre>
+				<h2 id="api-documents">API documents</h2>
+				<p><a href="https://masatomakino.github.io/threejs-shader-materials/api/">API documents</a></p>
+				<h2 id="license">License</h2>
+				<p>threejs-billboard is <a href="LICENSE">MIT licensed</a>.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
