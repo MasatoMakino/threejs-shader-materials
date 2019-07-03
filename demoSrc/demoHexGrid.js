@@ -4,10 +4,8 @@ import {
   Color,
   Fog,
   Mesh,
-  Material,
   PointLight,
   PointLightHelper,
-  TextureLoader,
   SphereGeometry
 } from "three";
 import { HexGridMaterial } from "../bin/hexGrid/HexGridMaterial";

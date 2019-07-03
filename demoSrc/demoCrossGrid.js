@@ -3,12 +3,10 @@ import { Common } from "./Common";
 import {
   Color,
   Fog,
-  Material,
   Mesh,
   PointLight,
   PointLightHelper,
-  SphereGeometry,
-  TextureLoader
+  SphereGeometry
 } from "three";
 import { Directions } from "../bin/chunk/WavyAnimationChunk";
 import { CrossGridMaterial } from "../bin/crossGrid/CrossGridMaterial";

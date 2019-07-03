@@ -2,13 +2,11 @@ import { Common } from "./Common";
 import * as dat from "dat.gui";
 import {
   Color,
-  Material,
   Fog,
   Mesh,
   PointLight,
   PointLightHelper,
-  SphereGeometry,
-  TextureLoader
+  SphereGeometry
 } from "three";
 import { HalftoneGridMaterial } from "../bin/halftoneGrid/HalftoneGridMaterial";
 import { Directions } from "../bin/chunk/WavyAnimationChunk";

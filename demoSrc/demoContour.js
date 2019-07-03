@@ -1,10 +1,10 @@
 import {
-  Mesh,
+  Color,
   Fog,
+  Mesh,
   PointLight,
   PointLightHelper,
-  TorusGeometry,
-  Color
+  TorusGeometry
 } from "three";
 import { Common } from "./Common";
 import { ContourMaterial } from "../bin/contour/ContourMaterial";
