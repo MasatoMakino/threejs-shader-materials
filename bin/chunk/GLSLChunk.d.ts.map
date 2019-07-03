@@ -1,0 +1,1 @@
+{"version":3,"file":"GLSLChunk.d.ts","sourceRoot":"","sources":["../../src/chunk/GLSLChunk.ts"],"names":[],"mappings":"AAEA;;;GAGG;AACH,qBAAa,SAAS;IACpB,SAAS,CAAC,MAAM,CAAC,YAAY,IAAI,MAAM;IAGvC,SAAS,CAAC,MAAM,CAAC,QAAQ,IAAI,MAAM;WAIrB,UAAU,IAAI,MAAM;WAIpB,aAAa,IAAI,IAAI;WAMrB,UAAU,IAAI,GAAG;CAGhC"}

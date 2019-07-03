@@ -1,0 +1,1 @@
+{"version":3,"file":"SquareGridMaterial.d.ts","sourceRoot":"","sources":["../../src/squareGrid/SquareGridMaterial.ts"],"names":[],"mappings":"AAAA;;GAEG;AAEH,OAAO,EAAE,wBAAwB,EAA0B,MAAM,OAAO,CAAC;AAczE,OAAO,EAAE,gBAAgB,EAAE,MAAM,qBAAqB,CAAC;AAEvD,qBAAa,kBAAmB,SAAQ,gBAAgB;IACtD;;;OAGG;IACC,UAAU,EAAI,MAAM;gBAOZ,UAAU,CAAC,EAAE,wBAAwB;IAIjD,SAAS,CAAC,YAAY,IAAI,IAAI;CAQ/B"}
