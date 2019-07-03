@@ -18,7 +18,28 @@ import { MeshPhongChunk } from "./chunk/MeshPhongChunk";
 
 export class ShaderPhongMaterial extends ShaderMaterial {
   /**
-   * MeshPhongMaterialに必要なuniformsを生成する。
+   * コンストラクタ。
+   * @param vertexShader
+   * @param fragmentShader
+   * @param parameters
+   */
+  constructor(
+    vertexShader: string,
+    fragmentShader: string,
+    parameters?: ShaderMaterialParameters
+  ) {
+    super(parameters);
+
+    this.initChunks();
+    this.initUniforms();
+    this.initDefines();
+    this.vertexShader = vertexShader;
+    this.fragmentShader = fragmentShader;
+    this.initDefaultSetting(parameters);
+  }
+
+  /**
+   * このMaterialに必要なuniformsを生成する。
    */
   public static getBasicUniforms(): any {
     return UniformsUtils.merge([
@@ -44,26 +65,8 @@ export class ShaderPhongMaterial extends ShaderMaterial {
   }
 
   /**
-   * コンストラクタ。
-   * @param vertexShader
-   * @param fragmentShader
-   * @param parameters
+   * ShaderChunkにこのマテリアルに必要なChunkを追加する。
    */
-  constructor(
-    vertexShader: string,
-    fragmentShader: string,
-    parameters?: ShaderMaterialParameters
-  ) {
-    super(parameters);
-
-    this.initChunks();
-    this.initUniforms();
-    this.initDefines();
-    this.vertexShader = vertexShader;
-    this.fragmentShader = fragmentShader;
-    this.initDefaultSetting(parameters);
-  }
-
   protected initChunks(): void {
     MeshPhongChunk.registerChunk();
   }
@@ -96,11 +99,6 @@ export class ShaderPhongMaterial extends ShaderMaterial {
     this.lights = true; //FIXME シェーダーがエラーを起こすのでlights設定は強制でON
   }
 
-  /*
-   * opacityなど、uniformsに反映しないと動作しないパラメーターを
-   * マテリアルのインスタンスに設定された段階で同期させる。
-   */
-
   /**
    * MeshPhongマテリアルと互換性を持つために、colorプロパティはdiffuseへ代入される。
    */
@@ -117,6 +115,13 @@ export class ShaderPhongMaterial extends ShaderMaterial {
   get opacity(): number {
     return this._opacity;
   }
+
+  /**
+   * opacityは基底クラスのMaterialのコンストラクタ内で明示的に1.0が代入される。
+   * この段階でuniformsはundefinedなので、そのままでは初期化できない。
+   * このsetterでは受け取った値をprivate変数に保存して、初期化後にuniformsに再代入する。
+   * @param value
+   */
   set opacity(value: number) {
     this._opacity = value;
     if (this.uniforms && this.uniforms.opacity) {
@@ -125,9 +130,6 @@ export class ShaderPhongMaterial extends ShaderMaterial {
   }
   protected _opacity: number;
 
-  /**
-   * 放射光
-   */
   get emissive(): Color {
     return this.uniforms.emissive.value;
   }
@@ -151,11 +153,5 @@ export class ShaderPhongMaterial extends ShaderMaterial {
     this.alphaTest = 0.0;
     this.depthWrite = false;
     this.blending = AdditiveBlending;
-  }
-}
-
-export class MaterialInterfaceChunk {
-  static getUniform(): any {
-    return {};
   }
 }
