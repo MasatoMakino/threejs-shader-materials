@@ -29,6 +29,7 @@ export class ShaderPhongMaterial extends ShaderMaterial {
     parameters?: ShaderMaterialParameters
   ) {
     super(parameters);
+    if (parameters == null) parameters = {};
 
     this.initChunks();
     this.initUniforms();

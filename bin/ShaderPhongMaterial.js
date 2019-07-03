@@ -15,6 +15,8 @@ export class ShaderPhongMaterial extends ShaderMaterial {
      */
     constructor(vertexShader, fragmentShader, parameters) {
         super(parameters);
+        if (parameters == null)
+            parameters = {};
         this.initChunks();
         this.initUniforms();
         this.initDefines();
