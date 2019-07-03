@@ -19,7 +19,6 @@
     "gulptask-webpack": "https://github.com/MasatoMakino/gulptask-webpack.git",
     "husky": "^2.7.0",
     "prettier": "^1.18.2",
-    "three": "^0.106.2",
     "typescript": "^3.5.2",
     "webpack-glsl-loader": "^1.0.1"
   },
@@ -34,5 +33,7 @@
       "pre-commit": "npm run prettier:src"
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "three": "^0.106.2"
+  }
 }
