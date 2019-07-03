@@ -56,62 +56,13 @@ export class StudySquareGrid {
 
   initGUI(mat) {
     const gui = new dat.GUI();
+    Common.initWavyMaterialGUI(gui, mat);
     this.initGUIMaterial(gui, mat);
   }
 
   initGUIMaterial(gui, mat) {
-    const prop = {
-      color: mat.color.getHex(),
-      mask: "",
-      alphaMap: ""
-    };
-
-    const folder = gui.addFolder("Material");
-    folder.addColor(prop, "color").onChange(val => {
-      mat.color.setHex(val);
-    });
-    folder.add(mat, "isAnimate");
-    folder.add(mat, "speed", -2, 2);
-    folder.add(mat, "waveFrequency", 0.0, 1.0);
-    folder.add(mat, "raisedBottom", 0.0, 1.0);
+    const folder = gui.addFolder("SquareGrid");
     folder.add(mat, "gridWeight", 0.0, 0.5);
-    folder.add(mat, "isReversed");
-    folder.add(mat, "division", 2.0, 256.0).step(1);
-    folder.add(mat, "divisionScaleX", 0.0, 4.0).step(1);
-    folder.add(mat, "wavePow", 0.0, 4.0);
-    folder.add(mat, "direction", {
-      horizontal: Directions.horizontal,
-      vertical: Directions.vertical,
-      radial: Directions.radial
-    });
-
-    folder
-      .add(prop, "mask", {
-        none: "",
-        earth: "./textures/landmask.png"
-      })
-      .onChange(val => {
-        if (val === "") {
-          mat.maskTexture = null;
-        } else {
-          mat.maskTexture = new TextureLoader().load(val);
-        }
-      });
-
-    folder
-      .add(prop, "alphaMap", {
-        none: "",
-        earth: "./textures/landmask.png"
-      })
-      .onChange(val => {
-        if (val === "") {
-          mat.alphaMap = null;
-        } else {
-          mat.alphaMap = new TextureLoader().load(val);
-        }
-      });
-
-    folder.add(mat, "opacity", 0.0, 1.0);
     folder.open();
   }
 }
