@@ -17,7 +17,7 @@ export class SquareGridMaterial extends WavyGridMaterial {
         this.uniforms.gridWeight.value = value;
     }
     constructor(parameters) {
-        super(VertexShader, FragmentShader, parameters);
+        super(VertexShader(), FragmentShader(), parameters);
     }
     initUniforms() {
         this.uniforms = UniformsUtils.merge([

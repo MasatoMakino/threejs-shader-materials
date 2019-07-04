@@ -1,6 +1,6 @@
+declare const _default: () => string;
 /**
- * ハーフトーンシェーダー
+ * ハーフトーンマテリアルのフラグメントシェーダー
  */
-declare const shader: string;
-export default shader;
+export default _default;
 //# sourceMappingURL=HalftoneGridMaterial.frag.glsl.d.ts.map

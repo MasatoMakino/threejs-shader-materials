@@ -1,6 +1,6 @@
+declare const _default: () => string;
 /**
  * 等高線状にテクスチャをマッピングするシェーダー
  */
-declare const shader: string;
-export default shader;
+export default _default;
 //# sourceMappingURL=ContourMaterial.frag.glsl.d.ts.map

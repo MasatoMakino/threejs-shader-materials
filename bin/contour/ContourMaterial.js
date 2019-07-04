@@ -21,7 +21,7 @@ export class ContourMaterial extends ShaderPhongMaterial {
         this.uniforms.bottom.value = geo.boundingBox.min.y;
     }
     constructor(parameters) {
-        super(VertexShader, FragmentShader, parameters);
+        super(VertexShader(), FragmentShader(), parameters);
     }
     initDefines() {
         super.initDefines();

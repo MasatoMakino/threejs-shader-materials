@@ -23,7 +23,7 @@ export class CrossGridMaterial extends WavyGridMaterial {
         this.uniforms.radius.value = value;
     }
     constructor(parameters) {
-        super(VertexShader, FragmentShader, parameters);
+        super(VertexShader(), FragmentShader(), parameters);
     }
     initUniforms() {
         this.uniforms = UniformsUtils.merge([
