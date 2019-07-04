@@ -1,8 +1,8 @@
-/**
- * 地球儀用の緯度経度グリッド
- */
 import { ShaderMaterialParameters } from "three";
 import { WavyGridMaterial } from "../WavyGridMaterial";
+/**
+ * 十字線を正方形グリッドの中心に描画するマテリアル。
+ */
 export declare class CrossGridMaterial extends WavyGridMaterial {
     /**
      * グリッド線の太さ

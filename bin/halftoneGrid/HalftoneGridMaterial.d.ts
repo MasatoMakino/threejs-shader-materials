@@ -1,8 +1,8 @@
+import { ShaderMaterialParameters } from "three";
+import { WavyGridMaterial } from "../WavyGridMaterial";
 /**
  * MaskMapをハーフトーン分解するマテリアル
  */
-import { ShaderMaterialParameters } from "three";
-import { WavyGridMaterial } from "../WavyGridMaterial";
 export declare class HalftoneGridMaterial extends WavyGridMaterial {
     radius: number;
     constructor(parameters?: ShaderMaterialParameters);

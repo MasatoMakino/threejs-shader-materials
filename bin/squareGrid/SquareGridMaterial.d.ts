@@ -1,8 +1,8 @@
-/**
- * 地球儀用の緯度経度グリッド
- */
 import { ShaderMaterialParameters } from "three";
 import { WavyGridMaterial } from "../WavyGridMaterial";
+/**
+ * 四角形グリッドマテリアル
+ */
 export declare class SquareGridMaterial extends WavyGridMaterial {
     /**
      * グリッド線の太さ

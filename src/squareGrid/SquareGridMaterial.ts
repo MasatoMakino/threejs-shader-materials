@@ -1,13 +1,11 @@
-/**
- * 地球儀用の緯度経度グリッド
- */
-
 import { ShaderMaterialParameters, UniformsUtils } from "three";
-
 import FragmentShader from "./SquareGridMaterial.frag.glsl";
 import VertexShader from "../ShaderPhongMaterial.vert.glsl";
 import { WavyGridMaterial } from "../WavyGridMaterial";
 
+/**
+ * 四角形グリッドマテリアル
+ */
 export class SquareGridMaterial extends WavyGridMaterial {
   /**
    * グリッド線の太さ

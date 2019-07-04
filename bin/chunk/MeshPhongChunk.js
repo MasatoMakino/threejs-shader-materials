@@ -1,4 +1,7 @@
 import { GLSLChunk } from "./GLSLChunk";
+/**
+ * MeshPhongMaterialと同等の機能を備えたShaderMaterialを実装するために必要なGLSLコードを格納したクラス。
+ */
 export class MeshPhongChunk extends GLSLChunk {
     static registerChunk() {
         MeshPhongUniformChunk.registerChunk();

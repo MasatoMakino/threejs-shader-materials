@@ -2,6 +2,7 @@ import { GLSLChunk } from "./GLSLChunk";
 /**
  * IAnimatableインターフェースで定義されたアニメーションを実行するGLSLチャンク。
  * uniformのtime値を操作する。
+ * time値によってどのように変化するかは実装するShaderによる。
  */
 export class AnimationChunk extends GLSLChunk {
     static registerChunk() {

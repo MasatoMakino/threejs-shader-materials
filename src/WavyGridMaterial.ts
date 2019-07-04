@@ -1,4 +1,5 @@
 import { Texture, UniformsUtils } from "three";
+import { ShaderMaterialParameters } from "three";
 import { ShaderPhongMaterial } from "./ShaderPhongMaterial";
 import {
   Directions,
@@ -8,8 +9,10 @@ import {
 import { IMaskable, MaskMapChunk } from "./chunk/MaskMapChunk";
 import { IReversible, ReversibleChunk } from "./chunk/ReversibleChunk";
 import { AnimationChunk } from "./chunk/AnimationChunk";
-import { ShaderMaterialParameters } from "three";
 
+/**
+ * グリッド状に分割され、Wavyアニメーションを行うマテリアル。
+ */
 export class WavyGridMaterial extends ShaderPhongMaterial
   implements IWavyAnimatable, IReversible, IMaskable {
   addTime(delta: number): void {

@@ -69,8 +69,13 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>マテリアル用インターフェース</p>
+						<p>時間経過によりアニメーションするマテリアルのインターフェース。</p>
 					</div>
+					<ul>
+						<li>アニメーションスピードspeed</li>
+						<li>アニメーション再生/停止フラグisAnimate</li>
+					</ul>
+					<p>のそれぞれの変数にアクセスできることを保証する。</p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -115,7 +120,7 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Animate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ca6b7c9/src/chunk/AnimationChunk.ts#L11">chunk/AnimationChunk.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/07fddfa/src/chunk/AnimationChunk.ts#L21">chunk/AnimationChunk.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -125,7 +130,7 @@
 					<div class="tsd-signature tsd-kind-icon">speed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ca6b7c9/src/chunk/AnimationChunk.ts#L10">chunk/AnimationChunk.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/07fddfa/src/chunk/AnimationChunk.ts#L20">chunk/AnimationChunk.ts:20</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -135,7 +140,7 @@
 					<div class="tsd-signature tsd-kind-icon">uniforms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ca6b7c9/src/chunk/AnimationChunk.ts#L8">chunk/AnimationChunk.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/07fddfa/src/chunk/AnimationChunk.ts#L13">chunk/AnimationChunk.ts:13</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -160,13 +165,21 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ca6b7c9/src/chunk/AnimationChunk.ts#L9">chunk/AnimationChunk.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/07fddfa/src/chunk/AnimationChunk.ts#L19">chunk/AnimationChunk.ts:19</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>経過時間を追加する。uniformのtimeにはdelta * speedの値が加算される。speedに負の値を設定すると、アニメーションの進行方向は反転する。</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>delta: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>前回アニメーション実行時からの差分時間 単位 : 秒</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>

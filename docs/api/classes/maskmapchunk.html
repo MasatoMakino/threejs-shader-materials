@@ -69,8 +69,8 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Grid内のマスク値を利用するテクスチャ用Chunk。
-						実行にはgridのid値、division、divisionScaleXが必要。</p>
+						<p>マスクテクスチャを利用するShaderMaterial用Chunk。
+						マスクテクスチャがどのように描画に反映されるかは、各Materialのシェーダー実装による。</p>
 					</div>
 				</div>
 			</section>
@@ -119,9 +119,14 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="glslchunk.html">GLSLChunk</a>.<a href="glslchunk.html#getchunk">getChunk</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ca6b7c9/src/chunk/GLSLChunk.ts#L11">chunk/GLSLChunk.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/07fddfa/src/chunk/GLSLChunk.ts#L18">chunk/GLSLChunk.ts:18</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>ShaderChunkに登録するGLSLコード。</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
@@ -137,9 +142,14 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="glslchunk.html">GLSLChunk</a>.<a href="glslchunk.html#getchunkname">getChunkName</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ca6b7c9/src/chunk/GLSLChunk.ts#L8">chunk/GLSLChunk.ts:8</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/07fddfa/src/chunk/GLSLChunk.ts#L11">chunk/GLSLChunk.ts:11</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>ShaderChunkに登録する名前。</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
@@ -155,9 +165,19 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="glslchunk.html">GLSLChunk</a>.<a href="glslchunk.html#getdefines">getDefines</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ca6b7c9/src/chunk/GLSLChunk.ts#L15">chunk/GLSLChunk.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/07fddfa/src/chunk/GLSLChunk.ts#L26">chunk/GLSLChunk.ts:26</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Chunkに関連する定数Defineを格納したオブジェクトを取得する。</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>see</dt>
+									<dd><p><a href="https://threejs.org/docs/#api/en/materials/ShaderMaterial.defines">https://threejs.org/docs/#api/en/materials/ShaderMaterial.defines</a></p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Object</span></h4>
 						</li>
 					</ul>
@@ -172,7 +192,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ca6b7c9/src/chunk/MaskMapChunk.ts#L31">chunk/MaskMapChunk.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/07fddfa/src/chunk/MaskMapChunk.ts#L37">chunk/MaskMapChunk.ts:37</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -196,7 +216,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="repeatpatternchunk.html">RepeatPatternChunk</a>.<a href="repeatpatternchunk.html#getuniform">getUniform</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ca6b7c9/src/chunk/MaskMapChunk.ts#L21">chunk/MaskMapChunk.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/07fddfa/src/chunk/MaskMapChunk.ts#L27">chunk/MaskMapChunk.ts:27</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -214,7 +234,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="repeatpatternchunk.html">RepeatPatternChunk</a>.<a href="repeatpatternchunk.html#registerchunk">registerChunk</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ca6b7c9/src/chunk/MaskMapChunk.ts#L15">chunk/MaskMapChunk.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/07fddfa/src/chunk/MaskMapChunk.ts#L21">chunk/MaskMapChunk.ts:21</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -231,7 +251,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ca6b7c9/src/chunk/MaskMapChunk.ts#L34">chunk/MaskMapChunk.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/07fddfa/src/chunk/MaskMapChunk.ts#L40">chunk/MaskMapChunk.ts:40</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>

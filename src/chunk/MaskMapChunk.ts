@@ -2,14 +2,20 @@ import { Texture, IUniform, UniformsUtils } from "three";
 import { GLSLChunk } from "./GLSLChunk";
 import { IRepeatablePattern, RepeatPatternChunk } from "./RepeatPatternChunk";
 
+/**
+ * Maskテクスチャを設定可能なマテリアル用のインターフェース
+ * - maskTexture変数
+ *
+ * にアクセス可能なことを保証する。
+ */
 export interface IMaskable extends IRepeatablePattern {
   uniforms: { [uniform: string]: IUniform };
   maskTexture: Texture;
 }
 
 /**
- * Grid内のマスク値を利用するテクスチャ用Chunk。
- * 実行にはgridのid値、division、divisionScaleXが必要。
+ * マスクテクスチャを利用するShaderMaterial用Chunk。
+ * マスクテクスチャがどのように描画に反映されるかは、各Materialのシェーダー実装による。
  */
 export class MaskMapChunk extends RepeatPatternChunk {
   public static registerChunk(): void {

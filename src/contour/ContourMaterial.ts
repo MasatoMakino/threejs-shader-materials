@@ -1,8 +1,3 @@
-/**
- * テクスチャを等高線状にマップするマテリアル。
- * マッピング以外の昨日はMeshPhongMaterialに準じる。
- */
-
 import {
   UniformsUtils,
   ShaderMaterialParameters,
@@ -17,6 +12,10 @@ import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
 import FragmentShader from "./ContourMaterial.frag.glsl";
 import VertexShader from "../ShaderPhongMaterial.vert.glsl";
 
+/**
+ * テクスチャを等高線状にマップするマテリアル。
+ * マッピング以外の機能はMeshPhongMaterialに準じる。
+ */
 export class ContourMaterial extends ShaderPhongMaterial {
   get map(): Texture {
     return this._map;

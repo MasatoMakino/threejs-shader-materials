@@ -1,4 +1,10 @@
 import { GLSLChunk } from "./GLSLChunk";
+/**
+ * リピートするグリッドマテリアル用のインターフェース
+ * - グリッドの分割数
+ *
+ * にアクセス可能なことを保証する。
+ */
 export interface IRepeatablePattern {
     division: number;
     divisionScaleX: number;

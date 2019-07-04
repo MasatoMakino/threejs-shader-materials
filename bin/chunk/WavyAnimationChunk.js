@@ -2,7 +2,7 @@ import { GLSLChunk } from "./GLSLChunk";
 import { UniformsUtils } from "three";
 import { AnimationChunk } from "./AnimationChunk";
 /**
- * IWaveAnimatableインターフェースで定義されたアニメーションを実行するGLSLチャンク。
+ * IWaveAnimatableインターフェースで定義されたアニメーションを実装するためのGLSLチャンク。
  * 実行にはグリッドid値が必要。idはvec2。
  * 結果はdiffuseColor.aに反映される。
  */
@@ -58,9 +58,15 @@ class WavyAnimationUniformChunk extends GLSLChunk {
     `;
     }
 }
+/**
+ * Wavyアニメーションの波及方向を示すenum。
+ */
 export var Directions;
 (function (Directions) {
     Directions[Directions["vertical"] = 4] = "vertical";
     Directions[Directions["horizontal"] = 3] = "horizontal";
+    /**
+     * id値(0,0)を中心に同心円状に波及する。
+     */
     Directions[Directions["radial"] = 5] = "radial";
 })(Directions || (Directions = {}));

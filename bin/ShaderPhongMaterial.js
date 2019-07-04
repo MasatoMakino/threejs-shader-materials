@@ -2,9 +2,8 @@ import { ShaderMaterial, Color, AdditiveBlending, UniformsUtils, UniformsLib } f
 import { MeshPhongChunk } from "./chunk/MeshPhongChunk";
 /**
  * MeshPhongMaterialに準じるShaderMaterialクラス。
- * このクラスを継承するクラスで、任意のシェーダーを指定することで機能を変更可能とする。
  *
- * {@link https://github.com/mrdoob/three.js/blob/76c64b23d422dcfb36a28353f45b1effa1f68c5a/src/renderers/shaders/ShaderLib.js#L53}
+ * @see https://github.com/mrdoob/three.js/blob/76c64b23d422dcfb36a28353f45b1effa1f68c5a/src/renderers/shaders/ShaderLib.js#L53
  */
 export class ShaderPhongMaterial extends ShaderMaterial {
     /**

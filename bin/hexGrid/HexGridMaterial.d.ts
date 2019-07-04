@@ -1,8 +1,8 @@
-/**
- * 六角形グリッド
- */
 import { ShaderMaterialParameters } from "three";
 import { WavyGridMaterial } from "../WavyGridMaterial";
+/**
+ * 六角形グリッドマテリアル
+ */
 export declare class HexGridMaterial extends WavyGridMaterial {
     /**
      * グリッド線の太さ

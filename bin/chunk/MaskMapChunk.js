@@ -2,8 +2,8 @@ import { UniformsUtils } from "three";
 import { GLSLChunk } from "./GLSLChunk";
 import { RepeatPatternChunk } from "./RepeatPatternChunk";
 /**
- * Grid内のマスク値を利用するテクスチャ用Chunk。
- * 実行にはgridのid値、division、divisionScaleXが必要。
+ * マスクテクスチャを利用するShaderMaterial用Chunk。
+ * マスクテクスチャがどのように描画に反映されるかは、各Materialのシェーダー実装による。
  */
 export class MaskMapChunk extends RepeatPatternChunk {
     static registerChunk() {

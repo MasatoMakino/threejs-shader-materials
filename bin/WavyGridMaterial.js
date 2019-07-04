@@ -4,6 +4,9 @@ import { WavyAnimationChunk } from "./chunk/WavyAnimationChunk";
 import { MaskMapChunk } from "./chunk/MaskMapChunk";
 import { ReversibleChunk } from "./chunk/ReversibleChunk";
 import { AnimationChunk } from "./chunk/AnimationChunk";
+/**
+ * グリッド状に分割され、Wavyアニメーションを行うマテリアル。
+ */
 export class WavyGridMaterial extends ShaderPhongMaterial {
     constructor() {
         super(...arguments);

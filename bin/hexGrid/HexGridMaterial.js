@@ -1,10 +1,10 @@
-/**
- * 六角形グリッド
- */
 import { UniformsUtils } from "three";
 import { WavyGridMaterial } from "../WavyGridMaterial";
 import FragmentShader from "./HexGridMaterial.frag.glsl";
 import VertexShader from "../ShaderPhongMaterial.vert.glsl";
+/**
+ * 六角形グリッドマテリアル
+ */
 export class HexGridMaterial extends WavyGridMaterial {
     /**
      * グリッド線の太さ
