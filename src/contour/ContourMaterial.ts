@@ -35,7 +35,7 @@ export class ContourMaterial extends ShaderPhongMaterial {
   private _map: Texture;
 
   constructor(parameters?: ShaderMaterialParameters) {
-    super(VertexShader, FragmentShader, parameters);
+    super(VertexShader(), FragmentShader(), parameters);
   }
 
   protected initDefines(): void {

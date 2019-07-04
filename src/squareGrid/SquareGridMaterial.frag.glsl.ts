@@ -2,7 +2,8 @@
  * 四角形シェーダー
  */
 
-const shader: string = `
+export default () => {
+  return `
 #define PHONG
 
 #include <mesh_phong_uniform>
@@ -95,5 +96,4 @@ void main() {
     #include <dithering_fragment>
 }
 `;
-
-export default shader;
+};

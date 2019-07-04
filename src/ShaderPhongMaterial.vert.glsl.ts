@@ -1,7 +1,8 @@
 /**
  * https://github.com/mrdoob/three.js/blob/dev/src/renderers/shaders/ShaderLib/meshphong_vert.glsl.js
  */
-const shader: string = `
+export default () => {
+  return `
 #define PHONG
 
 varying vec3 vViewPosition;
@@ -64,5 +65,4 @@ void main() {
 
 }
 `;
-
-export default shader;
+};

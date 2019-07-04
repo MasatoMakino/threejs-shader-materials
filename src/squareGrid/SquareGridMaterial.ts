@@ -2,17 +2,7 @@
  * 地球儀用の緯度経度グリッド
  */
 
-import { ShaderMaterialParameters, Texture, UniformsUtils } from "three";
-import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
-
-import { AnimationChunk } from "../chunk/AnimationChunk";
-import {
-  Directions,
-  IWavyAnimatable,
-  WavyAnimationChunk
-} from "../chunk/WavyAnimationChunk";
-import { IReversible, ReversibleChunk } from "../chunk/ReversibleChunk";
-import { IMaskable, MaskMapChunk } from "../chunk/MaskMapChunk";
+import { ShaderMaterialParameters, UniformsUtils } from "three";
 
 import FragmentShader from "./SquareGridMaterial.frag.glsl";
 import VertexShader from "../ShaderPhongMaterial.vert.glsl";
@@ -31,7 +21,7 @@ export class SquareGridMaterial extends WavyGridMaterial {
   }
 
   constructor(parameters?: ShaderMaterialParameters) {
-    super(VertexShader, FragmentShader, parameters);
+    super(VertexShader(), FragmentShader(), parameters);
   }
 
   protected initUniforms(): void {

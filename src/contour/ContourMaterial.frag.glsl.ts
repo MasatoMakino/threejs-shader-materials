@@ -1,7 +1,8 @@
 /**
  * 等高線状にテクスチャをマッピングするシェーダー
  */
-const shader: string = `
+export default () => {
+  return `
 #define PHONG
 
 #include <mesh_phong_uniform>
@@ -69,5 +70,4 @@ void main() {
     #include <premultiplied_alpha_fragment>
     #include <dithering_fragment>
 }`;
-
-export default shader;
+};

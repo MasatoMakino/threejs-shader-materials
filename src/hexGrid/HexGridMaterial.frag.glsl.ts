@@ -1,9 +1,10 @@
 /**
- * 6角形シェーダー
+ * 6角形グリッドマテリアルのフラグメントシェーダー
  * {@link https://qiita.com/edo_m18/items/37d8773a5295bc6aba3d}
  */
 
-const shader: string = `
+export default () => {
+  return `
 #define PHONG
 
 #include <mesh_phong_uniform>
@@ -113,5 +114,4 @@ void main() {
     #include <dithering_fragment>
 }
 `;
-
-export default shader;
+};

@@ -28,7 +28,7 @@ export class CrossGridMaterial extends WavyGridMaterial {
   }
 
   constructor(parameters?: ShaderMaterialParameters) {
-    super(VertexShader, FragmentShader, parameters);
+    super(VertexShader(), FragmentShader(), parameters);
   }
 
   protected initUniforms(): void {
