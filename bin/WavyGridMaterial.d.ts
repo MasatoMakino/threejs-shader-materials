@@ -8,6 +8,8 @@ import { IReversible } from "./chunk/ReversibleChunk";
  * グリッド状に分割され、Wavyアニメーションを行うマテリアル。
  */
 export declare class WavyGridMaterial extends ShaderPhongMaterial implements IWavyAnimatable, IReversible, IMaskable {
+    protected animationID: number;
+    protected lastAnimatedTimestamp: number;
     addTime(delta: number): void;
     /**
      * 波アニメーションを行うか否か。
@@ -41,5 +43,8 @@ export declare class WavyGridMaterial extends ShaderPhongMaterial implements IWa
     protected initChunks(): void;
     static getBasicUniforms(): any;
     protected initDefaultSetting(parameters?: ShaderMaterialParameters): void;
+    protected startAnimation(): void;
+    protected stopAnimation(): void;
+    protected onRequestAnimationFrame(timestamp: number): void;
 }
 //# sourceMappingURL=WavyGridMaterial.d.ts.map

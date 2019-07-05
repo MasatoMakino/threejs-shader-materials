@@ -28,6 +28,12 @@ export class WavyGridMaterial extends ShaderPhongMaterial {
     }
     set isAnimate(value) {
         this.uniforms.isAnimate.value = value;
+        if (this.isAnimate) {
+            this.startAnimation();
+        }
+        else {
+            this.stopAnimation();
+        }
     }
     get division() {
         return this.uniforms.division.value;
@@ -107,5 +113,30 @@ export class WavyGridMaterial extends ShaderPhongMaterial {
         if (parameters.transparent == null) {
             this.transparent = true;
         }
+        this.isAnimate = this.isAnimate; //reset and start requestAnimationFrame()
+    }
+    startAnimation() {
+        if (this.animationID != null)
+            return;
+        this.animationID = requestAnimationFrame(timestamp => {
+            this.onRequestAnimationFrame(timestamp);
+        });
+    }
+    stopAnimation() {
+        this.lastAnimatedTimestamp = null;
+        if (this.animationID == null)
+            return;
+        cancelAnimationFrame(this.animationID);
+        this.animationID = null;
+    }
+    onRequestAnimationFrame(timestamp) {
+        if (this.lastAnimatedTimestamp != null) {
+            const delta = (timestamp - this.lastAnimatedTimestamp) / 1000;
+            this.addTime(delta);
+        }
+        this.lastAnimatedTimestamp = timestamp;
+        this.animationID = requestAnimationFrame(timestamp => {
+            this.onRequestAnimationFrame(timestamp);
+        });
     }
 }
