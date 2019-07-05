@@ -15,6 +15,9 @@ import { AnimationChunk } from "./chunk/AnimationChunk";
  */
 export class WavyGridMaterial extends ShaderPhongMaterial
   implements IWavyAnimatable, IReversible, IMaskable {
+  protected animationID: number;
+  protected lastAnimatedTimestamp: number;
+
   addTime(delta: number): void {
     AnimationChunk.addTime(this, delta);
   }
@@ -27,6 +30,11 @@ export class WavyGridMaterial extends ShaderPhongMaterial
   }
   set isAnimate(value: boolean) {
     this.uniforms.isAnimate.value = value;
+    if (this.isAnimate) {
+      this.startAnimation();
+    } else {
+      this.stopAnimation();
+    }
   }
 
   /**
@@ -124,5 +132,32 @@ export class WavyGridMaterial extends ShaderPhongMaterial
     if (parameters.transparent == null) {
       this.transparent = true;
     }
+    this.isAnimate = this.isAnimate; //reset and start requestAnimationFrame()
+  }
+
+  protected startAnimation(): void {
+    if (this.animationID != null) return;
+    this.animationID = requestAnimationFrame(timestamp => {
+      this.onRequestAnimationFrame(timestamp);
+    });
+  }
+
+  protected stopAnimation(): void {
+    this.lastAnimatedTimestamp = null;
+    if (this.animationID == null) return;
+    cancelAnimationFrame(this.animationID);
+    this.animationID = null;
+  }
+
+  protected onRequestAnimationFrame(timestamp: number) {
+    if (this.lastAnimatedTimestamp != null) {
+      const delta = (timestamp - this.lastAnimatedTimestamp) / 1000;
+      this.addTime(delta);
+    }
+
+    this.lastAnimatedTimestamp = timestamp;
+    this.animationID = requestAnimationFrame(timestamp => {
+      this.onRequestAnimationFrame(timestamp);
+    });
   }
 }

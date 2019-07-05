@@ -24,9 +24,7 @@ export class StudyHalftoneGrid {
     const control = Common.initControl(camera, renderer);
     Common.initHelper(scene);
     const mat = this.initObject(scene);
-    Common.render(control, renderer, scene, camera, () => {
-      mat.addTime(0.0333);
-    });
+    Common.render(control, renderer, scene, camera);
 
     this.initGUI(mat);
   }
