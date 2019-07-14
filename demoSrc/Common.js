@@ -22,8 +22,8 @@ export class Common {
     return ambientLight;
   }
 
-  static initCamera(scene, W, H) {
-    const camera = new PerspectiveCamera(45, W / H, 1, 400);
+  static initCamera(scene, W, H, far = 400) {
+    const camera = new PerspectiveCamera(45, W / H, 1, far);
     camera.position.set(0, 0, 100);
     camera.updateMatrixWorld(false);
     scene.add(camera);
