@@ -2,6 +2,7 @@ import * as dat from "dat.gui";
 import { Common } from "./Common";
 import {
   Color,
+  Fog,
   Mesh,
   MeshBasicMaterial,
   PlaneGeometry,
@@ -17,23 +18,21 @@ export class StudyHexGrid {
 
     const scene = Common.initScene();
     Common.initLight(scene);
+    scene.fog = new Fog(0x557799, 2000, 10000);
     const camera = Common.initCamera(scene, W, H, 20000);
-    const renderer = Common.initRenderer(W, H);
+    const renderer = Common.initRenderer(W, H, 0x000000, "webgl-canvas", false);
     const control = Common.initControl(camera, renderer);
     Common.initHelper(scene);
 
     const gui = new dat.GUI();
-
     this.initSky(scene, gui);
-
     const mat = this.initObject(scene);
     Common.render(control, renderer, scene, camera);
-
     this.initGUI(gui, mat);
   }
 
   initObject(scene) {
-    const size = 40000;
+    const size = 20000;
     const geo = new PlaneGeometry(size, size);
     const mat = new SkyCloudMaterial({
       fog: scene.fog !== undefined

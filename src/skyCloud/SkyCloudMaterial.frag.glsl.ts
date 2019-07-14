@@ -116,13 +116,13 @@ void main() {
     cloudColor *= vec3(1.015, 1.015, 0.95);
     
     float volume;
+    float alpha = 0.0;
     volume = (f*f)*cloudVolume*0.03;
-    
-    float alpha = clamp(volume,0.0,1.0);
-
+    alpha += volume;
     volume = (f*f*f*f*f)*cloudVolume;
-    alpha += clamp(volume,0.0,1.0);
-
+    alpha += volume;
+    alpha = clamp(alpha,0.0,1.0);
+    
     cloudColor = mix(cloudColor,
                 skyColor*cloudBottomSaturation,
                 clamp(volume*cloudBottomVolume,0.0,1.0));
