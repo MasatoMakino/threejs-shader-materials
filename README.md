@@ -16,6 +16,8 @@ Collection of shader materials for three.js
 
 [ContourMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/contour.html)
 
+[SkyCloudMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/skyCloud.html)
+
 ## Getting Started
 
 ### Install
