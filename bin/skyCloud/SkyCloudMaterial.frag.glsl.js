@@ -104,16 +104,15 @@ void main() {
     st += time;
 
     vec2 q = vec2(0.);
-    q.x = fbm( st + 0.00*time);
+    q.x = fbm( st + time);
     q.y = fbm( st + vec2(1.0));
 
     vec2 r = vec2(0.0);
-    r.x = fbm( st + 1.0*q + vec2(1.7,9.2)+ 0.15*time * cloudTransformSpeed);
-    r.y = fbm( st + 1.0*q + vec2(8.3,2.8)+ 0.126*time * cloudTransformSpeed);
+    r.x = fbm( st + q + vec2(1.7,9.2)+ 0.15*time * cloudTransformSpeed);
+    r.y = fbm( st + q + vec2(8.3,2.8)+ 0.126*time * cloudTransformSpeed);
     float f = fbm(st+r);
 
     vec3 cloudColor = diffuseColor.rgb;
-    //cloudColor *= vec3(1.015, 1.015, 0.95);
     
     float volume;
     float alpha = 0.0;

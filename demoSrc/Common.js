@@ -47,8 +47,11 @@ export class Common {
     id = "webgl-canvas",
     antialias = true
   ) {
+    const element = document.getElementById(id);
+    element.style.zIndex = 0;
+    element.style.position = "absolute";
     const renderer = new WebGLRenderer({
-      canvas: document.getElementById(id),
+      canvas: element,
       antialias: antialias
     });
     renderer.setClearColor(new Color(color));
