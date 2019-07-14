@@ -11,4 +11,5 @@ export * from "./crossGrid/CrossGridMaterial";
 export * from "./halftoneGrid/HalftoneGridMaterial";
 export * from "./hexGrid/HexGridMaterial";
 export * from "./squareGrid/SquareGridMaterial";
+export * from "./skyCloud/SkyCloudMaterial";
 //# sourceMappingURL=index.d.ts.map
