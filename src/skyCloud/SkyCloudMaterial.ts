@@ -137,7 +137,6 @@ export class SkyCloudMaterial extends ShaderPhongMaterial
     this.animationID = null;
   }
 
-
   /*
    * TODO requestAnimationFrameの多重実行はパフォーマンスに悪影響を与える。
    * ref https://jsperf.com/single-raf-draw-calls-vs-multiple-raf-draw-calls
