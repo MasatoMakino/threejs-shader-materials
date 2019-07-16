@@ -18,6 +18,8 @@ Collection of shader materials for three.js
 
 [SkyCloudMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/skyCloud.html)
 
+[FBMDissolveMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/fbmDissolve.html)
+
 ## Getting Started
 
 ### Install
