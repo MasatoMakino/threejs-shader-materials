@@ -113,14 +113,19 @@ export class SkyCloudMaterial extends ShaderPhongMaterial {
         cancelAnimationFrame(this.animationID);
         this.animationID = null;
     }
+    /*
+     * TODO requestAnimationFrameの多重実行はパフォーマンスに悪影響を与える。
+     * ref https://jsperf.com/single-raf-draw-calls-vs-multiple-raf-draw-calls
+     * Object.onBeforeRenderなどを利用してcallを一本化できないか検討する。
+     */
     onRequestAnimationFrame(timestamp) {
         if (this.lastAnimatedTimestamp != null) {
             const delta = (timestamp - this.lastAnimatedTimestamp) / 1000;
             this.addTime(delta);
         }
         this.lastAnimatedTimestamp = timestamp;
-        this.animationID = requestAnimationFrame(timestamp => {
-            this.onRequestAnimationFrame(timestamp);
+        this.animationID = requestAnimationFrame(t => {
+            this.onRequestAnimationFrame(t);
         });
     }
 }

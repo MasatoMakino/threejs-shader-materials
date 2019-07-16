@@ -12,3 +12,4 @@ export * from "./halftoneGrid/HalftoneGridMaterial";
 export * from "./hexGrid/HexGridMaterial";
 export * from "./squareGrid/SquareGridMaterial";
 export * from "./skyCloud/SkyCloudMaterial";
+export * from "./fbmDissolve/FBMDissolveMaterial";
