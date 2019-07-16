@@ -11,7 +11,7 @@ import {
 import { Sky } from "three/examples/jsm/objects/Sky";
 import { SkyCloudMaterial } from "../bin";
 
-export class StudyHexGrid {
+export class Study {
   constructor() {
     const W = 1024;
     const H = 768;
@@ -160,5 +160,5 @@ export class StudyHexGrid {
 }
 
 window.onload = () => {
-  const study = new StudyHexGrid();
+  const study = new Study();
 };
