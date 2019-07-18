@@ -7,6 +7,7 @@ export * from "./chunk/MeshPhongChunk";
 export * from "./chunk/RepeatPatternChunk";
 export * from "./chunk/ReversibleChunk";
 export * from "./chunk/WavyAnimationChunk";
+export * from "./chunk/TilingFBMChunk";
 
 export * from "./contour/ContourMaterial";
 export * from "./crossGrid/CrossGridMaterial";
