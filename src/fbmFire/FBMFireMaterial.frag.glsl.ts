@@ -2,13 +2,16 @@ export default () => {
   return `
 #define PHONG
 
+#include <mesh_phong_uniform>
+
 //varying
 varying vec2 uvPosition; 
 #include <mesh_position_varying>
 #include <tiling_fbm_uniform_chunk>
-uniform float progress;
-uniform vec3 edgeColor;
-uniform float edgeWeight;
+#include <time_animation_uniform_chunk>
+
+uniform float strength;
+uniform float bloom;
 
 #include <common>
 #include <packing>
@@ -43,28 +46,25 @@ void main()
     #include <map_fragment>
     #include <color_fragment>
     
-    vec2 uv = uvPosition * tiles;
+    vec2 uv = uvPosition;
     float uVy = uv.y;
-    uv *= TILES;
+    uv *= tiles;
 
-    float transformSpeed = 1.9;
     vec2 q = vec2(0.0);
-    q.x = fbm( uv + vec2(1.7,9.2) -.38  * time * transformSpeed);
-    q.y = fbm( uv + vec2(8.3,2.8) -.126 * time * transformSpeed);
+    q.x = fbm( uv + vec2(1.7,9.2) +.16  * time );
+    q.y = fbm( uv + vec2(8.3,2.8) +.356 * time );
 
     float fbmVal = fbm(uv + q);
     fbmVal += 1.0-(uVy * 1.0 );
     fbmVal *= 1.0-uVy;
     
-    vec3 color = vec3(1.0, 0.4, 0.6);
+    vec3 color = diffuseColor.rgb;
     
-    //strength of fire.
-    float st = 0.5;
-    float bri = smoothstep( st-0.4, st, fbmVal );
+    float st = 1.0 - strength;
+    float bri = smoothstep( max( st-0.4, 0.0), st, fbmVal );
     
-    //bloom of fire. 
-    float bloom = 0.95;
-    float bloomVal = smoothstep( bloom-0.4, bloom, fbmVal );
+    float blm = 1.0 - bloom;
+    float bloomVal = smoothstep( blm-0.4, blm, fbmVal );
     color += bloomVal;
 
     diffuseColor.rgb = color;

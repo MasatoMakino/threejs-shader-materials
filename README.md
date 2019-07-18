@@ -20,6 +20,8 @@ Collection of shader materials for three.js
 
 [FBMDissolveMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/fbmDissolve.html)
 
+[FBMFireMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/fbmFire.html)
+
 ## Getting Started
 
 ### Install
