@@ -50,7 +50,6 @@ export class FBMDissolveMaterial extends ShaderPhongMaterial
     this.uniforms.edgeColor.value = value;
   }
 
-
   /**
    *
    * @param parameters
@@ -83,7 +82,6 @@ export class FBMDissolveMaterial extends ShaderPhongMaterial
     super.initDefines();
     this.defines = Object.assign({}, TilingFBMChunk.getDefines(), this.defines);
   }
-
 
   protected initDefaultSetting(parameters?: ShaderMaterialParameters): void {
     super.initDefaultSetting(parameters);
