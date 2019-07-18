@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>MeshPhongChunk | threejs-shader-materials</title>
+	<title>TilingFBMChunk | threejs-shader-materials</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,23 +56,16 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="meshphongchunk.html">MeshPhongChunk</a>
+					<a href="tilingfbmchunk.html">TilingFBMChunk</a>
 				</li>
 			</ul>
-			<h1>Class MeshPhongChunk</h1>
+			<h1>Class TilingFBMChunk</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>MeshPhongMaterialと同等の機能を備えたShaderMaterialを実装するために必要なGLSLコードを格納したクラス。</p>
-					</div>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -80,7 +73,7 @@
 						<a href="glslchunk.html" class="tsd-signature-type">GLSLChunk</a>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">MeshPhongChunk</span>
+								<span class="target">TilingFBMChunk</span>
 							</li>
 						</ul>
 					</li>
@@ -93,11 +86,11 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-static"><a href="meshphongchunk.html#getchunk" class="tsd-kind-icon">get<wbr>Chunk</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-static"><a href="meshphongchunk.html#getchunkname" class="tsd-kind-icon">get<wbr>Chunk<wbr>Name</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static"><a href="meshphongchunk.html#getdefines" class="tsd-kind-icon">get<wbr>Defines</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="meshphongchunk.html#getuniform" class="tsd-kind-icon">get<wbr>Uniform</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static"><a href="meshphongchunk.html#registerchunk" class="tsd-kind-icon">register<wbr>Chunk</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-static"><a href="tilingfbmchunk.html#getchunk" class="tsd-kind-icon">get<wbr>Chunk</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-static"><a href="tilingfbmchunk.html#getchunkname" class="tsd-kind-icon">get<wbr>Chunk<wbr>Name</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static"><a href="tilingfbmchunk.html#getdefines" class="tsd-kind-icon">get<wbr>Defines</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static"><a href="tilingfbmchunk.html#getuniform" class="tsd-kind-icon">get<wbr>Uniform</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static"><a href="tilingfbmchunk.html#registerchunk" class="tsd-kind-icon">register<wbr>Chunk</a></li>
 							</ul>
 						</section>
 					</div>
@@ -162,37 +155,27 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="glslchunk.html">GLSLChunk</a>.<a href="glslchunk.html#getdefines">getDefines</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/3743b9c/src/chunk/MeshPhongChunk.ts#L15">chunk/MeshPhongChunk.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/3743b9c/src/chunk/TilingFBMChunk.ts#L22">chunk/TilingFBMChunk.ts:22</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Object</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static">
 					<a name="getuniform" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Uniform</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Uniform<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="glslchunk.html">GLSLChunk</a>.<a href="glslchunk.html#getuniform">getUniform</a></p>
+								<p>Overrides <a href="glslchunk.html">GLSLChunk</a>.<a href="glslchunk.html#getuniform">getUniform</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/3743b9c/src/chunk/GLSLChunk.ts#L43">chunk/GLSLChunk.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/3743b9c/src/chunk/TilingFBMChunk.ts#L15">chunk/TilingFBMChunk.ts:15</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Chunkに関連する共有変数Uniformsを格納したオブジェクトを取得する。</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>see</dt>
-									<dd><p><a href="https://threejs.org/docs/#api/en/materials/ShaderMaterial.uniforms">https://threejs.org/docs/#api/en/materials/ShaderMaterial.uniforms</a></p>
-									</dd>
-								</dl>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 						</li>
 					</ul>
@@ -208,7 +191,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="glslchunk.html">GLSLChunk</a>.<a href="glslchunk.html#registerchunk">registerChunk</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/3743b9c/src/chunk/MeshPhongChunk.ts#L7">chunk/MeshPhongChunk.ts:7</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/3743b9c/src/chunk/TilingFBMChunk.ts#L10">chunk/TilingFBMChunk.ts:10</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -263,30 +246,9 @@
 					<li class=" tsd-kind-class tsd-is-not-exported">
 						<a href="maskmapuniformchunk.html" class="tsd-kind-icon">Mask<wbr>Map<wbr>Uniform<wbr>Chunk</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-class">
+					<li class=" tsd-kind-class">
 						<a href="meshphongchunk.html" class="tsd-kind-icon">Mesh<wbr>Phong<wbr>Chunk</a>
-						<ul>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-static">
-								<a href="meshphongchunk.html#getchunk" class="tsd-kind-icon">get<wbr>Chunk</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-static">
-								<a href="meshphongchunk.html#getchunkname" class="tsd-kind-icon">get<wbr>Chunk<wbr>Name</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static">
-								<a href="meshphongchunk.html#getdefines" class="tsd-kind-icon">get<wbr>Defines</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="meshphongchunk.html#getuniform" class="tsd-kind-icon">get<wbr>Uniform</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static">
-								<a href="meshphongchunk.html#registerchunk" class="tsd-kind-icon">register<wbr>Chunk</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-class tsd-is-not-exported">
 						<a href="meshphongdiffusecolorchunk.html" class="tsd-kind-icon">Mesh<wbr>Phong<wbr>Diffuse<wbr>Color<wbr>Chunk</a>
 					</li>
@@ -326,9 +288,30 @@
 					<li class=" tsd-kind-class">
 						<a href="squaregridmaterial.html" class="tsd-kind-icon">Square<wbr>Grid<wbr>Material</a>
 					</li>
-					<li class=" tsd-kind-class">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
 						<a href="tilingfbmchunk.html" class="tsd-kind-icon">TilingFBMChunk</a>
+						<ul>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-static">
+								<a href="tilingfbmchunk.html#getchunk" class="tsd-kind-icon">get<wbr>Chunk</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-static">
+								<a href="tilingfbmchunk.html#getchunkname" class="tsd-kind-icon">get<wbr>Chunk<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static">
+								<a href="tilingfbmchunk.html#getdefines" class="tsd-kind-icon">get<wbr>Defines</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static">
+								<a href="tilingfbmchunk.html#getuniform" class="tsd-kind-icon">get<wbr>Uniform</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static">
+								<a href="tilingfbmchunk.html#registerchunk" class="tsd-kind-icon">register<wbr>Chunk</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-class tsd-is-not-exported">
 						<a href="tilingfbmfunctionchunk.html" class="tsd-kind-icon">TilingFBMFunction<wbr>Chunk</a>
 					</li>

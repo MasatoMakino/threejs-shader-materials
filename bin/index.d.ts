@@ -6,6 +6,7 @@ export * from "./chunk/MeshPhongChunk";
 export * from "./chunk/RepeatPatternChunk";
 export * from "./chunk/ReversibleChunk";
 export * from "./chunk/WavyAnimationChunk";
+export * from "./chunk/TilingFBMChunk";
 export * from "./contour/ContourMaterial";
 export * from "./crossGrid/CrossGridMaterial";
 export * from "./halftoneGrid/HalftoneGridMaterial";
@@ -13,4 +14,5 @@ export * from "./hexGrid/HexGridMaterial";
 export * from "./squareGrid/SquareGridMaterial";
 export * from "./skyCloud/SkyCloudMaterial";
 export * from "./fbmDissolve/FBMDissolveMaterial";
+export * from "./fbmFire/FBMFireMaterial";
 //# sourceMappingURL=index.d.ts.map

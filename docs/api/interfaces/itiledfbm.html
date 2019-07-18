@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IMaskable | threejs-shader-materials</title>
+	<title>ITiledFBM | threejs-shader-materials</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,48 +56,29 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="imaskable.html">IMaskable</a>
+					<a href="itiledfbm.html">ITiledFBM</a>
 				</li>
 			</ul>
-			<h1>Interface IMaskable</h1>
+			<h1>Interface ITiledFBM</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>Maskテクスチャを設定可能なマテリアル用のインターフェース</p>
-						<ul>
-							<li>maskTexture変数</li>
-						</ul>
-					</div>
-					<p>にアクセス可能なことを保証する。</p>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="irepeatablepattern.html" class="tsd-signature-type">IRepeatablePattern</a>
-						<ul class="tsd-hierarchy">
-							<li>
-								<span class="target">IMaskable</span>
-							</li>
-						</ul>
+						<span class="target">ITiledFBM</span>
 					</li>
 				</ul>
 			</section>
 			<section class="tsd-panel">
 				<h3>Implemented by</h3>
 				<ul class="tsd-hierarchy">
-					<li><a href="../classes/crossgridmaterial.html" class="tsd-signature-type">CrossGridMaterial</a></li>
-					<li><a href="../classes/halftonegridmaterial.html" class="tsd-signature-type">HalftoneGridMaterial</a></li>
-					<li><a href="../classes/hexgridmaterial.html" class="tsd-signature-type">HexGridMaterial</a></li>
-					<li><a href="../classes/squaregridmaterial.html" class="tsd-signature-type">SquareGridMaterial</a></li>
-					<li><a href="../classes/wavygridmaterial.html" class="tsd-signature-type">WavyGridMaterial</a></li>
+					<li><a href="../classes/fbmdissolvematerial.html" class="tsd-signature-type">FBMDissolveMaterial</a></li>
+					<li><a href="../classes/fbmfirematerial.html" class="tsd-signature-type">FBMFireMaterial</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -107,10 +88,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="imaskable.html#division" class="tsd-kind-icon">division</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="imaskable.html#divisionscalex" class="tsd-kind-icon">division<wbr>ScaleX</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="imaskable.html#masktexture" class="tsd-kind-icon">mask<wbr>Texture</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="imaskable.html#uniforms" class="tsd-kind-icon">uniforms</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="itiledfbm.html#amp" class="tsd-kind-icon">amp</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="itiledfbm.html#hashloop" class="tsd-kind-icon">hash<wbr>Loop</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="itiledfbm.html#tiles" class="tsd-kind-icon">tiles</a></li>
 							</ul>
 						</section>
 					</div>
@@ -118,55 +98,35 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="division" class="tsd-anchor"></a>
-					<h3>division</h3>
-					<div class="tsd-signature tsd-kind-icon">division<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="amp" class="tsd-anchor"></a>
+					<h3>amp</h3>
+					<div class="tsd-signature tsd-kind-icon">amp<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="irepeatablepattern.html">IRepeatablePattern</a>.<a href="irepeatablepattern.html#division">division</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/3743b9c/src/chunk/RepeatPatternChunk.ts#L10">chunk/RepeatPatternChunk.ts:10</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="divisionscalex" class="tsd-anchor"></a>
-					<h3>division<wbr>ScaleX</h3>
-					<div class="tsd-signature tsd-kind-icon">division<wbr>ScaleX<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="irepeatablepattern.html">IRepeatablePattern</a>.<a href="irepeatablepattern.html#divisionscalex">divisionScaleX</a></p>
-						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/3743b9c/src/chunk/RepeatPatternChunk.ts#L11">chunk/RepeatPatternChunk.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/3743b9c/src/chunk/TilingFBMChunk.ts#L6">chunk/TilingFBMChunk.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="masktexture" class="tsd-anchor"></a>
-					<h3>mask<wbr>Texture</h3>
-					<div class="tsd-signature tsd-kind-icon">mask<wbr>Texture<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Texture</span></div>
+					<a name="hashloop" class="tsd-anchor"></a>
+					<h3>hash<wbr>Loop</h3>
+					<div class="tsd-signature tsd-kind-icon">hash<wbr>Loop<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/3743b9c/src/chunk/MaskMapChunk.ts#L13">chunk/MaskMapChunk.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/3743b9c/src/chunk/TilingFBMChunk.ts#L5">chunk/TilingFBMChunk.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="uniforms" class="tsd-anchor"></a>
-					<h3>uniforms</h3>
-					<div class="tsd-signature tsd-kind-icon">uniforms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<a name="tiles" class="tsd-anchor"></a>
+					<h3>tiles</h3>
+					<div class="tsd-signature tsd-kind-icon">tiles<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/3743b9c/src/chunk/MaskMapChunk.ts#L12">chunk/MaskMapChunk.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/3743b9c/src/chunk/TilingFBMChunk.ts#L4">chunk/TilingFBMChunk.ts:4</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-index-signature">
-								<h5><span class="tsd-signature-symbol">[</span>uniform: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">IUniform</span></h5>
-							</li>
-						</ul>
-					</div>
 				</section>
 			</section>
 		</div>
@@ -285,36 +245,33 @@
 					<li class=" tsd-kind-interface">
 						<a href="ianimatable.html" class="tsd-kind-icon">IAnimatable</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class=" tsd-kind-interface">
 						<a href="imaskable.html" class="tsd-kind-icon">IMaskable</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="imaskable.html#division" class="tsd-kind-icon">division</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="imaskable.html#divisionscalex" class="tsd-kind-icon">division<wbr>ScaleX</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="imaskable.html#masktexture" class="tsd-kind-icon">mask<wbr>Texture</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="imaskable.html#uniforms" class="tsd-kind-icon">uniforms</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-interface">
 						<a href="irepeatablepattern.html" class="tsd-kind-icon">IRepeatable<wbr>Pattern</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="ireversible.html" class="tsd-kind-icon">IReversible</a>
 					</li>
-					<li class=" tsd-kind-interface">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface">
 						<a href="itiledfbm.html" class="tsd-kind-icon">ITiledFBM</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="itiledfbm.html#amp" class="tsd-kind-icon">amp</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="itiledfbm.html#hashloop" class="tsd-kind-icon">hash<wbr>Loop</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="itiledfbm.html#tiles" class="tsd-kind-icon">tiles</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface">
 						<a href="iwavyanimatable.html" class="tsd-kind-icon">IWavy<wbr>Animatable</a>
 					</li>

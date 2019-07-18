@@ -1,6 +1,7 @@
 import { UniformsUtils } from "three";
 import { Color } from "three";
 import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
+import { TilingFBMChunk } from "../chunk/TilingFBMChunk";
 import VertexShader from "../ShaderPhongMaterial.vert.glsl";
 import FragmentShader from "./FBMDissolveMaterial.frag.glsl";
 export class FBMDissolveMaterial extends ShaderPhongMaterial {
@@ -9,6 +10,18 @@ export class FBMDissolveMaterial extends ShaderPhongMaterial {
     }
     set tiles(value) {
         this.uniforms.tiles.value = value;
+    }
+    get hashLoop() {
+        return this.uniforms.hashLoop.value;
+    }
+    set hashLoop(value) {
+        this.uniforms.hashLoop.value = value;
+    }
+    get amp() {
+        return this.uniforms.amp.value;
+    }
+    set amp(value) {
+        this.uniforms.amp.value = value;
     }
     get progress() {
         return this.uniforms.progress.value;
@@ -28,18 +41,6 @@ export class FBMDissolveMaterial extends ShaderPhongMaterial {
     set edgeColor(value) {
         this.uniforms.edgeColor.value = value;
     }
-    get hashLoop() {
-        return this.uniforms.hashLoop.value;
-    }
-    set hashLoop(value) {
-        this.uniforms.hashLoop.value = value;
-    }
-    get amp() {
-        return this.uniforms.amp.value;
-    }
-    set amp(value) {
-        this.uniforms.amp.value = value;
-    }
     /**
      *
      * @param parameters
@@ -50,15 +51,24 @@ export class FBMDissolveMaterial extends ShaderPhongMaterial {
     initUniforms() {
         this.uniforms = UniformsUtils.merge([
             ShaderPhongMaterial.getBasicUniforms(),
+            TilingFBMChunk.getUniform(),
             {
-                tiles: { value: 2.0 },
                 progress: { value: 0.0 },
                 edgeWeight: { value: 0.1 },
-                edgeColor: { value: new Color(1.0, 1.0, 1.0) },
-                hashLoop: { value: 8.0 },
-                amp: { value: 0.5 }
+                edgeColor: { value: new Color(1.0, 1.0, 1.0) }
             }
         ]);
+    }
+    initChunks() {
+        super.initChunks();
+        TilingFBMChunk.registerChunk();
+    }
+    /**
+     * definesを初期化する。
+     */
+    initDefines() {
+        super.initDefines();
+        this.defines = Object.assign({}, TilingFBMChunk.getDefines(), this.defines);
     }
     initDefaultSetting(parameters) {
         super.initDefaultSetting(parameters);

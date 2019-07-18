@@ -8,9 +8,10 @@ export default () => {
 varying vec2 uvPosition; 
 #include <mesh_position_varying>
 #include <tiling_fbm_uniform_chunk>
-uniform float progress;
-uniform vec3 edgeColor;
-uniform float edgeWeight;
+#include <time_animation_uniform_chunk>
+
+uniform float strength;
+uniform float bloom;
 
 #include <common>
 #include <packing>
@@ -45,20 +46,28 @@ void main()
     #include <map_fragment>
     #include <color_fragment>
     
-    vec2 uv = uvPosition * tiles;
+    vec2 uv = uvPosition;
+    float uVy = uv.y;
+    uv *= tiles;
 
-    float fbmVal = fbm(uv);
-    float bri = 1.0 - smoothstep( progress-0.01, progress, fbmVal );
+    vec2 q = vec2(0.0);
+    q.x = fbm( uv + vec2(1.7,9.2) +.16  * time );
+    q.y = fbm( uv + vec2(8.3,2.8) +.356 * time );
 
-    float edge = 
-          smoothstep( progress-edgeWeight, progress, fbmVal )
-        - smoothstep( progress, progress+edgeWeight, fbmVal );
-    edge = clamp( edge, 0.0, 1.0 );
+    float fbmVal = fbm(uv + q);
+    fbmVal += 1.0-(uVy * 1.0 );
+    fbmVal *= 1.0-uVy;
+    
+    vec3 color = diffuseColor.rgb;
+    
+    float st = 1.0 - strength;
+    float bri = smoothstep( max( st-0.4, 0.0), st, fbmVal );
+    
+    float blm = 1.0 - bloom;
+    float bloomVal = smoothstep( blm-0.4, blm, fbmVal );
+    color += bloomVal;
 
-    vec3 col = diffuseColor.rgb;
-    col += edgeColor * edge;
-
-    diffuseColor.rgb = col;
+    diffuseColor.rgb = color;
     diffuseColor.a *= bri;
     
     #include <mesh_phong_switching_alpha_map>
@@ -82,7 +91,6 @@ void main()
     #include <fog_fragment>
     #include <premultiplied_alpha_fragment>
     #include <dithering_fragment>
-}
-
+}            
     `;
 };
