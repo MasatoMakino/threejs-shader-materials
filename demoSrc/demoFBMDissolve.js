@@ -37,7 +37,8 @@ export class Study {
     const helper = new PointLightHelper(spot);
     scene.add(helper);
 
-    const geo = new SphereGeometry(30, 32, 32);
+    const seg = 32;
+    const geo = new SphereGeometry(30, seg, seg);
 
     const mat = new FBMDissolveMaterial({
       fog: scene.fog !== undefined
