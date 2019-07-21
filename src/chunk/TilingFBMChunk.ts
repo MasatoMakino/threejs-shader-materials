@@ -36,14 +36,10 @@ class TilingFBMFunctionChunk extends GLSLChunk {
         // Based On Dave_Hoskins 
         // https://www.shadertoy.com/view/4dlGW2
         
-        float hash(in vec2 p, in float hashLoop)
+        highp float hash(in vec2 p, in float hashLoop)
         {
             p = mod(p, hashLoop);
-            return fract(
-                sin(
-                    dot(p, vec2(27.16898, 38.90563))
-                ) * 5151.5473453
-            );
+            return rand(p);
         }
         
         float noise(in vec2 p, in float hashLoop)
