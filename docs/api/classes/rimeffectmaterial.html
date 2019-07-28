@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>WavyGridMaterial | threejs-shader-materials</title>
+	<title>RimEffectMaterial | threejs-shader-materials</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,23 +56,16 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="wavygridmaterial.html">WavyGridMaterial</a>
+					<a href="rimeffectmaterial.html">RimEffectMaterial</a>
 				</li>
 			</ul>
-			<h1>Class WavyGridMaterial</h1>
+			<h1>Class RimEffectMaterial</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>グリッド状に分割され、Wavyアニメーションを行うマテリアル。</p>
-					</div>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -80,182 +73,136 @@
 						<a href="shaderphongmaterial.html" class="tsd-signature-type">ShaderPhongMaterial</a>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">WavyGridMaterial</span>
-								<ul class="tsd-hierarchy">
-									<li>
-										<a href="crossgridmaterial.html" class="tsd-signature-type">CrossGridMaterial</a>
-									</li>
-									<li>
-										<a href="halftonegridmaterial.html" class="tsd-signature-type">HalftoneGridMaterial</a>
-									</li>
-									<li>
-										<a href="hexgridmaterial.html" class="tsd-signature-type">HexGridMaterial</a>
-									</li>
-									<li>
-										<a href="squaregridmaterial.html" class="tsd-signature-type">SquareGridMaterial</a>
-									</li>
-								</ul>
+								<span class="target">RimEffectMaterial</span>
 							</li>
 						</ul>
 					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel">
-				<h3>Implements</h3>
-				<ul class="tsd-hierarchy">
-					<li><a href="../interfaces/iwavyanimatable.html" class="tsd-signature-type">IWavyAnimatable</a></li>
-					<li><a href="../interfaces/ireversible.html" class="tsd-signature-type">IReversible</a></li>
-					<li><a href="../interfaces/imaskable.html" class="tsd-signature-type">IMaskable</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-inherited">
+						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="wavygridmaterial.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="rimeffectmaterial.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="wavygridmaterial.html#_opacity" class="tsd-kind-icon">_opacity</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#alphatest" class="tsd-kind-icon">alpha<wbr>Test</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="wavygridmaterial.html#animationid" class="tsd-kind-icon">animationID</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#blenddst" class="tsd-kind-icon">blend<wbr>Dst</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#blenddstalpha" class="tsd-kind-icon">blend<wbr>Dst<wbr>Alpha</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#blendequation" class="tsd-kind-icon">blend<wbr>Equation</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#blendequationalpha" class="tsd-kind-icon">blend<wbr>Equation<wbr>Alpha</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#blendsrc" class="tsd-kind-icon">blend<wbr>Src</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#blendsrcalpha" class="tsd-kind-icon">blend<wbr>Src<wbr>Alpha</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#blending" class="tsd-kind-icon">blending</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#clipintersection" class="tsd-kind-icon">clip<wbr>Intersection</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#clipshadows" class="tsd-kind-icon">clip<wbr>Shadows</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#clipping" class="tsd-kind-icon">clipping</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#clippingplanes" class="tsd-kind-icon">clipping<wbr>Planes</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#colorwrite" class="tsd-kind-icon">color<wbr>Write</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#defaultattributevalues" class="tsd-kind-icon">default<wbr>Attribute<wbr>Values</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#defines" class="tsd-kind-icon">defines</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#depthfunc" class="tsd-kind-icon">depth<wbr>Func</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#depthtest" class="tsd-kind-icon">depth<wbr>Test</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#depthwrite" class="tsd-kind-icon">depth<wbr>Write</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#derivatives" class="tsd-kind-icon">derivatives</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#dithering" class="tsd-kind-icon">dithering</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#extensions" class="tsd-kind-icon">extensions</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#flatshading" class="tsd-kind-icon">flat<wbr>Shading</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#fog" class="tsd-kind-icon">fog</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#fragmentshader" class="tsd-kind-icon">fragment<wbr>Shader</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#id" class="tsd-kind-icon">id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#index0attributename" class="tsd-kind-icon">index0<wbr>Attribute<wbr>Name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#ismaterial" class="tsd-kind-icon">is<wbr>Material</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="wavygridmaterial.html#lastanimatedtimestamp" class="tsd-kind-icon">last<wbr>Animated<wbr>Timestamp</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="wavygridmaterial.html#lights" class="tsd-kind-icon">lights</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#linewidth" class="tsd-kind-icon">linewidth</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#morphnormals" class="tsd-kind-icon">morph<wbr>Normals</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#morphtargets" class="tsd-kind-icon">morph<wbr>Targets</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#name" class="tsd-kind-icon">name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#needsupdate" class="tsd-kind-icon">needs<wbr>Update</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#overdraw" class="tsd-kind-icon">overdraw</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#polygonoffset" class="tsd-kind-icon">polygon<wbr>Offset</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#polygonoffsetfactor" class="tsd-kind-icon">polygon<wbr>Offset<wbr>Factor</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#polygonoffsetunits" class="tsd-kind-icon">polygon<wbr>Offset<wbr>Units</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#precision" class="tsd-kind-icon">precision</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#premultipliedalpha" class="tsd-kind-icon">premultiplied<wbr>Alpha</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#side" class="tsd-kind-icon">side</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#skinning" class="tsd-kind-icon">skinning</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="wavygridmaterial.html#speed" class="tsd-kind-icon">speed</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#transparent" class="tsd-kind-icon">transparent</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#type" class="tsd-kind-icon">type</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#uniforms" class="tsd-kind-icon">uniforms</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#userdata" class="tsd-kind-icon">user<wbr>Data</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#uuid" class="tsd-kind-icon">uuid</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#vertexcolors" class="tsd-kind-icon">vertex<wbr>Colors</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#vertexshader" class="tsd-kind-icon">vertex<wbr>Shader</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#vertextangents" class="tsd-kind-icon">vertex<wbr>Tangents</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#visible" class="tsd-kind-icon">visible</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#wireframe" class="tsd-kind-icon">wireframe</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#wireframelinewidth" class="tsd-kind-icon">wireframe<wbr>Linewidth</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="rimeffectmaterial.html#_opacity" class="tsd-kind-icon">_opacity</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#alphatest" class="tsd-kind-icon">alpha<wbr>Test</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#blenddst" class="tsd-kind-icon">blend<wbr>Dst</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#blenddstalpha" class="tsd-kind-icon">blend<wbr>Dst<wbr>Alpha</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#blendequation" class="tsd-kind-icon">blend<wbr>Equation</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#blendequationalpha" class="tsd-kind-icon">blend<wbr>Equation<wbr>Alpha</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#blendsrc" class="tsd-kind-icon">blend<wbr>Src</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#blendsrcalpha" class="tsd-kind-icon">blend<wbr>Src<wbr>Alpha</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#blending" class="tsd-kind-icon">blending</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#clipintersection" class="tsd-kind-icon">clip<wbr>Intersection</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#clipshadows" class="tsd-kind-icon">clip<wbr>Shadows</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#clipping" class="tsd-kind-icon">clipping</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#clippingplanes" class="tsd-kind-icon">clipping<wbr>Planes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#colorwrite" class="tsd-kind-icon">color<wbr>Write</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#defaultattributevalues" class="tsd-kind-icon">default<wbr>Attribute<wbr>Values</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#defines" class="tsd-kind-icon">defines</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#depthfunc" class="tsd-kind-icon">depth<wbr>Func</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#depthtest" class="tsd-kind-icon">depth<wbr>Test</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#depthwrite" class="tsd-kind-icon">depth<wbr>Write</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#derivatives" class="tsd-kind-icon">derivatives</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#dithering" class="tsd-kind-icon">dithering</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#extensions" class="tsd-kind-icon">extensions</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#flatshading" class="tsd-kind-icon">flat<wbr>Shading</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#fog" class="tsd-kind-icon">fog</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#fragmentshader" class="tsd-kind-icon">fragment<wbr>Shader</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#index0attributename" class="tsd-kind-icon">index0<wbr>Attribute<wbr>Name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#ismaterial" class="tsd-kind-icon">is<wbr>Material</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="rimeffectmaterial.html#lights" class="tsd-kind-icon">lights</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#linewidth" class="tsd-kind-icon">linewidth</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#morphnormals" class="tsd-kind-icon">morph<wbr>Normals</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#morphtargets" class="tsd-kind-icon">morph<wbr>Targets</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#needsupdate" class="tsd-kind-icon">needs<wbr>Update</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#overdraw" class="tsd-kind-icon">overdraw</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#polygonoffset" class="tsd-kind-icon">polygon<wbr>Offset</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#polygonoffsetfactor" class="tsd-kind-icon">polygon<wbr>Offset<wbr>Factor</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#polygonoffsetunits" class="tsd-kind-icon">polygon<wbr>Offset<wbr>Units</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#precision" class="tsd-kind-icon">precision</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#premultipliedalpha" class="tsd-kind-icon">premultiplied<wbr>Alpha</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#side" class="tsd-kind-icon">side</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#skinning" class="tsd-kind-icon">skinning</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#transparent" class="tsd-kind-icon">transparent</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#uniforms" class="tsd-kind-icon">uniforms</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#userdata" class="tsd-kind-icon">user<wbr>Data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#uuid" class="tsd-kind-icon">uuid</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#vertexcolors" class="tsd-kind-icon">vertex<wbr>Colors</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#vertexshader" class="tsd-kind-icon">vertex<wbr>Shader</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#vertextangents" class="tsd-kind-icon">vertex<wbr>Tangents</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#visible" class="tsd-kind-icon">visible</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#wireframe" class="tsd-kind-icon">wireframe</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#wireframelinewidth" class="tsd-kind-icon">wireframe<wbr>Linewidth</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#alphamap" class="tsd-kind-icon">alpha<wbr>Map</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#color" class="tsd-kind-icon">color</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="wavygridmaterial.html#direction" class="tsd-kind-icon">direction</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="wavygridmaterial.html#division" class="tsd-kind-icon">division</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="wavygridmaterial.html#divisionscalex" class="tsd-kind-icon">division<wbr>ScaleX</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#emissive" class="tsd-kind-icon">emissive</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="wavygridmaterial.html#isanimate" class="tsd-kind-icon">is<wbr>Animate</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="wavygridmaterial.html#isreversed" class="tsd-kind-icon">is<wbr>Reversed</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="wavygridmaterial.html#masktexture" class="tsd-kind-icon">mask<wbr>Texture</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="wavygridmaterial.html#opacity" class="tsd-kind-icon">opacity</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="wavygridmaterial.html#raisedbottom" class="tsd-kind-icon">raised<wbr>Bottom</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="wavygridmaterial.html#wavefrequency" class="tsd-kind-icon">wave<wbr>Frequency</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="wavygridmaterial.html#wavepow" class="tsd-kind-icon">wave<wbr>Pow</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#alphamap" class="tsd-kind-icon">alpha<wbr>Map</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#color" class="tsd-kind-icon">color</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#emissive" class="tsd-kind-icon">emissive</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="rimeffectmaterial.html#opacity" class="tsd-kind-icon">opacity</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="rimeffectmaterial.html#rimcolor" class="tsd-kind-icon">rim<wbr>Color</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="rimeffectmaterial.html#strength" class="tsd-kind-icon">strength</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#addeventlistener" class="tsd-kind-icon">add<wbr>Event<wbr>Listener</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="wavygridmaterial.html#addtime" class="tsd-kind-icon">add<wbr>Time</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#clone" class="tsd-kind-icon">clone</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#copy" class="tsd-kind-icon">copy</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#dispatchevent" class="tsd-kind-icon">dispatch<wbr>Event</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#dispose" class="tsd-kind-icon">dispose</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#haseventlistener" class="tsd-kind-icon">has<wbr>Event<wbr>Listener</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="wavygridmaterial.html#initchunks" class="tsd-kind-icon">init<wbr>Chunks</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="wavygridmaterial.html#initdefaultsetting" class="tsd-kind-icon">init<wbr>Default<wbr>Setting</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="wavygridmaterial.html#initdefines" class="tsd-kind-icon">init<wbr>Defines</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="wavygridmaterial.html#inituniforms" class="tsd-kind-icon">init<wbr>Uniforms</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#onbeforecompile" class="tsd-kind-icon">on<wbr>Before<wbr>Compile</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="wavygridmaterial.html#onrequestanimationframe" class="tsd-kind-icon">on<wbr>Request<wbr>Animation<wbr>Frame</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#removeeventlistener" class="tsd-kind-icon">remove<wbr>Event<wbr>Listener</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="wavygridmaterial.html#setvalues" class="tsd-kind-icon">set<wbr>Values</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="wavygridmaterial.html#startanimation" class="tsd-kind-icon">start<wbr>Animation</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#startglow" class="tsd-kind-icon">start<wbr>Glow</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="wavygridmaterial.html#stopanimation" class="tsd-kind-icon">stop<wbr>Animation</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="wavygridmaterial.html#tojson" class="tsd-kind-icon">toJSON</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#update" class="tsd-kind-icon">update</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static"><a href="wavygridmaterial.html#getbasicuniforms" class="tsd-kind-icon">get<wbr>Basic<wbr>Uniforms</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#addeventlistener" class="tsd-kind-icon">add<wbr>Event<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#clone" class="tsd-kind-icon">clone</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#copy" class="tsd-kind-icon">copy</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#dispatchevent" class="tsd-kind-icon">dispatch<wbr>Event</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#dispose" class="tsd-kind-icon">dispose</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#haseventlistener" class="tsd-kind-icon">has<wbr>Event<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="rimeffectmaterial.html#initchunks" class="tsd-kind-icon">init<wbr>Chunks</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="rimeffectmaterial.html#initdefaultsetting" class="tsd-kind-icon">init<wbr>Default<wbr>Setting</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="rimeffectmaterial.html#initdefines" class="tsd-kind-icon">init<wbr>Defines</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="rimeffectmaterial.html#inituniforms" class="tsd-kind-icon">init<wbr>Uniforms</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#onbeforecompile" class="tsd-kind-icon">on<wbr>Before<wbr>Compile</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#removeeventlistener" class="tsd-kind-icon">remove<wbr>Event<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="rimeffectmaterial.html#setvalues" class="tsd-kind-icon">set<wbr>Values</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#startglow" class="tsd-kind-icon">start<wbr>Glow</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="rimeffectmaterial.html#tojson" class="tsd-kind-icon">toJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="rimeffectmaterial.html#update" class="tsd-kind-icon">update</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="rimeffectmaterial.html#getbasicuniforms" class="tsd-kind-icon">get<wbr>Basic<wbr>Uniforms</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Wavy<wbr>Grid<wbr>Material<span class="tsd-signature-symbol">(</span>vertexShader<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, fragmentShader<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, parameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ShaderMaterialParameters</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="wavygridmaterial.html" class="tsd-signature-type">WavyGridMaterial</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Rim<wbr>Effect<wbr>Material<span class="tsd-signature-symbol">(</span>parameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ShaderMaterialParameters</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="rimeffectmaterial.html" class="tsd-signature-type">RimEffectMaterial</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#constructor">constructor</a></p>
-								<p>Overrides ShaderMaterial.__constructor</p>
+								<p>Overrides <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/ShaderPhongMaterial.ts#L18">ShaderPhongMaterial.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/rimEffect/RimEffectMaterial.ts#L21">rimEffect/RimEffectMaterial.ts:21</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>コンストラクタ。</p>
-								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
-								<li>
-									<h5>vertexShader: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>fragmentShader: <span class="tsd-signature-type">string</span></h5>
-								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> parameters: <span class="tsd-signature-type">ShaderMaterialParameters</span></h5>
 									<div class="tsd-comment tsd-typography">
@@ -264,12 +211,12 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="wavygridmaterial.html" class="tsd-signature-type">WavyGridMaterial</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="rimeffectmaterial.html" class="tsd-signature-type">RimEffectMaterial</a></h4>
 						</li>
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 					<a name="_opacity" class="tsd-anchor"></a>
@@ -297,16 +244,6 @@
 							<p>Sets the alpha value to be used when running an alpha test. Default is 0.</p>
 						</div>
 					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
-					<a name="animationid" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> animationID</h3>
-					<div class="tsd-signature tsd-kind-icon">animationID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L18">WavyGridMaterial.ts:18</a></li>
-						</ul>
-					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="blenddst" class="tsd-anchor"></a>
@@ -715,16 +652,6 @@
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
-					<a name="lastanimatedtimestamp" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> last<wbr>Animated<wbr>Timestamp</h3>
-					<div class="tsd-signature tsd-kind-icon">last<wbr>Animated<wbr>Timestamp<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L19">WavyGridMaterial.ts:19</a></li>
-						</ul>
-					</aside>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="lights" class="tsd-anchor"></a>
 					<h3>lights</h3>
@@ -927,24 +854,6 @@
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="speed" class="tsd-anchor"></a>
-					<h3>speed</h3>
-					<div class="tsd-signature tsd-kind-icon">speed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;-0.5</span></div>
-					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/iwavyanimatable.html">IWavyAnimatable</a>.<a href="../interfaces/iwavyanimatable.html#speed">speed</a></p>
-						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L45">WavyGridMaterial.ts:45</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>波の速度
-								0.5にすると1の半分の速度になる。
-							マイナスを指定すると、波の進行方向が反転する。</p>
-						</div>
-					</div>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="transparent" class="tsd-anchor"></a>
 					<h3>transparent</h3>
@@ -984,7 +893,6 @@
 					<h3>uniforms</h3>
 					<div class="tsd-signature tsd-kind-icon">uniforms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/imaskable.html">IMaskable</a>.<a href="../interfaces/imaskable.html#uniforms">uniforms</a></p>
 						<p>Inherited from ShaderMaterial.uniforms</p>
 						<ul>
 							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:35</li>
@@ -1193,112 +1101,6 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
-					<a name="direction" class="tsd-anchor"></a>
-					<h3>direction</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> direction<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/directions.html" class="tsd-signature-type">Directions</a></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> direction<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><a href="../enums/directions.html" class="tsd-signature-type">Directions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L100">WavyGridMaterial.ts:100</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>波が発生する方角</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="../enums/directions.html" class="tsd-signature-type">Directions</a></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L103">WavyGridMaterial.ts:103</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>波が発生する方角</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <a href="../enums/directions.html" class="tsd-signature-type">Directions</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
-					<a name="division" class="tsd-anchor"></a>
-					<h3>division</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> division<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> division<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L47">WavyGridMaterial.ts:47</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L50">WavyGridMaterial.ts:50</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
-					<a name="divisionscalex" class="tsd-anchor"></a>
-					<h3>division<wbr>ScaleX</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> divisionScaleX<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> divisionScaleX<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L54">WavyGridMaterial.ts:54</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L57">WavyGridMaterial.ts:57</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
 					<a name="emissive" class="tsd-anchor"></a>
 					<h3>emissive</h3>
@@ -1327,112 +1129,6 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5>value: <span class="tsd-signature-type">Color</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
-					<a name="isanimate" class="tsd-anchor"></a>
-					<h3>is<wbr>Animate</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> isAnimate<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> isAnimate<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L28">WavyGridMaterial.ts:28</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>波アニメーションを行うか否か。</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L31">WavyGridMaterial.ts:31</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>波アニメーションを行うか否か。</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
-					<a name="isreversed" class="tsd-anchor"></a>
-					<h3>is<wbr>Reversed</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> isReversed<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> isReversed<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L61">WavyGridMaterial.ts:61</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L64">WavyGridMaterial.ts:64</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
-					<a name="masktexture" class="tsd-anchor"></a>
-					<h3>mask<wbr>Texture</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> maskTexture<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Texture</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> maskTexture<span class="tsd-signature-symbol">(</span>val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Texture</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L107">WavyGridMaterial.ts:107</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Texture</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L110">WavyGridMaterial.ts:110</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>val: <span class="tsd-signature-type">Texture</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1492,41 +1188,31 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
-					<a name="raisedbottom" class="tsd-anchor"></a>
-					<h3>raised<wbr>Bottom</h3>
+					<a name="rimcolor" class="tsd-anchor"></a>
+					<h3>rim<wbr>Color</h3>
 					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> raisedBottom<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> raisedBottom<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> rimColor<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> rimColor<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L71">WavyGridMaterial.ts:71</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/rimEffect/RimEffectMaterial.ts#L16">rimEffect/RimEffectMaterial.ts:16</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>明るさの底上げ</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Color</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L74">WavyGridMaterial.ts:74</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/rimEffect/RimEffectMaterial.ts#L19">rimEffect/RimEffectMaterial.ts:19</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>明るさの底上げ</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>value: <span class="tsd-signature-type">number</span></h5>
+									<h5>value: <span class="tsd-signature-type">Color</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1534,63 +1220,17 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
-					<a name="wavefrequency" class="tsd-anchor"></a>
-					<h3>wave<wbr>Frequency</h3>
+					<a name="strength" class="tsd-anchor"></a>
+					<h3>strength</h3>
 					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> waveFrequency<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> waveFrequency<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> strength<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> strength<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L83">WavyGridMaterial.ts:83</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>波の振幅
-										1の場合、幅1ヘックス
-									0.5の場合、幅2ヘックスになる</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L86">WavyGridMaterial.ts:86</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>波の振幅
-										1の場合、幅1ヘックス
-									0.5の場合、幅2ヘックスになる</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
-					<a name="wavepow" class="tsd-anchor"></a>
-					<h3>wave<wbr>Pow</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> wavePow<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> wavePow<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L90">WavyGridMaterial.ts:90</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/rimEffect/RimEffectMaterial.ts#L9">rimEffect/RimEffectMaterial.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -1598,7 +1238,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L93">WavyGridMaterial.ts:93</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/rimEffect/RimEffectMaterial.ts#L12">rimEffect/RimEffectMaterial.ts:12</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1664,30 +1304,6 @@
 											</ul>
 										</li>
 									</ul>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="addtime" class="tsd-anchor"></a>
-					<h3>add<wbr>Time</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Time<span class="tsd-signature-symbol">(</span>delta<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/iwavyanimatable.html">IWavyAnimatable</a>.<a href="../interfaces/iwavyanimatable.html#addtime">addTime</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L21">WavyGridMaterial.ts:21</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>delta: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1864,42 +1480,55 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 					<a name="initchunks" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> init<wbr>Chunks</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 						<li class="tsd-signature tsd-kind-icon">init<wbr>Chunks<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#initchunks">initChunks</a></p>
+								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#initchunks">initChunks</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L114">WavyGridMaterial.ts:114</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/ShaderPhongMaterial.ts#L70">ShaderPhongMaterial.ts:70</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>ShaderChunkにこのマテリアルに必要なChunkを追加する。</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 					<a name="initdefaultsetting" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> init<wbr>Default<wbr>Setting</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 						<li class="tsd-signature tsd-kind-icon">init<wbr>Default<wbr>Setting<span class="tsd-signature-symbol">(</span>parameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ShaderMaterialParameters</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#initdefaultsetting">initDefaultSetting</a></p>
+								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#initdefaultsetting">initDefaultSetting</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L130">WavyGridMaterial.ts:130</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/ShaderPhongMaterial.ts#L97">ShaderPhongMaterial.ts:97</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>1.オプションで指定されなかったパラメーター値を補完する。
+									2.uniformsに代入する必要のあるパラメーターを明示的に代入する。</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> parameters: <span class="tsd-signature-type">ShaderMaterialParameters</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1929,25 +1558,20 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
 					<a name="inituniforms" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> init<wbr>Uniforms</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
 						<li class="tsd-signature tsd-kind-icon">init<wbr>Uniforms<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#inituniforms">initUniforms</a></p>
+								<p>Overrides <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#inituniforms">initUniforms</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/ShaderPhongMaterial.ts#L77">ShaderPhongMaterial.ts:77</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/rimEffect/RimEffectMaterial.ts#L31">rimEffect/RimEffectMaterial.ts:31</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>uniformsを初期化する。</p>
-								</div>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -1984,29 +1608,6 @@
 									<div class="tsd-comment tsd-typography">
 										<p>WebGLRenderer Context that is initializing the material</p>
 									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-					<a name="onrequestanimationframe" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> on<wbr>Request<wbr>Animation<wbr>Frame</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>Request<wbr>Animation<wbr>Frame<span class="tsd-signature-symbol">(</span>timestamp<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L152">WavyGridMaterial.ts:152</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>timestamp: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -2094,23 +1695,6 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-					<a name="startanimation" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> start<wbr>Animation</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">start<wbr>Animation<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L138">WavyGridMaterial.ts:138</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="startglow" class="tsd-anchor"></a>
 					<h3>start<wbr>Glow</h3>
@@ -2131,23 +1715,6 @@
 									<a href="https://stackoverflow.com/questions/37647853/three-js-depthwrite-vs-depthtest-for-transparent-canvas-texture-map-on-three-p" class="external">https://stackoverflow.com/questions/37647853/three-js-depthwrite-vs-depthtest-for-transparent-canvas-texture-map-on-three-p</a></p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-					<a name="stopanimation" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> stop<wbr>Animation</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">stop<wbr>Animation<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L145">WavyGridMaterial.ts:145</a></li>
-								</ul>
-							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -2200,20 +1767,25 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 					<a name="getbasicuniforms" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Basic<wbr>Uniforms</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Basic<wbr>Uniforms<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#getbasicuniforms">getBasicUniforms</a></p>
+								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#getbasicuniforms">getBasicUniforms</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/WavyGridMaterial.ts#L121">WavyGridMaterial.ts:121</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/6227d5c/src/ShaderPhongMaterial.ts#L44">ShaderPhongMaterial.ts:44</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>このMaterialに必要なuniformsを生成する。</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 						</li>
 					</ul>
@@ -2233,280 +1805,238 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
-						<a href="wavygridmaterial.html" class="tsd-kind-icon">Wavy<wbr>Grid<wbr>Material</a>
+						<a href="rimeffectmaterial.html" class="tsd-kind-icon">Rim<wbr>Effect<wbr>Material</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-								<a href="wavygridmaterial.html#constructor" class="tsd-kind-icon">constructor</a>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="rimeffectmaterial.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="wavygridmaterial.html#_opacity" class="tsd-kind-icon">_opacity</a>
+								<a href="rimeffectmaterial.html#_opacity" class="tsd-kind-icon">_opacity</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#alphatest" class="tsd-kind-icon">alpha<wbr>Test</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
-								<a href="wavygridmaterial.html#animationid" class="tsd-kind-icon">animationID</a>
+								<a href="rimeffectmaterial.html#alphatest" class="tsd-kind-icon">alpha<wbr>Test</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#blenddst" class="tsd-kind-icon">blend<wbr>Dst</a>
+								<a href="rimeffectmaterial.html#blenddst" class="tsd-kind-icon">blend<wbr>Dst</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#blenddstalpha" class="tsd-kind-icon">blend<wbr>Dst<wbr>Alpha</a>
+								<a href="rimeffectmaterial.html#blenddstalpha" class="tsd-kind-icon">blend<wbr>Dst<wbr>Alpha</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#blendequation" class="tsd-kind-icon">blend<wbr>Equation</a>
+								<a href="rimeffectmaterial.html#blendequation" class="tsd-kind-icon">blend<wbr>Equation</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#blendequationalpha" class="tsd-kind-icon">blend<wbr>Equation<wbr>Alpha</a>
+								<a href="rimeffectmaterial.html#blendequationalpha" class="tsd-kind-icon">blend<wbr>Equation<wbr>Alpha</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#blendsrc" class="tsd-kind-icon">blend<wbr>Src</a>
+								<a href="rimeffectmaterial.html#blendsrc" class="tsd-kind-icon">blend<wbr>Src</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#blendsrcalpha" class="tsd-kind-icon">blend<wbr>Src<wbr>Alpha</a>
+								<a href="rimeffectmaterial.html#blendsrcalpha" class="tsd-kind-icon">blend<wbr>Src<wbr>Alpha</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#blending" class="tsd-kind-icon">blending</a>
+								<a href="rimeffectmaterial.html#blending" class="tsd-kind-icon">blending</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#clipintersection" class="tsd-kind-icon">clip<wbr>Intersection</a>
+								<a href="rimeffectmaterial.html#clipintersection" class="tsd-kind-icon">clip<wbr>Intersection</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#clipshadows" class="tsd-kind-icon">clip<wbr>Shadows</a>
+								<a href="rimeffectmaterial.html#clipshadows" class="tsd-kind-icon">clip<wbr>Shadows</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#clipping" class="tsd-kind-icon">clipping</a>
+								<a href="rimeffectmaterial.html#clipping" class="tsd-kind-icon">clipping</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#clippingplanes" class="tsd-kind-icon">clipping<wbr>Planes</a>
+								<a href="rimeffectmaterial.html#clippingplanes" class="tsd-kind-icon">clipping<wbr>Planes</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#colorwrite" class="tsd-kind-icon">color<wbr>Write</a>
+								<a href="rimeffectmaterial.html#colorwrite" class="tsd-kind-icon">color<wbr>Write</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#defaultattributevalues" class="tsd-kind-icon">default<wbr>Attribute<wbr>Values</a>
+								<a href="rimeffectmaterial.html#defaultattributevalues" class="tsd-kind-icon">default<wbr>Attribute<wbr>Values</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#defines" class="tsd-kind-icon">defines</a>
+								<a href="rimeffectmaterial.html#defines" class="tsd-kind-icon">defines</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#depthfunc" class="tsd-kind-icon">depth<wbr>Func</a>
+								<a href="rimeffectmaterial.html#depthfunc" class="tsd-kind-icon">depth<wbr>Func</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#depthtest" class="tsd-kind-icon">depth<wbr>Test</a>
+								<a href="rimeffectmaterial.html#depthtest" class="tsd-kind-icon">depth<wbr>Test</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#depthwrite" class="tsd-kind-icon">depth<wbr>Write</a>
+								<a href="rimeffectmaterial.html#depthwrite" class="tsd-kind-icon">depth<wbr>Write</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#derivatives" class="tsd-kind-icon">derivatives</a>
+								<a href="rimeffectmaterial.html#derivatives" class="tsd-kind-icon">derivatives</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#dithering" class="tsd-kind-icon">dithering</a>
+								<a href="rimeffectmaterial.html#dithering" class="tsd-kind-icon">dithering</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#extensions" class="tsd-kind-icon">extensions</a>
+								<a href="rimeffectmaterial.html#extensions" class="tsd-kind-icon">extensions</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#flatshading" class="tsd-kind-icon">flat<wbr>Shading</a>
+								<a href="rimeffectmaterial.html#flatshading" class="tsd-kind-icon">flat<wbr>Shading</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#fog" class="tsd-kind-icon">fog</a>
+								<a href="rimeffectmaterial.html#fog" class="tsd-kind-icon">fog</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#fragmentshader" class="tsd-kind-icon">fragment<wbr>Shader</a>
+								<a href="rimeffectmaterial.html#fragmentshader" class="tsd-kind-icon">fragment<wbr>Shader</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#id" class="tsd-kind-icon">id</a>
+								<a href="rimeffectmaterial.html#id" class="tsd-kind-icon">id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#index0attributename" class="tsd-kind-icon">index0<wbr>Attribute<wbr>Name</a>
+								<a href="rimeffectmaterial.html#index0attributename" class="tsd-kind-icon">index0<wbr>Attribute<wbr>Name</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#ismaterial" class="tsd-kind-icon">is<wbr>Material</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
-								<a href="wavygridmaterial.html#lastanimatedtimestamp" class="tsd-kind-icon">last<wbr>Animated<wbr>Timestamp</a>
+								<a href="rimeffectmaterial.html#ismaterial" class="tsd-kind-icon">is<wbr>Material</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-								<a href="wavygridmaterial.html#lights" class="tsd-kind-icon">lights</a>
+								<a href="rimeffectmaterial.html#lights" class="tsd-kind-icon">lights</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#linewidth" class="tsd-kind-icon">linewidth</a>
+								<a href="rimeffectmaterial.html#linewidth" class="tsd-kind-icon">linewidth</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#morphnormals" class="tsd-kind-icon">morph<wbr>Normals</a>
+								<a href="rimeffectmaterial.html#morphnormals" class="tsd-kind-icon">morph<wbr>Normals</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#morphtargets" class="tsd-kind-icon">morph<wbr>Targets</a>
+								<a href="rimeffectmaterial.html#morphtargets" class="tsd-kind-icon">morph<wbr>Targets</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#name" class="tsd-kind-icon">name</a>
+								<a href="rimeffectmaterial.html#name" class="tsd-kind-icon">name</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#needsupdate" class="tsd-kind-icon">needs<wbr>Update</a>
+								<a href="rimeffectmaterial.html#needsupdate" class="tsd-kind-icon">needs<wbr>Update</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#overdraw" class="tsd-kind-icon">overdraw</a>
+								<a href="rimeffectmaterial.html#overdraw" class="tsd-kind-icon">overdraw</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#polygonoffset" class="tsd-kind-icon">polygon<wbr>Offset</a>
+								<a href="rimeffectmaterial.html#polygonoffset" class="tsd-kind-icon">polygon<wbr>Offset</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#polygonoffsetfactor" class="tsd-kind-icon">polygon<wbr>Offset<wbr>Factor</a>
+								<a href="rimeffectmaterial.html#polygonoffsetfactor" class="tsd-kind-icon">polygon<wbr>Offset<wbr>Factor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#polygonoffsetunits" class="tsd-kind-icon">polygon<wbr>Offset<wbr>Units</a>
+								<a href="rimeffectmaterial.html#polygonoffsetunits" class="tsd-kind-icon">polygon<wbr>Offset<wbr>Units</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#precision" class="tsd-kind-icon">precision</a>
+								<a href="rimeffectmaterial.html#precision" class="tsd-kind-icon">precision</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#premultipliedalpha" class="tsd-kind-icon">premultiplied<wbr>Alpha</a>
+								<a href="rimeffectmaterial.html#premultipliedalpha" class="tsd-kind-icon">premultiplied<wbr>Alpha</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#side" class="tsd-kind-icon">side</a>
+								<a href="rimeffectmaterial.html#side" class="tsd-kind-icon">side</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#skinning" class="tsd-kind-icon">skinning</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="wavygridmaterial.html#speed" class="tsd-kind-icon">speed</a>
+								<a href="rimeffectmaterial.html#skinning" class="tsd-kind-icon">skinning</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#transparent" class="tsd-kind-icon">transparent</a>
+								<a href="rimeffectmaterial.html#transparent" class="tsd-kind-icon">transparent</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#type" class="tsd-kind-icon">type</a>
+								<a href="rimeffectmaterial.html#type" class="tsd-kind-icon">type</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#uniforms" class="tsd-kind-icon">uniforms</a>
+								<a href="rimeffectmaterial.html#uniforms" class="tsd-kind-icon">uniforms</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#userdata" class="tsd-kind-icon">user<wbr>Data</a>
+								<a href="rimeffectmaterial.html#userdata" class="tsd-kind-icon">user<wbr>Data</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#uuid" class="tsd-kind-icon">uuid</a>
+								<a href="rimeffectmaterial.html#uuid" class="tsd-kind-icon">uuid</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#vertexcolors" class="tsd-kind-icon">vertex<wbr>Colors</a>
+								<a href="rimeffectmaterial.html#vertexcolors" class="tsd-kind-icon">vertex<wbr>Colors</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#vertexshader" class="tsd-kind-icon">vertex<wbr>Shader</a>
+								<a href="rimeffectmaterial.html#vertexshader" class="tsd-kind-icon">vertex<wbr>Shader</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#vertextangents" class="tsd-kind-icon">vertex<wbr>Tangents</a>
+								<a href="rimeffectmaterial.html#vertextangents" class="tsd-kind-icon">vertex<wbr>Tangents</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#visible" class="tsd-kind-icon">visible</a>
+								<a href="rimeffectmaterial.html#visible" class="tsd-kind-icon">visible</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#wireframe" class="tsd-kind-icon">wireframe</a>
+								<a href="rimeffectmaterial.html#wireframe" class="tsd-kind-icon">wireframe</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#wireframelinewidth" class="tsd-kind-icon">wireframe<wbr>Linewidth</a>
+								<a href="rimeffectmaterial.html#wireframelinewidth" class="tsd-kind-icon">wireframe<wbr>Linewidth</a>
 							</li>
 							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#alphamap" class="tsd-kind-icon">alpha<wbr>Map</a>
+								<a href="rimeffectmaterial.html#alphamap" class="tsd-kind-icon">alpha<wbr>Map</a>
 							</li>
 							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#color" class="tsd-kind-icon">color</a>
-							</li>
-							<li class=" tsd-kind-accessor tsd-parent-kind-class">
-								<a href="wavygridmaterial.html#direction" class="tsd-kind-icon">direction</a>
-							</li>
-							<li class=" tsd-kind-accessor tsd-parent-kind-class">
-								<a href="wavygridmaterial.html#division" class="tsd-kind-icon">division</a>
-							</li>
-							<li class=" tsd-kind-accessor tsd-parent-kind-class">
-								<a href="wavygridmaterial.html#divisionscalex" class="tsd-kind-icon">division<wbr>ScaleX</a>
+								<a href="rimeffectmaterial.html#color" class="tsd-kind-icon">color</a>
 							</li>
 							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#emissive" class="tsd-kind-icon">emissive</a>
-							</li>
-							<li class=" tsd-kind-accessor tsd-parent-kind-class">
-								<a href="wavygridmaterial.html#isanimate" class="tsd-kind-icon">is<wbr>Animate</a>
-							</li>
-							<li class=" tsd-kind-accessor tsd-parent-kind-class">
-								<a href="wavygridmaterial.html#isreversed" class="tsd-kind-icon">is<wbr>Reversed</a>
-							</li>
-							<li class=" tsd-kind-accessor tsd-parent-kind-class">
-								<a href="wavygridmaterial.html#masktexture" class="tsd-kind-icon">mask<wbr>Texture</a>
+								<a href="rimeffectmaterial.html#emissive" class="tsd-kind-icon">emissive</a>
 							</li>
 							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-								<a href="wavygridmaterial.html#opacity" class="tsd-kind-icon">opacity</a>
+								<a href="rimeffectmaterial.html#opacity" class="tsd-kind-icon">opacity</a>
 							</li>
 							<li class=" tsd-kind-accessor tsd-parent-kind-class">
-								<a href="wavygridmaterial.html#raisedbottom" class="tsd-kind-icon">raised<wbr>Bottom</a>
+								<a href="rimeffectmaterial.html#rimcolor" class="tsd-kind-icon">rim<wbr>Color</a>
 							</li>
 							<li class=" tsd-kind-accessor tsd-parent-kind-class">
-								<a href="wavygridmaterial.html#wavefrequency" class="tsd-kind-icon">wave<wbr>Frequency</a>
-							</li>
-							<li class=" tsd-kind-accessor tsd-parent-kind-class">
-								<a href="wavygridmaterial.html#wavepow" class="tsd-kind-icon">wave<wbr>Pow</a>
+								<a href="rimeffectmaterial.html#strength" class="tsd-kind-icon">strength</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#addeventlistener" class="tsd-kind-icon">add<wbr>Event<wbr>Listener</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="wavygridmaterial.html#addtime" class="tsd-kind-icon">add<wbr>Time</a>
+								<a href="rimeffectmaterial.html#addeventlistener" class="tsd-kind-icon">add<wbr>Event<wbr>Listener</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#clone" class="tsd-kind-icon">clone</a>
+								<a href="rimeffectmaterial.html#clone" class="tsd-kind-icon">clone</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#copy" class="tsd-kind-icon">copy</a>
+								<a href="rimeffectmaterial.html#copy" class="tsd-kind-icon">copy</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#dispatchevent" class="tsd-kind-icon">dispatch<wbr>Event</a>
+								<a href="rimeffectmaterial.html#dispatchevent" class="tsd-kind-icon">dispatch<wbr>Event</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#dispose" class="tsd-kind-icon">dispose</a>
+								<a href="rimeffectmaterial.html#dispose" class="tsd-kind-icon">dispose</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#haseventlistener" class="tsd-kind-icon">has<wbr>Event<wbr>Listener</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-								<a href="wavygridmaterial.html#initchunks" class="tsd-kind-icon">init<wbr>Chunks</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-								<a href="wavygridmaterial.html#initdefaultsetting" class="tsd-kind-icon">init<wbr>Default<wbr>Setting</a>
+								<a href="rimeffectmaterial.html#haseventlistener" class="tsd-kind-icon">has<wbr>Event<wbr>Listener</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="wavygridmaterial.html#initdefines" class="tsd-kind-icon">init<wbr>Defines</a>
+								<a href="rimeffectmaterial.html#initchunks" class="tsd-kind-icon">init<wbr>Chunks</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="wavygridmaterial.html#inituniforms" class="tsd-kind-icon">init<wbr>Uniforms</a>
+								<a href="rimeffectmaterial.html#initdefaultsetting" class="tsd-kind-icon">init<wbr>Default<wbr>Setting</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="rimeffectmaterial.html#initdefines" class="tsd-kind-icon">init<wbr>Defines</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+								<a href="rimeffectmaterial.html#inituniforms" class="tsd-kind-icon">init<wbr>Uniforms</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#onbeforecompile" class="tsd-kind-icon">on<wbr>Before<wbr>Compile</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-								<a href="wavygridmaterial.html#onrequestanimationframe" class="tsd-kind-icon">on<wbr>Request<wbr>Animation<wbr>Frame</a>
+								<a href="rimeffectmaterial.html#onbeforecompile" class="tsd-kind-icon">on<wbr>Before<wbr>Compile</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#removeeventlistener" class="tsd-kind-icon">remove<wbr>Event<wbr>Listener</a>
+								<a href="rimeffectmaterial.html#removeeventlistener" class="tsd-kind-icon">remove<wbr>Event<wbr>Listener</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-								<a href="wavygridmaterial.html#setvalues" class="tsd-kind-icon">set<wbr>Values</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-								<a href="wavygridmaterial.html#startanimation" class="tsd-kind-icon">start<wbr>Animation</a>
+								<a href="rimeffectmaterial.html#setvalues" class="tsd-kind-icon">set<wbr>Values</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#startglow" class="tsd-kind-icon">start<wbr>Glow</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-								<a href="wavygridmaterial.html#stopanimation" class="tsd-kind-icon">stop<wbr>Animation</a>
+								<a href="rimeffectmaterial.html#startglow" class="tsd-kind-icon">start<wbr>Glow</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-								<a href="wavygridmaterial.html#tojson" class="tsd-kind-icon">toJSON</a>
+								<a href="rimeffectmaterial.html#tojson" class="tsd-kind-icon">toJSON</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="wavygridmaterial.html#update" class="tsd-kind-icon">update</a>
+								<a href="rimeffectmaterial.html#update" class="tsd-kind-icon">update</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static">
-								<a href="wavygridmaterial.html#getbasicuniforms" class="tsd-kind-icon">get<wbr>Basic<wbr>Uniforms</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="rimeffectmaterial.html#getbasicuniforms" class="tsd-kind-icon">get<wbr>Basic<wbr>Uniforms</a>
 							</li>
 						</ul>
 					</li>
