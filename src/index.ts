@@ -17,3 +17,4 @@ export * from "./squareGrid/SquareGridMaterial";
 export * from "./skyCloud/SkyCloudMaterial";
 export * from "./fbmDissolve/FBMDissolveMaterial";
 export * from "./fbmFire/FBMFireMaterial";
+export * from "./rimEffect/RimEffectMaterial";

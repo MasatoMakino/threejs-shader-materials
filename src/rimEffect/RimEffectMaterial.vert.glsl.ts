@@ -1,18 +1,20 @@
 /**
+ *
  * https://github.com/mrdoob/three.js/blob/dev/src/renderers/shaders/ShaderLib/meshphong_vert.glsl.js
+ * https://github.com/mrdoob/three.js/blob/master/examples/jsm/shaders/FresnelShader.js#L21
  */
 export default () => {
-    return `
+  return `
 #define PHONG
 
 varying vec3 vViewPosition;
 varying vec2 uvPosition;
 #include <mesh_position_varying>
 
+varying float vNml;
+
 #ifndef FLAT_SHADED
-
-varying vec3 vNormal;
-
+    varying vec3 vNormal;
 #endif
 
 #include <common>
@@ -43,9 +45,7 @@ void main() {
     #include <defaultnormal_vertex>
 
     #ifndef FLAT_SHADED // Normal computed with derivatives when FLAT_SHADED
-
-    vNormal = normalize( transformedNormal );
-
+        vNormal = normalize( transformedNormal );
     #endif
 
     #include <begin_vertex>
@@ -62,7 +62,9 @@ void main() {
     #include <envmap_vertex>
     #include <shadowmap_vertex>
     #include <fog_vertex>
-
+    
+    vNml = normalize( transformedNormal ).z;
+    
 }
 `;
 };

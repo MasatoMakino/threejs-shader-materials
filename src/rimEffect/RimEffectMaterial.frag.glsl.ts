@@ -1,15 +1,13 @@
-/**
- * 等高線状にテクスチャをマッピングするシェーダー
- */
 export default () => {
-    return `
+  return `
 #define PHONG
 
 #include <mesh_phong_uniform>
 varying vec2 uvPosition;
-#include <mesh_position_varying>
-uniform float bottom;
-uniform float top;
+
+varying float vNml;
+uniform vec3 rimColor;
+uniform float strength;
 
 #include <common>
 #include <packing>
@@ -39,13 +37,9 @@ void main() {
     #include <clipping_planes_fragment>
     #include <mesh_phong_diffuse_color>
     #include <logdepthbuf_fragment>
-
-    #ifdef USE_MAP
-      float mapY = ( meshPosition.y - bottom ) / ( top - bottom );
-      vec4 texelColor = texture2D( map, vec2(0.5, mapY) );
-      texelColor = mapTexelToLinear( texelColor );
-      diffuseColor *= texelColor;
-    #endif
+    #include <map_fragment>
+    
+    diffuseColor.rgb += rimColor * (1.0-vNml)*strength;
 
     #include <color_fragment>
     #include <mesh_phong_switching_alpha_map>
