@@ -22,7 +22,7 @@ Collection of shader materials for three.js
 
 [FBMFireMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/fbmFire.html)
 
-[RimEffectMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/rimEffect.html)
+[RimEffectMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/rimEffect)
 
 ## Getting Started
 
