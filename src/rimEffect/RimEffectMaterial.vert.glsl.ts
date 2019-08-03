@@ -11,7 +11,7 @@ varying vec3 vViewPosition;
 varying vec2 uvPosition;
 #include <mesh_position_varying>
 
-varying float vNml;
+varying vec3 vNml;
 
 #ifndef FLAT_SHADED
     varying vec3 vNormal;
@@ -63,8 +63,7 @@ void main() {
     #include <shadowmap_vertex>
     #include <fog_vertex>
     
-    vNml = normalize( transformedNormal ).z;
-    
+    vNml = normalize( transformedNormal );   
 }
 `;
 };

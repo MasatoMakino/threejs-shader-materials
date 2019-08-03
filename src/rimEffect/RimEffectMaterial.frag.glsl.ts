@@ -5,7 +5,7 @@ export default () => {
 #include <mesh_phong_uniform>
 varying vec2 uvPosition;
 
-varying float vNml;
+varying vec3 vNml;
 uniform vec3 rimColor;
 uniform float strength;
 
@@ -39,7 +39,9 @@ void main() {
     #include <logdepthbuf_fragment>
     #include <map_fragment>
     
-    diffuseColor.rgb += rimColor * (1.0-vNml)*strength;
+    vec3 viewDir = normalize(vViewPosition);    
+    float glow = 1.0 - max(0.0, dot(vNml, viewDir));
+    diffuseColor.rgb += rimColor * glow * strength;
 
     #include <color_fragment>
     #include <mesh_phong_switching_alpha_map>

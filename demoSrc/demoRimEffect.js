@@ -1,6 +1,7 @@
 import { Common } from "./Common";
 import * as dat from "dat.gui";
 import {
+  AdditiveBlending,
   Color,
   Fog,
   Mesh,
@@ -41,6 +42,7 @@ export class Study {
     const mat = new RimEffectMaterial({
       fog: scene.fog !== undefined
     });
+    mat.transparent = true;
     mat.color = new Color(0x003311);
     mat.rimColor = new Color(0xaacc55);
 
@@ -69,6 +71,7 @@ export class Study {
     folder.addColor(prop, "color").onChange(val => {
       mat.color.setHex(val);
     });
+    folder.add(mat, "opacity", 0.0, 1.0);
     folder.open();
   }
 
