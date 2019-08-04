@@ -24,7 +24,7 @@ Collection of shader materials for three.js
 
 [RimEffectMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/rimEffect)
 
-[ExpansionMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/expansion)
+[ExpansionMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/expansion.html)
 
 ## Getting Started
 
