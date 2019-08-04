@@ -16,4 +16,5 @@ export * from "./skyCloud/SkyCloudMaterial";
 export * from "./fbmDissolve/FBMDissolveMaterial";
 export * from "./fbmFire/FBMFireMaterial";
 export * from "./rimEffect/RimEffectMaterial";
+export * from "./expansion/ExpansionMaterial";
 //# sourceMappingURL=index.d.ts.map

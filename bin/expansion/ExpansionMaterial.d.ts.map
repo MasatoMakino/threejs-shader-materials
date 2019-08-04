@@ -1,0 +1,1 @@
+{"version":3,"file":"ExpansionMaterial.d.ts","sourceRoot":"","sources":["../../src/expansion/ExpansionMaterial.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,mBAAmB,EAAE,MAAM,wBAAwB,CAAC;AAC7D,OAAO,EAAE,wBAAwB,EAAiB,MAAM,OAAO,CAAC;AAKhE,qBAAa,iBAAkB,SAAQ,mBAAmB;IACpD,GAAG,EAAI,MAAM;gBAOL,UAAU,CAAC,EAAE,wBAAwB;IAIjD,SAAS,CAAC,YAAY,IAAI,IAAI;CAQ/B"}
