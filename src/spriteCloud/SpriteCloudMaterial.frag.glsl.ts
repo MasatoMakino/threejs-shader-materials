@@ -9,6 +9,9 @@ uniform float bottomStrength;
 uniform vec3 rimColor;
 uniform vec3 skyColor;
 
+uniform float rimCenter;
+uniform float rimRange;
+
 #include <sprite_fragment_uniform_chunk>
 #include <common>
 #include <uv_pars_fragment>
@@ -34,12 +37,14 @@ void main() {
     
     float rim = 0.0;
     #ifdef USE_MAP
-      rim = texture2D( map, vUv ).a ;
-      rim *= rimStrength;
+      float a = 1.0 - texture2D( map, vUv ).a ;
+      float edge = 
+          smoothstep( rimCenter-rimRange, rimCenter, a )
+        - smoothstep( rimCenter, rimCenter+rimRange, a );
     #endif
     
     outgoingLight = mix( diffuse, skyColor, bottom);
-    outgoingLight += rimColor * rim;
+    outgoingLight += rimColor * edge * rimStrength;
     
     gl_FragColor = vec4( outgoingLight, diffuseColor.a );
     

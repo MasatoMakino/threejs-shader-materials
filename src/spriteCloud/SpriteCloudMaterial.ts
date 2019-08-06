@@ -3,7 +3,6 @@ import { UniformsUtils } from "three";
 import { Color } from "three";
 
 import { ShaderSpriteMaterial } from "../ShaderSpriteMaterial";
-import VertexShader from "../ShaderSpriteMaterial.vert.glsl";
 import FragmentShader from "./SpriteCloudMaterial.frag.glsl";
 
 export class SpriteCloudMaterial extends ShaderSpriteMaterial {
@@ -19,16 +18,31 @@ export class SpriteCloudMaterial extends ShaderSpriteMaterial {
     this.uniforms = UniformsUtils.merge([
       this.uniforms,
       {
-        rimStrength: { value: 1.0 },
+        rimStrength: { value: 0.2 },
         bottomStrength: { value: 1.0 },
         rimColor: { value: new Color(0xffffff) },
-        skyColor: { value: new Color(0xcccccc) }
+        skyColor: { value: new Color(0xcccccc) },
+        rimCenter: { value: 0.25 },
+        rimRange: { value: 0.15 }
       }
     ]);
   }
 
   protected initDefaultSetting(parameters?: ShaderMaterialParameters): void {
     super.initDefaultSetting(parameters);
+  }
+
+  get rimCenter(): number {
+    return this.uniforms.rimCenter.value;
+  }
+  set rimCenter(value: number) {
+    this.uniforms.rimCenter.value = value;
+  }
+  get rimRange(): number {
+    return this.uniforms.rimRange.value;
+  }
+  set rimRange(value: number) {
+    this.uniforms.rimRange.value = value;
   }
 
   get rimStrength(): number {

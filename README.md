@@ -26,6 +26,8 @@ Collection of shader materials for three.js
 
 [ExpansionMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/expansion.html)
 
+[SpriteCloudMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/spriteCloud.html)
+
 ## Getting Started
 
 ### Install
