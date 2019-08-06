@@ -23,7 +23,9 @@ export class ShaderSpriteMaterial extends ShaderMaterial {
     fragmentShader: string,
     parameters?: ShaderMaterialParameters
   ) {
+    console.log(parameters);
     super(parameters);
+
     if (parameters == null) parameters = {};
 
     if (vertexShader == null) {
@@ -70,7 +72,6 @@ export class ShaderSpriteMaterial extends ShaderMaterial {
    */
   protected initDefaultSetting(parameters?: ShaderMaterialParameters): void {
     this.opacity = this._opacity;
-    // this.lights = true; //FIXME シェーダーがエラーを起こすのでlights設定は強制でON
   }
 
   /**
