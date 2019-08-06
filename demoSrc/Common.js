@@ -2,13 +2,17 @@ import {
   AmbientLight,
   AxesHelper,
   Color,
+  Mesh,
+  MeshBasicMaterial,
   PerspectiveCamera,
   Scene,
-  TextureLoader,
+  SphereBufferGeometry,
   WebGLRenderer
 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { Directions } from "../bin";
+
+import { Sky } from "three/examples/jsm/objects/Sky";
+import { CommonGUI } from "./CommonGUI";
 
 export class Common {
   static initScene() {
@@ -63,6 +67,22 @@ export class Common {
   static initHelper(scene) {
     const axesHelper = new AxesHelper(30);
     scene.add(axesHelper);
+  }
+
+  static initSky(scene, gui) {
+    const sunSphere = new Mesh(
+      new SphereBufferGeometry(20000, 16, 8),
+      new MeshBasicMaterial({ color: 0xffffff })
+    );
+    sunSphere.position.y = -700000;
+    sunSphere.visible = false;
+    scene.add(sunSphere);
+
+    const sky = new Sky();
+    sky.scale.setScalar(45000);
+    scene.add(sky);
+
+    CommonGUI.initSkyGUI(gui, sky, sunSphere);
   }
 
   static render(control, renderer, scene, camera, onBeforeRender) {

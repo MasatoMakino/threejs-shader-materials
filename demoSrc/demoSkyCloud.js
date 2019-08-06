@@ -1,14 +1,6 @@
 import * as dat from "dat.gui";
 import { Common } from "./Common";
-import {
-  Color,
-  Fog,
-  Mesh,
-  MeshBasicMaterial,
-  PlaneGeometry,
-  SphereBufferGeometry
-} from "three";
-import { Sky } from "three/examples/jsm/objects/Sky";
+import { Color, Fog, Mesh, PlaneGeometry } from "three";
 import { SkyCloudMaterial } from "../bin";
 import { CommonGUI } from "./CommonGUI";
 
@@ -26,7 +18,7 @@ export class Study {
     Common.initHelper(scene);
 
     const gui = new dat.GUI();
-    this.initSky(scene, gui);
+    Common.initSky(scene, gui);
     const mat = this.initObject(scene);
     Common.render(control, renderer, scene, camera);
     this.initGUI(gui, mat);
@@ -48,71 +40,6 @@ export class Study {
     scene.add(mesh);
 
     return mat;
-  }
-
-  initSky(scene, gui) {
-    const sunSphere = new Mesh(
-      new SphereBufferGeometry(20000, 16, 8),
-      new MeshBasicMaterial({ color: 0xffffff })
-    );
-    sunSphere.position.y = -700000;
-    sunSphere.visible = false;
-    scene.add(sunSphere);
-
-    const sky = new Sky();
-    sky.scale.setScalar(45000);
-    scene.add(sky);
-
-    const effectController = {
-      turbidity: 10,
-      rayleigh: 0.15,
-      mieCoefficient: 0.005,
-      mieDirectionalG: 0.8,
-      luminance: 1,
-      inclination: 0.07, // elevation / inclination
-      azimuth: 0.25, // Facing front,
-      sun: !true
-    };
-
-    var distance = 400000;
-
-    function guiChanged() {
-      const uniforms = sky.material.uniforms;
-      uniforms["turbidity"].value = effectController.turbidity;
-      uniforms["rayleigh"].value = effectController.rayleigh;
-      uniforms["luminance"].value = effectController.luminance;
-      uniforms["mieCoefficient"].value = effectController.mieCoefficient;
-      uniforms["mieDirectionalG"].value = effectController.mieDirectionalG;
-      const theta = Math.PI * (effectController.inclination - 0.5);
-      const phi = 2 * Math.PI * (effectController.azimuth - 0.5);
-      sunSphere.position.x = distance * Math.cos(phi);
-      sunSphere.position.y = distance * Math.sin(phi) * Math.sin(theta);
-      sunSphere.position.z = distance * Math.sin(phi) * Math.cos(theta);
-      sunSphere.visible = effectController.sun;
-      uniforms["sunPosition"].value.copy(sunSphere.position);
-    }
-    guiChanged();
-
-    const folder = gui.addFolder("Sky");
-    folder
-      .add(effectController, "turbidity", 1.0, 20.0, 0.1)
-      .onChange(guiChanged);
-    folder
-      .add(effectController, "rayleigh", 0.0, 4, 0.001)
-      .onChange(guiChanged);
-    folder
-      .add(effectController, "mieCoefficient", 0.0, 0.1, 0.001)
-      .onChange(guiChanged);
-    folder
-      .add(effectController, "mieDirectionalG", 0.0, 1, 0.001)
-      .onChange(guiChanged);
-    folder.add(effectController, "luminance", 0.0, 2).onChange(guiChanged);
-    folder
-      .add(effectController, "inclination", 0, 1, 0.0001)
-      .onChange(guiChanged);
-    folder.add(effectController, "azimuth", 0, 1, 0.0001).onChange(guiChanged);
-    folder.add(effectController, "sun").onChange(guiChanged);
-    folder.open();
   }
 
   initGUI(gui, mat) {
