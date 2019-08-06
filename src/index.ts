@@ -1,4 +1,5 @@
 export * from "./ShaderPhongMaterial";
+export * from "./ShaderSpriteMaterial";
 
 export * from "./chunk/AnimationChunk";
 export * from "./chunk/GLSLChunk";

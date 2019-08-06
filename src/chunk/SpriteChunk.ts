@@ -19,9 +19,13 @@ export class SpriteChunk extends GLSLChunk {
     };
   }
 
-  public static getBasicUniforms(): any {
+  public static getUniform(): any {
     //TODO : PR, UniformsLib.sprite in UniformsLib.d.ts
-    return UniformsUtils.merge([(UniformsLib as any).sprite, UniformsLib.fog]);
+    return UniformsUtils.merge([
+      (UniformsLib as any).sprite,
+      UniformsLib.fog,
+      UniformsLib.lights
+    ]);
   }
 }
 
