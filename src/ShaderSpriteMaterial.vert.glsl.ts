@@ -1,11 +1,9 @@
 /**
  * https://raw.githubusercontent.com/mrdoob/three.js/dev/src/renderers/shaders/ShaderLib/sprite_vert.glsl.js
  */
-export default () => /* glsl */ {
+export default () => {
   return `
-uniform float rotation;
-uniform vec2 center;
-
+#include <sprite_vertex_uniform_chunk>
 #include <common>
 #include <uv_pars_vertex>
 #include <fog_pars_vertex>
@@ -13,37 +11,14 @@ uniform vec2 center;
 #include <clipping_planes_pars_vertex>
 
 void main() {
-
 	#include <uv_vertex>
-
-	vec4 mvPosition = modelViewMatrix * vec4( 0.0, 0.0, 0.0, 1.0 );
-
-	vec2 scale;
-	scale.x = length( vec3( modelMatrix[ 0 ].x, modelMatrix[ 0 ].y, modelMatrix[ 0 ].z ) );
-	scale.y = length( vec3( modelMatrix[ 1 ].x, modelMatrix[ 1 ].y, modelMatrix[ 1 ].z ) );
-
-	#ifndef USE_SIZEATTENUATION
-
-		bool isPerspective = ( projectionMatrix[ 2 ][ 3 ] == - 1.0 );
-
-		if ( isPerspective ) scale *= - mvPosition.z;
-
-	#endif
-
-	vec2 alignedPosition = ( position.xy - ( center - vec2( 0.5 ) ) ) * scale;
-
-	vec2 rotatedPosition;
-	rotatedPosition.x = cos( rotation ) * alignedPosition.x - sin( rotation ) * alignedPosition.y;
-	rotatedPosition.y = sin( rotation ) * alignedPosition.x + cos( rotation ) * alignedPosition.y;
-
-	mvPosition.xy += rotatedPosition;
+	#include <sprite_mv_position_chunk>
 
 	gl_Position = projectionMatrix * mvPosition;
 
 	#include <logdepthbuf_vertex>
 	#include <clipping_planes_vertex>
 	#include <fog_vertex>
-
 }
 `;
 };
