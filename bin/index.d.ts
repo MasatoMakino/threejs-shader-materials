@@ -1,4 +1,5 @@
 export * from "./ShaderPhongMaterial";
+export * from "./ShaderSpriteMaterial";
 export * from "./chunk/AnimationChunk";
 export * from "./chunk/GLSLChunk";
 export * from "./chunk/MaskMapChunk";
@@ -17,4 +18,5 @@ export * from "./fbmDissolve/FBMDissolveMaterial";
 export * from "./fbmFire/FBMFireMaterial";
 export * from "./rimEffect/RimEffectMaterial";
 export * from "./expansion/ExpansionMaterial";
+export * from "./spriteCloud/SpriteCloudMaterial";
 //# sourceMappingURL=index.d.ts.map
