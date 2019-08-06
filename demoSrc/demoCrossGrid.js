@@ -10,6 +10,7 @@ import {
 } from "three";
 import { Directions } from "../bin/chunk/WavyAnimationChunk";
 import { CrossGridMaterial } from "../bin/crossGrid/CrossGridMaterial";
+import { CommonGUI } from "./CommonGUI";
 
 export class StudyCrossGrid {
   constructor() {
@@ -39,7 +40,6 @@ export class StudyCrossGrid {
     const geo = new SphereGeometry(10, 64, 64);
 
     const mat = new CrossGridMaterial({
-      // side:DoubleSide,
       fog: scene.fog !== undefined
     });
     mat.color = new Color(0xff6666);
@@ -52,7 +52,7 @@ export class StudyCrossGrid {
 
   initGUI(mat) {
     const gui = new dat.GUI();
-    Common.initWavyMaterialGUI(gui, mat);
+    CommonGUI.initWavyMaterialGUI(gui, mat);
     this.initGUIMaterial(gui, mat);
   }
 

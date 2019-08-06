@@ -8,9 +8,8 @@ import {
   PointLightHelper,
   SphereGeometry
 } from "three";
-import { HalftoneGridMaterial } from "../bin/halftoneGrid/HalftoneGridMaterial";
-import { Directions } from "../bin/chunk/WavyAnimationChunk";
 import { FBMDissolveMaterial } from "../bin/fbmDissolve/FBMDissolveMaterial";
+import { CommonGUI } from "./CommonGUI";
 
 export class Study {
   constructor() {
@@ -57,34 +56,17 @@ export class Study {
 
   initGUI(mat) {
     const gui = new dat.GUI();
-    this.initGUIBaseMaterial(gui, mat);
+    CommonGUI.initMaterialGUI(gui, mat);
     this.initGUIMaterial(gui, mat);
-  }
-
-  initGUIBaseMaterial(gui, mat) {
-    const folder = gui.addFolder("Material");
-    const prop = {
-      color: mat.color.getHex()
-    };
-    folder.addColor(prop, "color").onChange(val => {
-      mat.color.setHex(val);
-    });
-    folder.open();
   }
 
   initGUIMaterial(gui, mat) {
     const folder = gui.addFolder("FBM Dissolve");
 
-    const prop = {
-      edgeColor: mat.edgeColor.getHex()
-    };
-
     folder.add(mat, "progress", 0.0, 1.0).step(0.01);
     folder.add(mat, "tiles", 1.0, 8.0).step(1.0);
     folder.add(mat, "edgeWeight", 0.0, 1.0).step(0.01);
-    folder.addColor(prop, "edgeColor").onChange(val => {
-      mat.edgeColor.setHex(val);
-    });
+    CommonGUI.initColorGUI(folder, mat, "edgeColor");
     folder.add(mat, "hashLoop", 1.0, 16.0).step(1.0);
     folder.add(mat, "amp", 0.0, 2.0).step(0.01);
     folder.open();

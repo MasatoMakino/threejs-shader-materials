@@ -1,5 +1,6 @@
 import * as dat from "dat.gui";
 import { Common } from "./Common";
+import { CommonGUI } from "./CommonGUI";
 import {
   Color,
   Fog,
@@ -52,7 +53,7 @@ export class StudyHexGrid {
 
   initGUI(mat) {
     const gui = new dat.GUI();
-    Common.initWavyMaterialGUI(gui, mat);
+    CommonGUI.initWavyMaterialGUI(gui, mat);
     this.initGUIMaterial(gui, mat);
   }
 

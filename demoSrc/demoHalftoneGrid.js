@@ -1,4 +1,5 @@
 import { Common } from "./Common";
+import { CommonGUI } from "./CommonGUI";
 import * as dat from "dat.gui";
 import {
   Color,
@@ -53,7 +54,7 @@ export class StudyHalftoneGrid {
 
   initGUI(mat) {
     const gui = new dat.GUI();
-    Common.initWavyMaterialGUI(gui, mat);
+    CommonGUI.initWavyMaterialGUI(gui, mat);
     this.initGUIMaterial(gui, mat);
   }
 

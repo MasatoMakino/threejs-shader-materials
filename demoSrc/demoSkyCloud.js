@@ -10,6 +10,7 @@ import {
 } from "three";
 import { Sky } from "three/examples/jsm/objects/Sky";
 import { SkyCloudMaterial } from "../bin";
+import { CommonGUI } from "./CommonGUI";
 
 export class Study {
   constructor() {
@@ -115,6 +116,7 @@ export class Study {
   }
 
   initGUI(gui, mat) {
+    CommonGUI.initMaterialGUI(gui, mat);
     this.initGUIMaterial(gui, mat);
     this.initGUISkyAnimation(gui, mat);
     this.initGUISkyColor(gui, mat);
@@ -122,11 +124,8 @@ export class Study {
 
   initGUIMaterial(gui, mat) {
     const folder = gui.addFolder("SkyCloudMaterial");
-
-    folder.add(mat, "opacity", 0.0, 1.0).step(0.01);
     folder.add(mat, "scale", 0.1, 128).step(0.1);
     folder.add(mat, "cloudVolume", 1.0, 128.0);
-
     folder.open();
   }
 
@@ -142,16 +141,7 @@ export class Study {
 
   initGUISkyColor(gui, mat) {
     const folder = gui.addFolder("SkyCloudMaterial - Color");
-    const prop = {
-      color: mat.color.getHex(),
-      skyColor: mat.skyColor.getHex()
-    };
-    folder.addColor(prop, "color").onChange(val => {
-      mat.color.setHex(val);
-    });
-    folder.addColor(prop, "skyColor").onChange(val => {
-      mat.skyColor.setHex(val);
-    });
+    const prop = CommonGUI.initColorGUI(folder, mat, "skyColor");
     folder.add(mat, "cloudBottomVolume", 0.0, 0.3).step(0.01);
     folder.add(mat, "cloudBottomSaturation", 0.0, 0.7).step(0.01);
 

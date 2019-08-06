@@ -11,6 +11,7 @@ import { Common } from "./Common";
 import { ExpansionMaterial } from "../bin/expansion/ExpansionMaterial";
 import { ExplodeModifier } from "three/examples/jsm/modifiers/ExplodeModifier";
 import * as dat from "dat.gui";
+import { CommonGUI } from "./CommonGUI";
 
 export class Study {
   constructor() {
@@ -60,20 +61,8 @@ export class Study {
 
   initGUI(mat) {
     const gui = new dat.GUI();
-    this.initGUIBaseMaterial(gui, mat);
+    CommonGUI.initMaterialGUI(gui, mat);
     this.initGUIMaterial(gui, mat);
-  }
-
-  initGUIBaseMaterial(gui, mat) {
-    const folder = gui.addFolder("Material");
-    const prop = {
-      color: mat.color.getHex()
-    };
-    folder.addColor(prop, "color").onChange(val => {
-      mat.color.setHex(val);
-    });
-    folder.add(mat, "opacity", 0.0, 1.0);
-    folder.open();
   }
 
   initGUIMaterial(gui, mat) {
