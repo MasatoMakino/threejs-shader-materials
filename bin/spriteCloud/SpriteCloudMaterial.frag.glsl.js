@@ -37,7 +37,7 @@ void main() {
     
     float rim = 0.0;
     #ifdef USE_MAP
-      float a = 1.0 - texture2D( map, vUv ).a ;
+      float a = texture2D( map, vUv ).a ;
       float edge = 
           smoothstep( rimCenter-rimRange, rimCenter, a )
         - smoothstep( rimCenter, rimCenter+rimRange, a );
