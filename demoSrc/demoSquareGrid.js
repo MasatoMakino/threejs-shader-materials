@@ -9,8 +9,8 @@ import {
   PointLightHelper,
   SphereGeometry
 } from "three";
-import { Directions } from "../bin/chunk/WavyAnimationChunk";
-import { SquareGridMaterial } from "../bin/squareGrid/SquareGridMaterial";
+import { Directions } from "../bin/";
+import { SquareGridMaterial } from "../bin/";
 
 export class StudySquareGrid {
   constructor() {

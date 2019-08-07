@@ -10,7 +10,6 @@ export class ShaderSpriteMaterial extends ShaderMaterial {
      * @param parameters
      */
     constructor(vertexShader, fragmentShader, parameters) {
-        console.log(parameters);
         super(parameters);
         if (parameters == null)
             parameters = {};
