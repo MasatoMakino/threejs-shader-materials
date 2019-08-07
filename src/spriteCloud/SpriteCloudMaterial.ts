@@ -19,10 +19,10 @@ export class SpriteCloudMaterial extends ShaderSpriteMaterial {
       this.uniforms,
       {
         rimStrength: { value: 0.2 },
-        bottomStrength: { value: 1.0 },
+        bottomStrength: { value: 0.75 },
         rimColor: { value: new Color(0xffffff) },
         skyColor: { value: new Color(0xcccccc) },
-        rimCenter: { value: 0.25 },
+        rimCenter: { value: 0.6 },
         rimRange: { value: 0.15 }
       }
     ]);

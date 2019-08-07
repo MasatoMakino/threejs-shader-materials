@@ -1,11 +1,4 @@
-import {
-  Color,
-  Fog,
-  PointLight,
-  PointLightHelper,
-  Sprite,
-  TextureLoader
-} from "three";
+import { Color, Fog, Sprite, TextureLoader } from "three";
 import { Common } from "./Common";
 import { SpriteCloudMaterial } from "../bin";
 import * as dat from "dat.gui";
@@ -33,12 +26,6 @@ export class Study {
   }
 
   initObject(scene) {
-    const spot = new PointLight(0xffffff, 3, 0, 2);
-    spot.position.set(10, 20, 30);
-    scene.add(spot);
-    const helper = new PointLightHelper(spot);
-    scene.add(helper);
-
     const mat = new SpriteCloudMaterial({
       fog: scene.fog !== undefined,
       transparent: true
@@ -46,14 +33,11 @@ export class Study {
     mat.color = new Color(0xdddddd);
     const loader = new TextureLoader();
     mat.map = loader.load("./textures/cloud.png");
-
     mat.skyColor = new Color(0x99aabb);
-    mat.bottomStrength = 0.7;
-
     mat.rimColor = new Color(0xffffff);
 
     const sprite = new Sprite(mat);
-    sprite.scale.set(30, 30, 1.0);
+    sprite.scale.set(40, 40, 1.0);
     sprite.position.x = 0;
 
     scene.add(sprite);
