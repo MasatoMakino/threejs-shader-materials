@@ -23,7 +23,6 @@ export class ShaderSpriteMaterial extends ShaderMaterial {
     fragmentShader: string,
     parameters?: ShaderMaterialParameters
   ) {
-    console.log(parameters);
     super(parameters);
 
     if (parameters == null) parameters = {};
