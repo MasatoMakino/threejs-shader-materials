@@ -13,7 +13,7 @@ const { bundleDevelopment, watchBundle } = require("gulptask-webpack")(
 );
 exports.bundleDevelopment = bundleDevelopment;
 
-const { tsc, watchTsc } = require("gulptask-tsc")();
+const { tsc, tscClean, watchTsc } = require("gulptask-tsc")();
 
 const watchTasks = cb => {
   watchBundle();
@@ -25,3 +25,4 @@ exports.watchTasks = watchTasks;
 exports.start_dev = series(watchTasks, server);
 
 exports.build = series(tsc, bundleDevelopment, doc);
+exports.build_clean = series(tscClean, bundleDevelopment, doc);
