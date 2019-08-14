@@ -6,9 +6,14 @@ export default () => {
 varying vec2 uvPosition;
 
 varying vec3 vNml;
+
 uniform vec3 rimColor;
 uniform float rimStrength;
 uniform float rimPow;
+
+uniform vec3 insideColor;
+uniform float insideStrength;
+uniform float insidePow;
 
 #include <common>
 #include <packing>
@@ -41,9 +46,14 @@ void main() {
     #include <map_fragment>
     
     vec3 viewDir = normalize(vViewPosition);    
-    float glow = 1.0 - max(0.0, dot(vNml, viewDir));
-    glow = pow( glow, rimPow);
-    diffuseColor.rgb += rimColor * glow * rimStrength;
+    
+    float rimGlow = 1.0 - max(0.0, dot(vNml, viewDir));
+    rimGlow = pow( rimGlow, rimPow);
+    diffuseColor.rgb += rimColor * rimGlow * rimStrength;
+
+    float insideGlow = max(0.0, dot(vNml, viewDir));
+    insideGlow = pow( insideGlow, insidePow);
+    diffuseColor.rgb += insideColor * insideGlow * insideStrength;
 
     #include <color_fragment>
     #include <mesh_phong_switching_alpha_map>

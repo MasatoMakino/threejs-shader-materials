@@ -43,6 +43,10 @@ export class Study {
     mat.transparent = true;
     mat.color = new Color(0x003311);
     mat.rimColor = new Color(0xaacc55);
+    mat.insideColor = new Color(0x0077ff);
+    mat.rimPow = 2.0;
+    mat.insidePow = 6.0;
+    mat.insideStrength = 0.5;
 
     const mesh = new Mesh(geo, mat);
     mesh.position.x = 24;
@@ -66,6 +70,10 @@ export class Study {
     CommonGUI.initColorGUI(folder, mat, "rimColor");
     folder.add(mat, "rimStrength", 0.0, 4.0).step(0.01);
     folder.add(mat, "rimPow", 0.0, 4.0).step(0.01);
+
+    CommonGUI.initColorGUI(folder, mat, "insideColor");
+    folder.add(mat, "insideStrength", 0.0, 4.0).step(0.01);
+    folder.add(mat, "insidePow", 0.0, 8.0).step(0.01);
     folder.open();
   }
 }

@@ -27,6 +27,27 @@ export class RimEffectMaterial extends ShaderPhongMaterial {
     this.uniforms.rimColor.value = value;
   }
 
+  get insidePow(): number {
+    return this.uniforms.insidePow.value;
+  }
+  set insidePow(value: number) {
+    this.uniforms.insidePow.value = value;
+  }
+
+  get insideStrength(): number {
+    return this.uniforms.insideStrength.value;
+  }
+  set insideStrength(value: number) {
+    this.uniforms.insideStrength.value = value;
+  }
+
+  get insideColor(): Color {
+    return this.uniforms.insideColor.value;
+  }
+  set insideColor(value: Color) {
+    this.uniforms.insideColor.value = value;
+  }
+
   /**
    *
    * @param parameters
@@ -41,7 +62,10 @@ export class RimEffectMaterial extends ShaderPhongMaterial {
       {
         rimColor: { value: new Color(1.0, 1.0, 1.0) },
         rimStrength: { value: 1.0 },
-        rimPow: { value: 1.0 }
+        rimPow: { value: 1.0 },
+        insideColor: { value: new Color(0.0, 0.0, 0.0) },
+        insideStrength: { value: 1.0 },
+        insidePow: { value: 1.0 }
       }
     ]);
   }
