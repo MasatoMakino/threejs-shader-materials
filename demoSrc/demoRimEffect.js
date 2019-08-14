@@ -64,7 +64,8 @@ export class Study {
   initGUIMaterial(gui, mat) {
     const folder = gui.addFolder("Rim Effect Material");
     CommonGUI.initColorGUI(folder, mat, "rimColor");
-    folder.add(mat, "strength", 0.0, 1.0).step(0.01);
+    folder.add(mat, "rimStrength", 0.0, 4.0).step(0.01);
+    folder.add(mat, "rimPow", 0.0, 4.0).step(0.01);
     folder.open();
   }
 }

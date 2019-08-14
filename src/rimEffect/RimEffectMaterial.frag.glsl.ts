@@ -7,7 +7,8 @@ varying vec2 uvPosition;
 
 varying vec3 vNml;
 uniform vec3 rimColor;
-uniform float strength;
+uniform float rimStrength;
+uniform float rimPow;
 
 #include <common>
 #include <packing>
@@ -41,7 +42,8 @@ void main() {
     
     vec3 viewDir = normalize(vViewPosition);    
     float glow = 1.0 - max(0.0, dot(vNml, viewDir));
-    diffuseColor.rgb += rimColor * glow * strength;
+    glow = pow( glow, rimPow);
+    diffuseColor.rgb += rimColor * glow * rimStrength;
 
     #include <color_fragment>
     #include <mesh_phong_switching_alpha_map>

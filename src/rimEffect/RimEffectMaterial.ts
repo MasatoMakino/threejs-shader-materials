@@ -6,11 +6,18 @@ import { UniformsUtils } from "three";
 import { Color } from "three";
 
 export class RimEffectMaterial extends ShaderPhongMaterial {
-  get strength(): number {
-    return this.uniforms.strength.value;
+  get rimPow(): number {
+    return this.uniforms.rimPow.value;
   }
-  set strength(value: number) {
-    this.uniforms.strength.value = value;
+  set rimPow(value: number) {
+    this.uniforms.rimPow.value = value;
+  }
+
+  get rimStrength(): number {
+    return this.uniforms.rimStrength.value;
+  }
+  set rimStrength(value: number) {
+    this.uniforms.rimStrength.value = value;
   }
 
   get rimColor(): Color {
@@ -33,7 +40,8 @@ export class RimEffectMaterial extends ShaderPhongMaterial {
       ShaderPhongMaterial.getBasicUniforms(),
       {
         rimColor: { value: new Color(1.0, 1.0, 1.0) },
-        strength: { value: 1.0 }
+        rimStrength: { value: 1.0 },
+        rimPow: { value: 1.0 }
       }
     ]);
   }
