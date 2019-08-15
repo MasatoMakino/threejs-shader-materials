@@ -68,7 +68,7 @@ export class Study {
   initGUIMaterial(gui, mat) {
     const folder = gui.addFolder("ExpansionMaterial");
     const ampRange = 12.0;
-    folder.add(mat, "amp", -ampRange, ampRange).step(0.01);
+    folder.add(mat, "expansionStrength", -ampRange, ampRange).step(0.01);
     folder.open();
   }
 }

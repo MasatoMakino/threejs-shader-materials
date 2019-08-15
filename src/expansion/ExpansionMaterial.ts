@@ -1,26 +1,22 @@
 import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
-import { ShaderMaterialParameters, UniformsUtils } from "three";
+import { ShaderMaterialParameters } from "three";
+import { IExpandable } from "../chunk/ExpansionChunk";
 
-import VertexShader from "./ExpansionMaterial.vert.glsl";
-
-export class ExpansionMaterial extends ShaderPhongMaterial {
-  get amp(): number {
-    return this.uniforms.amp.value;
+export class ExpansionMaterial extends ShaderPhongMaterial
+  implements IExpandable {
+  get expansionStrength(): number {
+    return this.uniforms.expansionStrength.value;
   }
-  set amp(value: number) {
-    this.uniforms.amp.value = value;
+  set expansionStrength(value: number) {
+    this.uniforms.expansionStrength.value = value;
   }
 
   constructor(parameters?: ShaderMaterialParameters) {
-    super(VertexShader(), null, parameters);
+    super(null, null, parameters);
   }
 
-  protected initUniforms(): void {
-    this.uniforms = UniformsUtils.merge([
-      ShaderPhongMaterial.getBasicUniforms(),
-      {
-        amp: { value: 0.0 }
-      }
-    ]);
+  protected initDefines(): void {
+    super.initDefines();
+    this.defines.USE_EXPANSION = true;
   }
 }

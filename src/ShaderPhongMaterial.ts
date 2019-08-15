@@ -9,8 +9,10 @@ import {
 } from "three";
 import { MeshPhongChunk } from "./chunk/MeshPhongChunk";
 import { SurfaceNormalChunk } from "./chunk/SurfaceNormalChunk";
+import { ExpansionChunk } from "./chunk/ExpansionChunk";
 import VertexShader from "./ShaderPhongMaterial.vert.glsl";
 import FragmentShader from "./ShaderPhongMaterial.frag.glsl";
+
 /**
  * MeshPhongMaterialに準じるShaderMaterialクラス。
  *
@@ -70,7 +72,8 @@ export class ShaderPhongMaterial extends ShaderMaterial {
         shininess: { value: 30 },
         hasAlphaMap: { value: false }
       },
-      SurfaceNormalChunk.getUniform()
+      SurfaceNormalChunk.getUniform(),
+      ExpansionChunk.getUniform()
     ]);
   }
 
@@ -80,6 +83,7 @@ export class ShaderPhongMaterial extends ShaderMaterial {
   protected initChunks(): void {
     MeshPhongChunk.registerChunk();
     SurfaceNormalChunk.registerChunk();
+    ExpansionChunk.registerChunk();
   }
 
   /**
@@ -88,6 +92,7 @@ export class ShaderPhongMaterial extends ShaderMaterial {
   protected initUniforms(): void {
     this.uniforms = UniformsUtils.merge([
       ShaderPhongMaterial.getBasicUniforms(),
+      ExpansionChunk.getUniform(),
       {}
     ]);
   }
@@ -100,6 +105,7 @@ export class ShaderPhongMaterial extends ShaderMaterial {
       {},
       MeshPhongChunk.getDefines(),
       SurfaceNormalChunk.getDefines(),
+      ExpansionChunk.getDefines(),
       this.defines
     );
   }

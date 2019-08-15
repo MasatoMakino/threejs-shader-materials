@@ -14,6 +14,7 @@ varying vec2 uvPosition;
 #endif
 
 #include <surface_normal_varying_chunk>
+#include <expansion_uniform_chunk>
 
 #include <common>
 #include <uv_pars_vertex>
@@ -48,6 +49,9 @@ void main() {
     #include <surface_normal_vertex_chunk>
 
     #include <begin_vertex>
+    
+    #include <expansion_vertex_chunk>
+    
     #include <morphtarget_vertex>
     #include <skinning_vertex>
     #include <displacementmap_vertex>
