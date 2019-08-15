@@ -1,0 +1,1 @@
+{"version":3,"file":"OuterGlowMaterial.d.ts","sourceRoot":"","sources":["../../src/rimEffect/OuterGlowMaterial.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,iBAAiB,EAAE,MAAM,qBAAqB,CAAC;AACxD,OAAO,EAAE,WAAW,EAAE,MAAM,yBAAyB,CAAC;AAEtD,qBAAa,iBAAkB,SAAQ,iBACrC,YAAW,WAAW;IAClB,iBAAiB,EAAI,MAAM;IAO/B,SAAS,CAAC,WAAW,IAAI,IAAI;CAK9B"}

@@ -1,23 +1,16 @@
 import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
-import { UniformsUtils } from "three";
-import FragmentShader from "./ExpansionMaterial.frag.glsl";
-import VertexShader from "./ExpansionMaterial.vert.glsl";
 export class ExpansionMaterial extends ShaderPhongMaterial {
-    get amp() {
-        return this.uniforms.amp.value;
+    get expansionStrength() {
+        return this.uniforms.expansionStrength.value;
     }
-    set amp(value) {
-        this.uniforms.amp.value = value;
+    set expansionStrength(value) {
+        this.uniforms.expansionStrength.value = value;
     }
     constructor(parameters) {
-        super(VertexShader(), FragmentShader(), parameters);
+        super(null, null, parameters);
     }
-    initUniforms() {
-        this.uniforms = UniformsUtils.merge([
-            ShaderPhongMaterial.getBasicUniforms(),
-            {
-                amp: { value: 0.0 }
-            }
-        ]);
+    initDefines() {
+        super.initDefines();
+        this.defines.USE_EXPANSION = true;
     }
 }

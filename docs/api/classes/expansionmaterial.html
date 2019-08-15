@@ -79,6 +79,12 @@
 					</li>
 				</ul>
 			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../interfaces/iexpandable.html" class="tsd-signature-type">IExpandable</a></li>
+				</ul>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
@@ -158,9 +164,9 @@
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="expansionmaterial.html#alphamap" class="tsd-kind-icon">alpha<wbr>Map</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="expansionmaterial.html#amp" class="tsd-kind-icon">amp</a></li>
 								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="expansionmaterial.html#color" class="tsd-kind-icon">color</a></li>
 								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="expansionmaterial.html#emissive" class="tsd-kind-icon">emissive</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="expansionmaterial.html#expansionstrength" class="tsd-kind-icon">expansion<wbr>Strength</a></li>
 								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="expansionmaterial.html#opacity" class="tsd-kind-icon">opacity</a></li>
 							</ul>
 						</section>
@@ -175,8 +181,8 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="expansionmaterial.html#haseventlistener" class="tsd-kind-icon">has<wbr>Event<wbr>Listener</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="expansionmaterial.html#initchunks" class="tsd-kind-icon">init<wbr>Chunks</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="expansionmaterial.html#initdefaultsetting" class="tsd-kind-icon">init<wbr>Default<wbr>Setting</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="expansionmaterial.html#initdefines" class="tsd-kind-icon">init<wbr>Defines</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="expansionmaterial.html#inituniforms" class="tsd-kind-icon">init<wbr>Uniforms</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="expansionmaterial.html#initdefines" class="tsd-kind-icon">init<wbr>Defines</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="expansionmaterial.html#inituniforms" class="tsd-kind-icon">init<wbr>Uniforms</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="expansionmaterial.html#onbeforecompile" class="tsd-kind-icon">on<wbr>Before<wbr>Compile</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="expansionmaterial.html#removeeventlistener" class="tsd-kind-icon">remove<wbr>Event<wbr>Listener</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="expansionmaterial.html#setvalues" class="tsd-kind-icon">set<wbr>Values</a></li>
@@ -202,7 +208,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/80ae958/src/expansion/ExpansionMaterial.ts#L13">expansion/ExpansionMaterial.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/4528b57/src/expansion/ExpansionMaterial.ts#L12">expansion/ExpansionMaterial.ts:12</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -225,7 +231,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#_opacity">_opacity</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/80ae958/src/ShaderPhongMaterial.ts#L131">ShaderPhongMaterial.ts:131</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/4528b57/src/ShaderPhongMaterial.ts#L153">ShaderPhongMaterial.ts:153</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1005,6 +1011,7 @@
 					<h3>uniforms</h3>
 					<div class="tsd-signature tsd-kind-icon">uniforms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/iexpandable.html">IExpandable</a>.<a href="../interfaces/iexpandable.html#uniforms">uniforms</a></p>
 						<p>Inherited from ShaderMaterial.uniforms</p>
 						<ul>
 							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:35</li>
@@ -1147,7 +1154,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#alphamap">alphaMap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/80ae958/src/ShaderPhongMaterial.ts#L140">ShaderPhongMaterial.ts:140</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/4528b57/src/ShaderPhongMaterial.ts#L162">ShaderPhongMaterial.ts:162</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Texture</span></h4>
@@ -1156,45 +1163,13 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#alphamap">alphaMap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/80ae958/src/ShaderPhongMaterial.ts#L143">ShaderPhongMaterial.ts:143</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/4528b57/src/ShaderPhongMaterial.ts#L165">ShaderPhongMaterial.ts:165</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>value: <span class="tsd-signature-type">Texture</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
-					<a name="amp" class="tsd-anchor"></a>
-					<h3>amp</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> amp<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> amp<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/80ae958/src/expansion/ExpansionMaterial.ts#L8">expansion/ExpansionMaterial.ts:8</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/80ae958/src/expansion/ExpansionMaterial.ts#L11">expansion/ExpansionMaterial.ts:11</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1213,7 +1188,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#color">color</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/80ae958/src/ShaderPhongMaterial.ts#L105">ShaderPhongMaterial.ts:105</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/4528b57/src/ShaderPhongMaterial.ts#L127">ShaderPhongMaterial.ts:127</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1227,7 +1202,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#color">color</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/80ae958/src/ShaderPhongMaterial.ts#L108">ShaderPhongMaterial.ts:108</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/4528b57/src/ShaderPhongMaterial.ts#L130">ShaderPhongMaterial.ts:130</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1257,7 +1232,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#emissive">emissive</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/80ae958/src/ShaderPhongMaterial.ts#L133">ShaderPhongMaterial.ts:133</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/4528b57/src/ShaderPhongMaterial.ts#L155">ShaderPhongMaterial.ts:155</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Color</span></h4>
@@ -1266,13 +1241,45 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#emissive">emissive</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/80ae958/src/ShaderPhongMaterial.ts#L136">ShaderPhongMaterial.ts:136</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/4528b57/src/ShaderPhongMaterial.ts#L158">ShaderPhongMaterial.ts:158</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>value: <span class="tsd-signature-type">Color</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="expansionstrength" class="tsd-anchor"></a>
+					<h3>expansion<wbr>Strength</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> expansionStrength<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> expansionStrength<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/4528b57/src/expansion/ExpansionMaterial.ts#L7">expansion/ExpansionMaterial.ts:7</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/4528b57/src/expansion/ExpansionMaterial.ts#L10">expansion/ExpansionMaterial.ts:10</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1292,7 +1299,7 @@
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#opacity">opacity</a></p>
 								<p>Overrides Material.opacity</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/80ae958/src/ShaderPhongMaterial.ts#L115">ShaderPhongMaterial.ts:115</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/4528b57/src/ShaderPhongMaterial.ts#L137">ShaderPhongMaterial.ts:137</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1307,7 +1314,7 @@
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#opacity">opacity</a></p>
 								<p>Overrides Material.opacity</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/80ae958/src/ShaderPhongMaterial.ts#L125">ShaderPhongMaterial.ts:125</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/4528b57/src/ShaderPhongMaterial.ts#L147">ShaderPhongMaterial.ts:147</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1571,7 +1578,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#initchunks">initChunks</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/80ae958/src/ShaderPhongMaterial.ts#L70">ShaderPhongMaterial.ts:70</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/4528b57/src/ShaderPhongMaterial.ts#L83">ShaderPhongMaterial.ts:83</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1594,7 +1601,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#initdefaultsetting">initDefaultSetting</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/80ae958/src/ShaderPhongMaterial.ts#L97">ShaderPhongMaterial.ts:97</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/4528b57/src/ShaderPhongMaterial.ts#L119">ShaderPhongMaterial.ts:119</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1615,43 +1622,43 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
 					<a name="initdefines" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> init<wbr>Defines</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
 						<li class="tsd-signature tsd-kind-icon">init<wbr>Defines<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#initdefines">initDefines</a></p>
+								<p>Overrides <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#initdefines">initDefines</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/80ae958/src/ShaderPhongMaterial.ts#L87">ShaderPhongMaterial.ts:87</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/4528b57/src/expansion/ExpansionMaterial.ts#L18">expansion/ExpansionMaterial.ts:18</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>definesを初期化する。</p>
-								</div>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 					<a name="inituniforms" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> init<wbr>Uniforms</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 						<li class="tsd-signature tsd-kind-icon">init<wbr>Uniforms<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#inituniforms">initUniforms</a></p>
+								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#inituniforms">initUniforms</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/80ae958/src/expansion/ExpansionMaterial.ts#L19">expansion/ExpansionMaterial.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/4528b57/src/ShaderPhongMaterial.ts#L92">ShaderPhongMaterial.ts:92</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>uniformsを初期化する。</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -1786,7 +1793,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#startglow">startGlow</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/80ae958/src/ShaderPhongMaterial.ts#L152">ShaderPhongMaterial.ts:152</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/4528b57/src/ShaderPhongMaterial.ts#L174">ShaderPhongMaterial.ts:174</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1858,7 +1865,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#getbasicuniforms">getBasicUniforms</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/80ae958/src/ShaderPhongMaterial.ts#L44">ShaderPhongMaterial.ts:44</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/4528b57/src/ShaderPhongMaterial.ts#L55">ShaderPhongMaterial.ts:55</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2073,14 +2080,14 @@
 							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
 								<a href="expansionmaterial.html#alphamap" class="tsd-kind-icon">alpha<wbr>Map</a>
 							</li>
-							<li class=" tsd-kind-accessor tsd-parent-kind-class">
-								<a href="expansionmaterial.html#amp" class="tsd-kind-icon">amp</a>
-							</li>
 							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
 								<a href="expansionmaterial.html#color" class="tsd-kind-icon">color</a>
 							</li>
 							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
 								<a href="expansionmaterial.html#emissive" class="tsd-kind-icon">emissive</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+								<a href="expansionmaterial.html#expansionstrength" class="tsd-kind-icon">expansion<wbr>Strength</a>
 							</li>
 							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="expansionmaterial.html#opacity" class="tsd-kind-icon">opacity</a>
@@ -2109,10 +2116,10 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 								<a href="expansionmaterial.html#initdefaultsetting" class="tsd-kind-icon">init<wbr>Default<wbr>Setting</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
 								<a href="expansionmaterial.html#initdefines" class="tsd-kind-icon">init<wbr>Defines</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 								<a href="expansionmaterial.html#inituniforms" class="tsd-kind-icon">init<wbr>Uniforms</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">

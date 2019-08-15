@@ -1,5 +1,9 @@
 import { ShaderMaterial, Color, AdditiveBlending, UniformsUtils, UniformsLib } from "three";
 import { MeshPhongChunk } from "./chunk/MeshPhongChunk";
+import { SurfaceNormalChunk } from "./chunk/SurfaceNormalChunk";
+import { ExpansionChunk } from "./chunk/ExpansionChunk";
+import VertexShader from "./ShaderPhongMaterial.vert.glsl";
+import FragmentShader from "./ShaderPhongMaterial.frag.glsl";
 /**
  * MeshPhongMaterialに準じるShaderMaterialクラス。
  *
@@ -16,6 +20,12 @@ export class ShaderPhongMaterial extends ShaderMaterial {
         super(parameters);
         if (parameters == null)
             parameters = {};
+        if (vertexShader == null) {
+            vertexShader = VertexShader();
+        }
+        if (fragmentShader == null) {
+            fragmentShader = FragmentShader();
+        }
         this.initChunks();
         this.initUniforms();
         this.initDefines();
@@ -45,7 +55,9 @@ export class ShaderPhongMaterial extends ShaderMaterial {
                 specular: { value: new Color(0x111111) },
                 shininess: { value: 30 },
                 hasAlphaMap: { value: false }
-            }
+            },
+            SurfaceNormalChunk.getUniform(),
+            ExpansionChunk.getUniform()
         ]);
     }
     /**
@@ -53,6 +65,8 @@ export class ShaderPhongMaterial extends ShaderMaterial {
      */
     initChunks() {
         MeshPhongChunk.registerChunk();
+        SurfaceNormalChunk.registerChunk();
+        ExpansionChunk.registerChunk();
     }
     /**
      * uniformsを初期化する。
@@ -60,6 +74,7 @@ export class ShaderPhongMaterial extends ShaderMaterial {
     initUniforms() {
         this.uniforms = UniformsUtils.merge([
             ShaderPhongMaterial.getBasicUniforms(),
+            ExpansionChunk.getUniform(),
             {}
         ]);
     }
@@ -67,7 +82,7 @@ export class ShaderPhongMaterial extends ShaderMaterial {
      * definesを初期化する。
      */
     initDefines() {
-        this.defines = Object.assign({}, MeshPhongChunk.getDefines(), this.defines);
+        this.defines = Object.assign({}, MeshPhongChunk.getDefines(), SurfaceNormalChunk.getDefines(), ExpansionChunk.getDefines(), this.defines);
     }
     /**
      * 1.オプションで指定されなかったパラメーター値を補完する。

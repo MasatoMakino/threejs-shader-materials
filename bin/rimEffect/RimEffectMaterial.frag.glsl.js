@@ -5,9 +5,17 @@ export default () => {
 #include <mesh_phong_uniform>
 varying vec2 uvPosition;
 
-varying vec3 vNml;
+#ifdef USE_SURFACE_NORMAL
+  varying vec3 surfaceNormal;
+#endif
+
 uniform vec3 rimColor;
-uniform float strength;
+uniform float rimStrength;
+uniform float rimPow;
+
+uniform vec3 insideColor;
+uniform float insideStrength;
+uniform float insidePow;
 
 #include <common>
 #include <packing>
@@ -40,8 +48,14 @@ void main() {
     #include <map_fragment>
     
     vec3 viewDir = normalize(vViewPosition);    
-    float glow = 1.0 - max(0.0, dot(vNml, viewDir));
-    diffuseColor.rgb += rimColor * glow * strength;
+    
+    float rimGlow = 1.0 - max(0.0, dot(surfaceNormal, viewDir));
+    rimGlow = pow( rimGlow, rimPow);
+    diffuseColor.rgb += rimColor * rimGlow * rimStrength;
+
+    float insideGlow = max(0.0, dot(surfaceNormal, viewDir));
+    insideGlow = pow( insideGlow, insidePow);
+    diffuseColor.rgb += insideColor * insideGlow * insideStrength;
 
     #include <color_fragment>
     #include <mesh_phong_switching_alpha_map>
@@ -59,7 +73,11 @@ void main() {
     #include <aomap_fragment>
     vec3 outgoingLight = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse + reflectedLight.directSpecular + reflectedLight.indirectSpecular + totalEmissiveRadiance;
     #include <envmap_fragment>
-    gl_FragColor = vec4( outgoingLight, diffuseColor.a );
+    #ifdef USE_LIGHT
+      gl_FragColor = vec4( outgoingLight, diffuseColor.a );
+    #else
+      gl_FragColor = diffuseColor;
+    #endif
     #include <tonemapping_fragment>
     #include <encodings_fragment>
     #include <fog_fragment>
