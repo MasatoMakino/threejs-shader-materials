@@ -10,7 +10,7 @@ import {
 import { MeshPhongChunk } from "./chunk/MeshPhongChunk";
 import { SurfaceNormalChunk } from "./chunk/SurfaceNormalChunk";
 import VertexShader from "./ShaderPhongMaterial.vert.glsl";
-
+import FragmentShader from "./ShaderPhongMaterial.frag.glsl";
 /**
  * MeshPhongMaterialに準じるShaderMaterialクラス。
  *
@@ -34,6 +34,9 @@ export class ShaderPhongMaterial extends ShaderMaterial {
 
     if (vertexShader == null) {
       vertexShader = VertexShader();
+    }
+    if (fragmentShader == null) {
+      fragmentShader = FragmentShader();
     }
 
     this.initChunks();

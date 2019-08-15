@@ -1,7 +1,6 @@
 import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
 import { ShaderMaterialParameters, UniformsUtils } from "three";
 
-import FragmentShader from "./ExpansionMaterial.frag.glsl";
 import VertexShader from "./ExpansionMaterial.vert.glsl";
 
 export class ExpansionMaterial extends ShaderPhongMaterial {
@@ -13,7 +12,7 @@ export class ExpansionMaterial extends ShaderPhongMaterial {
   }
 
   constructor(parameters?: ShaderMaterialParameters) {
-    super(VertexShader(), FragmentShader(), parameters);
+    super(VertexShader(), null, parameters);
   }
 
   protected initUniforms(): void {
