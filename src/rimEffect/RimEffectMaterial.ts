@@ -71,6 +71,7 @@ export class RimEffectMaterial extends ShaderPhongMaterial {
 
   protected initDefines(): void {
     super.initDefines();
+    this.defines.USE_LIGHT = true;
     this.defines.USE_SURFACE_NORMAL = true;
   }
 }

@@ -1,4 +1,11 @@
-import { TextureLoader } from "three";
+import {
+  TextureLoader,
+  NoBlending,
+  NormalBlending,
+  AdditiveBlending,
+  SubtractiveBlending,
+  MultiplyBlending
+} from "three";
 import { Directions } from "../bin";
 
 export class CommonGUI {
@@ -12,11 +19,12 @@ export class CommonGUI {
     return prop;
   }
 
-  static initMaterialGUI(gui, mat) {
-    const folder = gui.addFolder("Material");
+  static initMaterialGUI(gui, mat, folderName = "Material") {
+    const folder = gui.addFolder(folderName);
     this.initColorGUI(folder, mat);
     folder.add(mat, "transparent");
     folder.add(mat, "opacity", 0.0, 1.0);
+
     folder.open();
   }
 
@@ -74,6 +82,25 @@ export class CommonGUI {
     });
     animationFolder.add(mat, "raisedBottom", 0.0, 1.0);
     animationFolder.open();
+  }
+
+  static initRimGUI(gui, mat, folderName = "Rim Effect Material") {
+    const folder = gui.addFolder(folderName);
+    CommonGUI.initColorGUI(folder, mat, "rimColor");
+    folder.add(mat, "rimStrength", 0.0, 4.0).step(0.01);
+    folder.add(mat, "rimPow", 0.0, 4.0).step(0.01);
+
+    CommonGUI.initColorGUI(folder, mat, "insideColor");
+    folder.add(mat, "insideStrength", 0.0, 4.0).step(0.01);
+    folder.add(mat, "insidePow", 0.0, 8.0).step(0.01);
+    folder.open();
+  }
+
+  static initExpansionGUI(gui, mat, folderName = "ExpansionMaterial") {
+    const folder = gui.addFolder("ExpansionMaterial");
+    const ampRange = 12.0;
+    folder.add(mat, "expansionStrength", -ampRange, ampRange).step(0.01);
+    folder.open();
   }
 
   static initSkyGUI(gui, sky, sunSphere) {

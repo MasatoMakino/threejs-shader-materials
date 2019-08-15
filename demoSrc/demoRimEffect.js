@@ -62,19 +62,7 @@ export class Study {
   initGUI(mat) {
     const gui = new dat.GUI();
     CommonGUI.initMaterialGUI(gui, mat);
-    this.initGUIMaterial(gui, mat);
-  }
-
-  initGUIMaterial(gui, mat) {
-    const folder = gui.addFolder("Rim Effect Material");
-    CommonGUI.initColorGUI(folder, mat, "rimColor");
-    folder.add(mat, "rimStrength", 0.0, 4.0).step(0.01);
-    folder.add(mat, "rimPow", 0.0, 4.0).step(0.01);
-
-    CommonGUI.initColorGUI(folder, mat, "insideColor");
-    folder.add(mat, "insideStrength", 0.0, 4.0).step(0.01);
-    folder.add(mat, "insidePow", 0.0, 8.0).step(0.01);
-    folder.open();
+    CommonGUI.initRimGUI(gui, mat);
   }
 }
 

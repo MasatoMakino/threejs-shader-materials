@@ -1,8 +1,10 @@
 import {
+  AdditiveBlending,
   BufferGeometry,
   Color,
   Fog,
   Mesh,
+  MeshBasicMaterial,
   PointLight,
   PointLightHelper,
   TorusGeometry
@@ -12,6 +14,7 @@ import { ExpansionMaterial } from "../bin/expansion/ExpansionMaterial";
 import { ExplodeModifier } from "three/examples/jsm/modifiers/ExplodeModifier";
 import * as dat from "dat.gui";
 import { CommonGUI } from "./CommonGUI";
+import { OuterGlowMaterial } from "../bin/rimEffect/OuterGlowMaterial";
 
 export class Study {
   constructor() {
@@ -40,29 +43,39 @@ export class Study {
 
     const seg = 32;
     const geo = new TorusGeometry(10, 4, seg, seg);
-    const geoExp = new TorusGeometry(10, 4, seg, seg);
-    const modifier = new ExplodeModifier();
-    modifier.modify(geoExp);
 
-    const mat = new ExpansionMaterial({
+    const matBase = new MeshBasicMaterial({ color: 0xff0000 });
+
+    const matGlow = new OuterGlowMaterial({
       fog: scene.fog !== undefined
     });
-    mat.color = new Color(0xff0000);
+    matGlow.color = new Color(0x000000);
+    matGlow.rimStrength = 0.0;
+    matGlow.expansionStrength = 1.3;
+    matGlow.insidePow = 2.0;
+    matGlow.insideStrength = 2.0;
+    matGlow.insideColor = new Color(0x00ffff);
+    matGlow.depthWrite = false;
+    matGlow.blending = AdditiveBlending;
 
-    const mesh = new Mesh(geo, mat);
-    const meshExp = new Mesh(geoExp, mat);
+    const mesh = new Mesh(geo, matBase);
+    const meshGlow = new Mesh(geo, matGlow);
+    meshGlow.renderOrder = -1;
+
     mesh.position.x = -25;
-    meshExp.position.x = 25;
-    scene.add(mesh);
-    scene.add(meshExp);
+    meshGlow.position.x = -25;
 
-    return mat;
+    scene.add(mesh);
+    scene.add(meshGlow);
+
+    return matGlow;
   }
 
   initGUI(mat) {
     const gui = new dat.GUI();
     CommonGUI.initMaterialGUI(gui, mat);
     CommonGUI.initExpansionGUI(gui, mat);
+    CommonGUI.initRimGUI(gui, mat);
   }
 }
 
