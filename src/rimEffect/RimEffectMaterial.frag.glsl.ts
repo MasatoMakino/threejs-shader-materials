@@ -5,7 +5,9 @@ export default () => {
 #include <mesh_phong_uniform>
 varying vec2 uvPosition;
 
-varying vec3 vNml;
+#ifdef USE_SURFACE_NORMAL
+  varying vec3 surfaceNormal;
+#endif
 
 uniform vec3 rimColor;
 uniform float rimStrength;
@@ -47,11 +49,11 @@ void main() {
     
     vec3 viewDir = normalize(vViewPosition);    
     
-    float rimGlow = 1.0 - max(0.0, dot(vNml, viewDir));
+    float rimGlow = 1.0 - max(0.0, dot(surfaceNormal, viewDir));
     rimGlow = pow( rimGlow, rimPow);
     diffuseColor.rgb += rimColor * rimGlow * rimStrength;
 
-    float insideGlow = max(0.0, dot(vNml, viewDir));
+    float insideGlow = max(0.0, dot(surfaceNormal, viewDir));
     insideGlow = pow( insideGlow, insidePow);
     diffuseColor.rgb += insideColor * insideGlow * insideStrength;
 

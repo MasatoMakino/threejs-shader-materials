@@ -8,6 +8,8 @@ import {
   ShaderMaterialParameters
 } from "three";
 import { MeshPhongChunk } from "./chunk/MeshPhongChunk";
+import { SurfaceNormalChunk } from "./chunk/SurfaceNormalChunk";
+import VertexShader from "./ShaderPhongMaterial.vert.glsl";
 
 /**
  * MeshPhongMaterialに準じるShaderMaterialクラス。
@@ -29,6 +31,10 @@ export class ShaderPhongMaterial extends ShaderMaterial {
   ) {
     super(parameters);
     if (parameters == null) parameters = {};
+
+    if (vertexShader == null) {
+      vertexShader = VertexShader();
+    }
 
     this.initChunks();
     this.initUniforms();
@@ -60,7 +66,8 @@ export class ShaderPhongMaterial extends ShaderMaterial {
         specular: { value: new Color(0x111111) },
         shininess: { value: 30 },
         hasAlphaMap: { value: false }
-      }
+      },
+      SurfaceNormalChunk.getUniform()
     ]);
   }
 
@@ -69,6 +76,7 @@ export class ShaderPhongMaterial extends ShaderMaterial {
    */
   protected initChunks(): void {
     MeshPhongChunk.registerChunk();
+    SurfaceNormalChunk.registerChunk();
   }
 
   /**
@@ -85,7 +93,12 @@ export class ShaderPhongMaterial extends ShaderMaterial {
    * definesを初期化する。
    */
   protected initDefines(): void {
-    this.defines = Object.assign({}, MeshPhongChunk.getDefines(), this.defines);
+    this.defines = Object.assign(
+      {},
+      MeshPhongChunk.getDefines(),
+      SurfaceNormalChunk.getDefines(),
+      this.defines
+    );
   }
 
   /**

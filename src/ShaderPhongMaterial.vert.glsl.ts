@@ -10,10 +10,10 @@ varying vec2 uvPosition;
 #include <mesh_position_varying>
 
 #ifndef FLAT_SHADED
-
-varying vec3 vNormal;
-
+  varying vec3 vNormal;
 #endif
+
+#include <surface_normal_varying_chunk>
 
 #include <common>
 #include <uv_pars_vertex>
@@ -43,10 +43,9 @@ void main() {
     #include <defaultnormal_vertex>
 
     #ifndef FLAT_SHADED // Normal computed with derivatives when FLAT_SHADED
-
-    vNormal = normalize( transformedNormal );
-
+      vNormal = normalize( transformedNormal );
     #endif
+    #include <surface_normal_vertex_chunk>
 
     #include <begin_vertex>
     #include <morphtarget_vertex>

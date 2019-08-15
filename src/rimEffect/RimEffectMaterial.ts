@@ -1,6 +1,5 @@
 import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
 import { ShaderMaterialParameters } from "three";
-import VertexShader from "./RimEffectMaterial.vert.glsl";
 import FragmentShader from "./RimEffectMaterial.frag.glsl";
 import { UniformsUtils } from "three";
 import { Color } from "three";
@@ -53,7 +52,7 @@ export class RimEffectMaterial extends ShaderPhongMaterial {
    * @param parameters
    */
   constructor(parameters?: ShaderMaterialParameters) {
-    super(VertexShader(), FragmentShader(), parameters);
+    super(null, FragmentShader(), parameters);
   }
 
   protected initUniforms(): void {
@@ -68,5 +67,10 @@ export class RimEffectMaterial extends ShaderPhongMaterial {
         insidePow: { value: 1.0 }
       }
     ]);
+  }
+
+  protected initDefines(): void {
+    super.initDefines();
+    this.defines.USE_SURFACE_NORMAL = true;
   }
 }
