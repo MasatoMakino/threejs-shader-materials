@@ -8,8 +8,8 @@ import {
   PointLightHelper,
   SphereGeometry
 } from "three";
-import { FBMFireMaterial } from "../bin/";
 import { CommonGUI } from "./CommonGUI";
+import { ExpansionDissolveMaterial } from "../bin/expansionDissolve/ExpansionDissolveMaterial";
 
 export class Study {
   constructor() {
@@ -36,20 +36,16 @@ export class Study {
     const helper = new PointLightHelper(spot);
     scene.add(helper);
 
-    const geo = new SphereGeometry(30, 32, 32);
+    const seg = 64;
+    const geo = new SphereGeometry(30, seg, seg);
 
-    const mat = new FBMFireMaterial({
+    const mat = new ExpansionDissolveMaterial({
       fog: scene.fog !== undefined
     });
-    mat.color = new Color(0xcc3300);
-    mat.tiles = 1;
-    mat.hashLoop = 4.0;
-    mat.amp = 1.0;
-    mat.rimPow = 2.0;
-    mat.speed = -2.0;
-
+    mat.color = new Color(0x334466);
+    mat.tiles = 2;
     const mesh = new Mesh(geo, mat);
-    mesh.scale.set(0.5, 1.0, 0.5);
+
     scene.add(mesh);
 
     return mat;
@@ -59,23 +55,16 @@ export class Study {
     const gui = new dat.GUI();
     CommonGUI.initMaterialGUI(gui, mat);
     CommonGUI.initFBMTilingGUI(gui, mat);
-    this.initGUIFireMaterial(gui, mat);
-    this.initRimSetting(gui, mat);
+    this.initGUIMaterial(gui, mat);
   }
 
-  initGUIFireMaterial(gui, mat) {
-    const folder = gui.addFolder("FBM Animation");
-
-    folder.add(mat, "strength", 0.0, 1.0).step(0.01);
-    folder.add(mat, "bloom", 0.0, 1.0).step(0.01);
-    folder.add(mat, "speed", -8.0, 8.0).step(0.01);
-    folder.open();
-  }
-
-  initRimSetting(gui, mat) {
-    const folder = gui.addFolder("Rim");
-    folder.add(mat, "rimStrength", 0.0, 8.0).step(0.01);
-    folder.add(mat, "rimPow", 0.0, 8.0).step(0.01);
+  initGUIMaterial(gui, mat) {
+    const folder = gui.addFolder("Expansion");
+    folder.add(mat, "scaleMax", 0.0, 45.0).step(0.1);
+    folder.add(mat, "time", 0.0, 0.1).step(0.001);
+    folder.add(mat, "progress", 0.0, 1.0).step(0.01);
+    // folder.add(mat, "hashLoop", 1.0, 16.0).step(1.0);
+    // folder.add(mat, "amp", 0.0, 6.0).step(0.01);
     folder.open();
   }
 }

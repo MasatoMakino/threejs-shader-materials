@@ -103,6 +103,14 @@ export class CommonGUI {
     folder.open();
   }
 
+  static initFBMTilingGUI(gui, mat, folderName = "FBM Tiling") {
+    const folder = gui.addFolder("FBM Tiling");
+    folder.add(mat, "tiles", 1.0, 8.0).step(1.0);
+    folder.add(mat, "hashLoop", 2.0, 16.0).step(1.0);
+    folder.add(mat, "amp", 0.0, 2.0).step(0.01);
+    folder.open();
+  }
+
   static initSkyGUI(gui, sky, sunSphere) {
     const effectController = {
       turbidity: 10,
