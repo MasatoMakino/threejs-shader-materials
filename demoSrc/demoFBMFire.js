@@ -8,10 +8,7 @@ import {
   PointLightHelper,
   SphereGeometry
 } from "three";
-import { HalftoneGridMaterial } from "../bin/halftoneGrid/HalftoneGridMaterial";
-import { Directions } from "../bin/chunk/WavyAnimationChunk";
-import { FBMDissolveMaterial } from "../bin/fbmDissolve/FBMDissolveMaterial";
-import { FBMFireMaterial } from "../bin/fbmFire/FBMFireMaterial";
+import { FBMFireMaterial } from "../bin/";
 import { CommonGUI } from "./CommonGUI";
 
 export class Study {
@@ -44,10 +41,12 @@ export class Study {
     const mat = new FBMFireMaterial({
       fog: scene.fog !== undefined
     });
-    mat.color = new Color(0xff00cc);
+    mat.color = new Color(0xcc3300);
     mat.tiles = 1;
-    mat.hashLoop = 5.0;
+    mat.hashLoop = 4.0;
     mat.amp = 1.0;
+    mat.rimPow = 2.0;
+    mat.speed = -2.0;
 
     const mesh = new Mesh(geo, mat);
     mesh.scale.set(0.5, 1.0, 0.5);
@@ -61,12 +60,13 @@ export class Study {
     CommonGUI.initMaterialGUI(gui, mat);
     this.initGUIMaterial(gui, mat);
     this.initGUIFireMaterial(gui, mat);
+    this.initRimSetting(gui, mat);
   }
 
   initGUIMaterial(gui, mat) {
     const folder = gui.addFolder("FBM Tiling");
     folder.add(mat, "tiles", 1.0, 8.0).step(1.0);
-    folder.add(mat, "hashLoop", 2.0, 16.0).step(2.0);
+    folder.add(mat, "hashLoop", 2.0, 16.0).step(1.0);
     folder.add(mat, "amp", 0.0, 2.0).step(0.01);
     folder.open();
   }
@@ -77,6 +77,14 @@ export class Study {
     folder.add(mat, "strength", 0.0, 1.0).step(0.01);
     folder.add(mat, "bloom", 0.0, 1.0).step(0.01);
     folder.add(mat, "speed", -8.0, 8.0).step(0.01);
+    folder.open();
+  }
+
+  initRimSetting(gui, mat) {
+    const folder = gui.addFolder("Rim");
+
+    folder.add(mat, "rimStrength", 0.0, 8.0).step(0.01);
+    folder.add(mat, "rimPow", 0.0, 8.0).step(0.01);
     folder.open();
   }
 }

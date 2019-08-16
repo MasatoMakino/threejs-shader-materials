@@ -79,6 +79,20 @@ export class FBMFireMaterial extends ShaderPhongMaterial
     this.uniforms.transformSpeed.value = value;
   }
 
+  get rimPow(): number {
+    return this.uniforms.rimPow.value;
+  }
+  set rimPow(value: number) {
+    this.uniforms.rimPow.value = value;
+  }
+
+  get rimStrength(): number {
+    return this.uniforms.rimStrength.value;
+  }
+  set rimStrength(value: number) {
+    this.uniforms.rimStrength.value = value;
+  }
+
   /**
    *
    * @param parameters
@@ -94,7 +108,9 @@ export class FBMFireMaterial extends ShaderPhongMaterial
       AnimationChunk.getUniform(),
       {
         strength: { value: 0.45 },
-        bloom: { value: 0.1 }
+        bloom: { value: 0.1 },
+        rimStrength: { value: 1.0 },
+        rimPow: { value: 1.0 }
       }
     ]);
   }
@@ -108,6 +124,7 @@ export class FBMFireMaterial extends ShaderPhongMaterial
   protected initDefines(): void {
     super.initDefines();
     this.defines = Object.assign({}, TilingFBMChunk.getDefines(), this.defines);
+    this.defines.USE_SURFACE_NORMAL = true;
   }
 
   protected initDefaultSetting(parameters?: ShaderMaterialParameters): void {

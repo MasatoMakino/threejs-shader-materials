@@ -13,6 +13,12 @@ varying vec2 uvPosition;
 uniform float strength;
 uniform float bloom;
 
+#ifdef USE_SURFACE_NORMAL
+  varying vec3 surfaceNormal;
+#endif
+uniform float rimStrength;
+uniform float rimPow;
+
 #include <common>
 #include <packing>
 #include <dithering_pars_fragment>
@@ -57,6 +63,12 @@ void main()
     float fbmVal = fbm(uv + q);
     fbmVal += 1.0-(uVy * 1.0 );
     fbmVal *= 1.0-uVy;
+    
+    vec3 viewDir = normalize(vViewPosition);    
+    float rimGlow = 1.0 - max(0.0, dot(surfaceNormal, viewDir));
+    rimGlow = pow(rimGlow, rimPow) * rimStrength;
+    rimGlow = clamp( rimGlow, 0.0, 1.0);
+    fbmVal *= 1.0-rimGlow;
     
     vec3 color = diffuseColor.rgb;
     
