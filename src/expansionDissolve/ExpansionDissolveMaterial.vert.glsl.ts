@@ -57,20 +57,21 @@ void main() {
 
     #include <begin_vertex>
     
-    uvPosition.x = (
-         uvPosition.y > 0.99 
-      || uvPosition.y < 0.01
+    vec2 uvFBM = uvPosition;
+    uvFBM.x = (
+         uvFBM.y > 0.99 
+      || uvFBM.y < 0.01
     ) 
       ? 0.5
-      : uvPosition.x;
+      : uvFBM.x;
         
     vec2 q = vec2(0.0);
-    q.x = fbm( uvPosition + vec2(1.7,9.2) +.16  * time );
-    q.y = fbm( uvPosition + vec2(8.3,2.8) +.356 * time );
+    q.x = fbm( uvFBM + vec2(1.7,9.2) +.16  * time );
+    q.y = fbm( uvFBM + vec2(8.3,2.8) +.356 * time );
 
     float bottom = clamp(progress-0.5, 0.0, 0.5) *2.0;
     
-    vec2 pos = uvPosition * tiles;
+    vec2 pos = uvFBM * tiles;
     float noise = fbm( pos + q ) * progress;
     vFbm = clamp( noise + bottom, 0.0, 1.0);
     vec3 vExpansion = normal * vFbm * scaleMax;

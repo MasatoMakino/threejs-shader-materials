@@ -50,6 +50,9 @@ export class Study {
     mat.hashLoop = 3.0;
     mat.amp = 1.35;
 
+    const loader = new TextureLoader();
+    mat.map = loader.load("./textures/landmask.png");
+
     const mesh = new Mesh(geo, mat);
     scene.add(mesh);
 
