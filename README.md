@@ -28,6 +28,8 @@ Collection of shader materials for three.js
 
 [OuterGlowMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/outerGlow.html)
 
+[ExpansionDissolveMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/expansionDissolve.html)
+
 [SpriteCloudMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/spriteCloud)
 
 ## Getting Started

@@ -22,6 +22,8 @@ export declare class FBMFireMaterial extends ShaderPhongMaterial implements ITil
     strength: number;
     bloom: number;
     transformSpeed: number;
+    rimPow: number;
+    rimStrength: number;
     /**
      *
      * @param parameters

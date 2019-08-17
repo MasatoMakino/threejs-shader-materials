@@ -22,4 +22,5 @@ export * from "./rimEffect/RimEffectMaterial";
 export * from "./rimEffect/OuterGlowMaterial";
 export * from "./expansion/ExpansionMaterial";
 export * from "./spriteCloud/SpriteCloudMaterial";
+export * from "./expansionDissolve/ExpansionDissolveMaterial";
 //# sourceMappingURL=index.d.ts.map
