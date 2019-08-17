@@ -12,7 +12,7 @@ Collection of shader materials for three.js
 
 [SquareGrid](https://masatomakino.github.io/threejs-shader-materials/demo/squareGrid.html)
 
-[CrossGrid](https://masatomakino.github.io/threejs-shader-materials/demo/crossGrid.html)
+[CrossGrid](https://masatomakino.github.io/threejs-shader-materials/demo/cross_grid.html)
 
 [ContourMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/contour.html)
 
@@ -28,7 +28,7 @@ Collection of shader materials for three.js
 
 [OuterGlowMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/outerGlow.html)
 
-[ExpansionDissolveMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/expansionDissolve.html)
+[ExpansionDissolveMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/expansion_dissolve.html)
 
 [SpriteCloudMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/spriteCloud)
 
