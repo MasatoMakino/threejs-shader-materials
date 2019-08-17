@@ -19,6 +19,7 @@ varying vec2 uvPosition;
 uniform float scaleMax;
 uniform float time;
 uniform float progress;
+varying float vFbm;
 
 #include <common>
 #include <uv_pars_vertex>
@@ -71,7 +72,7 @@ void main() {
     
     vec2 pos = uvPosition * tiles;
     float noise = fbm( pos + q ) * progress;
-    float vFbm = clamp( noise + bottom, 0.0, 1.0);
+    vFbm = clamp( noise + bottom, 0.0, 1.0);
     vec3 vExpansion = normal * vFbm * scaleMax;
     transformed += vExpansion;
     

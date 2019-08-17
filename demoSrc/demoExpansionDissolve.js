@@ -6,7 +6,8 @@ import {
   Mesh,
   PointLight,
   PointLightHelper,
-  SphereGeometry
+  SphereGeometry,
+  TextureLoader
 } from "three";
 import { CommonGUI } from "./CommonGUI";
 import { ExpansionDissolveMaterial } from "../bin/expansionDissolve/ExpansionDissolveMaterial";
@@ -24,7 +25,9 @@ export class Study {
     const control = Common.initControl(camera, renderer);
     Common.initHelper(scene);
     const mat = this.initObject(scene);
-    Common.render(control, renderer, scene, camera);
+    Common.render(control, renderer, scene, camera, () => {
+      mat.addTime(0.016);
+    });
 
     this.initGUI(mat);
   }
@@ -44,8 +47,10 @@ export class Study {
     });
     mat.color = new Color(0x334466);
     mat.tiles = 2;
-    const mesh = new Mesh(geo, mat);
+    mat.hashLoop = 3.0;
+    mat.amp = 1.35;
 
+    const mesh = new Mesh(geo, mat);
     scene.add(mesh);
 
     return mat;
@@ -56,15 +61,16 @@ export class Study {
     CommonGUI.initMaterialGUI(gui, mat);
     CommonGUI.initFBMTilingGUI(gui, mat);
     this.initGUIMaterial(gui, mat);
+    CommonGUI.initAnimationGUI(gui, mat);
   }
 
   initGUIMaterial(gui, mat) {
     const folder = gui.addFolder("Expansion");
     folder.add(mat, "scaleMax", 0.0, 45.0).step(0.1);
-    folder.add(mat, "time", 0.0, 0.1).step(0.001);
     folder.add(mat, "progress", 0.0, 1.0).step(0.01);
-    // folder.add(mat, "hashLoop", 1.0, 16.0).step(1.0);
-    // folder.add(mat, "amp", 0.0, 6.0).step(0.01);
+    CommonGUI.initColorGUI(folder, mat, "dissolveColor");
+    CommonGUI.initColorGUI(folder, mat, "dissolveOutColor");
+
     folder.open();
   }
 }

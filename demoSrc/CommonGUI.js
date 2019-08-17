@@ -70,7 +70,10 @@ export class CommonGUI {
 
     folder.open();
 
+    this.initAnimationGUI(folder, mat);
+
     const animationFolder = folder.addFolder("WavyAnimation");
+
     animationFolder.add(mat, "isAnimate");
     animationFolder.add(mat, "speed", -2, 2);
     animationFolder.add(mat, "waveFrequency", 0.0, 1.0);
@@ -82,6 +85,13 @@ export class CommonGUI {
     });
     animationFolder.add(mat, "raisedBottom", 0.0, 1.0);
     animationFolder.open();
+  }
+
+  static initAnimationGUI(gui, mat, folderName = "Animation") {
+    const folder = gui.addFolder(folderName);
+    folder.add(mat, "isAnimate");
+    folder.add(mat, "speed", -2, 2);
+    folder.open();
   }
 
   static initRimGUI(gui, mat, folderName = "Rim Effect Material") {

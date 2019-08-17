@@ -1,11 +1,28 @@
-import { UniformsUtils, ShaderMaterialParameters } from "three";
-import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
-import { ITiledFBM, TilingFBMChunk } from "../chunk/TilingFBMChunk";
+import { UniformsUtils, ShaderMaterialParameters, Color } from "three";
+import { ShaderPhongMaterial } from "../index";
+import { ITiledFBM, TilingFBMChunk } from "../index";
 
 import VertexShader from "./ExpansionDissolveMaterial.vert.glsl";
+import FragmentShader from "./ExpansionDissolveMaterial.frag.glsl";
+import { IAnimatable, AnimationChunk } from "../index";
 
+/**
+ * FBMノイズによるジオメトリの膨張でディゾルブを行うマテリアル。
+ * 爆発しながら消滅するような表現になる。
+ * 膨張の進行度合いはprogressで制御する。
+ */
 export class ExpansionDissolveMaterial extends ShaderPhongMaterial
-  implements ITiledFBM {
+  implements ITiledFBM, IAnimatable {
+  // IAnimatable //
+  speed: number = -0.5;
+  addTime(delta: number): void {
+    if (this.isAnimate) {
+      AnimationChunk.addTime(this, delta);
+    }
+  }
+  public isAnimate = true;
+
+  // ITiledFBM //
   get tiles(): number {
     return this.uniforms.tiles.value;
   }
@@ -45,12 +62,25 @@ export class ExpansionDissolveMaterial extends ShaderPhongMaterial
   set progress(value: number) {
     this.uniforms.progress.value = value;
   }
+
+  get dissolveColor(): Color {
+    return this.uniforms.dissolveColor.value;
+  }
+  set dissolveColor(value: Color) {
+    this.uniforms.dissolveColor.value = value;
+  }
+  get dissolveOutColor(): Color {
+    return this.uniforms.dissolveOutColor.value;
+  }
+  set dissolveOutColor(value: Color) {
+    this.uniforms.dissolveOutColor.value = value;
+  }
   /**
    *
    * @param parameters
    */
   constructor(parameters?: ShaderMaterialParameters) {
-    super(VertexShader(), null, parameters);
+    super(VertexShader(), FragmentShader(), parameters);
   }
 
   protected initUniforms(): void {
@@ -58,11 +88,11 @@ export class ExpansionDissolveMaterial extends ShaderPhongMaterial
       ShaderPhongMaterial.getBasicUniforms(),
       TilingFBMChunk.getUniform(),
       {
-        scaleMax: { value: 10.0 },
+        scaleMax: { value: 20.0 },
         time: { value: 0.0 },
-        progress: { value: 0.0 }
-        // edgeWeight: { value: 0.1 },
-        // edgeColor: { value: new Color(1.0, 1.0, 1.0) }
+        progress: { value: 0.0 },
+        dissolveColor: { value: new Color(1.0, 1.0, 1.0) },
+        dissolveOutColor: { value: new Color(0.0, 0.0, 0.0) }
       }
     ]);
   }
