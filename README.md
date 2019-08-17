@@ -6,29 +6,29 @@ Collection of shader materials for three.js
 
 ## Demo
 
-[HexGrid](https://masatomakino.github.io/threejs-shader-materials/demo/hexGrid.html)
+[HexGrid](https://masatomakino.github.io/threejs-shader-materials/demo/hexGrid)
 
-[HalftoneGrid](https://masatomakino.github.io/threejs-shader-materials/demo/halftoneGrid.html)
+[HalftoneGrid](https://masatomakino.github.io/threejs-shader-materials/demo/halftoneGrid)
 
-[SquareGrid](https://masatomakino.github.io/threejs-shader-materials/demo/squareGrid.html)
+[SquareGrid](https://masatomakino.github.io/threejs-shader-materials/demo/squareGrid)
 
-[CrossGrid](https://masatomakino.github.io/threejs-shader-materials/demo/cross_grid.html)
+[CrossGrid](https://masatomakino.github.io/threejs-shader-materials/demo/cross_grid)
 
-[ContourMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/contour.html)
+[ContourMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/contour)
 
-[SkyCloudMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/skyCloud.html)
+[SkyCloudMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/skyCloud)
 
-[FBMDissolveMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/fbmDissolve.html)
+[FBMDissolveMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/fbmDissolve)
 
-[FBMFireMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/fbmFire.html)
+[FBMFireMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/fbmFire)
 
 [RimEffectMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/rimEffect)
 
-[ExpansionMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/expansion.html)
+[ExpansionMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/expansion)
 
-[OuterGlowMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/outerGlow.html)
+[OuterGlowMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/outerGlow)
 
-[ExpansionDissolveMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/expansion_dissolve.html)
+[ExpansionDissolveMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/expansion_dissolve)
 
 [SpriteCloudMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/spriteCloud)
 
