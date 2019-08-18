@@ -13,7 +13,7 @@ const { bundleDevelopment, watchBundle } = require("gulptask-webpack")(
 );
 exports.bundleDevelopment = bundleDevelopment;
 
-const { tsc, tscClean, watchTsc } = require("gulptask-tsc")();
+const { tsc, tscClean, watchTsc } = require("gulptask-tsc").get();
 
 const watchTasks = cb => {
   watchBundle();
