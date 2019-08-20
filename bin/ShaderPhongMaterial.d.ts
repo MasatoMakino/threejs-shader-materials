@@ -1,10 +1,11 @@
 import { ShaderMaterial, Color, Texture, ShaderMaterialParameters } from "three";
+import { IMap } from "./chunk/MapChunk";
 /**
  * MeshPhongMaterialに準じるShaderMaterialクラス。
  *
  * @see https://github.com/mrdoob/three.js/blob/76c64b23d422dcfb36a28353f45b1effa1f68c5a/src/renderers/shaders/ShaderLib.js#L53
  */
-export declare class ShaderPhongMaterial extends ShaderMaterial {
+export declare class ShaderPhongMaterial extends ShaderMaterial implements IMap {
     /**
      * コンストラクタ。
      * @param vertexShader
@@ -51,6 +52,7 @@ export declare class ShaderPhongMaterial extends ShaderMaterial {
     opacity: number;
     protected _opacity: number;
     emissive: Color;
+    map: Texture;
     alphaMap: Texture;
     /**
      * 発光状態のために、マテリアルの設定をまとめて変更する。

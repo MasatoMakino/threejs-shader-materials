@@ -2,6 +2,7 @@ import { ShaderMaterial, Color, AdditiveBlending, UniformsUtils, UniformsLib } f
 import { MeshPhongChunk } from "./chunk/MeshPhongChunk";
 import { SurfaceNormalChunk } from "./chunk/SurfaceNormalChunk";
 import { ExpansionChunk } from "./chunk/ExpansionChunk";
+import { MapChunk } from "./chunk/MapChunk";
 import VertexShader from "./ShaderPhongMaterial.vert.glsl";
 import FragmentShader from "./ShaderPhongMaterial.frag.glsl";
 /**
@@ -57,7 +58,8 @@ export class ShaderPhongMaterial extends ShaderMaterial {
                 hasAlphaMap: { value: false }
             },
             SurfaceNormalChunk.getUniform(),
-            ExpansionChunk.getUniform()
+            ExpansionChunk.getUniform(),
+            MapChunk.getUniform()
         ]);
     }
     /**
@@ -67,6 +69,7 @@ export class ShaderPhongMaterial extends ShaderMaterial {
         MeshPhongChunk.registerChunk();
         SurfaceNormalChunk.registerChunk();
         ExpansionChunk.registerChunk();
+        MapChunk.registerChunk();
     }
     /**
      * uniformsを初期化する。
@@ -126,6 +129,12 @@ export class ShaderPhongMaterial extends ShaderMaterial {
     }
     set emissive(value) {
         this.uniforms.emissive.value = value;
+    }
+    get map() {
+        return MapChunk.getMap(this);
+    }
+    set map(val) {
+        MapChunk.setMap(this, val);
     }
     get alphaMap() {
         return this.uniforms.alphaMap.value;

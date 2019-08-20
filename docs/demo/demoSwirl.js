@@ -510,7 +510,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*!**********************!*\
   !*** ./bin/index.js ***!
   \**********************/
-/*! exports provided: ShaderPhongMaterial, ShaderSpriteMaterial, AnimationChunk, GLSLChunk, MaskMapChunk, MeshPhongChunk, RepeatPatternChunk, ReversibleChunk, WavyAnimationChunk, Directions, TilingFBMChunk, SurfaceNormalChunk, SurfaceNormalVaryingChunk, SurfaceNormalVertexChunk, ExpansionChunk, ExpansionUniformChunk, ExpansionVertexChunk, ContourMaterial, CrossGridMaterial, HalftoneGridMaterial, HexGridMaterial, SquareGridMaterial, SkyCloudMaterial, FBMDissolveMaterial, FBMFireMaterial, RimEffectMaterial, OuterGlowMaterial, ExpansionMaterial, SpriteCloudMaterial, ExpansionDissolveMaterial, SwirlMaterial */
+/*! exports provided: WavyAnimationChunk, Directions, ContourMaterial, CrossGridMaterial, HalftoneGridMaterial, FBMDissolveMaterial, OuterGlowMaterial, ExpansionMaterial, ExpansionDissolveMaterial, ShaderPhongMaterial, ShaderSpriteMaterial, AnimationChunk, GLSLChunk, MaskMapChunk, MeshPhongChunk, RepeatPatternChunk, ReversibleChunk, TilingFBMChunk, SurfaceNormalChunk, SurfaceNormalVaryingChunk, SurfaceNormalVertexChunk, ExpansionChunk, ExpansionUniformChunk, ExpansionVertexChunk, HexGridMaterial, SquareGridMaterial, SkyCloudMaterial, FBMFireMaterial, RimEffectMaterial, SpriteCloudMaterial, SwirlMaterial */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

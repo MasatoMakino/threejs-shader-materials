@@ -4,7 +4,6 @@ import { TilingFBMChunk } from "../index";
 import VertexShader from "./ExpansionDissolveMaterial.vert.glsl";
 import FragmentShader from "./ExpansionDissolveMaterial.frag.glsl";
 import { AnimationChunk } from "../index";
-import { MapChunk } from "../chunk/MapChunk";
 /**
  * FBMノイズによるジオメトリの膨張でディゾルブを行うマテリアル。
  * 爆発しながら消滅するような表現になる。
@@ -20,13 +19,6 @@ export class ExpansionDissolveMaterial extends ShaderPhongMaterial {
         // IAnimatable //
         this.speed = -0.5;
         this.isAnimate = true;
-    }
-    // IMap //
-    get map() {
-        return MapChunk.getMap(this);
-    }
-    set map(val) {
-        MapChunk.setMap(this, val);
     }
     addTime(delta) {
         if (this.isAnimate) {
@@ -86,7 +78,6 @@ export class ExpansionDissolveMaterial extends ShaderPhongMaterial {
         this.uniforms = UniformsUtils.merge([
             ShaderPhongMaterial.getBasicUniforms(),
             TilingFBMChunk.getUniform(),
-            MapChunk.getUniform(),
             {
                 scaleMax: { value: 20.0 },
                 time: { value: 0.0 },
@@ -99,7 +90,6 @@ export class ExpansionDissolveMaterial extends ShaderPhongMaterial {
     initChunks() {
         super.initChunks();
         TilingFBMChunk.registerChunk();
-        MapChunk.registerChunk();
     }
     initDefines() {
         super.initDefines();

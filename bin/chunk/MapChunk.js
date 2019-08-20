@@ -9,6 +9,7 @@ export class MapChunk extends GLSLChunk {
         super.registerChunk();
         MapUniformChunk.registerChunk();
         MapFragmentChunk.registerChunk();
+        MapFragmentBeginChunk.registerChunk();
     }
     static getUniform() {
         return UniformsUtils.merge([
@@ -45,10 +46,20 @@ class MapFragmentChunk extends GLSLChunk {
     static getChunk() {
         return `
       if( hasMap ){
-        vec4 texelColor = texture2D( map, uvPosition );
+        vec4 texelColor = texture2D( map, uv );
         texelColor = mapTexelToLinear( texelColor );
         diffuseColor *= texelColor;
       }
+    `;
+    }
+}
+class MapFragmentBeginChunk extends GLSLChunk {
+    static getChunkName() {
+        return "map_fragment_begin_chunk";
+    }
+    static getChunk() {
+        return `
+      vec2 uv = uvPosition;
     `;
     }
 }

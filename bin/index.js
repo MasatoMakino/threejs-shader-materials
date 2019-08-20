@@ -23,3 +23,4 @@ export * from "./rimEffect/OuterGlowMaterial";
 export * from "./expansion/ExpansionMaterial";
 export * from "./spriteCloud/SpriteCloudMaterial";
 export * from "./expansionDissolve/ExpansionDissolveMaterial";
+export * from "./swirl/SwirlMaterial";
