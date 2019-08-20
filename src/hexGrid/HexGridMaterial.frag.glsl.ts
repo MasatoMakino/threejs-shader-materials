@@ -70,7 +70,7 @@ void main() {
     #include <clipping_planes_fragment>
     #include <mesh_phong_diffuse_color>
     #include <logdepthbuf_fragment>
-    #include <map_fragment>
+    //#include <map_fragment>
     #include <color_fragment>
 
     #include <repeat_pattern_fragment_chunk>    

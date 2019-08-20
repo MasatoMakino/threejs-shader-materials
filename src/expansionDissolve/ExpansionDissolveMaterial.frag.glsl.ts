@@ -45,9 +45,8 @@ void main() {
     #include <clipping_planes_fragment>
     #include <mesh_phong_diffuse_color>
     #include <logdepthbuf_fragment>
-    
+    #include <map_fragment_begin_chunk>
     #include <map_fragment_chunk>
-    
     #include <color_fragment>
     
     diffuseColor.rgb += dissolveColor.rgb * sin(progress*PI);

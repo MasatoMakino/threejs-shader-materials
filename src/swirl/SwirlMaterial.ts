@@ -1,6 +1,8 @@
 import { ShaderPhongMaterial, IAnimatable, AnimationChunk } from "../index";
 import { Vector2, ShaderMaterialParameters, UniformsUtils } from "three";
 import FragmentShader from "./SwirlMaterial.frag.glsl";
+import { Texture } from "three";
+import { RepeatWrapping } from "three";
 
 export class SwirlMaterial extends ShaderPhongMaterial implements IAnimatable {
   /*
@@ -11,6 +13,25 @@ export class SwirlMaterial extends ShaderPhongMaterial implements IAnimatable {
   addTime(delta: number): void {
     if (this.isAnimate) {
       AnimationChunk.addTime(this, delta);
+    }
+  }
+
+  set map(val: Texture) {
+    super.map = val;
+    this.setRepeat(val);
+  }
+  set alphaMap(value: Texture) {
+    super.alphaMap = value;
+    this.setRepeat(value);
+  }
+  /**
+   * リピートモードは強制的にRepeatWrappingに
+   * @param value
+   */
+  private setRepeat(value: Texture) {
+    if (value) {
+      value.wrapS = RepeatWrapping;
+      value.wrapT = RepeatWrapping;
     }
   }
 

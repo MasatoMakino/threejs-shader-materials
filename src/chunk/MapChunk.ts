@@ -21,6 +21,7 @@ export class MapChunk extends GLSLChunk {
     super.registerChunk();
     MapUniformChunk.registerChunk();
     MapFragmentChunk.registerChunk();
+    MapFragmentBeginChunk.registerChunk();
   }
 
   public static getUniform(): any {
@@ -63,10 +64,22 @@ class MapFragmentChunk extends GLSLChunk {
   protected static getChunk(): string {
     return `
       if( hasMap ){
-        vec4 texelColor = texture2D( map, uvPosition );
+        vec4 texelColor = texture2D( map, uv );
         texelColor = mapTexelToLinear( texelColor );
         diffuseColor *= texelColor;
       }
+    `;
+  }
+}
+
+class MapFragmentBeginChunk extends GLSLChunk {
+  protected static getChunkName(): string {
+    return "map_fragment_begin_chunk";
+  }
+
+  protected static getChunk(): string {
+    return `
+      vec2 uv = uvPosition;
     `;
   }
 }
