@@ -5,9 +5,6 @@ import { ITiledFBM, TilingFBMChunk } from "../index";
 import VertexShader from "./ExpansionDissolveMaterial.vert.glsl";
 import FragmentShader from "./ExpansionDissolveMaterial.frag.glsl";
 import { IAnimatable, AnimationChunk } from "../index";
-import { IMap } from "../chunk/MapChunk";
-import { MapChunk } from "../chunk/MapChunk";
-import { Texture } from "three";
 
 /**
  * FBMノイズによるジオメトリの膨張でディゾルブを行うマテリアル。
@@ -15,15 +12,7 @@ import { Texture } from "three";
  * 膨張の進行度合いはprogressで制御する。
  */
 export class ExpansionDissolveMaterial extends ShaderPhongMaterial
-  implements ITiledFBM, IAnimatable, IMap {
-  // IMap //
-  get map(): Texture {
-    return MapChunk.getMap(this);
-  }
-  set map(val: Texture) {
-    MapChunk.setMap(this, val);
-  }
-
+  implements ITiledFBM, IAnimatable {
   // IAnimatable //
   speed: number = -0.5;
   addTime(delta: number): void {
@@ -98,7 +87,6 @@ export class ExpansionDissolveMaterial extends ShaderPhongMaterial
     this.uniforms = UniformsUtils.merge([
       ShaderPhongMaterial.getBasicUniforms(),
       TilingFBMChunk.getUniform(),
-      MapChunk.getUniform(),
       {
         scaleMax: { value: 20.0 },
         time: { value: 0.0 },
@@ -112,7 +100,6 @@ export class ExpansionDissolveMaterial extends ShaderPhongMaterial
   protected initChunks(): void {
     super.initChunks();
     TilingFBMChunk.registerChunk();
-    MapChunk.registerChunk();
   }
 
   protected initDefines(): void {

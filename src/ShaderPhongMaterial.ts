@@ -10,6 +10,7 @@ import {
 import { MeshPhongChunk } from "./chunk/MeshPhongChunk";
 import { SurfaceNormalChunk } from "./chunk/SurfaceNormalChunk";
 import { ExpansionChunk } from "./chunk/ExpansionChunk";
+import { MapChunk, IMap } from "./chunk/MapChunk";
 import VertexShader from "./ShaderPhongMaterial.vert.glsl";
 import FragmentShader from "./ShaderPhongMaterial.frag.glsl";
 
@@ -19,7 +20,7 @@ import FragmentShader from "./ShaderPhongMaterial.frag.glsl";
  * @see https://github.com/mrdoob/three.js/blob/76c64b23d422dcfb36a28353f45b1effa1f68c5a/src/renderers/shaders/ShaderLib.js#L53
  */
 
-export class ShaderPhongMaterial extends ShaderMaterial {
+export class ShaderPhongMaterial extends ShaderMaterial implements IMap {
   /**
    * コンストラクタ。
    * @param vertexShader
@@ -73,7 +74,8 @@ export class ShaderPhongMaterial extends ShaderMaterial {
         hasAlphaMap: { value: false }
       },
       SurfaceNormalChunk.getUniform(),
-      ExpansionChunk.getUniform()
+      ExpansionChunk.getUniform(),
+      MapChunk.getUniform()
     ]);
   }
 
@@ -84,6 +86,7 @@ export class ShaderPhongMaterial extends ShaderMaterial {
     MeshPhongChunk.registerChunk();
     SurfaceNormalChunk.registerChunk();
     ExpansionChunk.registerChunk();
+    MapChunk.registerChunk();
   }
 
   /**
@@ -157,6 +160,13 @@ export class ShaderPhongMaterial extends ShaderMaterial {
   }
   set emissive(value: Color) {
     this.uniforms.emissive.value = value;
+  }
+
+  get map(): Texture {
+    return MapChunk.getMap(this);
+  }
+  set map(val: Texture) {
+    MapChunk.setMap(this, val);
   }
 
   get alphaMap(): Texture {
