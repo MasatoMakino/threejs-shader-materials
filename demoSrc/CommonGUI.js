@@ -70,8 +70,6 @@ export class CommonGUI {
 
     folder.open();
 
-    this.initAnimationGUI(folder, mat);
-
     const animationFolder = folder.addFolder("WavyAnimation");
 
     animationFolder.add(mat, "isAnimate");

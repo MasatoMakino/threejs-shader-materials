@@ -7,13 +7,12 @@ export default () => {
 
 #include <mesh_phong_uniform>
 varying vec2 uvPosition;
+#include <mesh_position_varying>
 
 varying float vFbm;
 uniform float progress;
 uniform vec3 dissolveColor;
 uniform vec3 dissolveOutColor;
-
-#include <mesh_position_varying>
 
 #include <common>
 #include <packing>
@@ -21,9 +20,7 @@ uniform vec3 dissolveOutColor;
 #include <color_pars_fragment>
 #include <uv_pars_fragment>
 #include <uv2_pars_fragment>
-
 #include <map_uniform_chunk>
-
 #include <alphamap_pars_fragment>
 #include <aomap_pars_fragment>
 #include <lightmap_pars_fragment>

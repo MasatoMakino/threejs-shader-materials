@@ -59,7 +59,7 @@ class MeshPhongSwitchingAlphaMapChunk extends GLSLChunk {
   protected static getChunk(): string {
     return `
       if( hasAlphaMap ){
-        diffuseColor.a *= texture2D( alphaMap, uvPosition ).g;
+        diffuseColor.a *= texture2D( alphaMap, mapUV ).g;
       }
     `;
   }

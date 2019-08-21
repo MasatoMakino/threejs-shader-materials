@@ -3,10 +3,9 @@ export default () => {
 #define PHONG
 
 #include <mesh_phong_uniform>
-
-//varying
-varying vec2 uvPosition; 
+varying vec2 uvPosition;
 #include <mesh_position_varying>
+
 #include <tiling_fbm_uniform_chunk>
 #include <time_animation_uniform_chunk>
 
@@ -25,7 +24,8 @@ uniform float rimPow;
 #include <color_pars_fragment>
 #include <uv_pars_fragment>
 #include <uv2_pars_fragment>
-#include <map_pars_fragment>
+#include <map_uniform_chunk>
+#include <alphamap_pars_fragment>
 #include <aomap_pars_fragment>
 #include <lightmap_pars_fragment>
 #include <emissivemap_pars_fragment>
@@ -49,7 +49,9 @@ void main()
     #include <clipping_planes_fragment>
     #include <mesh_phong_diffuse_color>
     #include <logdepthbuf_fragment>
-    #include <map_fragment>
+    
+    #include <map_fragment_begin_chunk>
+    #include <map_fragment_chunk>
     #include <color_fragment>
     
     vec2 uv = uvPosition;
@@ -103,6 +105,5 @@ void main()
     #include <fog_fragment>
     #include <premultiplied_alpha_fragment>
     #include <dithering_fragment>
-}            
-    `;
+}`;
 };
