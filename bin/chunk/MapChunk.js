@@ -46,7 +46,7 @@ class MapFragmentChunk extends GLSLChunk {
     static getChunk() {
         return `
       if( hasMap ){
-        vec4 texelColor = texture2D( map, uv );
+        vec4 texelColor = texture2D( map, mapUV );
         texelColor = mapTexelToLinear( texelColor );
         diffuseColor *= texelColor;
       }
@@ -59,7 +59,7 @@ class MapFragmentBeginChunk extends GLSLChunk {
     }
     static getChunk() {
         return `
-      vec2 uv = uvPosition;
+      vec2 mapUV = uvPosition;
     `;
     }
 }

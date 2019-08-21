@@ -75,19 +75,14 @@ void main() {
     #include <logdepthbuf_fragment>
     
     #include <map_fragment_begin_chunk>
-    uv = rotateUV( uv, uvRotation , center);
-    uv = swirl( uv, radius, swirlRotation, center );
+    mapUV = rotateUV( mapUV, uvRotation , center);
+    mapUV = swirl( mapUV, radius, swirlRotation, center );
     // offset Texture 
-    uv += vec2(time);
+    mapUV += vec2(time);
     #include <map_fragment_chunk>
     
     #include <color_fragment>
-    
-    //#include <mesh_phong_switching_alpha_map>
-    if( hasAlphaMap ){
-      diffuseColor.a *= texture2D( alphaMap, uv ).g;
-    }
-    
+    #include <mesh_phong_switching_alpha_map>
     #include <alphatest_fragment>
     #include <specularmap_fragment>
     #include <normal_fragment_begin>

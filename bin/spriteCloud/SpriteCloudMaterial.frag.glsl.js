@@ -24,8 +24,8 @@ void main() {
     vec3 color = diffuse;
     #include <clipping_planes_fragment>
     #include <sprite_diffuse_color_chunk>
-
 	#include <logdepthbuf_fragment>
+	
 	#include <map_fragment>
 	#include <alphatest_fragment>
 	

@@ -8,6 +8,7 @@ export default () => {
 #include <mesh_phong_uniform>
 varying vec2 uvPosition;
 #include <mesh_position_varying>
+
 uniform float bottom;
 uniform float top;
 
@@ -17,7 +18,7 @@ uniform float top;
 #include <color_pars_fragment>
 #include <uv_pars_fragment>
 #include <uv2_pars_fragment>
-#include <map_pars_fragment>
+#include <map_uniform_chunk>
 #include <alphamap_pars_fragment>
 #include <aomap_pars_fragment>
 #include <lightmap_pars_fragment>
@@ -39,7 +40,8 @@ void main() {
     #include <clipping_planes_fragment>
     #include <mesh_phong_diffuse_color>
     #include <logdepthbuf_fragment>
-
+    
+    #include <map_fragment_begin_chunk>
     #ifdef USE_MAP
       float mapY = ( meshPosition.y - bottom ) / ( top - bottom );
       vec4 texelColor = texture2D( map, vec2(0.5, mapY) );
