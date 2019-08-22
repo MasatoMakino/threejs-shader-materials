@@ -32,6 +32,10 @@ Collection of shader materials for three.js
 
 [SpriteCloudMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/spriteCloud)
 
+[SwirlMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/swirl)
+
+[CellularNoiseMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/cellular)
+
 ## Getting Started
 
 ### Install
