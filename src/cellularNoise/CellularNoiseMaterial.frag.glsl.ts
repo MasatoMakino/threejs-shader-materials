@@ -1,5 +1,5 @@
 /**
- *
+ * Cellular Noise Fragment Shader
  */
 export default () => {
   // language=GLSL
@@ -9,6 +9,11 @@ export default () => {
 #include <mesh_phong_uniform>
 varying vec2 uvPosition;
 #include <mesh_position_varying>
+
+uniform float grid;
+uniform float tiles;
+uniform float divisionScaleX;
+#include <time_animation_uniform_chunk>
 
 #include <common>
 #include <packing>
@@ -34,6 +39,51 @@ varying vec2 uvPosition;
 #include <logdepthbuf_pars_fragment>
 #include <clipping_planes_pars_fragment>
 
+vec2 rand2D(vec2 p, vec2 scale) {
+    p = mod(p, scale);
+    const float a = 12.9898, b = 78.233, c = 43758.5453;
+    const float a2 = 26.7, b2 = 14.879;
+    
+    highp float dt = dot(p, vec2(a, b)), sn = mod(dt, PI);
+    highp float dt2 = dot(p, vec2(a2, b2)), sn2 = mod(dt2, PI);
+    return fract(sin(vec2(dt, dt2)) * c);
+}
+
+/*!
+ * Cellular Noise
+ *
+ * The inherits function is :
+ * Author : patriciogv
+ * see https://thebookofshaders.com/12/
+ * LICENSE : https://github.com/patriciogonzalezvivo/thebookofshaders/issues/235
+ */
+float cellularNoise(vec2 uv, float grid, float tile, float divisionScaleX, float time){
+  
+    vec2 scale = grid * tile * vec2 ( divisionScaleX, 1.0 );
+    uv *= scale;
+    
+    vec2 i_uv = floor(uv);
+    vec2 f_uv = fract(uv);
+    
+    float minDist = 1.;
+    
+    for (int y= -1; y <= 1; y++) {
+        for (int x= -1; x <= 1; x++) {
+            vec2 neighbor = vec2(float(x), float(y));
+            vec2 point = rand2D(i_uv + neighbor, scale);
+            
+            point = 0.5 + 0.5 * sin(time + PI2 * point);
+            
+            vec2 diff = neighbor + point - f_uv;
+            float dist = length(diff);
+            
+            minDist = min(minDist, dist);
+        }
+    }
+    
+    return minDist;
+}
+
 void main() {
     #include <clipping_planes_fragment>
     #include <mesh_phong_diffuse_color>
@@ -42,6 +92,11 @@ void main() {
     #include <map_fragment_begin_chunk>
     #include <map_fragment_chunk>
     #include <color_fragment>
+
+    float dist = cellularNoise( mapUV, grid, tiles, divisionScaleX, time );
+    diffuseColor.rgb *= dist;
+    diffuseColor.a *= dist;
+    
     #include <mesh_phong_switching_alpha_map>
     #include <alphatest_fragment>
     #include <specularmap_fragment>
