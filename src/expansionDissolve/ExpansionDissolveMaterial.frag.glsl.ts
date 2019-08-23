@@ -1,7 +1,8 @@
 /**
- *
+ * メッシュが膨張しながら消えるエフェクト
  */
 export default () => {
+  // language=GLSL
   return `
 #define PHONG
 

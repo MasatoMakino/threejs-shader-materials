@@ -1,7 +1,9 @@
+/**
+ * 平面上に雲模様を描画するシェーダー
+ */
 export default () => {
-  return `
-
-
+  // language=GLSL
+  return `      
 #define PHONG
 
 #include <mesh_phong_uniform>

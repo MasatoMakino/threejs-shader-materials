@@ -1,8 +1,9 @@
 /**
- * 四角形シェーダー
+ * 十字のラインでグリッドを分割するシェーダー
  */
 
 export default () => {
+  // language=GLSL
   return `
 #define PHONG
 

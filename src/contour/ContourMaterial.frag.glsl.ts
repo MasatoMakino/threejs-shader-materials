@@ -2,6 +2,7 @@
  * 等高線状にテクスチャをマッピングするシェーダー
  */
 export default () => {
+  // language=GLSL
   return `
 #define PHONG
 
