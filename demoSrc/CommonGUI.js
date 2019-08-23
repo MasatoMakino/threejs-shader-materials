@@ -1,12 +1,5 @@
-import {
-  TextureLoader,
-  NoBlending,
-  NormalBlending,
-  AdditiveBlending,
-  SubtractiveBlending,
-  MultiplyBlending
-} from "three";
-import { Directions } from "../bin";
+import {TextureLoader} from "three";
+import {Directions} from "../bin";
 
 export class CommonGUI {
   static initColorGUI(folder, mat, propName = "color") {
@@ -22,9 +15,9 @@ export class CommonGUI {
   static initMaterialGUI(gui, mat, folderName = "Material") {
     const folder = gui.addFolder(folderName);
     this.initColorGUI(folder, mat);
+    this.initColorGUI(folder, mat, "emissive");
     folder.add(mat, "transparent");
     folder.add(mat, "opacity", 0.0, 1.0);
-
     folder.open();
   }
 
