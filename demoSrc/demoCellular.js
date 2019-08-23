@@ -46,7 +46,6 @@ export class Study {
     });
     mat.color = new Color(0x0055ff);
     mat.transparent = true;
-    mat.tiles = 1;
     mat.grid = 8;
     mat.speed = 2.0;
     mat.divisionScaleX = 2.0;
@@ -68,7 +67,6 @@ export class Study {
     const folder = gui.addFolder("CellularNoise");
 
     folder.add(mat, "grid", 3.0, 64.0).step(1.0);
-    folder.add(mat, "tiles", 1.0, 8.0).step(1.0);
     folder.add(mat, "divisionScaleX", 1.0, 4.0).step(1.0);
     folder.open();
   }

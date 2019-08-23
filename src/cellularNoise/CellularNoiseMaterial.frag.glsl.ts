@@ -11,7 +11,6 @@ varying vec2 uvPosition;
 #include <mesh_position_varying>
 
 uniform float grid;
-uniform float tiles;
 uniform float divisionScaleX;
 #include <time_animation_uniform_chunk>
 
@@ -57,9 +56,9 @@ vec2 rand2D(vec2 p, vec2 scale) {
  * see https://thebookofshaders.com/12/
  * LICENSE : https://github.com/patriciogonzalezvivo/thebookofshaders/issues/235
  */
-float cellularNoise(vec2 uv, float grid, float tile, float divisionScaleX, float time){
+float cellularNoise(vec2 uv, float grid, float divisionScaleX, float time){
   
-    vec2 scale = grid * tile * vec2 ( divisionScaleX, 1.0 );
+    vec2 scale = grid * vec2 ( divisionScaleX, 1.0 );
     uv *= scale;
     
     vec2 i_uv = floor(uv);
@@ -93,7 +92,7 @@ void main() {
     #include <map_fragment_chunk>
     #include <color_fragment>
 
-    float dist = cellularNoise( mapUV, grid, tiles, divisionScaleX, time );
+    float dist = cellularNoise( mapUV, grid, divisionScaleX, time );
     diffuseColor.rgb *= dist;
     diffuseColor.a *= dist;
     

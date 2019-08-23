@@ -22,13 +22,6 @@ export class CellularNoiseMaterial extends ShaderPhongMaterial
     this.uniforms.grid.value = value;
   }
 
-  get tiles(): number {
-    return this.uniforms.tiles.value;
-  }
-  set tiles(value: number) {
-    this.uniforms.tiles.value = value;
-  }
-
   get divisionScaleX(): number {
     return this.uniforms.divisionScaleX.value;
   }
@@ -51,7 +44,6 @@ export class CellularNoiseMaterial extends ShaderPhongMaterial
       AnimationChunk.getUniform(),
       {
         grid: { value: 3.0 },
-        tiles: { value: 1.0 },
         divisionScaleX: { value: 1.0 }
       }
     ]);
