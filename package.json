@@ -35,7 +35,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged --pattern './!(bin|docs|coverage)/**/*.{js,ts,json}'"
+      "pre-commit": "pretty-quick --staged --pattern './**/*.{js,ts,json}' --pattern './!(bin|docs|coverage)/**/*.{js,ts,json}'"
     }
   },
   "dependencies": {}
