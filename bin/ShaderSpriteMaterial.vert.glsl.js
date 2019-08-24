@@ -2,6 +2,7 @@
  * https://raw.githubusercontent.com/mrdoob/three.js/dev/src/renderers/shaders/ShaderLib/sprite_vert.glsl.js
  */
 export default () => {
+    // language=GLSL
     return `
 #include <sprite_vertex_uniform_chunk>
 #include <common>

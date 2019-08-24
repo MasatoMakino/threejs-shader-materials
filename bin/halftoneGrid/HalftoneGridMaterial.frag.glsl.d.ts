@@ -1,6 +1,6 @@
 declare const _default: () => string;
 /**
- * ハーフトーンマテリアルのフラグメントシェーダー
+ * ハーフトーンマテリアル
  */
 export default _default;
 //# sourceMappingURL=HalftoneGridMaterial.frag.glsl.d.ts.map

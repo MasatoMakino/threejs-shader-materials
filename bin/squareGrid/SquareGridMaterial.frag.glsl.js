@@ -1,7 +1,8 @@
 /**
- * 四角形シェーダー
+ * 四角形のグリッドを描画するシェーダー
  */
 export default () => {
+    // language=GLSL
     return `
 #define PHONG
 

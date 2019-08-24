@@ -1,4 +1,5 @@
 export default () => {
+    // language=GLSL
     return `
 #define PHONG
 

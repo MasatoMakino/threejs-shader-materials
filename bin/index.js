@@ -25,3 +25,4 @@ export * from "./spriteCloud/SpriteCloudMaterial";
 export * from "./expansionDissolve/ExpansionDissolveMaterial";
 export * from "./swirl/SwirlMaterial";
 export * from "./cellularNoise/CellularNoiseMaterial";
+export * from "./solidClipping/SolidClippingMaterial";

@@ -1,7 +1,8 @@
 /**
- *
+ * 渦巻き状にUV座標を変形させるシェーダー
  */
 export default () => {
+    // language=GLSL
     return `
 #define PHONG
 

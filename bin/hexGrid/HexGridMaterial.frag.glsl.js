@@ -3,6 +3,7 @@
  * {@link https://qiita.com/edo_m18/items/37d8773a5295bc6aba3d}
  */
 export default () => {
+    // language=GLSL
     return `
 #define PHONG
 

@@ -5,7 +5,6 @@ export declare class CellularNoiseMaterial extends ShaderPhongMaterial implement
     isAnimate: boolean;
     addTime(delta: number): void;
     grid: number;
-    tiles: number;
     divisionScaleX: number;
     constructor(parameters?: ShaderMaterialParameters);
     protected initChunks(): void;

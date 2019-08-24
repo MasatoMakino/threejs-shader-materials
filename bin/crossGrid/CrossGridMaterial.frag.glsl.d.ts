@@ -1,5 +1,5 @@
 /**
- * 四角形シェーダー
+ * 十字のラインでグリッドを分割するシェーダー
  */
 declare const _default: () => string;
 export default _default;

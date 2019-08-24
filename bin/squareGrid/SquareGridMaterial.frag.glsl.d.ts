@@ -1,5 +1,5 @@
 /**
- * 四角形シェーダー
+ * 四角形のグリッドを描画するシェーダー
  */
 declare const _default: () => string;
 export default _default;

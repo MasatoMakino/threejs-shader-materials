@@ -2,6 +2,7 @@
  * https://github.com/mrdoob/three.js/blob/dev/src/renderers/shaders/ShaderLib/sprite_frag.glsl.js
  */
 export default () => {
+    // language=GLSL
     return `
 #include <sprite_fragment_uniform_chunk>
 #include <common>
