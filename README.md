@@ -36,6 +36,8 @@ Collection of shader materials for three.js
 
 [CellularNoiseMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/cellular)
 
+[SolidClippingMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/solidClipping)
+
 ## Getting Started
 
 ### Install
