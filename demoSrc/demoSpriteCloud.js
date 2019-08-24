@@ -45,7 +45,7 @@ export class Study {
   }
 
   initGUI(gui, mat) {
-    CommonGUI.initMaterialGUI(gui, mat);
+    CommonGUI.initSpriteMaterialGUI(gui, mat);
 
     const cloudGUI = gui.addFolder("SpriteCloud");
     CommonGUI.initColorGUI(cloudGUI, mat, "skyColor");

@@ -14,10 +14,20 @@ export class CommonGUI {
 
   static initMaterialGUI(gui, mat, folderName = "Material") {
     const folder = gui.addFolder(folderName);
-    this.initColorGUI(folder, mat);
+    this.initMaterialFolder( folder, mat );
     this.initColorGUI(folder, mat, "emissive");
+    folder.open();
+  }
+
+  static initMaterialFolder(folder, mat){
+    this.initColorGUI(folder, mat);
     folder.add(mat, "transparent");
     folder.add(mat, "opacity", 0.0, 1.0);
+  }
+
+  static initSpriteMaterialGUI(gui, mat, folderName = "Material") {
+    const folder = gui.addFolder(folderName);
+    this.initMaterialFolder( folder, mat )
     folder.open();
   }
 
