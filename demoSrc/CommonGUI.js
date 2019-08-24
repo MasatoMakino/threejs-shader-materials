@@ -19,6 +19,11 @@ export class CommonGUI {
 
 
 
+
+  
+
+
+
   static initMaterialGUI(gui, mat, folderName = "Material") {
     const folder = gui.addFolder(folderName);
     this.initMaterialFolder(folder, mat);
