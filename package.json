@@ -31,7 +31,8 @@
     "build": "npm run prettier:src && gulp build && npm run doc:card",
     "build:clean": "npm run prettier:src && gulp build_clean && npm run doc:card",
     "prettier:src": "prettier --write './**/*.{js,ts,json}' ",
-    "doc:card": "repoimg -n MasatoMakino/threejs-shader-materials -o ./docs/card.png"
+    "doc:card": "repoimg -n MasatoMakino/threejs-shader-materials -o ./docs/card.png",
+    "checkout:API": "git checkout HEAD -- ./docs/api/"
   },
   "husky": {
     "hooks": {
