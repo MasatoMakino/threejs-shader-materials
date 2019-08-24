@@ -30,12 +30,12 @@
     "start:dev": "gulp start_dev",
     "build": "npm run prettier:src && gulp build && npm run doc:card",
     "build:clean": "npm run prettier:src && gulp build_clean && npm run doc:card",
-    "prettier:src": "prettier --write './!(bin|docs|coverage)/**/*.{js,ts,json}' ",
+    "prettier:src": "prettier --write './**/*.{js,ts,json}' ",
     "doc:card": "repoimg -n MasatoMakino/threejs-shader-materials -o ./docs/card.png"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged --pattern './**/*.{js,ts,json}' --pattern './!(bin|docs|coverage)/**/*.{js,ts,json}'"
+      "pre-commit": "pretty-quick --staged"
     }
   },
   "dependencies": {}
