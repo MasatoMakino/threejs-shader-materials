@@ -16,7 +16,8 @@ module.exports = {
   entry: entries,
   output: {
     path: path.join(__dirname, "docs/demo"),
-    filename: "[name]"
+    filename: "[name]",
+    chunkFilename: "[name].bundle.js"
   },
   module: {
     rules: [
@@ -28,5 +29,17 @@ module.exports = {
         }
       }
     ]
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          chunks: "initial",
+          name: "vendor",
+          test: /node_modules/,
+          enforce: true
+        }
+      }
+    }
   }
 };
