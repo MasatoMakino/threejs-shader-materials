@@ -3,6 +3,7 @@ import { WavyGridMaterial } from "../WavyGridMaterial";
 
 import FragmentShader from "./HexGridMaterial.frag.glsl";
 import VertexShader from "../ShaderPhongMaterial.vert.glsl";
+import { HexGridChunk } from "../chunk/HexGridChunk";
 
 /**
  * 六角形グリッドマテリアル
@@ -30,5 +31,10 @@ export class HexGridMaterial extends WavyGridMaterial {
         gridWeight: { value: 0.03 }
       }
     ]);
+  }
+
+  protected initChunks(): void {
+    super.initChunks();
+    HexGridChunk.registerChunk();
   }
 }

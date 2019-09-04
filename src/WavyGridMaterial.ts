@@ -9,12 +9,12 @@ import {
 import { IMaskable, MaskMapChunk } from "./chunk/MaskMapChunk";
 import { IReversible, ReversibleChunk } from "./chunk/ReversibleChunk";
 import { AnimationChunk } from "./chunk/AnimationChunk";
+import { GridMaterial } from "./GridMaterial";
 
 /**
  * グリッド状に分割され、Wavyアニメーションを行うマテリアル。
  */
-export class WavyGridMaterial extends ShaderPhongMaterial
-  implements IWavyAnimatable, IReversible, IMaskable {
+export class WavyGridMaterial extends GridMaterial implements IWavyAnimatable {
   protected animationID: number;
   protected lastAnimatedTimestamp: number;
 
@@ -44,37 +44,6 @@ export class WavyGridMaterial extends ShaderPhongMaterial
    */
   speed: number = -0.5;
 
-  get division(): number {
-    return this.uniforms.division.value;
-  }
-  set division(value: number) {
-    this.uniforms.division.value = value;
-  }
-
-  get divisionScaleX(): number {
-    return this.uniforms.divisionScaleX.value;
-  }
-  set divisionScaleX(value: number) {
-    this.uniforms.divisionScaleX.value = value;
-  }
-
-  get isReversed(): boolean {
-    return this.uniforms.isReversed.value;
-  }
-  set isReversed(value: boolean) {
-    this.uniforms.isReversed.value = value;
-  }
-
-  /**
-   * 明るさの底上げ
-   */
-  get raisedBottom(): number {
-    return this.uniforms.raisedBottom.value;
-  }
-  set raisedBottom(value: number) {
-    this.uniforms.raisedBottom.value = value;
-  }
-
   /**
    * 波の振幅
    * 1の場合、幅1ヘックス
@@ -95,6 +64,16 @@ export class WavyGridMaterial extends ShaderPhongMaterial
   }
 
   /**
+   * 明るさの底上げ
+   */
+  get raisedBottom(): number {
+    return this.uniforms.raisedBottom.value;
+  }
+  set raisedBottom(value: number) {
+    this.uniforms.raisedBottom.value = value;
+  }
+
+  /**
    * 波が発生する方角
    */
   get direction(): Directions {
@@ -104,23 +83,14 @@ export class WavyGridMaterial extends ShaderPhongMaterial
     this.uniforms.direction.value = value;
   }
 
-  get maskTexture(): Texture {
-    return MaskMapChunk.getMaskTexture(this);
-  }
-  set maskTexture(val: Texture) {
-    MaskMapChunk.setMaskTexture(this, val);
-  }
-
   protected initChunks(): void {
     super.initChunks();
     WavyAnimationChunk.registerChunk();
-    MaskMapChunk.registerChunk();
-    ReversibleChunk.registerChunk();
   }
 
   public static getBasicUniforms(): any {
     return UniformsUtils.merge([
-      ShaderPhongMaterial.getBasicUniforms(),
+      super.getBasicUniforms(),
       ReversibleChunk.getUniform(),
       WavyAnimationChunk.getUniform(),
       MaskMapChunk.getUniform()
@@ -129,9 +99,6 @@ export class WavyGridMaterial extends ShaderPhongMaterial
 
   protected initDefaultSetting(parameters?: ShaderMaterialParameters): void {
     super.initDefaultSetting(parameters);
-    if (parameters.transparent == null) {
-      this.transparent = true;
-    }
     this.isAnimate = this.isAnimate; //reset and start requestAnimationFrame()
   }
 
