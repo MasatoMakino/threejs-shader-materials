@@ -11,5 +11,6 @@ export declare class HexGridMaterial extends WavyGridMaterial {
     gridWeight: number;
     constructor(parameters?: ShaderMaterialParameters);
     protected initUniforms(): void;
+    protected initChunks(): void;
 }
 //# sourceMappingURL=HexGridMaterial.d.ts.map

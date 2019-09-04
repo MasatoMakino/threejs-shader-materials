@@ -43,28 +43,7 @@ uniform float gridWeight;
 #include <logdepthbuf_pars_fragment>
 #include <clipping_planes_pars_fragment>
 
-float hexDist(vec2 p)
-{
-    p = abs(p);
-    float d = dot(p, normalize(vec2(1.0, 1.73)));
-    return max(d, p.x);
-}
-
-vec4 hexCoords(vec2 uv)
-{
-    vec2 r = vec2(1.0, 1.73);
-    vec2 h = r * 0.5;
-    vec2 a = mod(uv, r) - h;
-    vec2 b = mod(uv - h, r) - h;
-
-    vec2 gv = length(a) < length(b) ? a : b;
-    vec2 id = uv - gv;
-
-    float x = atan(gv.x, gv.y);
-    float y = 0.5 - hexDist(gv);
-
-    return vec4(x, y, id);
-}
+#include <hex_grid_function_chunk>
 
 void main() {
     #include <clipping_planes_fragment>

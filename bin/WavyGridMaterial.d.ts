@@ -1,13 +1,10 @@
-import { Texture } from "three";
 import { ShaderMaterialParameters } from "three";
-import { ShaderPhongMaterial } from "./ShaderPhongMaterial";
 import { Directions, IWavyAnimatable } from "./chunk/WavyAnimationChunk";
-import { IMaskable } from "./chunk/MaskMapChunk";
-import { IReversible } from "./chunk/ReversibleChunk";
+import { GridMaterial } from "./GridMaterial";
 /**
  * グリッド状に分割され、Wavyアニメーションを行うマテリアル。
  */
-export declare class WavyGridMaterial extends ShaderPhongMaterial implements IWavyAnimatable, IReversible, IMaskable {
+export declare class WavyGridMaterial extends GridMaterial implements IWavyAnimatable {
     protected animationID: number;
     protected lastAnimatedTimestamp: number;
     addTime(delta: number): void;
@@ -21,13 +18,6 @@ export declare class WavyGridMaterial extends ShaderPhongMaterial implements IWa
      * マイナスを指定すると、波の進行方向が反転する。
      */
     speed: number;
-    division: number;
-    divisionScaleX: number;
-    isReversed: boolean;
-    /**
-     * 明るさの底上げ
-     */
-    raisedBottom: number;
     /**
      * 波の振幅
      * 1の場合、幅1ヘックス
@@ -36,10 +26,13 @@ export declare class WavyGridMaterial extends ShaderPhongMaterial implements IWa
     waveFrequency: number;
     wavePow: number;
     /**
+     * 明るさの底上げ
+     */
+    raisedBottom: number;
+    /**
      * 波が発生する方角
      */
     direction: Directions;
-    maskTexture: Texture;
     protected initChunks(): void;
     static getBasicUniforms(): any;
     protected initDefaultSetting(parameters?: ShaderMaterialParameters): void;
