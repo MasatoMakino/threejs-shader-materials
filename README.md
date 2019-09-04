@@ -8,7 +8,7 @@ Collection of shader materials for three.js
 
 [HexGrid](https://masatomakino.github.io/threejs-shader-materials/demo/hexGrid)
 
-[HexDissolve](https://masatomakino.github.io/threejs-shader-materials/demo/hex_dissolve)
+[HexDissolve](https://masatomakino.github.io/threejs-shader-materials/demo/hex_dissolve.html)
 
 [HalftoneGrid](https://masatomakino.github.io/threejs-shader-materials/demo/halftoneGrid)
 
