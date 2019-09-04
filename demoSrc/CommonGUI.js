@@ -31,7 +31,7 @@ export class CommonGUI {
     folder.open();
   }
 
-  static initWavyMaterialGUI(gui, mat) {
+  static initGridMaterialGUI(gui, mat) {
     this.initMaterialGUI(gui, mat);
 
     const prop = {
@@ -72,9 +72,12 @@ export class CommonGUI {
       });
 
     folder.open();
+  }
+
+  static initWavyMaterialGUI(gui, mat) {
+    this.initGridMaterialGUI(gui, mat);
 
     const animationFolder = folder.addFolder("WavyAnimation");
-
     animationFolder.add(mat, "isAnimate");
     animationFolder.add(mat, "speed", -2, 2);
     animationFolder.add(mat, "waveFrequency", 0.0, 1.0);
