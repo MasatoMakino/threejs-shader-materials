@@ -18,6 +18,7 @@ varying vec2 uvPosition;
 #include <reversible_uniform_chunk>
 uniform float progress;
 uniform float delay;
+uniform float gridWeight;
 
 #include <common>
 #include <packing>
@@ -66,7 +67,7 @@ void main() {
     currentProgress /= range;
     currentProgress = clamp( currentProgress, 0.0, 1.0);
   
-    float w = currentProgress / 2.0 + (1.0 - mask);
+    float w = gridWeight + currentProgress / 2.0 + (1.0 - mask);
     w = clamp( w, 0.0, 1.0);
 
     float margin = clamp ( w * 0.33, 0.00, 0.02 );

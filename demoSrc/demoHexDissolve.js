@@ -60,6 +60,7 @@ export class StudyHexGrid {
     const folder = gui.addFolder("HexDissolveMaterial");
     folder.add(mat, "progress", 0.0, 1.0).step(0.01);
     folder.add(mat, "delay", 0.0, 1.0).step(0.01);
+    folder.add(mat, "gridWeight", 0.0, 0.5).step(0.01);
     folder.open();
   }
 }
