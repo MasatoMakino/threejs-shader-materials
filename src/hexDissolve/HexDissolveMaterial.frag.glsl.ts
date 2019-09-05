@@ -50,6 +50,10 @@ uniform float gridEmissiveWeight;
 
 #include <hex_grid_function_chunk>
 
+float reverse( float val, bool isReversed){
+  return isReversed ? 1.0 - val : val;
+}
+
 void main() {
     #include <clipping_planes_fragment>
     #include <mesh_phong_diffuse_color>
@@ -76,19 +80,16 @@ void main() {
   
     float w = gridWeight + currentProgress / 2.0 + (1.0 - mask);
     w = clamp( w, 0.0, 1.0);
-
     float margin = clamp ( w * 0.33, 0.00, 0.02 );
   
     float gridLine = smoothstep(w, w + margin, hc.y);
-    gridLine = isReversed
-        ? 1.0 - gridLine
-        : gridLine;
+    gridLine =  reverse ( gridLine , isReversed);
     diffuseColor.a *= gridLine ;
     
-    float emmesiveWeight = w * gridEmissiveWeight;
+    float emmesiveWeight = currentProgress / 2.0 * gridEmissiveWeight;
+    emmesiveWeight =  reverse ( emmesiveWeight, isReversed );
     float emissiveVal = smoothstep(emmesiveWeight, emmesiveWeight + margin, hc.y);
     emissiveVal = 1.0 - emissiveVal;
-    emissiveVal *= progress;
     diffuseColor.rgb += gridEmissive * emissiveVal;
 
     #include <mesh_phong_switching_alpha_map>
