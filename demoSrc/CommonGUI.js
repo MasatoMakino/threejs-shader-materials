@@ -72,10 +72,11 @@ export class CommonGUI {
       });
 
     folder.open();
+    return folder;
   }
 
   static initWavyMaterialGUI(gui, mat) {
-    this.initGridMaterialGUI(gui, mat);
+    const folder = this.initGridMaterialGUI(gui, mat);
 
     const animationFolder = folder.addFolder("WavyAnimation");
     animationFolder.add(mat, "isAnimate");
