@@ -17,6 +17,11 @@ varying vec2 uvPosition;
 #include <reversible_uniform_chunk>
 uniform float progress;
 uniform float delay;
+uniform float gridWeight;
+uniform bool isAscending;
+
+uniform vec3 gridEmissive;
+uniform float gridEmissiveWeight;
 
 #include <common>
 #include <packing>
@@ -60,21 +65,30 @@ void main() {
     #include <mask_map_fragment_chunk>
   
     float range = 1.0 - delay;
-    float rateY = ( division-id.y ) / division;
+    float rateY = isAscending 
+      ? ( division-id.y ) / division
+      : id.y  / division;
+  
     float currentProgress = progress - (rateY * delay);
     currentProgress /= range;
+    currentProgress = clamp( currentProgress, 0.0, 1.0);
   
-    float w = currentProgress / 2.0 + (1.0 - mask);
+    float w = gridWeight + currentProgress / 2.0 + (1.0 - mask);
     w = clamp( w, 0.0, 1.0);
 
     float margin = clamp ( w * 0.33, 0.00, 0.02 );
-    float stepMax = w + margin;
-
-    float gridLine = smoothstep(w, stepMax, hc.y);
+  
+    float gridLine = smoothstep(w, w + margin, hc.y);
     gridLine = isReversed
         ? 1.0 - gridLine
         : gridLine;
     diffuseColor.a *= gridLine ;
+    
+    float emmesiveWeight = w * gridEmissiveWeight;
+    float emissiveVal = smoothstep(emmesiveWeight, emmesiveWeight + margin, hc.y);
+    emissiveVal = 1.0 - emissiveVal;
+    emissiveVal *= progress;
+    diffuseColor.rgb += gridEmissive * emissiveVal;
 
     #include <mesh_phong_switching_alpha_map>
     #include <alphatest_fragment>
