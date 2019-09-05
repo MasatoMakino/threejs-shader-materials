@@ -64,6 +64,7 @@ void main() {
     float rateY = ( division-id.y ) / division;
     float currentProgress = progress - (rateY * delay);
     currentProgress /= range;
+    currentProgress = clamp( currentProgress, 0.0, 1.0);
   
     float w = currentProgress / 2.0 + (1.0 - mask);
     w = clamp( w, 0.0, 1.0);
