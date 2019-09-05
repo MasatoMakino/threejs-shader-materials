@@ -19,6 +19,7 @@ varying vec2 uvPosition;
 uniform float progress;
 uniform float delay;
 uniform float gridWeight;
+uniform bool isAscending;
 
 #include <common>
 #include <packing>
@@ -62,7 +63,10 @@ void main() {
     #include <mask_map_fragment_chunk>
   
     float range = 1.0 - delay;
-    float rateY = ( division-id.y ) / division;
+    float rateY = isAscending 
+      ? ( division-id.y ) / division
+      : id.y  / division;
+  
     float currentProgress = progress - (rateY * delay);
     currentProgress /= range;
     currentProgress = clamp( currentProgress, 0.0, 1.0);

@@ -31,6 +31,13 @@ export class HexDissolveMaterial extends GridMaterial {
     this.uniforms.delay.value = value;
   }
 
+  get isAscending(): boolean {
+    return this.uniforms.isAscending.value;
+  }
+  set isAscending(value: boolean) {
+    this.uniforms.isAscending.value = value;
+  }
+
   /**
    * グリッド線の太さ
    * 0.0で線なし、0.5でグリッド面なしになる。
@@ -52,7 +59,8 @@ export class HexDissolveMaterial extends GridMaterial {
       {
         progress: { value: 0.0 },
         delay: { value: 0.8 },
-        gridWeight: { value: 0.0 }
+        gridWeight: { value: 0.0 },
+        isAscending: { value: true }
       }
     ]);
   }
