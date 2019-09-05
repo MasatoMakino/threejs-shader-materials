@@ -21,6 +21,9 @@ uniform float delay;
 uniform float gridWeight;
 uniform bool isAscending;
 
+uniform vec3 gridEmissive;
+uniform float gridEmissiveWeight;
+
 #include <common>
 #include <packing>
 #include <dithering_pars_fragment>
@@ -75,13 +78,18 @@ void main() {
     w = clamp( w, 0.0, 1.0);
 
     float margin = clamp ( w * 0.33, 0.00, 0.02 );
-    float stepMax = w + margin;
-
-    float gridLine = smoothstep(w, stepMax, hc.y);
+  
+    float gridLine = smoothstep(w, w + margin, hc.y);
     gridLine = isReversed
         ? 1.0 - gridLine
         : gridLine;
     diffuseColor.a *= gridLine ;
+    
+    float emmesiveWeight = w * gridEmissiveWeight;
+    float emissiveVal = smoothstep(emmesiveWeight, emmesiveWeight + margin, hc.y);
+    emissiveVal = 1.0 - emissiveVal;
+    emissiveVal *= progress;
+    diffuseColor.rgb += gridEmissive * emissiveVal;
 
     #include <mesh_phong_switching_alpha_map>
     #include <alphatest_fragment>

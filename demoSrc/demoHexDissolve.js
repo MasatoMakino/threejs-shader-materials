@@ -42,8 +42,9 @@ export class StudyHexGrid {
     const mat = new HexDissolveMaterial({
       fog: scene.fog !== undefined
     });
-    mat.color = new Color(0xff6666);
+    mat.color = new Color(0x444444);
     mat.delay = 0.8;
+    mat.gridEmissive = new Color(0x99ff99);
     const mesh = new Mesh(geo, mat);
     scene.add(mesh);
 
@@ -61,6 +62,9 @@ export class StudyHexGrid {
     folder.add(mat, "progress", 0.0, 1.0).step(0.01);
     folder.add(mat, "delay", 0.0, 1.0).step(0.01);
     folder.add(mat, "gridWeight", 0.0, 0.5).step(0.01);
+    folder.add(mat, "isAscending");
+    CommonGUI.initColorGUI(folder, mat, "gridEmissive");
+    folder.add(mat, "gridEmissiveWeight", 0.0, 3.0).step(0.01);
     folder.open();
   }
 }

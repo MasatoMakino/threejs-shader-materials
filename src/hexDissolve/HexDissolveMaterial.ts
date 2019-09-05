@@ -2,6 +2,7 @@ import { ShaderMaterialParameters, UniformsUtils } from "three";
 import FragmentShader from "./HexDissolveMaterial.frag.glsl";
 import { HexGridChunk } from "../index";
 import { GridMaterial } from "../GridMaterial";
+import { Color } from "three";
 
 /**
  * 六角形グリッドマテリアル
@@ -49,6 +50,19 @@ export class HexDissolveMaterial extends GridMaterial {
     this.uniforms.gridWeight.value = value;
   }
 
+  get gridEmissive(): Color {
+    return this.uniforms.gridEmissive.value;
+  }
+  set gridEmissive(value: Color) {
+    this.uniforms.gridEmissive.value = value;
+  }
+  get gridEmissiveWeight(): number {
+    return this.uniforms.gridEmissiveWeight.value;
+  }
+  set gridEmissiveWeight(value: number) {
+    this.uniforms.gridEmissiveWeight.value = value;
+  }
+
   constructor(parameters?: ShaderMaterialParameters) {
     super(null, FragmentShader(), parameters);
   }
@@ -60,7 +74,9 @@ export class HexDissolveMaterial extends GridMaterial {
         progress: { value: 0.0 },
         delay: { value: 0.8 },
         gridWeight: { value: 0.0 },
-        isAscending: { value: true }
+        isAscending: { value: true },
+        gridEmissive: { value: new Color(0x000000) },
+        gridEmissiveWeight: { value: 2.5 }
       }
     ]);
   }
