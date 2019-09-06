@@ -56,6 +56,14 @@ export class HexDissolveMaterial extends GridMaterial {
   set gridEmissive(value: Color) {
     this.uniforms.gridEmissive.value = value;
   }
+
+  /**
+   * ディゾルブ中に表示されるグローラインの太さ
+   * 数値はグリッド線の太さの倍率、2.0ならグローアウトラインはディゾルブラインの倍の太さになる。
+   *
+   * 注意 : isReversed = true かつgridEmissiveWeightが2.0以下の場合、グロー線が消えなくなる。
+   * 反転させる場合は、2.0以上を指定すること。
+   */
   get gridEmissiveWeight(): number {
     return this.uniforms.gridEmissiveWeight.value;
   }
