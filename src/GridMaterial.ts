@@ -7,7 +7,7 @@ import { IMaskable, MaskMapChunk } from "./chunk/MaskMapChunk";
  * グリッド状に分割されたマテリアル。
  */
 
-export class GridMaterial extends ShaderPhongMaterial
+export abstract class GridMaterial extends ShaderPhongMaterial
   implements IReversible, IMaskable {
   get division(): number {
     return this.uniforms.division.value;

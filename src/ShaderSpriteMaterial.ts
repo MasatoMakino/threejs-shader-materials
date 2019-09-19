@@ -11,7 +11,7 @@ import { SpriteChunk } from "./chunk/SpriteChunk";
 import VertexShader from "./ShaderSpriteMaterial.vert.glsl";
 import FragmentShader from "./ShaderSpriteMaterial.frag.glsl";
 
-export class ShaderSpriteMaterial extends ShaderMaterial {
+export abstract class ShaderSpriteMaterial extends ShaderMaterial {
   /**
    * コンストラクタ。
    * @param vertexShader

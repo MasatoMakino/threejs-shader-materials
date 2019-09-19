@@ -4,7 +4,7 @@ import { ShaderChunk } from "three";
  * ShaderChunkに登録を行うGLSLのコード片を格納するクラス。
  * GLSLコードの共有化を目的とする。
  */
-export class GLSLChunk {
+export abstract class GLSLChunk {
   /**
    * ShaderChunkに登録する名前。
    */

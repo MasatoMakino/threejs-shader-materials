@@ -1,20 +1,20 @@
-import { Texture, UniformsUtils } from "three";
+import { UniformsUtils } from "three";
 import { ShaderMaterialParameters } from "three";
-import { ShaderPhongMaterial } from "./ShaderPhongMaterial";
 import {
   Directions,
   IWavyAnimatable,
   WavyAnimationChunk
 } from "./chunk/WavyAnimationChunk";
-import { IMaskable, MaskMapChunk } from "./chunk/MaskMapChunk";
-import { IReversible, ReversibleChunk } from "./chunk/ReversibleChunk";
+import { MaskMapChunk } from "./chunk/MaskMapChunk";
+import { ReversibleChunk } from "./chunk/ReversibleChunk";
 import { AnimationChunk } from "./chunk/AnimationChunk";
 import { GridMaterial } from "./GridMaterial";
 
 /**
  * グリッド状に分割され、Wavyアニメーションを行うマテリアル。
  */
-export class WavyGridMaterial extends GridMaterial implements IWavyAnimatable {
+export abstract class WavyGridMaterial extends GridMaterial
+  implements IWavyAnimatable {
   protected animationID: number;
   protected lastAnimatedTimestamp: number;
 

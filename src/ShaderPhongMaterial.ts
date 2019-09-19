@@ -20,7 +20,8 @@ import FragmentShader from "./ShaderPhongMaterial.frag.glsl";
  * @see https://github.com/mrdoob/three.js/blob/76c64b23d422dcfb36a28353f45b1effa1f68c5a/src/renderers/shaders/ShaderLib.js#L53
  */
 
-export class ShaderPhongMaterial extends ShaderMaterial implements IMap {
+export abstract class ShaderPhongMaterial extends ShaderMaterial
+  implements IMap {
   /**
    * コンストラクタ。
    * @param vertexShader
