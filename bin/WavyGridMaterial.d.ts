@@ -4,7 +4,7 @@ import { GridMaterial } from "./GridMaterial";
 /**
  * グリッド状に分割され、Wavyアニメーションを行うマテリアル。
  */
-export declare class WavyGridMaterial extends GridMaterial implements IWavyAnimatable {
+export declare abstract class WavyGridMaterial extends GridMaterial implements IWavyAnimatable {
     protected animationID: number;
     protected lastAnimatedTimestamp: number;
     addTime(delta: number): void;

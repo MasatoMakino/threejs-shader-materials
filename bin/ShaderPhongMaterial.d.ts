@@ -5,7 +5,7 @@ import { IMap } from "./chunk/MapChunk";
  *
  * @see https://github.com/mrdoob/three.js/blob/76c64b23d422dcfb36a28353f45b1effa1f68c5a/src/renderers/shaders/ShaderLib.js#L53
  */
-export declare class ShaderPhongMaterial extends ShaderMaterial implements IMap {
+export declare abstract class ShaderPhongMaterial extends ShaderMaterial implements IMap {
     /**
      * コンストラクタ。
      * @param vertexShader

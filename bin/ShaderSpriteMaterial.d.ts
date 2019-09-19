@@ -1,5 +1,5 @@
 import { ShaderMaterial, ShaderMaterialParameters, Color, Vector2, Matrix3, Texture } from "three";
-export declare class ShaderSpriteMaterial extends ShaderMaterial {
+export declare abstract class ShaderSpriteMaterial extends ShaderMaterial {
     /**
      * コンストラクタ。
      * @param vertexShader
