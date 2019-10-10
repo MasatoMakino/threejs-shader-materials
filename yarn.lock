@@ -5911,6 +5911,10 @@ three@^0.107.0:
   resolved "https://registry.yarnpkg.com/three/-/three-0.107.0.tgz#0c862c348d61bd3f22058e01f5e771c1294315a1"
   integrity sha512-vqbKJRLBEviPVa7poEzXocobicwxzsctr5mnymA7n8fEzcVS49rYP0RrwqZ98JqujRoruK+/YzcchNpRP+kXsQ==
 
+"threejs-ticker@https://github.com/MasatoMakino/threejs-ticker.git":
+  version "0.1.0"
+  resolved "https://github.com/MasatoMakino/threejs-ticker.git#25680bfae5ccb0a9def33dd754455f5706a41f0a"
+
 through2-filter@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/through2-filter/-/through2-filter-3.0.0.tgz#700e786df2367c2c88cd8aa5be4cf9c1e7831254"

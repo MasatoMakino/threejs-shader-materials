@@ -39,5 +39,7 @@
       "pre-commit": "pretty-quick --staged"
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "threejs-ticker": "https://github.com/MasatoMakino/threejs-ticker.git"
+  }
 }
