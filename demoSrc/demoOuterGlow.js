@@ -10,11 +10,10 @@ import {
   TorusGeometry
 } from "three";
 import { Common } from "./Common";
-import { ExpansionMaterial } from "../bin/expansion/ExpansionMaterial";
-import { ExplodeModifier } from "three/examples/jsm/modifiers/ExplodeModifier";
 import * as dat from "dat.gui";
 import { CommonGUI } from "./CommonGUI";
 import { OuterGlowMaterial } from "../bin/rimEffect/OuterGlowMaterial";
+import { ThreeTicker, ThreeTickerEventType } from "threejs-ticker";
 
 export class Study {
   constructor() {
@@ -29,8 +28,9 @@ export class Study {
     const control = Common.initControl(camera, renderer);
     Common.initHelper(scene);
     const mat = this.initObject(scene);
-    Common.render(control, renderer, scene, camera);
-
+    ThreeTicker.addEventListener(ThreeTickerEventType.tick, e => {
+      renderer.render(scene, camera);
+    });
     this.initGUI(mat);
   }
 

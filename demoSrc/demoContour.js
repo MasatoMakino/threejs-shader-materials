@@ -8,6 +8,7 @@ import {
 } from "three";
 import { Common } from "./Common";
 import { ContourMaterial } from "../bin/contour/ContourMaterial";
+import { ThreeTicker, ThreeTickerEventType } from "threejs-ticker";
 
 export class StudyContourMap {
   constructor() {
@@ -22,7 +23,9 @@ export class StudyContourMap {
     const control = Common.initControl(camera, renderer);
     Common.initHelper(scene);
     this.initObject(scene);
-    Common.render(control, renderer, scene, camera);
+    ThreeTicker.addEventListener(ThreeTickerEventType.tick, e => {
+      renderer.render(scene, camera);
+    });
   }
 
   initObject(scene) {

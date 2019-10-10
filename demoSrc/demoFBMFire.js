@@ -10,6 +10,7 @@ import {
 } from "three";
 import { FBMFireMaterial } from "../bin/";
 import { CommonGUI } from "./CommonGUI";
+import { ThreeTickerEventType, ThreeTicker } from "threejs-ticker";
 
 export class Study {
   constructor() {
@@ -24,7 +25,10 @@ export class Study {
     const control = Common.initControl(camera, renderer);
     Common.initHelper(scene);
     const mat = this.initObject(scene);
-    Common.render(control, renderer, scene, camera);
+
+    ThreeTicker.addEventListener(ThreeTickerEventType.tick, e => {
+      renderer.render(scene, camera);
+    });
 
     this.initGUI(mat);
   }
@@ -65,7 +69,7 @@ export class Study {
 
   initGUIFireMaterial(gui, mat) {
     const folder = gui.addFolder("FBM Animation");
-
+    folder.add(mat, "isAnimate");
     folder.add(mat, "strength", 0.0, 1.0).step(0.01);
     folder.add(mat, "bloom", 0.0, 1.0).step(0.01);
     folder.add(mat, "speed", -8.0, 8.0).step(0.01);

@@ -3,6 +3,7 @@ import { Common } from "./Common";
 import { Color, Fog, Mesh, PlaneGeometry } from "three";
 import { SkyCloudMaterial } from "../bin";
 import { CommonGUI } from "./CommonGUI";
+import { ThreeTicker, ThreeTickerEventType } from "threejs-ticker";
 
 export class Study {
   constructor() {
@@ -20,7 +21,9 @@ export class Study {
     const gui = new dat.GUI();
     Common.initSky(scene, gui);
     const mat = this.initObject(scene);
-    Common.render(control, renderer, scene, camera);
+    ThreeTicker.addEventListener(ThreeTickerEventType.tick, e => {
+      renderer.render(scene, camera);
+    });
     this.initGUI(gui, mat);
   }
 

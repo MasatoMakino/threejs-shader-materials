@@ -9,6 +9,7 @@ import {
 } from "three";
 import { RimEffectMaterial } from "../bin/";
 import { CommonGUI } from "./CommonGUI";
+import { ThreeTicker, ThreeTickerEventType } from "threejs-ticker";
 
 export class Study {
   constructor() {
@@ -23,8 +24,9 @@ export class Study {
     const control = Common.initControl(camera, renderer);
     Common.initHelper(scene);
     const mat = this.initObject(scene);
-    Common.render(control, renderer, scene, camera);
-
+    ThreeTicker.addEventListener(ThreeTickerEventType.tick, e => {
+      renderer.render(scene, camera);
+    });
     this.initGUI(mat);
   }
 

@@ -14,6 +14,7 @@ import {
 } from "three";
 import { CommonGUI } from "./CommonGUI";
 import { SolidClippingMaterial } from "../bin";
+import { ThreeTicker, ThreeTickerEventType } from "threejs-ticker";
 
 export class Study {
   constructor() {
@@ -31,9 +32,13 @@ export class Study {
     Common.initHelper(scene);
     const mat = this.initObject(scene);
     const mesh = this.initMesh(mat, scene);
-    Common.render(control, renderer, scene, camera, () => {
+
+    ThreeTicker.addEventListener(ThreeTickerEventType.tick, e => {
+      renderer.render(scene, camera);
+    });
+    ThreeTicker.addEventListener(ThreeTickerEventType.onBeforeTick, e => {
       mesh.forEach(m => {
-        m.rotation.x += 0.031415;
+        m.rotation.x += e.delta / 500;
       });
     });
 

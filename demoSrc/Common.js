@@ -84,16 +84,4 @@ export class Common {
 
     CommonGUI.initSkyGUI(gui, sky, sunSphere);
   }
-
-  static render(control, renderer, scene, camera, onBeforeRender) {
-    const rendering = () => {
-      if (onBeforeRender != null) {
-        onBeforeRender();
-      }
-      control.update();
-      renderer.render(scene, camera);
-      requestAnimationFrame(rendering);
-    };
-    rendering();
-  }
 }

@@ -3,6 +3,7 @@ import { Common } from "./Common";
 import { SpriteCloudMaterial } from "../bin";
 import * as dat from "dat.gui";
 import { CommonGUI } from "./CommonGUI";
+import { ThreeTicker, ThreeTickerEventType } from "threejs-ticker";
 
 export class Study {
   constructor() {
@@ -21,8 +22,9 @@ export class Study {
     const gui = new dat.GUI();
     Common.initSky(scene, gui);
     this.initGUI(gui, mat);
-
-    Common.render(control, renderer, scene, camera);
+    ThreeTicker.addEventListener(ThreeTickerEventType.tick, e => {
+      renderer.render(scene, camera);
+    });
   }
 
   initObject(scene) {
