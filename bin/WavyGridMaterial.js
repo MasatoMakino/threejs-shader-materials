@@ -4,18 +4,27 @@ import { MaskMapChunk } from "./chunk/MaskMapChunk";
 import { ReversibleChunk } from "./chunk/ReversibleChunk";
 import { AnimationChunk } from "./chunk/AnimationChunk";
 import { GridMaterial } from "./GridMaterial";
+import { ThreeTicker } from "threejs-ticker";
+import { ThreeTickerEventType } from "threejs-ticker";
 /**
  * グリッド状に分割され、Wavyアニメーションを行うマテリアル。
  */
 export class WavyGridMaterial extends GridMaterial {
-    constructor() {
-        super(...arguments);
+    constructor(vertexShader, fragmentShader, parameters) {
+        super(vertexShader, fragmentShader, parameters);
         /**
          * 波の速度
          * 0.5にすると1の半分の速度になる。
          * マイナスを指定すると、波の進行方向が反転する。
          */
         this.speed = -0.5;
+        /*
+         * IAnimatable implements
+         */
+        this.animationListener = e => {
+            this.addTime(e.delta / 1000);
+        };
+        this.isAnimate = this.isAnimate; //reset and start animation
     }
     addTime(delta) {
         AnimationChunk.addTime(this, delta);
@@ -84,30 +93,11 @@ export class WavyGridMaterial extends GridMaterial {
     }
     initDefaultSetting(parameters) {
         super.initDefaultSetting(parameters);
-        this.isAnimate = this.isAnimate; //reset and start requestAnimationFrame()
     }
     startAnimation() {
-        if (this.animationID != null)
-            return;
-        this.animationID = requestAnimationFrame(timestamp => {
-            this.onRequestAnimationFrame(timestamp);
-        });
+        ThreeTicker.addEventListener(ThreeTickerEventType.onBeforeTick, this.animationListener);
     }
     stopAnimation() {
-        this.lastAnimatedTimestamp = null;
-        if (this.animationID == null)
-            return;
-        cancelAnimationFrame(this.animationID);
-        this.animationID = null;
-    }
-    onRequestAnimationFrame(timestamp) {
-        if (this.lastAnimatedTimestamp != null) {
-            const delta = (timestamp - this.lastAnimatedTimestamp) / 1000;
-            this.addTime(delta);
-        }
-        this.lastAnimatedTimestamp = timestamp;
-        this.animationID = requestAnimationFrame(timestamp => {
-            this.onRequestAnimationFrame(timestamp);
-        });
+        ThreeTicker.removeEventListener(ThreeTickerEventType.onBeforeTick, this.animationListener);
     }
 }

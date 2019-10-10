@@ -27,5 +27,8 @@ export declare class ExpansionDissolveMaterial extends ShaderPhongMaterial imple
     protected initUniforms(): void;
     protected initChunks(): void;
     protected initDefines(): void;
+    private animationListener;
+    protected startAnimation(): void;
+    protected stopAnimation(): void;
 }
 //# sourceMappingURL=ExpansionDissolveMaterial.d.ts.map

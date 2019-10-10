@@ -1,6 +1,8 @@
 import { ShaderPhongMaterial, AnimationChunk } from "../index";
 import { UniformsUtils } from "three";
 import FragmentShader from "./CellularNoiseMaterial.frag.glsl";
+import { ThreeTicker } from "threejs-ticker";
+import { ThreeTickerEventType } from "threejs-ticker";
 export class CellularNoiseMaterial extends ShaderPhongMaterial {
     constructor(parameters) {
         super(null, FragmentShader(), parameters);
@@ -8,11 +10,29 @@ export class CellularNoiseMaterial extends ShaderPhongMaterial {
          * implements IAnimatable
          */
         this.speed = -0.02;
-        this.isAnimate = true;
+        /*
+         * IAnimatable implements
+         */
+        this.animationListener = e => {
+            this.addTime(e.delta / 1000);
+        };
+        this.isAnimate = this.isAnimate;
     }
     addTime(delta) {
         if (this.isAnimate) {
             AnimationChunk.addTime(this, delta);
+        }
+    }
+    get isAnimate() {
+        return this.uniforms.isAnimate.value;
+    }
+    set isAnimate(value) {
+        this.uniforms.isAnimate.value = value;
+        if (this.isAnimate) {
+            this.startAnimation();
+        }
+        else {
+            this.stopAnimation();
         }
     }
     get grid() {
@@ -40,5 +60,11 @@ export class CellularNoiseMaterial extends ShaderPhongMaterial {
                 divisionScaleX: { value: 1.0 }
             }
         ]);
+    }
+    startAnimation() {
+        ThreeTicker.addEventListener(ThreeTickerEventType.onBeforeTick, this.animationListener);
+    }
+    stopAnimation() {
+        ThreeTicker.removeEventListener(ThreeTickerEventType.onBeforeTick, this.animationListener);
     }
 }

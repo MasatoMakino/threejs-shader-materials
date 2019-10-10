@@ -33,11 +33,12 @@ export declare abstract class WavyGridMaterial extends GridMaterial implements I
      * 波が発生する方角
      */
     direction: Directions;
+    constructor(vertexShader: string, fragmentShader: string, parameters?: ShaderMaterialParameters);
     protected initChunks(): void;
     static getBasicUniforms(): any;
     protected initDefaultSetting(parameters?: ShaderMaterialParameters): void;
+    private animationListener;
     protected startAnimation(): void;
     protected stopAnimation(): void;
-    protected onRequestAnimationFrame(timestamp: number): void;
 }
 //# sourceMappingURL=WavyGridMaterial.d.ts.map

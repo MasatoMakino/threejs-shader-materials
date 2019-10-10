@@ -26,8 +26,8 @@ export declare class SkyCloudMaterial extends ShaderPhongMaterial implements IAn
     protected initChunks(): void;
     protected initUniforms(): void;
     protected initDefaultSetting(parameters?: ShaderMaterialParameters): void;
+    private animationListener;
     protected startAnimation(): void;
     protected stopAnimation(): void;
-    protected onRequestAnimationFrame(timestamp: number): void;
 }
 //# sourceMappingURL=SkyCloudMaterial.d.ts.map

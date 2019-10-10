@@ -3,6 +3,8 @@ import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
 import { AnimationChunk } from "../chunk/AnimationChunk";
 import FragmentShader from "./SkyCloudMaterial.frag.glsl";
 import VertexShader from "../ShaderPhongMaterial.vert.glsl";
+import { ThreeTicker } from "threejs-ticker";
+import { ThreeTickerEventType } from "threejs-ticker";
 export class SkyCloudMaterial extends ShaderPhongMaterial {
     /**
      *
@@ -16,6 +18,13 @@ export class SkyCloudMaterial extends ShaderPhongMaterial {
          * マイナスを指定すると、波の進行方向が反転する。
          */
         this.speed = -0.02;
+        /*
+         * IAnimatable implements
+         */
+        this.animationListener = e => {
+            this.addTime(e.delta / 1000);
+        };
+        this.isAnimate = this.isAnimate; //reset and start animation
     }
     get scale() {
         return this.uniforms.scale.value;
@@ -94,38 +103,11 @@ export class SkyCloudMaterial extends ShaderPhongMaterial {
         else {
             this.transparent = parameters.transparent;
         }
-        this.isAnimate = this.isAnimate; //reset and start requestAnimationFrame()
     }
-    /*
-     * implements IAnimatable
-     */
     startAnimation() {
-        if (this.animationID != null)
-            return;
-        this.animationID = requestAnimationFrame(timestamp => {
-            this.onRequestAnimationFrame(timestamp);
-        });
+        ThreeTicker.addEventListener(ThreeTickerEventType.onBeforeTick, this.animationListener);
     }
     stopAnimation() {
-        this.lastAnimatedTimestamp = null;
-        if (this.animationID == null)
-            return;
-        cancelAnimationFrame(this.animationID);
-        this.animationID = null;
-    }
-    /*
-     * TODO requestAnimationFrameの多重実行はパフォーマンスに悪影響を与える。
-     * ref https://jsperf.com/single-raf-draw-calls-vs-multiple-raf-draw-calls
-     * Object.onBeforeRenderなどを利用してcallを一本化できないか検討する。
-     */
-    onRequestAnimationFrame(timestamp) {
-        if (this.lastAnimatedTimestamp != null) {
-            const delta = (timestamp - this.lastAnimatedTimestamp) / 1000;
-            this.addTime(delta);
-        }
-        this.lastAnimatedTimestamp = timestamp;
-        this.animationID = requestAnimationFrame(t => {
-            this.onRequestAnimationFrame(t);
-        });
+        ThreeTicker.removeEventListener(ThreeTickerEventType.onBeforeTick, this.animationListener);
     }
 }

@@ -113,10 +113,10 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-inherited">
+						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="wavygridmaterial.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="wavygridmaterial.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -211,6 +211,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#addeventlistener" class="tsd-kind-icon">add<wbr>Event<wbr>Listener</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="wavygridmaterial.html#addtime" class="tsd-kind-icon">add<wbr>Time</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="wavygridmaterial.html#animationlistener" class="tsd-kind-icon">animation<wbr>Listener</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#clone" class="tsd-kind-icon">clone</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#copy" class="tsd-kind-icon">copy</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#dispatchevent" class="tsd-kind-icon">dispatch<wbr>Event</a></li>
@@ -221,7 +222,6 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="wavygridmaterial.html#initdefines" class="tsd-kind-icon">init<wbr>Defines</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="wavygridmaterial.html#inituniforms" class="tsd-kind-icon">init<wbr>Uniforms</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#onbeforecompile" class="tsd-kind-icon">on<wbr>Before<wbr>Compile</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="wavygridmaterial.html#onrequestanimationframe" class="tsd-kind-icon">on<wbr>Request<wbr>Animation<wbr>Frame</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="wavygridmaterial.html#removeeventlistener" class="tsd-kind-icon">remove<wbr>Event<wbr>Listener</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="wavygridmaterial.html#setvalues" class="tsd-kind-icon">set<wbr>Values</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="wavygridmaterial.html#startanimation" class="tsd-kind-icon">start<wbr>Animation</a></li>
@@ -235,28 +235,22 @@
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 						<li class="tsd-signature tsd-kind-icon">new <wbr>Wavy<wbr>Grid<wbr>Material<span class="tsd-signature-symbol">(</span>vertexShader<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, fragmentShader<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, parameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ShaderMaterialParameters</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="wavygridmaterial.html" class="tsd-signature-type">WavyGridMaterial</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#constructor">constructor</a></p>
-								<p>Overrides ShaderMaterial.__constructor</p>
+								<p>Overrides <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L24">ShaderPhongMaterial.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/WavyGridMaterial.ts#L86">WavyGridMaterial.ts:86</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>コンストラクタ。</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -267,10 +261,6 @@
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> parameters: <span class="tsd-signature-type">ShaderMaterialParameters</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-										</div>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="wavygridmaterial.html" class="tsd-signature-type">WavyGridMaterial</a></h4>
@@ -287,7 +277,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#_opacity">_opacity</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L157">ShaderPhongMaterial.ts:157</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L157">ShaderPhongMaterial.ts:157</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -313,7 +303,7 @@
 					<div class="tsd-signature tsd-kind-icon">animationID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/WavyGridMaterial.ts#L18">WavyGridMaterial.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/WavyGridMaterial.ts#L20">WavyGridMaterial.ts:20</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -730,7 +720,7 @@
 					<div class="tsd-signature tsd-kind-icon">last<wbr>Animated<wbr>Timestamp<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/WavyGridMaterial.ts#L19">WavyGridMaterial.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/WavyGridMaterial.ts#L21">WavyGridMaterial.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -943,7 +933,7 @@
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/iwavyanimatable.html">IWavyAnimatable</a>.<a href="../interfaces/iwavyanimatable.html#speed">speed</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/WavyGridMaterial.ts#L45">WavyGridMaterial.ts:45</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/WavyGridMaterial.ts#L47">WavyGridMaterial.ts:47</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -1248,7 +1238,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#alphamap">alphaMap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L173">ShaderPhongMaterial.ts:173</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L173">ShaderPhongMaterial.ts:173</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Texture</span></h4>
@@ -1257,7 +1247,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#alphamap">alphaMap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L176">ShaderPhongMaterial.ts:176</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L176">ShaderPhongMaterial.ts:176</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1282,7 +1272,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#color">color</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L131">ShaderPhongMaterial.ts:131</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L131">ShaderPhongMaterial.ts:131</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1296,7 +1286,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#color">color</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L134">ShaderPhongMaterial.ts:134</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L134">ShaderPhongMaterial.ts:134</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1325,7 +1315,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/WavyGridMaterial.ts#L79">WavyGridMaterial.ts:79</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/WavyGridMaterial.ts#L81">WavyGridMaterial.ts:81</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1338,7 +1328,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/WavyGridMaterial.ts#L82">WavyGridMaterial.ts:82</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/WavyGridMaterial.ts#L84">WavyGridMaterial.ts:84</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1368,7 +1358,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="gridmaterial.html">GridMaterial</a>.<a href="gridmaterial.html#division">division</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/GridMaterial.ts#L12">GridMaterial.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/GridMaterial.ts#L12">GridMaterial.ts:12</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -1377,7 +1367,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="gridmaterial.html">GridMaterial</a>.<a href="gridmaterial.html#division">division</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/GridMaterial.ts#L15">GridMaterial.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/GridMaterial.ts#L15">GridMaterial.ts:15</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1402,7 +1392,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="gridmaterial.html">GridMaterial</a>.<a href="gridmaterial.html#divisionscalex">divisionScaleX</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/GridMaterial.ts#L19">GridMaterial.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/GridMaterial.ts#L19">GridMaterial.ts:19</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -1411,7 +1401,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="gridmaterial.html">GridMaterial</a>.<a href="gridmaterial.html#divisionscalex">divisionScaleX</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/GridMaterial.ts#L22">GridMaterial.ts:22</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/GridMaterial.ts#L22">GridMaterial.ts:22</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1436,7 +1426,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#emissive">emissive</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L159">ShaderPhongMaterial.ts:159</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L159">ShaderPhongMaterial.ts:159</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Color</span></h4>
@@ -1445,7 +1435,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#emissive">emissive</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L162">ShaderPhongMaterial.ts:162</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L162">ShaderPhongMaterial.ts:162</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1469,7 +1459,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/WavyGridMaterial.ts#L28">WavyGridMaterial.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/WavyGridMaterial.ts#L30">WavyGridMaterial.ts:30</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1482,7 +1472,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/WavyGridMaterial.ts#L31">WavyGridMaterial.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/WavyGridMaterial.ts#L33">WavyGridMaterial.ts:33</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1512,7 +1502,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="gridmaterial.html">GridMaterial</a>.<a href="gridmaterial.html#isreversed">isReversed</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/GridMaterial.ts#L26">GridMaterial.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/GridMaterial.ts#L26">GridMaterial.ts:26</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -1521,7 +1511,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="gridmaterial.html">GridMaterial</a>.<a href="gridmaterial.html#isreversed">isReversed</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/GridMaterial.ts#L29">GridMaterial.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/GridMaterial.ts#L29">GridMaterial.ts:29</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1546,7 +1536,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#map">map</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L166">ShaderPhongMaterial.ts:166</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L166">ShaderPhongMaterial.ts:166</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Texture</span></h4>
@@ -1555,7 +1545,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#map">map</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L169">ShaderPhongMaterial.ts:169</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L169">ShaderPhongMaterial.ts:169</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1580,7 +1570,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="gridmaterial.html">GridMaterial</a>.<a href="gridmaterial.html#masktexture">maskTexture</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/GridMaterial.ts#L33">GridMaterial.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/GridMaterial.ts#L33">GridMaterial.ts:33</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Texture</span></h4>
@@ -1589,7 +1579,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="gridmaterial.html">GridMaterial</a>.<a href="gridmaterial.html#masktexture">maskTexture</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/GridMaterial.ts#L36">GridMaterial.ts:36</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/GridMaterial.ts#L36">GridMaterial.ts:36</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1615,7 +1605,7 @@
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#opacity">opacity</a></p>
 								<p>Overrides Material.opacity</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L141">ShaderPhongMaterial.ts:141</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L141">ShaderPhongMaterial.ts:141</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1630,7 +1620,7 @@
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#opacity">opacity</a></p>
 								<p>Overrides Material.opacity</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L151">ShaderPhongMaterial.ts:151</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L151">ShaderPhongMaterial.ts:151</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1665,7 +1655,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/WavyGridMaterial.ts#L69">WavyGridMaterial.ts:69</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/WavyGridMaterial.ts#L71">WavyGridMaterial.ts:71</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1678,7 +1668,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/WavyGridMaterial.ts#L72">WavyGridMaterial.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/WavyGridMaterial.ts#L74">WavyGridMaterial.ts:74</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1707,7 +1697,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/WavyGridMaterial.ts#L52">WavyGridMaterial.ts:52</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/WavyGridMaterial.ts#L54">WavyGridMaterial.ts:54</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1722,7 +1712,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/WavyGridMaterial.ts#L55">WavyGridMaterial.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/WavyGridMaterial.ts#L57">WavyGridMaterial.ts:57</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1753,7 +1743,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/WavyGridMaterial.ts#L59">WavyGridMaterial.ts:59</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/WavyGridMaterial.ts#L61">WavyGridMaterial.ts:61</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -1761,7 +1751,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/WavyGridMaterial.ts#L62">WavyGridMaterial.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/WavyGridMaterial.ts#L64">WavyGridMaterial.ts:64</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1844,13 +1834,36 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/iwavyanimatable.html">IWavyAnimatable</a>.<a href="../interfaces/iwavyanimatable.html#addtime">addTime</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/WavyGridMaterial.ts#L21">WavyGridMaterial.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/WavyGridMaterial.ts#L23">WavyGridMaterial.ts:23</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>delta: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="animationlistener" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> animation<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">animation<wbr>Listener<span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/WavyGridMaterial.ts#L118">WavyGridMaterial.ts:118</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>e: <span class="tsd-signature-type">any</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -2038,7 +2051,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="gridmaterial.html">GridMaterial</a>.<a href="gridmaterial.html#initchunks">initChunks</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/WavyGridMaterial.ts#L86">WavyGridMaterial.ts:86</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/WavyGridMaterial.ts#L97">WavyGridMaterial.ts:97</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -2056,7 +2069,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="gridmaterial.html">GridMaterial</a>.<a href="gridmaterial.html#initdefaultsetting">initDefaultSetting</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/WavyGridMaterial.ts#L100">WavyGridMaterial.ts:100</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/WavyGridMaterial.ts#L111">WavyGridMaterial.ts:111</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2080,7 +2093,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#initdefines">initDefines</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L107">ShaderPhongMaterial.ts:107</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L107">ShaderPhongMaterial.ts:107</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2103,7 +2116,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#inituniforms">initUniforms</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L96">ShaderPhongMaterial.ts:96</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L96">ShaderPhongMaterial.ts:96</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2147,29 +2160,6 @@
 									<div class="tsd-comment tsd-typography">
 										<p>WebGLRenderer Context that is initializing the material</p>
 									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-					<a name="onrequestanimationframe" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> on<wbr>Request<wbr>Animation<wbr>Frame</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>Request<wbr>Animation<wbr>Frame<span class="tsd-signature-symbol">(</span>timestamp<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/WavyGridMaterial.ts#L119">WavyGridMaterial.ts:119</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>timestamp: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -2267,7 +2257,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/WavyGridMaterial.ts#L105">WavyGridMaterial.ts:105</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/WavyGridMaterial.ts#L122">WavyGridMaterial.ts:122</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -2285,7 +2275,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#startglow">startGlow</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L185">ShaderPhongMaterial.ts:185</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L185">ShaderPhongMaterial.ts:185</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2308,7 +2298,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/WavyGridMaterial.ts#L112">WavyGridMaterial.ts:112</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/WavyGridMaterial.ts#L129">WavyGridMaterial.ts:129</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -2374,7 +2364,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="gridmaterial.html">GridMaterial</a>.<a href="gridmaterial.html#getbasicuniforms">getBasicUniforms</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/WavyGridMaterial.ts#L91">WavyGridMaterial.ts:91</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/WavyGridMaterial.ts#L102">WavyGridMaterial.ts:102</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -2398,7 +2388,7 @@
 					<li class="current tsd-kind-class">
 						<a href="wavygridmaterial.html" class="tsd-kind-icon">Wavy<wbr>Grid<wbr>Material</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="wavygridmaterial.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
@@ -2638,6 +2628,9 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="wavygridmaterial.html#addtime" class="tsd-kind-icon">add<wbr>Time</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="wavygridmaterial.html#animationlistener" class="tsd-kind-icon">animation<wbr>Listener</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="wavygridmaterial.html#clone" class="tsd-kind-icon">clone</a>
 							</li>
@@ -2667,9 +2660,6 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="wavygridmaterial.html#onbeforecompile" class="tsd-kind-icon">on<wbr>Before<wbr>Compile</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-								<a href="wavygridmaterial.html#onrequestanimationframe" class="tsd-kind-icon">on<wbr>Request<wbr>Animation<wbr>Frame</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="wavygridmaterial.html#removeeventlistener" class="tsd-kind-icon">remove<wbr>Event<wbr>Listener</a>

@@ -3,8 +3,8 @@ import { Vector2, ShaderMaterialParameters } from "three";
 import { Texture } from "three";
 export declare class SwirlMaterial extends ShaderPhongMaterial implements IAnimatable {
     speed: number;
-    isAnimate: boolean;
     addTime(delta: number): void;
+    isAnimate: boolean;
     map: Texture;
     alphaMap: Texture;
     /**
@@ -19,5 +19,8 @@ export declare class SwirlMaterial extends ShaderPhongMaterial implements IAnima
     constructor(parameters?: ShaderMaterialParameters);
     protected initChunks(): void;
     protected initUniforms(): void;
+    private animationListener;
+    protected startAnimation(): void;
+    protected stopAnimation(): void;
 }
 //# sourceMappingURL=SwirlMaterial.d.ts.map

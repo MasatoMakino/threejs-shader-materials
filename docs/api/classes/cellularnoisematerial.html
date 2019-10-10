@@ -126,7 +126,6 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="cellularnoisematerial.html#fragmentshader" class="tsd-kind-icon">fragment<wbr>Shader</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="cellularnoisematerial.html#id" class="tsd-kind-icon">id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="cellularnoisematerial.html#index0attributename" class="tsd-kind-icon">index0<wbr>Attribute<wbr>Name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="cellularnoisematerial.html#isanimate" class="tsd-kind-icon">is<wbr>Animate</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="cellularnoisematerial.html#ismaterial" class="tsd-kind-icon">is<wbr>Material</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="cellularnoisematerial.html#lights" class="tsd-kind-icon">lights</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="cellularnoisematerial.html#linewidth" class="tsd-kind-icon">linewidth</a></li>
@@ -171,6 +170,7 @@
 								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="cellularnoisematerial.html#divisionscalex" class="tsd-kind-icon">division<wbr>ScaleX</a></li>
 								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="cellularnoisematerial.html#emissive" class="tsd-kind-icon">emissive</a></li>
 								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="cellularnoisematerial.html#grid" class="tsd-kind-icon">grid</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="cellularnoisematerial.html#isanimate" class="tsd-kind-icon">is<wbr>Animate</a></li>
 								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="cellularnoisematerial.html#map" class="tsd-kind-icon">map</a></li>
 								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="cellularnoisematerial.html#opacity" class="tsd-kind-icon">opacity</a></li>
 							</ul>
@@ -180,6 +180,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="cellularnoisematerial.html#addeventlistener" class="tsd-kind-icon">add<wbr>Event<wbr>Listener</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cellularnoisematerial.html#addtime" class="tsd-kind-icon">add<wbr>Time</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="cellularnoisematerial.html#animationlistener" class="tsd-kind-icon">animation<wbr>Listener</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="cellularnoisematerial.html#clone" class="tsd-kind-icon">clone</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="cellularnoisematerial.html#copy" class="tsd-kind-icon">copy</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="cellularnoisematerial.html#dispatchevent" class="tsd-kind-icon">dispatch<wbr>Event</a></li>
@@ -192,7 +193,9 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="cellularnoisematerial.html#onbeforecompile" class="tsd-kind-icon">on<wbr>Before<wbr>Compile</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="cellularnoisematerial.html#removeeventlistener" class="tsd-kind-icon">remove<wbr>Event<wbr>Listener</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="cellularnoisematerial.html#setvalues" class="tsd-kind-icon">set<wbr>Values</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="cellularnoisematerial.html#startanimation" class="tsd-kind-icon">start<wbr>Animation</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="cellularnoisematerial.html#startglow" class="tsd-kind-icon">start<wbr>Glow</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="cellularnoisematerial.html#stopanimation" class="tsd-kind-icon">stop<wbr>Animation</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="cellularnoisematerial.html#tojson" class="tsd-kind-icon">toJSON</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="cellularnoisematerial.html#update" class="tsd-kind-icon">update</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="cellularnoisematerial.html#getbasicuniforms" class="tsd-kind-icon">get<wbr>Basic<wbr>Uniforms</a></li>
@@ -214,7 +217,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/cellularNoise/CellularNoiseMaterial.ts#L30">cellularNoise/CellularNoiseMaterial.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/cellularNoise/CellularNoiseMaterial.ts#L43">cellularNoise/CellularNoiseMaterial.ts:43</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -237,7 +240,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#_opacity">_opacity</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L157">ShaderPhongMaterial.ts:157</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L157">ShaderPhongMaterial.ts:157</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -647,17 +650,6 @@
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="isanimate" class="tsd-anchor"></a>
-					<h3>is<wbr>Animate</h3>
-					<div class="tsd-signature tsd-kind-icon">is<wbr>Animate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
-					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/ianimatable.html">IAnimatable</a>.<a href="../interfaces/ianimatable.html#isanimate">isAnimate</a></p>
-						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/cellularNoise/CellularNoiseMaterial.ts#L11">cellularNoise/CellularNoiseMaterial.ts:11</a></li>
-						</ul>
-					</aside>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="ismaterial" class="tsd-anchor"></a>
 					<h3>is<wbr>Material</h3>
@@ -884,7 +876,7 @@
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/ianimatable.html">IAnimatable</a>.<a href="../interfaces/ianimatable.html#speed">speed</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/cellularNoise/CellularNoiseMaterial.ts#L10">cellularNoise/CellularNoiseMaterial.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/cellularNoise/CellularNoiseMaterial.ts#L12">cellularNoise/CellularNoiseMaterial.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1182,7 +1174,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#alphamap">alphaMap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L173">ShaderPhongMaterial.ts:173</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L173">ShaderPhongMaterial.ts:173</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Texture</span></h4>
@@ -1191,7 +1183,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#alphamap">alphaMap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L176">ShaderPhongMaterial.ts:176</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L176">ShaderPhongMaterial.ts:176</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1216,7 +1208,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#color">color</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L131">ShaderPhongMaterial.ts:131</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L131">ShaderPhongMaterial.ts:131</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1230,7 +1222,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#color">color</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L134">ShaderPhongMaterial.ts:134</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L134">ShaderPhongMaterial.ts:134</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1259,7 +1251,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/cellularNoise/CellularNoiseMaterial.ts#L25">cellularNoise/CellularNoiseMaterial.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/cellularNoise/CellularNoiseMaterial.ts#L38">cellularNoise/CellularNoiseMaterial.ts:38</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -1267,7 +1259,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/cellularNoise/CellularNoiseMaterial.ts#L28">cellularNoise/CellularNoiseMaterial.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/cellularNoise/CellularNoiseMaterial.ts#L41">cellularNoise/CellularNoiseMaterial.ts:41</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1292,7 +1284,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#emissive">emissive</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L159">ShaderPhongMaterial.ts:159</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L159">ShaderPhongMaterial.ts:159</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Color</span></h4>
@@ -1301,7 +1293,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#emissive">emissive</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L162">ShaderPhongMaterial.ts:162</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L162">ShaderPhongMaterial.ts:162</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1325,7 +1317,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/cellularNoise/CellularNoiseMaterial.ts#L18">cellularNoise/CellularNoiseMaterial.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/cellularNoise/CellularNoiseMaterial.ts#L31">cellularNoise/CellularNoiseMaterial.ts:31</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -1333,13 +1325,45 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/cellularNoise/CellularNoiseMaterial.ts#L21">cellularNoise/CellularNoiseMaterial.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/cellularNoise/CellularNoiseMaterial.ts#L34">cellularNoise/CellularNoiseMaterial.ts:34</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>value: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="isanimate" class="tsd-anchor"></a>
+					<h3>is<wbr>Animate</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> isAnimate<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> isAnimate<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/cellularNoise/CellularNoiseMaterial.ts#L19">cellularNoise/CellularNoiseMaterial.ts:19</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/cellularNoise/CellularNoiseMaterial.ts#L22">cellularNoise/CellularNoiseMaterial.ts:22</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1358,7 +1382,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#map">map</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L166">ShaderPhongMaterial.ts:166</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L166">ShaderPhongMaterial.ts:166</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Texture</span></h4>
@@ -1367,7 +1391,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#map">map</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L169">ShaderPhongMaterial.ts:169</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L169">ShaderPhongMaterial.ts:169</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1393,7 +1417,7 @@
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#opacity">opacity</a></p>
 								<p>Overrides Material.opacity</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L141">ShaderPhongMaterial.ts:141</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L141">ShaderPhongMaterial.ts:141</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1408,7 +1432,7 @@
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#opacity">opacity</a></p>
 								<p>Overrides Material.opacity</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L151">ShaderPhongMaterial.ts:151</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L151">ShaderPhongMaterial.ts:151</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1502,13 +1526,36 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/ianimatable.html">IAnimatable</a>.<a href="../interfaces/ianimatable.html#addtime">addTime</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/cellularNoise/CellularNoiseMaterial.ts#L12">cellularNoise/CellularNoiseMaterial.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/cellularNoise/CellularNoiseMaterial.ts#L14">cellularNoise/CellularNoiseMaterial.ts:14</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>delta: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="animationlistener" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> animation<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">animation<wbr>Listener<span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/cellularNoise/CellularNoiseMaterial.ts#L68">cellularNoise/CellularNoiseMaterial.ts:68</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>e: <span class="tsd-signature-type">any</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1696,7 +1743,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#initchunks">initChunks</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/cellularNoise/CellularNoiseMaterial.ts#L36">cellularNoise/CellularNoiseMaterial.ts:36</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/cellularNoise/CellularNoiseMaterial.ts#L50">cellularNoise/CellularNoiseMaterial.ts:50</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1714,7 +1761,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#initdefaultsetting">initDefaultSetting</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L123">ShaderPhongMaterial.ts:123</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L123">ShaderPhongMaterial.ts:123</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1746,7 +1793,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#initdefines">initDefines</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L107">ShaderPhongMaterial.ts:107</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L107">ShaderPhongMaterial.ts:107</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1769,7 +1816,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#inituniforms">initUniforms</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/cellularNoise/CellularNoiseMaterial.ts#L41">cellularNoise/CellularNoiseMaterial.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/cellularNoise/CellularNoiseMaterial.ts#L55">cellularNoise/CellularNoiseMaterial.ts:55</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1895,6 +1942,23 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="startanimation" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> start<wbr>Animation</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">start<wbr>Animation<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/cellularNoise/CellularNoiseMaterial.ts#L72">cellularNoise/CellularNoiseMaterial.ts:72</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="startglow" class="tsd-anchor"></a>
 					<h3>start<wbr>Glow</h3>
@@ -1906,7 +1970,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#startglow">startGlow</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L185">ShaderPhongMaterial.ts:185</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L185">ShaderPhongMaterial.ts:185</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1915,6 +1979,23 @@
 									<a href="https://stackoverflow.com/questions/37647853/three-js-depthwrite-vs-depthtest-for-transparent-canvas-texture-map-on-three-p" class="external">https://stackoverflow.com/questions/37647853/three-js-depthwrite-vs-depthtest-for-transparent-canvas-texture-map-on-three-p</a></p>
 								</div>
 							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="stopanimation" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> stop<wbr>Animation</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">stop<wbr>Animation<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/cellularNoise/CellularNoiseMaterial.ts#L79">cellularNoise/CellularNoiseMaterial.ts:79</a></li>
+								</ul>
+							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -1978,7 +2059,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#getbasicuniforms">getBasicUniforms</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/b64c23f/src/ShaderPhongMaterial.ts#L57">ShaderPhongMaterial.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/9a39f69/src/ShaderPhongMaterial.ts#L57">ShaderPhongMaterial.ts:57</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2090,9 +2171,6 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="cellularnoisematerial.html#index0attributename" class="tsd-kind-icon">index0<wbr>Attribute<wbr>Name</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="cellularnoisematerial.html#isanimate" class="tsd-kind-icon">is<wbr>Animate</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="cellularnoisematerial.html#ismaterial" class="tsd-kind-icon">is<wbr>Material</a>
@@ -2211,6 +2289,9 @@
 							<li class=" tsd-kind-accessor tsd-parent-kind-class">
 								<a href="cellularnoisematerial.html#grid" class="tsd-kind-icon">grid</a>
 							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+								<a href="cellularnoisematerial.html#isanimate" class="tsd-kind-icon">is<wbr>Animate</a>
+							</li>
 							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
 								<a href="cellularnoisematerial.html#map" class="tsd-kind-icon">map</a>
 							</li>
@@ -2222,6 +2303,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="cellularnoisematerial.html#addtime" class="tsd-kind-icon">add<wbr>Time</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="cellularnoisematerial.html#animationlistener" class="tsd-kind-icon">animation<wbr>Listener</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="cellularnoisematerial.html#clone" class="tsd-kind-icon">clone</a>
@@ -2259,8 +2343,14 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="cellularnoisematerial.html#setvalues" class="tsd-kind-icon">set<wbr>Values</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="cellularnoisematerial.html#startanimation" class="tsd-kind-icon">start<wbr>Animation</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="cellularnoisematerial.html#startglow" class="tsd-kind-icon">start<wbr>Glow</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="cellularnoisematerial.html#stopanimation" class="tsd-kind-icon">stop<wbr>Animation</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="cellularnoisematerial.html#tojson" class="tsd-kind-icon">toJSON</a>

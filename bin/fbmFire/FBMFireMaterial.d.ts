@@ -6,8 +6,6 @@ export declare class FBMFireMaterial extends ShaderPhongMaterial implements ITil
     tiles: number;
     hashLoop: number;
     amp: number;
-    protected animationID: number;
-    protected lastAnimatedTimestamp: number;
     addTime(delta: number): void;
     /**
      * アニメーションを行うか否か。
@@ -33,8 +31,8 @@ export declare class FBMFireMaterial extends ShaderPhongMaterial implements ITil
     protected initChunks(): void;
     protected initDefines(): void;
     protected initDefaultSetting(parameters?: ShaderMaterialParameters): void;
+    private animationListener;
     protected startAnimation(): void;
     protected stopAnimation(): void;
-    protected onRequestAnimationFrame(timestamp: number): void;
 }
 //# sourceMappingURL=FBMFireMaterial.d.ts.map
