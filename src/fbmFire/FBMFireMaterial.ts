@@ -5,6 +5,7 @@ import VertexShader from "../ShaderPhongMaterial.vert.glsl";
 import FragmentShader from "./FBMFireMaterial.frag.glsl";
 import { ITiledFBM, TilingFBMChunk } from "../chunk/TilingFBMChunk";
 import { IAnimatable, AnimationChunk } from "../chunk/AnimationChunk";
+import { ThreeTicker, ThreeTickerEventType } from "threejs-ticker";
 
 export class FBMFireMaterial extends ShaderPhongMaterial
   implements ITiledFBM, IAnimatable {
@@ -30,9 +31,6 @@ export class FBMFireMaterial extends ShaderPhongMaterial
   /*
    * IAnimatable implements
    */
-  protected animationID: number;
-  protected lastAnimatedTimestamp: number;
-
   addTime(delta: number): void {
     AnimationChunk.addTime(this, delta);
   }
@@ -99,6 +97,7 @@ export class FBMFireMaterial extends ShaderPhongMaterial
    */
   constructor(parameters?: ShaderMaterialParameters) {
     super(VertexShader(), FragmentShader(), parameters);
+    this.isAnimate = this.isAnimate; //reset and start animation
   }
 
   protected initUniforms(): void {
@@ -135,35 +134,26 @@ export class FBMFireMaterial extends ShaderPhongMaterial
     } else {
       this.transparent = parameters.transparent;
     }
-    this.isAnimate = this.isAnimate; //reset and start requestAnimationFrame()
   }
 
   /*
    * IAnimatable implements
    */
-  protected startAnimation(): void {
-    if (this.animationID != null) return;
-    this.animationID = requestAnimationFrame(timestamp => {
-      this.onRequestAnimationFrame(timestamp);
-    });
+  private animationListener = e => {
+    this.addTime(e.delta / 1000);
+  };
+
+  protected startAnimation() {
+    ThreeTicker.addEventListener(
+      ThreeTickerEventType.onBeforeTick,
+      this.animationListener
+    );
   }
 
   protected stopAnimation(): void {
-    this.lastAnimatedTimestamp = null;
-    if (this.animationID == null) return;
-    cancelAnimationFrame(this.animationID);
-    this.animationID = null;
-  }
-
-  protected onRequestAnimationFrame(timestamp: number) {
-    if (this.lastAnimatedTimestamp != null) {
-      const delta = (timestamp - this.lastAnimatedTimestamp) / 1000;
-      this.addTime(delta);
-    }
-
-    this.lastAnimatedTimestamp = timestamp;
-    this.animationID = requestAnimationFrame(timestamp => {
-      this.onRequestAnimationFrame(timestamp);
-    });
+    ThreeTicker.removeEventListener(
+      ThreeTickerEventType.onBeforeTick,
+      this.animationListener
+    );
   }
 }

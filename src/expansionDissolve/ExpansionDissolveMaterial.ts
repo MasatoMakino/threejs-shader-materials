@@ -5,6 +5,8 @@ import { ITiledFBM, TilingFBMChunk } from "../index";
 import VertexShader from "./ExpansionDissolveMaterial.vert.glsl";
 import FragmentShader from "./ExpansionDissolveMaterial.frag.glsl";
 import { IAnimatable, AnimationChunk } from "../index";
+import { ThreeTicker } from "threejs-ticker";
+import { ThreeTickerEventType } from "threejs-ticker";
 
 /**
  * FBMノイズによるジオメトリの膨張でディゾルブを行うマテリアル。
@@ -20,7 +22,17 @@ export class ExpansionDissolveMaterial extends ShaderPhongMaterial
       AnimationChunk.addTime(this, delta);
     }
   }
-  public isAnimate = true;
+  get isAnimate(): boolean {
+    return this.uniforms.isAnimate.value;
+  }
+  set isAnimate(value: boolean) {
+    this.uniforms.isAnimate.value = value;
+    if (this.isAnimate) {
+      this.startAnimation();
+    } else {
+      this.stopAnimation();
+    }
+  }
 
   // ITiledFBM //
   get tiles(): number {
@@ -81,15 +93,16 @@ export class ExpansionDissolveMaterial extends ShaderPhongMaterial
    */
   constructor(parameters?: ShaderMaterialParameters) {
     super(VertexShader(), FragmentShader(), parameters);
+    this.isAnimate = this.isAnimate;
   }
 
   protected initUniforms(): void {
     this.uniforms = UniformsUtils.merge([
       ShaderPhongMaterial.getBasicUniforms(),
       TilingFBMChunk.getUniform(),
+      AnimationChunk.getUniform(),
       {
         scaleMax: { value: 20.0 },
-        time: { value: 0.0 },
         progress: { value: 0.0 },
         dissolveColor: { value: new Color(1.0, 1.0, 1.0) },
         dissolveOutColor: { value: new Color(0.0, 0.0, 0.0) }
@@ -106,5 +119,26 @@ export class ExpansionDissolveMaterial extends ShaderPhongMaterial
     super.initDefines();
     this.defines = Object.assign(this.defines, TilingFBMChunk.getDefines());
     this.defines.USE_EXPANSION = true;
+  }
+
+  /*
+   * IAnimatable implements
+   */
+  private animationListener = e => {
+    this.addTime(e.delta / 1000);
+  };
+
+  protected startAnimation() {
+    ThreeTicker.addEventListener(
+      ThreeTickerEventType.onBeforeTick,
+      this.animationListener
+    );
+  }
+
+  protected stopAnimation(): void {
+    ThreeTicker.removeEventListener(
+      ThreeTickerEventType.onBeforeTick,
+      this.animationListener
+    );
   }
 }

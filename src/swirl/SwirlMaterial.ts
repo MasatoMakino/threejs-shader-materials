@@ -3,16 +3,28 @@ import { Vector2, ShaderMaterialParameters, UniformsUtils } from "three";
 import FragmentShader from "./SwirlMaterial.frag.glsl";
 import { Texture } from "three";
 import { RepeatWrapping } from "three";
+import { ThreeTicker } from "threejs-ticker";
+import { ThreeTickerEventType } from "threejs-ticker";
 
 export class SwirlMaterial extends ShaderPhongMaterial implements IAnimatable {
   /*
    * implements IAnimatable
    */
   speed: number = -0.02;
-  isAnimate: boolean = true;
   addTime(delta: number): void {
     if (this.isAnimate) {
       AnimationChunk.addTime(this, delta);
+    }
+  }
+  get isAnimate(): boolean {
+    return this.uniforms.isAnimate.value;
+  }
+  set isAnimate(value: boolean) {
+    this.uniforms.isAnimate.value = value;
+    if (this.isAnimate) {
+      this.startAnimation();
+    } else {
+      this.stopAnimation();
     }
   }
 
@@ -65,6 +77,7 @@ export class SwirlMaterial extends ShaderPhongMaterial implements IAnimatable {
 
   constructor(parameters?: ShaderMaterialParameters) {
     super(null, FragmentShader(), parameters);
+    this.isAnimate = this.isAnimate;
   }
 
   protected initChunks(): void {
@@ -83,5 +96,26 @@ export class SwirlMaterial extends ShaderPhongMaterial implements IAnimatable {
         center: { value: new Vector2(0.5, 0.5) }
       }
     ]);
+  }
+
+  /*
+   * IAnimatable implements
+   */
+  private animationListener = e => {
+    this.addTime(e.delta / 1000);
+  };
+
+  protected startAnimation() {
+    ThreeTicker.addEventListener(
+      ThreeTickerEventType.onBeforeTick,
+      this.animationListener
+    );
+  }
+
+  protected stopAnimation(): void {
+    ThreeTicker.removeEventListener(
+      ThreeTickerEventType.onBeforeTick,
+      this.animationListener
+    );
   }
 }
