@@ -4,8 +4,7 @@ import { TilingFBMChunk } from "../index";
 import VertexShader from "./ExpansionDissolveMaterial.vert.glsl";
 import FragmentShader from "./ExpansionDissolveMaterial.frag.glsl";
 import { AnimationChunk } from "../index";
-import { ThreeTicker } from "threejs-ticker";
-import { ThreeTickerEventType } from "threejs-ticker";
+import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 /**
  * FBMノイズによるジオメトリの膨張でディゾルブを行うマテリアル。
  * 爆発しながら消滅するような表現になる。
@@ -117,9 +116,9 @@ export class ExpansionDissolveMaterial extends ShaderPhongMaterial {
         this.defines.USE_EXPANSION = true;
     }
     startAnimation() {
-        ThreeTicker.addEventListener(ThreeTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.addEventListener(RAFTickerEventType.onBeforeTick, this.animationListener);
     }
     stopAnimation() {
-        ThreeTicker.removeEventListener(ThreeTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.removeEventListener(RAFTickerEventType.onBeforeTick, this.animationListener);
     }
 }

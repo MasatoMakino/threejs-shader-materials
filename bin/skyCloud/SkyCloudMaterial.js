@@ -3,8 +3,7 @@ import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
 import { AnimationChunk } from "../chunk/AnimationChunk";
 import FragmentShader from "./SkyCloudMaterial.frag.glsl";
 import VertexShader from "../ShaderPhongMaterial.vert.glsl";
-import { ThreeTicker } from "threejs-ticker";
-import { ThreeTickerEventType } from "threejs-ticker";
+import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 export class SkyCloudMaterial extends ShaderPhongMaterial {
     /**
      *
@@ -105,9 +104,9 @@ export class SkyCloudMaterial extends ShaderPhongMaterial {
         }
     }
     startAnimation() {
-        ThreeTicker.addEventListener(ThreeTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.addEventListener(RAFTickerEventType.onBeforeTick, this.animationListener);
     }
     stopAnimation() {
-        ThreeTicker.removeEventListener(ThreeTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.removeEventListener(RAFTickerEventType.onBeforeTick, this.animationListener);
     }
 }

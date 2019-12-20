@@ -6,39 +6,7 @@ Collection of shader materials for three.js
 
 ## Demo
 
-[HexGrid](https://masatomakino.github.io/threejs-shader-materials/demo/hexGrid)
-
-[HexDissolve](https://masatomakino.github.io/threejs-shader-materials/demo/hex_dissolve.html)
-
-[HalftoneGrid](https://masatomakino.github.io/threejs-shader-materials/demo/halftoneGrid)
-
-[SquareGrid](https://masatomakino.github.io/threejs-shader-materials/demo/squareGrid)
-
-[CrossGrid](https://masatomakino.github.io/threejs-shader-materials/demo/cross_grid)
-
-[ContourMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/contour)
-
-[SkyCloudMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/skyCloud)
-
-[FBMDissolveMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/fbmDissolve)
-
-[FBMFireMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/fbmFire)
-
-[RimEffectMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/rimEffect)
-
-[ExpansionMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/expansion)
-
-[OuterGlowMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/outerGlow)
-
-[ExpansionDissolveMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/expansion_dissolve)
-
-[SpriteCloudMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/spriteCloud)
-
-[SwirlMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/swirl)
-
-[CellularNoiseMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/cellular)
-
-[SolidClippingMaterial](https://masatomakino.github.io/threejs-shader-materials/demo/solid_clipping)
+[Demo page](https://masatomakino.github.io/threejs-shader-materials/demo/)
 
 ## Getting Started
 

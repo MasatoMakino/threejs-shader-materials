@@ -2,22 +2,29 @@ import { ShaderMaterialParameters, Color } from "three";
 import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
 import { IAnimatable } from "../chunk/AnimationChunk";
 export declare class SkyCloudMaterial extends ShaderPhongMaterial implements IAnimatable {
-    scale: number;
+    get scale(): number;
+    set scale(value: number);
     private animationID;
     private lastAnimatedTimestamp;
     addTime(delta: number): void;
-    isAnimate: boolean;
+    get isAnimate(): boolean;
+    set isAnimate(value: boolean);
     /**
      * 波の速度
      * 0.5にすると1の半分の速度になる。
      * マイナスを指定すると、波の進行方向が反転する。
      */
     speed: number;
-    skyColor: Color;
-    cloudVolume: number;
-    cloudBottomVolume: number;
-    cloudBottomSaturation: number;
-    cloudTransformSpeed: number;
+    get skyColor(): Color;
+    set skyColor(value: Color);
+    get cloudVolume(): number;
+    set cloudVolume(value: number);
+    get cloudBottomVolume(): number;
+    set cloudBottomVolume(value: number);
+    get cloudBottomSaturation(): number;
+    set cloudBottomSaturation(value: number);
+    get cloudTransformSpeed(): number;
+    set cloudTransformSpeed(value: number);
     /**
      *
      * @param parameters

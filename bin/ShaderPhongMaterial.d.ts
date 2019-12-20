@@ -39,21 +39,26 @@ export declare abstract class ShaderPhongMaterial extends ShaderMaterial impleme
     /**
      * MeshPhongマテリアルと互換性を持つために、colorプロパティはdiffuseへ代入される。
      */
-    color: Color;
+    get color(): Color;
+    set color(value: Color);
     /**
      * 透明度
      */
+    get opacity(): number;
     /**
-    * opacityは基底クラスのMaterialのコンストラクタ内で明示的に1.0が代入される。
-    * この段階でuniformsはundefinedなので、そのままでは初期化できない。
-    * このsetterでは受け取った値をprivate変数に保存して、初期化後にuniformsに再代入する。
-    * @param value
-    */
-    opacity: number;
+     * opacityは基底クラスのMaterialのコンストラクタ内で明示的に1.0が代入される。
+     * この段階でuniformsはundefinedなので、そのままでは初期化できない。
+     * このsetterでは受け取った値をprivate変数に保存して、初期化後にuniformsに再代入する。
+     * @param value
+     */
+    set opacity(value: number);
     protected _opacity: number;
-    emissive: Color;
-    map: Texture;
-    alphaMap: Texture;
+    get emissive(): Color;
+    set emissive(value: Color);
+    get map(): Texture;
+    set map(val: Texture);
+    get alphaMap(): Texture;
+    set alphaMap(value: Texture);
     /**
      * 発光状態のために、マテリアルの設定をまとめて変更する。
      * {@link https://stackoverflow.com/questions/37647853/three-js-depthwrite-vs-depthtest-for-transparent-canvas-texture-map-on-three-p}

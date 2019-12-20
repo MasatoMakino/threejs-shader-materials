@@ -8,8 +8,10 @@ export declare class CrossGridMaterial extends WavyGridMaterial {
      * グリッド線の太さ
      * 0.0で線なし、0.5でグリッド面なしになる。
      */
-    gridWeight: number;
-    radius: number;
+    get gridWeight(): number;
+    set gridWeight(value: number);
+    get radius(): number;
+    set radius(value: number);
     constructor(parameters?: ShaderMaterialParameters);
     protected initUniforms(): void;
 }

@@ -4,7 +4,8 @@
 import { ShaderPhongMaterial } from "../index";
 import { Vector3, ShaderMaterialParameters } from "three";
 export declare class SolidClippingMaterial extends ShaderPhongMaterial {
-    cutSectionColor: Vector3;
+    get cutSectionColor(): Vector3;
+    set cutSectionColor(value: Vector3);
     constructor(parameters?: ShaderMaterialParameters);
     protected initUniforms(): void;
     protected initDefaultSetting(parameters?: ShaderMaterialParameters): void;

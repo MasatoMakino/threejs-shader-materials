@@ -2,8 +2,7 @@ import { ShaderPhongMaterial, AnimationChunk } from "../index";
 import { Vector2, UniformsUtils } from "three";
 import FragmentShader from "./SwirlMaterial.frag.glsl";
 import { RepeatWrapping } from "three";
-import { ThreeTicker } from "threejs-ticker";
-import { ThreeTickerEventType } from "threejs-ticker";
+import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 export class SwirlMaterial extends ShaderPhongMaterial {
     constructor(parameters) {
         super(null, FragmentShader(), parameters);
@@ -95,9 +94,9 @@ export class SwirlMaterial extends ShaderPhongMaterial {
         ]);
     }
     startAnimation() {
-        ThreeTicker.addEventListener(ThreeTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.addEventListener(RAFTickerEventType.onBeforeTick, this.animationListener);
     }
     stopAnimation() {
-        ThreeTicker.removeEventListener(ThreeTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.removeEventListener(RAFTickerEventType.onBeforeTick, this.animationListener);
     }
 }

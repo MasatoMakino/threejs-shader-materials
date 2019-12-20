@@ -11,7 +11,8 @@ export declare abstract class WavyGridMaterial extends GridMaterial implements I
     /**
      * 波アニメーションを行うか否か。
      */
-    isAnimate: boolean;
+    get isAnimate(): boolean;
+    set isAnimate(value: boolean);
     /**
      * 波の速度
      * 0.5にすると1の半分の速度になる。
@@ -23,16 +24,20 @@ export declare abstract class WavyGridMaterial extends GridMaterial implements I
      * 1の場合、幅1ヘックス
      * 0.5の場合、幅2ヘックスになる
      */
-    waveFrequency: number;
-    wavePow: number;
+    get waveFrequency(): number;
+    set waveFrequency(value: number);
+    get wavePow(): number;
+    set wavePow(value: number);
     /**
      * 明るさの底上げ
      */
-    raisedBottom: number;
+    get raisedBottom(): number;
+    set raisedBottom(value: number);
     /**
      * 波が発生する方角
      */
-    direction: Directions;
+    get direction(): Directions;
+    set direction(value: Directions);
     constructor(vertexShader: string, fragmentShader: string, parameters?: ShaderMaterialParameters);
     protected initChunks(): void;
     static getBasicUniforms(): any;

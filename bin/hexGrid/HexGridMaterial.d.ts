@@ -8,7 +8,8 @@ export declare class HexGridMaterial extends WavyGridMaterial {
      * グリッド線の太さ
      * 0.0で線なし、0.5でグリッド面なしになる。
      */
-    gridWeight: number;
+    get gridWeight(): number;
+    set gridWeight(value: number);
     constructor(parameters?: ShaderMaterialParameters);
     protected initUniforms(): void;
     protected initChunks(): void;

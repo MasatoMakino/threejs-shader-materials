@@ -3,25 +3,34 @@ import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
 import { ITiledFBM } from "../chunk/TilingFBMChunk";
 import { IAnimatable } from "../chunk/AnimationChunk";
 export declare class FBMFireMaterial extends ShaderPhongMaterial implements ITiledFBM, IAnimatable {
-    tiles: number;
-    hashLoop: number;
-    amp: number;
+    get tiles(): number;
+    set tiles(value: number);
+    get hashLoop(): number;
+    set hashLoop(value: number);
+    get amp(): number;
+    set amp(value: number);
     addTime(delta: number): void;
     /**
      * アニメーションを行うか否か。
      */
-    isAnimate: boolean;
+    get isAnimate(): boolean;
+    set isAnimate(value: boolean);
     /**
      * 波の速度
      * 0.5にすると1の半分の速度になる。
      * マイナスを指定すると、波の進行方向が反転する。
      */
     speed: number;
-    strength: number;
-    bloom: number;
-    transformSpeed: number;
-    rimPow: number;
-    rimStrength: number;
+    get strength(): number;
+    set strength(value: number);
+    get bloom(): number;
+    set bloom(value: number);
+    get transformSpeed(): number;
+    set transformSpeed(value: number);
+    get rimPow(): number;
+    set rimPow(value: number);
+    get rimStrength(): number;
+    set rimStrength(value: number);
     /**
      *
      * @param parameters

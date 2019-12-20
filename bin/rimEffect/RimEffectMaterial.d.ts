@@ -2,12 +2,18 @@ import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
 import { ShaderMaterialParameters } from "three";
 import { Color } from "three";
 export declare class RimEffectMaterial extends ShaderPhongMaterial {
-    rimPow: number;
-    rimStrength: number;
-    rimColor: Color;
-    insidePow: number;
-    insideStrength: number;
-    insideColor: Color;
+    get rimPow(): number;
+    set rimPow(value: number);
+    get rimStrength(): number;
+    set rimStrength(value: number);
+    get rimColor(): Color;
+    set rimColor(value: Color);
+    get insidePow(): number;
+    set insidePow(value: number);
+    get insideStrength(): number;
+    set insideStrength(value: number);
+    get insideColor(): Color;
+    set insideColor(value: Color);
     /**
      *
      * @param parameters

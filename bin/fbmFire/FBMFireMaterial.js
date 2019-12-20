@@ -4,7 +4,7 @@ import VertexShader from "../ShaderPhongMaterial.vert.glsl";
 import FragmentShader from "./FBMFireMaterial.frag.glsl";
 import { TilingFBMChunk } from "../chunk/TilingFBMChunk";
 import { AnimationChunk } from "../chunk/AnimationChunk";
-import { ThreeTicker, ThreeTickerEventType } from "threejs-ticker";
+import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 export class FBMFireMaterial extends ShaderPhongMaterial {
     /**
      *
@@ -128,9 +128,9 @@ export class FBMFireMaterial extends ShaderPhongMaterial {
         }
     }
     startAnimation() {
-        ThreeTicker.addEventListener(ThreeTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.addEventListener(RAFTickerEventType.onBeforeTick, this.animationListener);
     }
     stopAnimation() {
-        ThreeTicker.removeEventListener(ThreeTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.removeEventListener(RAFTickerEventType.onBeforeTick, this.animationListener);
     }
 }

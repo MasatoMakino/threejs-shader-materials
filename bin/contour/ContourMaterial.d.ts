@@ -5,7 +5,7 @@ import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
  * マッピング以外の機能はMeshPhongMaterialに準じる。
  */
 export declare class ContourMaterial extends ShaderPhongMaterial {
-    readonly map: Texture;
+    get map(): Texture;
     loadMap(url: string, geo: Geometry | BufferGeometry): void;
     private _map;
     constructor(parameters?: ShaderMaterialParameters);

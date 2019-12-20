@@ -10,15 +10,24 @@ import { IAnimatable } from "../index";
 export declare class ExpansionDissolveMaterial extends ShaderPhongMaterial implements ITiledFBM, IAnimatable {
     speed: number;
     addTime(delta: number): void;
-    isAnimate: boolean;
-    tiles: number;
-    hashLoop: number;
-    amp: number;
-    scaleMax: number;
-    time: number;
-    progress: number;
-    dissolveColor: Color;
-    dissolveOutColor: Color;
+    get isAnimate(): boolean;
+    set isAnimate(value: boolean);
+    get tiles(): number;
+    set tiles(value: number);
+    get hashLoop(): number;
+    set hashLoop(value: number);
+    get amp(): number;
+    set amp(value: number);
+    get scaleMax(): number;
+    set scaleMax(value: number);
+    get time(): number;
+    set time(value: number);
+    get progress(): number;
+    set progress(value: number);
+    get dissolveColor(): Color;
+    set dissolveColor(value: Color);
+    get dissolveOutColor(): Color;
+    set dissolveOutColor(value: Color);
     /**
      *
      * @param parameters
