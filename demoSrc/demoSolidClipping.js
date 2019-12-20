@@ -14,7 +14,7 @@ import {
 } from "three";
 import { CommonGUI } from "./CommonGUI";
 import { SolidClippingMaterial } from "../bin";
-import { ThreeTicker, ThreeTickerEventType } from "threejs-ticker";
+import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 
 export class Study {
   constructor() {
@@ -33,10 +33,10 @@ export class Study {
     const mat = this.initObject(scene);
     const mesh = this.initMesh(mat, scene);
 
-    ThreeTicker.addEventListener(ThreeTickerEventType.tick, e => {
+    RAFTicker.addEventListener(RAFTickerEventType.tick, e => {
       renderer.render(scene, camera);
     });
-    ThreeTicker.addEventListener(ThreeTickerEventType.onBeforeTick, e => {
+    RAFTicker.addEventListener(RAFTickerEventType.onBeforeTick, e => {
       mesh.forEach(m => {
         m.rotation.x += e.delta / 500;
       });

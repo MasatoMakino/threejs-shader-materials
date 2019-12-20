@@ -5,8 +5,7 @@ import { ITiledFBM, TilingFBMChunk } from "../index";
 import VertexShader from "./ExpansionDissolveMaterial.vert.glsl";
 import FragmentShader from "./ExpansionDissolveMaterial.frag.glsl";
 import { IAnimatable, AnimationChunk } from "../index";
-import { ThreeTicker } from "threejs-ticker";
-import { ThreeTickerEventType } from "threejs-ticker";
+import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 
 /**
  * FBMノイズによるジオメトリの膨張でディゾルブを行うマテリアル。
@@ -129,15 +128,15 @@ export class ExpansionDissolveMaterial extends ShaderPhongMaterial
   };
 
   protected startAnimation() {
-    ThreeTicker.addEventListener(
-      ThreeTickerEventType.onBeforeTick,
+    RAFTicker.addEventListener(
+      RAFTickerEventType.onBeforeTick,
       this.animationListener
     );
   }
 
   protected stopAnimation(): void {
-    ThreeTicker.removeEventListener(
-      ThreeTickerEventType.onBeforeTick,
+    RAFTicker.removeEventListener(
+      RAFTickerEventType.onBeforeTick,
       this.animationListener
     );
   }

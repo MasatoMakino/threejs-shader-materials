@@ -9,8 +9,7 @@ import { MaskMapChunk } from "./chunk/MaskMapChunk";
 import { ReversibleChunk } from "./chunk/ReversibleChunk";
 import { AnimationChunk } from "./chunk/AnimationChunk";
 import { GridMaterial } from "./GridMaterial";
-import { ThreeTicker } from "threejs-ticker";
-import { ThreeTickerEventType } from "threejs-ticker";
+import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 
 /**
  * グリッド状に分割され、Wavyアニメーションを行うマテリアル。
@@ -120,15 +119,15 @@ export abstract class WavyGridMaterial extends GridMaterial
   };
 
   protected startAnimation() {
-    ThreeTicker.addEventListener(
-      ThreeTickerEventType.onBeforeTick,
+    RAFTicker.addEventListener(
+      RAFTickerEventType.onBeforeTick,
       this.animationListener
     );
   }
 
   protected stopAnimation(): void {
-    ThreeTicker.removeEventListener(
-      ThreeTickerEventType.onBeforeTick,
+    RAFTicker.removeEventListener(
+      RAFTickerEventType.onBeforeTick,
       this.animationListener
     );
   }

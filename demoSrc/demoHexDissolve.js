@@ -11,7 +11,7 @@ import {
 } from "three";
 import { HexDissolveMaterial } from "../bin";
 import { Directions } from "../bin";
-import { ThreeTicker, ThreeTickerEventType } from "threejs-ticker";
+import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 
 export class StudyHexGrid {
   constructor() {
@@ -26,7 +26,7 @@ export class StudyHexGrid {
     const control = Common.initControl(camera, renderer);
     Common.initHelper(scene);
     const mat = this.initObject(scene);
-    ThreeTicker.addEventListener(ThreeTickerEventType.tick, e => {
+    RAFTicker.addEventListener(RAFTickerEventType.tick, e => {
       renderer.render(scene, camera);
     });
     this.initGUI(mat);

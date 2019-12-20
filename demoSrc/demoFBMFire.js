@@ -10,7 +10,7 @@ import {
 } from "three";
 import { FBMFireMaterial } from "../bin/";
 import { CommonGUI } from "./CommonGUI";
-import { ThreeTickerEventType, ThreeTicker } from "threejs-ticker";
+import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 
 export class Study {
   constructor() {
@@ -26,7 +26,7 @@ export class Study {
     Common.initHelper(scene);
     const mat = this.initObject(scene);
 
-    ThreeTicker.addEventListener(ThreeTickerEventType.tick, e => {
+    RAFTicker.addEventListener(RAFTickerEventType.tick, e => {
       renderer.render(scene, camera);
     });
 

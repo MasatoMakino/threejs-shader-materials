@@ -36,6 +36,6 @@
     }
   },
   "dependencies": {
-    "threejs-ticker": "https://github.com/MasatoMakino/threejs-ticker.git"
+    "raf-ticker": "https://github.com/MasatoMakino/raf-ticker.git"
   }
 }

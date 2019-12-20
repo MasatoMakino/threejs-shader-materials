@@ -4788,6 +4788,10 @@ querystring@0.2.0:
   resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
   integrity sha1-sgmEkgO7Jd+CDadW50cAWHhSFiA=
 
+"raf-ticker@https://github.com/MasatoMakino/raf-ticker.git":
+  version "0.1.0"
+  resolved "https://github.com/MasatoMakino/raf-ticker.git#96c936cc4d8870db7909fd4a11d754c0c03b172a"
+
 randombytes@^2.0.0, randombytes@^2.0.1, randombytes@^2.0.5:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/randombytes/-/randombytes-2.1.0.tgz#df6f84372f0270dc65cdf6291349ab7a473d4f2a"
@@ -5726,10 +5730,6 @@ three@^0.111.0:
   version "0.111.0"
   resolved "https://registry.yarnpkg.com/three/-/three-0.111.0.tgz#9cedb73e79b7f6bf2440cb67a273f883faa923b6"
   integrity sha512-AcTqyGJ3H75AIusOuADy0LsP958QKQwm/YhABHFMzd6RFXPNVay1rlSbbG6WYv7KM72G2THMMwqbjQd4dVHMkQ==
-
-"threejs-ticker@https://github.com/MasatoMakino/threejs-ticker.git":
-  version "0.1.0"
-  resolved "https://github.com/MasatoMakino/threejs-ticker.git#c12970447a414f76c7f2a8f5f3e4b9334c007438"
 
 through2-filter@^3.0.0:
   version "3.0.0"

@@ -11,7 +11,7 @@ import {
 } from "three";
 import { Directions } from "../bin/";
 import { SquareGridMaterial } from "../bin/";
-import { ThreeTicker, ThreeTickerEventType } from "threejs-ticker";
+import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 
 export class StudySquareGrid {
   constructor() {
@@ -26,7 +26,7 @@ export class StudySquareGrid {
     const control = Common.initControl(camera, renderer);
     Common.initHelper(scene);
     const mat = this.initObject(scene);
-    ThreeTicker.addEventListener(ThreeTickerEventType.tick, e => {
+    RAFTicker.addEventListener(RAFTickerEventType.tick, e => {
       renderer.render(scene, camera);
     });
 

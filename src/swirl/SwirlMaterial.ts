@@ -3,8 +3,7 @@ import { Vector2, ShaderMaterialParameters, UniformsUtils } from "three";
 import FragmentShader from "./SwirlMaterial.frag.glsl";
 import { Texture } from "three";
 import { RepeatWrapping } from "three";
-import { ThreeTicker } from "threejs-ticker";
-import { ThreeTickerEventType } from "threejs-ticker";
+import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 
 export class SwirlMaterial extends ShaderPhongMaterial implements IAnimatable {
   /*
@@ -106,15 +105,15 @@ export class SwirlMaterial extends ShaderPhongMaterial implements IAnimatable {
   };
 
   protected startAnimation() {
-    ThreeTicker.addEventListener(
-      ThreeTickerEventType.onBeforeTick,
+    RAFTicker.addEventListener(
+      RAFTickerEventType.onBeforeTick,
       this.animationListener
     );
   }
 
   protected stopAnimation(): void {
-    ThreeTicker.removeEventListener(
-      ThreeTickerEventType.onBeforeTick,
+    RAFTicker.removeEventListener(
+      RAFTickerEventType.onBeforeTick,
       this.animationListener
     );
   }

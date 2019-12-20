@@ -1,8 +1,7 @@
 import { ShaderPhongMaterial, IAnimatable, AnimationChunk } from "../index";
 import { ShaderMaterialParameters, UniformsUtils } from "three";
 import FragmentShader from "./CellularNoiseMaterial.frag.glsl";
-import { ThreeTicker } from "threejs-ticker";
-import { ThreeTickerEventType } from "threejs-ticker";
+import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 
 export class CellularNoiseMaterial extends ShaderPhongMaterial
   implements IAnimatable {
@@ -70,15 +69,15 @@ export class CellularNoiseMaterial extends ShaderPhongMaterial
   };
 
   protected startAnimation() {
-    ThreeTicker.addEventListener(
-      ThreeTickerEventType.onBeforeTick,
+    RAFTicker.addEventListener(
+      RAFTickerEventType.onBeforeTick,
       this.animationListener
     );
   }
 
   protected stopAnimation(): void {
-    ThreeTicker.removeEventListener(
-      ThreeTickerEventType.onBeforeTick,
+    RAFTicker.removeEventListener(
+      RAFTickerEventType.onBeforeTick,
       this.animationListener
     );
   }
