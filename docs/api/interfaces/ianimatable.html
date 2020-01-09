@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IAnimatable | threejs-shader-materials</title>
+	<title>IAnimatable | threejs-shader-materials - v0.1.0</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">threejs-shader-materials</a>
+					<a href="../index.html" class="title">threejs-shader-materials - v0.1.0</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -66,18 +66,6 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>時間経過によりアニメーションするマテリアルのインターフェース。</p>
-					</div>
-					<ul>
-						<li>アニメーションスピードspeed</li>
-						<li>アニメーション再生/停止フラグisAnimate</li>
-					</ul>
-					<p>のそれぞれの変数にアクセスできることを保証する。</p>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -130,7 +118,7 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Animate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/chunk/AnimationChunk.ts#L21">src/chunk/AnimationChunk.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/chunk/AnimationChunk.ts#L21">src/chunk/AnimationChunk.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -140,7 +128,7 @@
 					<div class="tsd-signature tsd-kind-icon">speed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/chunk/AnimationChunk.ts#L20">src/chunk/AnimationChunk.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/chunk/AnimationChunk.ts#L20">src/chunk/AnimationChunk.ts:20</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -150,7 +138,7 @@
 					<div class="tsd-signature tsd-kind-icon">uniforms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/chunk/AnimationChunk.ts#L13">src/chunk/AnimationChunk.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/chunk/AnimationChunk.ts#L13">src/chunk/AnimationChunk.ts:13</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -175,21 +163,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/chunk/AnimationChunk.ts#L19">src/chunk/AnimationChunk.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/chunk/AnimationChunk.ts#L19">src/chunk/AnimationChunk.ts:19</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>経過時間を追加する。uniformのtimeにはdelta * speedの値が加算される。speedに負の値を設定すると、アニメーションの進行方向は反転する。</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>delta: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>前回アニメーション実行時からの差分時間 単位 : 秒</p>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>

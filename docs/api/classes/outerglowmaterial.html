@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>OuterGlowMaterial | threejs-shader-materials</title>
+	<title>OuterGlowMaterial | threejs-shader-materials - v0.1.0</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">threejs-shader-materials</a>
+					<a href="../index.html" class="title">threejs-shader-materials - v0.1.0</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -193,6 +193,8 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="outerglowmaterial.html#initdefines" class="tsd-kind-icon">init<wbr>Defines</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-protected"><a href="outerglowmaterial.html#inituniforms" class="tsd-kind-icon">init<wbr>Uniforms</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="outerglowmaterial.html#onbeforecompile" class="tsd-kind-icon">on<wbr>Before<wbr>Compile</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="outerglowmaterial.html#onsetalphamap" class="tsd-kind-icon">on<wbr>Set<wbr>Alpha<wbr>Map</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="outerglowmaterial.html#onsetmap" class="tsd-kind-icon">on<wbr>Set<wbr>Map</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="outerglowmaterial.html#removeeventlistener" class="tsd-kind-icon">remove<wbr>Event<wbr>Listener</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="outerglowmaterial.html#setvalues" class="tsd-kind-icon">set<wbr>Values</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="outerglowmaterial.html#startglow" class="tsd-kind-icon">start<wbr>Glow</a></li>
@@ -209,7 +211,7 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Outer<wbr>Glow<wbr>Material<span class="tsd-signature-symbol">(</span>parameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ShaderMaterialParameters</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="outerglowmaterial.html" class="tsd-signature-type">OuterGlowMaterial</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Outer<wbr>Glow<wbr>Material<span class="tsd-signature-symbol">(</span>parameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ShaderMaterialParameters</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="outerglowmaterial.html" class="tsd-signature-type">OuterGlowMaterial</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -217,19 +219,13 @@
 								<p>Inherited from <a href="rimeffectmaterial.html">RimEffectMaterial</a>.<a href="rimeffectmaterial.html#constructor">constructor</a></p>
 								<p>Overrides <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/rimEffect/RimEffectMaterial.ts#L48">src/rimEffect/RimEffectMaterial.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/rimEffect/RimEffectMaterial.ts#L48">src/rimEffect/RimEffectMaterial.ts:48</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> parameters: <span class="tsd-signature-type">ShaderMaterialParameters</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-										</div>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="outerglowmaterial.html" class="tsd-signature-type">OuterGlowMaterial</a></h4>
@@ -246,7 +242,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#_opacity">_opacity</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/ShaderPhongMaterial.ts#L157">src/ShaderPhongMaterial.ts:157</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/ShaderPhongMaterial.ts#L157">src/ShaderPhongMaterial.ts:157</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -257,14 +253,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.alphaTest</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:72</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:73</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Sets the alpha value to be used when running an alpha test. Default is 0.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="blenddst" class="tsd-anchor"></a>
@@ -273,14 +264,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.blendDst</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:77</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:78</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Blending destination. It&#39;s one of the blending mode constants defined in Three.js. Default is {@link OneMinusSrcAlphaFactor}.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="blenddstalpha" class="tsd-anchor"></a>
@@ -289,14 +275,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.blendDstAlpha</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:82</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:83</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The tranparency of the .blendDst. Default is null.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="blendequation" class="tsd-anchor"></a>
@@ -305,14 +286,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.blendEquation</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:87</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:88</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Blending equation to use when applying blending. It&#39;s one of the constants defined in Three.js. Default is {@link AddEquation}.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="blendequationalpha" class="tsd-anchor"></a>
@@ -321,14 +297,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.blendEquationAlpha</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:92</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:93</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The tranparency of the .blendEquation. Default is null.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="blendsrc" class="tsd-anchor"></a>
@@ -337,14 +308,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.blendSrc</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:102</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:103</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Blending source. It&#39;s one of the blending mode constants defined in Three.js. Default is {@link SrcAlphaFactor}.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="blendsrcalpha" class="tsd-anchor"></a>
@@ -353,14 +319,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.blendSrcAlpha</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:107</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:108</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The tranparency of the .blendSrc. Default is null.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="blending" class="tsd-anchor"></a>
@@ -369,14 +330,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.blending</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:97</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:98</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Which blending to use when displaying objects with this material. Default is {@link NormalBlending}.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="clipintersection" class="tsd-anchor"></a>
@@ -385,14 +341,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.clipIntersection</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:112</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:113</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Changes the behavior of clipping planes so that only their intersection is clipped, rather than their union. Default is false.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="clipshadows" class="tsd-anchor"></a>
@@ -401,14 +352,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.clipShadows</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:122</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:123</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Defines whether to clip shadows according to the clipping planes specified on this material. Default is false.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="clipping" class="tsd-anchor"></a>
@@ -417,7 +363,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from ShaderMaterial.clipping</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:47</li>
+							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:45</li>
 						</ul>
 					</aside>
 				</section>
@@ -428,14 +374,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.clippingPlanes</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:117</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:118</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>User-defined clipping planes specified as THREE.Plane objects in world space. These planes apply to the objects this material is attached to. Points in space whose signed distance to the plane is negative are clipped (not rendered). See the WebGL / clipping /intersection example. Default is null.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="colorwrite" class="tsd-anchor"></a>
@@ -444,14 +385,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.colorWrite</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:127</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:128</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Whether to render the material&#39;s color. This can be used in conjunction with a mesh&#39;s .renderOrder property to create invisible objects that occlude other objects. Default is true.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="defaultattributevalues" class="tsd-anchor"></a>
@@ -460,7 +396,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from ShaderMaterial.defaultAttributeValues</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:61</li>
+							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:59</li>
 						</ul>
 					</aside>
 				</section>
@@ -469,9 +405,9 @@
 					<h3>defines</h3>
 					<div class="tsd-signature tsd-kind-icon">defines<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from ShaderMaterial.defines</p>
+						<p>Inherited from Material.defines</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:39</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:134</li>
 						</ul>
 					</aside>
 				</section>
@@ -482,14 +418,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.depthFunc</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:132</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:139</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Which depth function to use. Default is {@link LessEqualDepth}. See the depth mode constants for all possible values.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="depthtest" class="tsd-anchor"></a>
@@ -498,14 +429,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.depthTest</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:137</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:144</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Whether to have depth test enabled when rendering this material. Default is true.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="depthwrite" class="tsd-anchor"></a>
@@ -514,15 +440,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.depthWrite</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:143</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:150</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Whether rendering this material has any effect on the depth buffer. Default is true.
-							When drawing 2D overlays it can be useful to disable the depth writing in order to layer several things together without creating z-index artifacts.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="derivatives" class="tsd-anchor"></a>
@@ -531,16 +451,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from ShaderMaterial.derivatives</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:54</li>
+							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:52</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<dl class="tsd-comment-tags">
-							<dt>deprecated</dt>
-							<dd><p>Use {@link ShaderMaterial#extensions.derivatives extensions.derivatives} instead.</p>
-							</dd>
-						</dl>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="dithering" class="tsd-anchor"></a>
@@ -549,14 +462,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.dithering</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:240</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:247</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Whether to apply dithering to the color to remove the appearance of banding. Default is false.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="extensions" class="tsd-anchor"></a>
@@ -565,7 +473,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from ShaderMaterial.extensions</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:55</li>
+							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:53</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -593,14 +501,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.flatShading</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:245</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:252</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Define whether the material is rendered with flat shading. Default is false.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="fog" class="tsd-anchor"></a>
@@ -609,14 +512,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.fog</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:148</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:155</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Whether the material is affected by fog. Default is true.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="fragmentshader" class="tsd-anchor"></a>
@@ -625,7 +523,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from ShaderMaterial.fragmentShader</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:42</li>
+							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:40</li>
 						</ul>
 					</aside>
 				</section>
@@ -636,14 +534,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.id</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:153</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:160</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Unique number of this material instance.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="index0attributename" class="tsd-anchor"></a>
@@ -652,7 +545,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from ShaderMaterial.index0AttributeName</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:62</li>
+							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:60</li>
 						</ul>
 					</aside>
 				</section>
@@ -663,15 +556,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.isMaterial</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:194</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:201</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Used to check whether this or derived classes are materials. Default is true.
-							You should not change this, as it used internally for optimisation.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="lights" class="tsd-anchor"></a>
@@ -680,7 +567,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from ShaderMaterial.lights</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:46</li>
+							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:44</li>
 						</ul>
 					</aside>
 				</section>
@@ -691,7 +578,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from ShaderMaterial.linewidth</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:43</li>
+							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:41</li>
 						</ul>
 					</aside>
 				</section>
@@ -702,7 +589,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from ShaderMaterial.morphNormals</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:50</li>
+							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:48</li>
 						</ul>
 					</aside>
 				</section>
@@ -713,7 +600,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from ShaderMaterial.morphTargets</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:49</li>
+							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:47</li>
 						</ul>
 					</aside>
 				</section>
@@ -724,14 +611,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.name</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:199</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:206</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Material name. Default is an empty string.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="needsupdate" class="tsd-anchor"></a>
@@ -740,15 +622,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.needsUpdate</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:205</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:212</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Specifies that the material needs to be updated, WebGL wise. Set it to true if you made changes that need to be reflected in WebGL.
-							This property is automatically set to true when instancing a new material.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="polygonoffset" class="tsd-anchor"></a>
@@ -757,14 +633,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.polygonOffset</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:215</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:222</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Whether to use polygon offset. Default is false. This corresponds to the POLYGON_OFFSET_FILL WebGL feature.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="polygonoffsetfactor" class="tsd-anchor"></a>
@@ -773,14 +644,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.polygonOffsetFactor</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:220</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:227</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Sets the polygon offset factor. Default is 0.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="polygonoffsetunits" class="tsd-anchor"></a>
@@ -789,14 +655,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.polygonOffsetUnits</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:225</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:232</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Sets the polygon offset units. Default is 0.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="precision" class="tsd-anchor"></a>
@@ -805,14 +666,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.precision</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:230</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:237</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Override the renderer&#39;s default precision for this material. Can be &quot;highp&quot;, &quot;mediump&quot; or &quot;lowp&quot;. Defaults is null.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="premultipliedalpha" class="tsd-anchor"></a>
@@ -821,14 +677,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.premultipliedAlpha</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:235</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:242</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Whether to premultiply the alpha (transparency) value. See WebGL / Materials / Transparency for an example of the difference. Default is false.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="side" class="tsd-anchor"></a>
@@ -837,15 +688,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.side</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:251</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:258</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Defines which of the face sides will be rendered - front, back or both.
-							Default is THREE.FrontSide. Other options are THREE.BackSide and THREE.DoubleSide.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="skinning" class="tsd-anchor"></a>
@@ -854,7 +699,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from ShaderMaterial.skinning</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:48</li>
+							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:46</li>
 						</ul>
 					</aside>
 				</section>
@@ -865,14 +710,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.stencilFail</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:178</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:185</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Which stencil operation to perform when the comparison function returns false. Default is {@link KeepStencilOp}. See the stencil operation constants for all possible values.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="stencilfunc" class="tsd-anchor"></a>
@@ -881,14 +721,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.stencilFunc</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:163</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:170</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The stencil comparison function to use. Default is {@link AlwaysStencilFunc}. See stencil operation constants for all possible values.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="stencilmask" class="tsd-anchor"></a>
@@ -897,14 +732,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.stencilMask</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:173</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:180</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The bit mask to use when comparing against or writing to the stencil buffer. Default is <em>0xFF</em>.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="stencilref" class="tsd-anchor"></a>
@@ -913,14 +743,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.stencilRef</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:168</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:175</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The value to use when performing stencil comparisons or stencil operations. Default is <em>0</em>.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="stencilwrite" class="tsd-anchor"></a>
@@ -929,14 +754,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.stencilWrite</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:158</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:165</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Whether rendering this material has any effect on the stencil buffer. Default is <em>false</em>.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="stencilzfail" class="tsd-anchor"></a>
@@ -945,14 +765,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.stencilZFail</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:183</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:190</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Which stencil operation to perform when the comparison function returns true but the depth test fails. Default is {@link KeepStencilOp}. See the stencil operation constants for all possible values.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="stencilzpass" class="tsd-anchor"></a>
@@ -961,14 +776,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.stencilZPass</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:188</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:195</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Which stencil operation to perform when the comparison function returns true and the depth test passes. Default is {@link KeepStencilOp}. See the stencil operation constants for all possible values.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="tonemapped" class="tsd-anchor"></a>
@@ -977,15 +787,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.toneMapped</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:257</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:264</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Defines whether this material is tone mapped according to the renderer&#39;s toneMapping setting.
-							Default is true.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="transparent" class="tsd-anchor"></a>
@@ -994,16 +798,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.transparent</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:264</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:271</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Defines whether this material is transparent. This has an effect on rendering as transparent objects need special treatment and are rendered after non-transparent objects.
-								When set to true, the extent to which the material is transparent is controlled by setting it&#39;s .opacity property.
-							Default is false.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="type" class="tsd-anchor"></a>
@@ -1012,14 +809,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.type</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:269</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:276</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Value is the string &#39;Material&#39;. This shouldn&#39;t be changed, and can be used to find all objects of this type in a scene.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="uniforms" class="tsd-anchor"></a>
@@ -1029,7 +821,7 @@
 						<p>Implementation of <a href="../interfaces/iexpandable.html">IExpandable</a>.<a href="../interfaces/iexpandable.html#uniforms">uniforms</a></p>
 						<p>Inherited from ShaderMaterial.uniforms</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:40</li>
+							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:38</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -1048,14 +840,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.userData</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:294</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:301</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>An object that can be used to store custom data about the Material. It should not hold references to functions as these will not be cloned.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="uuid" class="tsd-anchor"></a>
@@ -1064,14 +851,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.uuid</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:274</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:281</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>UUID of this material instance. This gets automatically assigned, so this shouldn&#39;t be edited.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="version" class="tsd-anchor"></a>
@@ -1080,14 +862,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.version</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:299</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:306</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>This starts at 0 and counts how many times .needsUpdate is set to true.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="vertexcolors" class="tsd-anchor"></a>
@@ -1096,14 +873,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.vertexColors</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:279</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:286</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Defines whether vertex coloring is used. Default is THREE.NoColors. Other options are THREE.VertexColors and THREE.FaceColors.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="vertexshader" class="tsd-anchor"></a>
@@ -1112,7 +884,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from ShaderMaterial.vertexShader</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:41</li>
+							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:39</li>
 						</ul>
 					</aside>
 				</section>
@@ -1123,14 +895,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.vertexTangents</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:284</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:291</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Defines whether precomputed vertex tangents are used. Default is false.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="visible" class="tsd-anchor"></a>
@@ -1139,14 +906,9 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Material.visible</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/Material.d.ts:289</li>
+							<li>Defined in node_modules/three/src/materials/Material.d.ts:296</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Defines whether this material is visible. Default is true.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="wireframe" class="tsd-anchor"></a>
@@ -1155,7 +917,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from ShaderMaterial.wireframe</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:44</li>
+							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:42</li>
 						</ul>
 					</aside>
 				</section>
@@ -1166,7 +928,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from ShaderMaterial.wireframeLinewidth</p>
 						<ul>
-							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:45</li>
+							<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:43</li>
 						</ul>
 					</aside>
 				</section>
@@ -1176,436 +938,148 @@
 				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
 					<a name="alphamap" class="tsd-anchor"></a>
 					<h3>alpha<wbr>Map</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> alphaMap<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Texture</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> alphaMap<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Texture</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#alphamap">alphaMap</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/ShaderPhongMaterial.ts#L173">src/ShaderPhongMaterial.ts:173</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Texture</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#alphamap">alphaMap</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/ShaderPhongMaterial.ts#L176">src/ShaderPhongMaterial.ts:176</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">Texture</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
+					<div class="tsd-signature tsd-kind-icon">alpha<wbr>Map<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#alphamap">alphaMap</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/ShaderPhongMaterial.ts#L176">src/ShaderPhongMaterial.ts:176</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/ShaderPhongMaterial.ts#L180">src/ShaderPhongMaterial.ts:180</a></li>
+						</ul>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
 					<a name="color" class="tsd-anchor"></a>
 					<h3>color</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> color<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> color<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#color">color</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/ShaderPhongMaterial.ts#L131">src/ShaderPhongMaterial.ts:131</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>MeshPhongマテリアルと互換性を持つために、colorプロパティはdiffuseへ代入される。</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Color</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#color">color</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/ShaderPhongMaterial.ts#L134">src/ShaderPhongMaterial.ts:134</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>MeshPhongマテリアルと互換性を持つために、colorプロパティはdiffuseへ代入される。</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">Color</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
+					<div class="tsd-signature tsd-kind-icon">color<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#color">color</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/ShaderPhongMaterial.ts#L131">src/ShaderPhongMaterial.ts:131</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/ShaderPhongMaterial.ts#L134">src/ShaderPhongMaterial.ts:134</a></li>
+						</ul>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
 					<a name="emissive" class="tsd-anchor"></a>
 					<h3>emissive</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> emissive<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> emissive<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#emissive">emissive</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/ShaderPhongMaterial.ts#L159">src/ShaderPhongMaterial.ts:159</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Color</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#emissive">emissive</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/ShaderPhongMaterial.ts#L162">src/ShaderPhongMaterial.ts:162</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">Color</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
+					<div class="tsd-signature tsd-kind-icon">emissive<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#emissive">emissive</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/ShaderPhongMaterial.ts#L159">src/ShaderPhongMaterial.ts:159</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/ShaderPhongMaterial.ts#L162">src/ShaderPhongMaterial.ts:162</a></li>
+						</ul>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
 					<a name="expansionstrength" class="tsd-anchor"></a>
 					<h3>expansion<wbr>Strength</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> expansionStrength<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> expansionStrength<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/rimEffect/OuterGlowMaterial.ts#L6">src/rimEffect/OuterGlowMaterial.ts:6</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/rimEffect/OuterGlowMaterial.ts#L9">src/rimEffect/OuterGlowMaterial.ts:9</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
+					<div class="tsd-signature tsd-kind-icon">expansion<wbr>Strength<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/iexpandable.html">IExpandable</a>.<a href="../interfaces/iexpandable.html#expansionstrength">expansionStrength</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/rimEffect/OuterGlowMaterial.ts#L6">src/rimEffect/OuterGlowMaterial.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/rimEffect/OuterGlowMaterial.ts#L9">src/rimEffect/OuterGlowMaterial.ts:9</a></li>
+						</ul>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
 					<a name="insidecolor" class="tsd-anchor"></a>
 					<h3>inside<wbr>Color</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> insideColor<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> insideColor<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="rimeffectmaterial.html">RimEffectMaterial</a>.<a href="rimeffectmaterial.html#insidecolor">insideColor</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/rimEffect/RimEffectMaterial.ts#L43">src/rimEffect/RimEffectMaterial.ts:43</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Color</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="rimeffectmaterial.html">RimEffectMaterial</a>.<a href="rimeffectmaterial.html#insidecolor">insideColor</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/rimEffect/RimEffectMaterial.ts#L46">src/rimEffect/RimEffectMaterial.ts:46</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">Color</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
+					<div class="tsd-signature tsd-kind-icon">inside<wbr>Color<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="rimeffectmaterial.html">RimEffectMaterial</a>.<a href="rimeffectmaterial.html#insidecolor">insideColor</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/rimEffect/RimEffectMaterial.ts#L43">src/rimEffect/RimEffectMaterial.ts:43</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/rimEffect/RimEffectMaterial.ts#L46">src/rimEffect/RimEffectMaterial.ts:46</a></li>
+						</ul>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
 					<a name="insidepow" class="tsd-anchor"></a>
 					<h3>inside<wbr>Pow</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> insidePow<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> insidePow<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="rimeffectmaterial.html">RimEffectMaterial</a>.<a href="rimeffectmaterial.html#insidepow">insidePow</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/rimEffect/RimEffectMaterial.ts#L29">src/rimEffect/RimEffectMaterial.ts:29</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="rimeffectmaterial.html">RimEffectMaterial</a>.<a href="rimeffectmaterial.html#insidepow">insidePow</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/rimEffect/RimEffectMaterial.ts#L32">src/rimEffect/RimEffectMaterial.ts:32</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
+					<div class="tsd-signature tsd-kind-icon">inside<wbr>Pow<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="rimeffectmaterial.html">RimEffectMaterial</a>.<a href="rimeffectmaterial.html#insidepow">insidePow</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/rimEffect/RimEffectMaterial.ts#L29">src/rimEffect/RimEffectMaterial.ts:29</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/rimEffect/RimEffectMaterial.ts#L32">src/rimEffect/RimEffectMaterial.ts:32</a></li>
+						</ul>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
 					<a name="insidestrength" class="tsd-anchor"></a>
 					<h3>inside<wbr>Strength</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> insideStrength<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> insideStrength<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="rimeffectmaterial.html">RimEffectMaterial</a>.<a href="rimeffectmaterial.html#insidestrength">insideStrength</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/rimEffect/RimEffectMaterial.ts#L36">src/rimEffect/RimEffectMaterial.ts:36</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="rimeffectmaterial.html">RimEffectMaterial</a>.<a href="rimeffectmaterial.html#insidestrength">insideStrength</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/rimEffect/RimEffectMaterial.ts#L39">src/rimEffect/RimEffectMaterial.ts:39</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
+					<div class="tsd-signature tsd-kind-icon">inside<wbr>Strength<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="rimeffectmaterial.html">RimEffectMaterial</a>.<a href="rimeffectmaterial.html#insidestrength">insideStrength</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/rimEffect/RimEffectMaterial.ts#L36">src/rimEffect/RimEffectMaterial.ts:36</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/rimEffect/RimEffectMaterial.ts#L39">src/rimEffect/RimEffectMaterial.ts:39</a></li>
+						</ul>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
 					<a name="map" class="tsd-anchor"></a>
 					<h3>map</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> map<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Texture</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> map<span class="tsd-signature-symbol">(</span>val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Texture</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#map">map</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/ShaderPhongMaterial.ts#L166">src/ShaderPhongMaterial.ts:166</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Texture</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#map">map</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/ShaderPhongMaterial.ts#L169">src/ShaderPhongMaterial.ts:169</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>val: <span class="tsd-signature-type">Texture</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
+					<div class="tsd-signature tsd-kind-icon">map<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/imap.html">IMap</a>.<a href="../interfaces/imap.html#map">map</a></p>
+						<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#map">map</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/ShaderPhongMaterial.ts#L166">src/ShaderPhongMaterial.ts:166</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/ShaderPhongMaterial.ts#L170">src/ShaderPhongMaterial.ts:170</a></li>
+						</ul>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="opacity" class="tsd-anchor"></a>
 					<h3>opacity</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> opacity<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> opacity<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#opacity">opacity</a></p>
-								<p>Overrides Material.opacity</p>
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/ShaderPhongMaterial.ts#L141">src/ShaderPhongMaterial.ts:141</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>透明度</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#opacity">opacity</a></p>
-								<p>Overrides Material.opacity</p>
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/ShaderPhongMaterial.ts#L151">src/ShaderPhongMaterial.ts:151</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>opacityは基底クラスのMaterialのコンストラクタ内で明示的に1.0が代入される。
-										この段階でuniformsはundefinedなので、そのままでは初期化できない。
-									このsetterでは受け取った値をprivate変数に保存して、初期化後にuniformsに再代入する。</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-										</div>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
+					<div class="tsd-signature tsd-kind-icon">opacity<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#opacity">opacity</a></p>
+						<p>Overrides Material.opacity</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/ShaderPhongMaterial.ts#L141">src/ShaderPhongMaterial.ts:141</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/ShaderPhongMaterial.ts#L151">src/ShaderPhongMaterial.ts:151</a></li>
+						</ul>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
 					<a name="rimcolor" class="tsd-anchor"></a>
 					<h3>rim<wbr>Color</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> rimColor<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> rimColor<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="rimeffectmaterial.html">RimEffectMaterial</a>.<a href="rimeffectmaterial.html#rimcolor">rimColor</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/rimEffect/RimEffectMaterial.ts#L22">src/rimEffect/RimEffectMaterial.ts:22</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Color</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="rimeffectmaterial.html">RimEffectMaterial</a>.<a href="rimeffectmaterial.html#rimcolor">rimColor</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/rimEffect/RimEffectMaterial.ts#L25">src/rimEffect/RimEffectMaterial.ts:25</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">Color</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
+					<div class="tsd-signature tsd-kind-icon">rim<wbr>Color<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="rimeffectmaterial.html">RimEffectMaterial</a>.<a href="rimeffectmaterial.html#rimcolor">rimColor</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/rimEffect/RimEffectMaterial.ts#L22">src/rimEffect/RimEffectMaterial.ts:22</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/rimEffect/RimEffectMaterial.ts#L25">src/rimEffect/RimEffectMaterial.ts:25</a></li>
+						</ul>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
 					<a name="rimpow" class="tsd-anchor"></a>
 					<h3>rim<wbr>Pow</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> rimPow<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> rimPow<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="rimeffectmaterial.html">RimEffectMaterial</a>.<a href="rimeffectmaterial.html#rimpow">rimPow</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/rimEffect/RimEffectMaterial.ts#L8">src/rimEffect/RimEffectMaterial.ts:8</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="rimeffectmaterial.html">RimEffectMaterial</a>.<a href="rimeffectmaterial.html#rimpow">rimPow</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/rimEffect/RimEffectMaterial.ts#L11">src/rimEffect/RimEffectMaterial.ts:11</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
+					<div class="tsd-signature tsd-kind-icon">rim<wbr>Pow<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="rimeffectmaterial.html">RimEffectMaterial</a>.<a href="rimeffectmaterial.html#rimpow">rimPow</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/rimEffect/RimEffectMaterial.ts#L8">src/rimEffect/RimEffectMaterial.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/rimEffect/RimEffectMaterial.ts#L11">src/rimEffect/RimEffectMaterial.ts:11</a></li>
+						</ul>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
 					<a name="rimstrength" class="tsd-anchor"></a>
 					<h3>rim<wbr>Strength</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> rimStrength<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> rimStrength<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="rimeffectmaterial.html">RimEffectMaterial</a>.<a href="rimeffectmaterial.html#rimstrength">rimStrength</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/rimEffect/RimEffectMaterial.ts#L15">src/rimEffect/RimEffectMaterial.ts:15</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="rimeffectmaterial.html">RimEffectMaterial</a>.<a href="rimeffectmaterial.html#rimstrength">rimStrength</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/rimEffect/RimEffectMaterial.ts#L18">src/rimEffect/RimEffectMaterial.ts:18</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
+					<div class="tsd-signature tsd-kind-icon">rim<wbr>Strength<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="rimeffectmaterial.html">RimEffectMaterial</a>.<a href="rimeffectmaterial.html#rimstrength">rimStrength</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/rimEffect/RimEffectMaterial.ts#L15">src/rimEffect/RimEffectMaterial.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/rimEffect/RimEffectMaterial.ts#L18">src/rimEffect/RimEffectMaterial.ts:18</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -1624,24 +1098,13 @@
 									<li>Defined in node_modules/three/src/core/EventDispatcher.d.ts:20</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Adds a listener to an event type.</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>type: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The type of event to listen to.</p>
-									</div>
 								</li>
 								<li>
 									<h5>listener: <span class="tsd-signature-type">function</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The function that gets called when the event is fired.</p>
-									</div>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
@@ -1677,14 +1140,9 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Material.clone</p>
 								<ul>
-									<li>Defined in node_modules/three/src/materials/Material.d.ts:304</li>
+									<li>Defined in node_modules/three/src/materials/Material.d.ts:311</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Return a new material with the same parameters as this material.</p>
-								</div>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 						</li>
 					</ul>
@@ -1700,20 +1158,13 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Material.copy</p>
 								<ul>
-									<li>Defined in node_modules/three/src/materials/Material.d.ts:310</li>
+									<li>Defined in node_modules/three/src/materials/Material.d.ts:317</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Copy the parameters from the passed material into this material.</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>material: <span class="tsd-signature-type">Material</span></h5>
-									<div class="tsd-comment tsd-typography">
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -1734,11 +1185,6 @@
 									<li>Defined in node_modules/three/src/core/EventDispatcher.d.ts:40</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Fire an event type.</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -1768,14 +1214,9 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Material.dispose</p>
 								<ul>
-									<li>Defined in node_modules/three/src/materials/Material.d.ts:315</li>
+									<li>Defined in node_modules/three/src/materials/Material.d.ts:322</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>This disposes the material. Textures of a material don&#39;t get disposed. These needs to be disposed by {@link Texture}.</p>
-								</div>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -1794,24 +1235,13 @@
 									<li>Defined in node_modules/three/src/core/EventDispatcher.d.ts:27</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Checks if listener is added to an event type.</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>type: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The type of event to listen to.</p>
-									</div>
 								</li>
 								<li>
 									<h5>listener: <span class="tsd-signature-type">function</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The function that gets called when the event is fired.</p>
-									</div>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
@@ -1847,14 +1277,9 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#initchunks">initChunks</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/ShaderPhongMaterial.ts#L86">src/ShaderPhongMaterial.ts:86</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/ShaderPhongMaterial.ts#L86">src/ShaderPhongMaterial.ts:86</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>ShaderChunkにこのマテリアルに必要なChunkを追加する。</p>
-								</div>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -1863,28 +1288,20 @@
 					<a name="initdefaultsetting" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> init<wbr>Default<wbr>Setting</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">init<wbr>Default<wbr>Setting<span class="tsd-signature-symbol">(</span>parameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ShaderMaterialParameters</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">init<wbr>Default<wbr>Setting<span class="tsd-signature-symbol">(</span>parameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ShaderMaterialParameters</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#initdefaultsetting">initDefaultSetting</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/ShaderPhongMaterial.ts#L123">src/ShaderPhongMaterial.ts:123</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/ShaderPhongMaterial.ts#L123">src/ShaderPhongMaterial.ts:123</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>1.オプションで指定されなかったパラメーター値を補完する。
-									2.uniformsに代入する必要のあるパラメーターを明示的に代入する。</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> parameters: <span class="tsd-signature-type">ShaderMaterialParameters</span></h5>
-									<div class="tsd-comment tsd-typography">
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1902,7 +1319,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="rimeffectmaterial.html">RimEffectMaterial</a>.<a href="rimeffectmaterial.html#initdefines">initDefines</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/rimEffect/OuterGlowMaterial.ts#L13">src/rimEffect/OuterGlowMaterial.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/rimEffect/OuterGlowMaterial.ts#L13">src/rimEffect/OuterGlowMaterial.ts:13</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1921,7 +1338,7 @@
 								<p>Inherited from <a href="rimeffectmaterial.html">RimEffectMaterial</a>.<a href="rimeffectmaterial.html#inituniforms">initUniforms</a></p>
 								<p>Overrides <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#inituniforms">initUniforms</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/rimEffect/RimEffectMaterial.ts#L58">src/rimEffect/RimEffectMaterial.ts:58</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/rimEffect/RimEffectMaterial.ts#L58">src/rimEffect/RimEffectMaterial.ts:58</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1939,27 +1356,64 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Material.onBeforeCompile</p>
 								<ul>
-									<li>Defined in node_modules/three/src/materials/Material.d.ts:322</li>
+									<li>Defined in node_modules/three/src/materials/Material.d.ts:329</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>An optional callback that is executed immediately before the shader program is compiled. This function is called with the shader source code as a parameter. Useful for the modification of built-in materials.</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>shader: <span class="tsd-signature-type">Shader</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Source code of the shader</p>
-									</div>
 								</li>
 								<li>
 									<h5>renderer: <span class="tsd-signature-type">WebGLRenderer</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>WebGLRenderer Context that is initializing the material</p>
-									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="onsetalphamap" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> on<wbr>Set<wbr>Alpha<wbr>Map</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Set<wbr>Alpha<wbr>Map<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Texture</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#onsetalphamap">onSetAlphaMap</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/ShaderPhongMaterial.ts#L185">src/ShaderPhongMaterial.ts:185</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">Texture</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="onsetmap" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> on<wbr>Set<wbr>Map</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Set<wbr>Map<span class="tsd-signature-symbol">(</span>val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Texture</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#onsetmap">onSetMap</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/ShaderPhongMaterial.ts#L174">src/ShaderPhongMaterial.ts:174</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>val: <span class="tsd-signature-type">Texture</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1980,24 +1434,13 @@
 									<li>Defined in node_modules/three/src/core/EventDispatcher.d.ts:34</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Removes a listener from an event type.</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>type: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The type of the listener that gets removed.</p>
-									</div>
 								</li>
 								<li>
 									<h5>listener: <span class="tsd-signature-type">function</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The listener function that gets removed.</p>
-									</div>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
@@ -2034,7 +1477,7 @@
 								<p>Inherited from ShaderMaterial.setValues</p>
 								<p>Overrides Material.setValues</p>
 								<ul>
-									<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:64</li>
+									<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:62</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2058,15 +1501,9 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#startglow">startGlow</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/ShaderPhongMaterial.ts#L185">src/ShaderPhongMaterial.ts:185</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/ShaderPhongMaterial.ts#L191">src/ShaderPhongMaterial.ts:191</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>発光状態のために、マテリアルの設定をまとめて変更する。
-									<a href="https://stackoverflow.com/questions/37647853/three-js-depthwrite-vs-depthtest-for-transparent-canvas-texture-map-on-three-p" class="external">https://stackoverflow.com/questions/37647853/three-js-depthwrite-vs-depthtest-for-transparent-canvas-texture-map-on-three-p</a></p>
-								</div>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -2083,7 +1520,7 @@
 								<p>Inherited from ShaderMaterial.toJSON</p>
 								<p>Overrides Material.toJSON</p>
 								<ul>
-									<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:65</li>
+									<li>Defined in node_modules/three/src/materials/ShaderMaterial.d.ts:63</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2107,14 +1544,9 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="shaderphongmaterial.html">ShaderPhongMaterial</a>.<a href="shaderphongmaterial.html#getbasicuniforms">getBasicUniforms</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/978fafc/src/ShaderPhongMaterial.ts#L57">src/ShaderPhongMaterial.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-shader-materials/blob/ad5adc1/src/ShaderPhongMaterial.ts#L57">src/ShaderPhongMaterial.ts:57</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>このMaterialに必要なuniformsを生成する。</p>
-								</div>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 						</li>
 					</ul>
@@ -2390,6 +1822,12 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="outerglowmaterial.html#onbeforecompile" class="tsd-kind-icon">on<wbr>Before<wbr>Compile</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="outerglowmaterial.html#onsetalphamap" class="tsd-kind-icon">on<wbr>Set<wbr>Alpha<wbr>Map</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="outerglowmaterial.html#onsetmap" class="tsd-kind-icon">on<wbr>Set<wbr>Map</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="outerglowmaterial.html#removeeventlistener" class="tsd-kind-icon">remove<wbr>Event<wbr>Listener</a>
