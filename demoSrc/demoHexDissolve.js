@@ -9,8 +9,8 @@ import {
   PointLightHelper,
   SphereGeometry
 } from "three";
-import { HexDissolveMaterial } from "../bin";
-import { Directions } from "../bin";
+import { HexDissolveMaterial } from "../lib";
+import { Directions } from "../lib";
 import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 
 export class StudyHexGrid {

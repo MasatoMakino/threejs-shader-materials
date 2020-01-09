@@ -9,8 +9,8 @@ import {
   PointLightHelper,
   SphereGeometry
 } from "three";
-import { Directions } from "../bin/";
-import { SquareGridMaterial } from "../bin/";
+import { Directions } from "../lib/";
+import { SquareGridMaterial } from "../lib/";
 import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 
 export class StudySquareGrid {

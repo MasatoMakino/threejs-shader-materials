@@ -1,7 +1,7 @@
 import * as dat from "dat.gui";
 import { Common } from "./Common";
 import { Color, Fog, Mesh, PlaneGeometry } from "three";
-import { SkyCloudMaterial } from "../bin";
+import { SkyCloudMaterial } from "../lib";
 import { CommonGUI } from "./CommonGUI";
 import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 

@@ -1,6 +1,6 @@
 import { Color, Fog, Sprite, TextureLoader } from "three";
 import { Common } from "./Common";
-import { SpriteCloudMaterial } from "../bin";
+import { SpriteCloudMaterial } from "../lib";
 import * as dat from "dat.gui";
 import { CommonGUI } from "./CommonGUI";
 import { RAFTicker, RAFTickerEventType } from "raf-ticker";

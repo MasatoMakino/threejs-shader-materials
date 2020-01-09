@@ -8,7 +8,7 @@ import {
   PointLightHelper,
   SphereGeometry
 } from "three";
-import { CellularNoiseMaterial } from "../bin/";
+import { CellularNoiseMaterial } from "../lib/";
 import { CommonGUI } from "./CommonGUI";
 import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 

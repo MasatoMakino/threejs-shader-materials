@@ -12,7 +12,7 @@ import {
 import { Common } from "./Common";
 import * as dat from "dat.gui";
 import { CommonGUI } from "./CommonGUI";
-import { OuterGlowMaterial } from "../bin/rimEffect/OuterGlowMaterial";
+import { OuterGlowMaterial } from "../lib/rimEffect/OuterGlowMaterial";
 import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 
 export class Study {

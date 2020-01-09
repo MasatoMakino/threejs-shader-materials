@@ -8,8 +8,8 @@ import {
   PointLightHelper,
   SphereGeometry
 } from "three";
-import { Directions } from "../bin/chunk/WavyAnimationChunk";
-import { CrossGridMaterial } from "../bin/crossGrid/CrossGridMaterial";
+import { Directions } from "../lib/chunk/WavyAnimationChunk";
+import { CrossGridMaterial } from "../lib/crossGrid/CrossGridMaterial";
 import { CommonGUI } from "./CommonGUI";
 import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 

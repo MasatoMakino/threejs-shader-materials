@@ -8,7 +8,7 @@ import {
   PointLightHelper,
   SphereGeometry
 } from "three";
-import { FBMDissolveMaterial } from "../bin/fbmDissolve/FBMDissolveMaterial";
+import { FBMDissolveMaterial } from "../lib/fbmDissolve/FBMDissolveMaterial";
 import { CommonGUI } from "./CommonGUI";
 import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 

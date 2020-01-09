@@ -7,7 +7,7 @@ import {
   PointLightHelper,
   TorusGeometry
 } from "three";
-import { RimEffectMaterial } from "../bin/";
+import { RimEffectMaterial } from "../lib/";
 import { CommonGUI } from "./CommonGUI";
 import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 

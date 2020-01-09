@@ -13,7 +13,7 @@ import {
   PlaneHelper
 } from "three";
 import { CommonGUI } from "./CommonGUI";
-import { SolidClippingMaterial } from "../bin";
+import { SolidClippingMaterial } from "../lib";
 import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 
 export class Study {

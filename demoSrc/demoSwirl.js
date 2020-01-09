@@ -11,7 +11,7 @@ import {
   RepeatWrapping
 } from "three";
 import { CommonGUI } from "./CommonGUI";
-import { SwirlMaterial } from "../bin";
+import { SwirlMaterial } from "../lib";
 import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 
 export class Study {

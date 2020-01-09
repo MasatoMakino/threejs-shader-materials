@@ -10,7 +10,7 @@ import {
   TextureLoader
 } from "three";
 import { CommonGUI } from "./CommonGUI";
-import { ExpansionDissolveMaterial } from "../bin/expansionDissolve/ExpansionDissolveMaterial";
+import { ExpansionDissolveMaterial } from "../lib/expansionDissolve/ExpansionDissolveMaterial";
 import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 
 export class Study {

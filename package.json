@@ -1,14 +1,19 @@
 {
   "name": "threejs-shader-materials",
-  "version": "0.1.0",
-  "main": "./bin/index.js",
-  "types": "./bin/index.d.ts",
+  "version": "0.1.1",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "module": "./esm/index.js",
+  "files": [
+    "lib",
+    "esm"
+  ],
   "description": "Collection of shader materials for three.js",
   "repository": "https://MasatoMakino@github.com/MasatoMakino/threejs-shader-materials.git",
   "author": "MasatoMakino <unagiinu.g@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
-    "three": "^0.111.0"
+    "three": "^0.112.1"
   },
   "devDependencies": {
     "dat.gui": "^0.7.6",
@@ -17,11 +22,11 @@
     "gulptask-dev-server": "https://github.com/MasatoMakino/gulptask-dev-server.git",
     "gulptask-tsc": "https://github.com/MasatoMakino/gulptask-tsc.git",
     "gulptask-tsdoc": "https://github.com/MasatoMakino/gulptask-tsdoc.git",
-    "husky": "^3.1.0",
+    "husky": "^4.0.3",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
-    "three": "^0.111.0",
-    "typescript": "^3.7.3"
+    "three": "^0.112.1",
+    "typescript": "^3.7.4"
   },
   "scripts": {
     "start:dev": "gulp start_dev",

@@ -27,14 +27,16 @@ export class SwirlMaterial extends ShaderPhongMaterial implements IAnimatable {
     }
   }
 
-  set map(val: Texture) {
-    super.map = val;
+  protected onSetMap(val: Texture): void {
+    super.onSetMap(val);
     this.setRepeat(val);
   }
-  set alphaMap(value: Texture) {
-    super.alphaMap = value;
+
+  protected onSetAlphaMap(value: Texture): void {
+    super.onSetAlphaMap(value);
     this.setRepeat(value);
   }
+
   /**
    * リピートモードは強制的にRepeatWrappingに
    * @param value

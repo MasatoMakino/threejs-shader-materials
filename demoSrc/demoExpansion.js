@@ -8,7 +8,7 @@ import {
   TorusGeometry
 } from "three";
 import { Common } from "./Common";
-import { ExpansionMaterial } from "../bin/expansion/ExpansionMaterial";
+import { ExpansionMaterial } from "../lib/expansion/ExpansionMaterial";
 import { ExplodeModifier } from "three/examples/jsm/modifiers/ExplodeModifier";
 import * as dat from "dat.gui";
 import { CommonGUI } from "./CommonGUI";

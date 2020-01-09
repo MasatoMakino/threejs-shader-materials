@@ -7,7 +7,7 @@ import {
   TorusGeometry
 } from "three";
 import { Common } from "./Common";
-import { ContourMaterial } from "../bin/contour/ContourMaterial";
+import { ContourMaterial } from "../lib/contour/ContourMaterial";
 import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 
 export class StudyContourMap {

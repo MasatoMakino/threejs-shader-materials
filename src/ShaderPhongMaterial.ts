@@ -166,17 +166,23 @@ export abstract class ShaderPhongMaterial extends ShaderMaterial
   get map(): Texture {
     return MapChunk.getMap(this);
   }
+
   set map(val: Texture) {
     MapChunk.setMap(this, val);
+    this.onSetMap(val);
   }
+  protected onSetMap(val: Texture): void {}
 
   get alphaMap(): Texture {
     return this.uniforms.alphaMap.value;
   }
+
   set alphaMap(value: Texture) {
     this.uniforms.alphaMap.value = value;
     this.uniforms.hasAlphaMap.value = value != null;
+    this.onSetAlphaMap(value);
   }
+  protected onSetAlphaMap(value: Texture): void {}
 
   /**
    * 発光状態のために、マテリアルの設定をまとめて変更する。

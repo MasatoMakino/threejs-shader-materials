@@ -9,8 +9,8 @@ import {
   PointLightHelper,
   SphereGeometry
 } from "three";
-import { HalftoneGridMaterial } from "../bin/halftoneGrid/HalftoneGridMaterial";
-import { Directions } from "../bin/chunk/WavyAnimationChunk";
+import { HalftoneGridMaterial } from "../lib/halftoneGrid/HalftoneGridMaterial";
+import { Directions } from "../lib/chunk/WavyAnimationChunk";
 import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 
 export class StudyHalftoneGrid {
