@@ -23,7 +23,6 @@ uniform vec2 center;
 #include <uv_pars_fragment>
 #include <uv2_pars_fragment>
 #include <map_uniform_chunk>
-#include <alphamap_pars_fragment>
 #include <aomap_pars_fragment>
 #include <lightmap_pars_fragment>
 #include <emissivemap_pars_fragment>
