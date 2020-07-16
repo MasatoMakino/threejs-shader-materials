@@ -1,4 +1,5 @@
 import {
+  ACESFilmicToneMapping,
   AmbientLight,
   AxesHelper,
   Color,
@@ -7,7 +8,7 @@ import {
   PerspectiveCamera,
   Scene,
   SphereBufferGeometry,
-  WebGLRenderer
+  WebGLRenderer,
 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
@@ -56,7 +57,7 @@ export class Common {
     element.style.position = "absolute";
     const renderer = new WebGLRenderer({
       canvas: element,
-      antialias: antialias
+      antialias: antialias,
     });
     renderer.setClearColor(new Color(color));
     renderer.setSize(W, H);
@@ -69,7 +70,9 @@ export class Common {
     scene.add(axesHelper);
   }
 
-  static initSky(scene, gui) {
+  static initSky(scene, gui, renderer) {
+    renderer.toneMapping = ACESFilmicToneMapping;
+
     const sunSphere = new Mesh(
       new SphereBufferGeometry(20000, 16, 8),
       new MeshBasicMaterial({ color: 0xffffff })
@@ -82,6 +85,6 @@ export class Common {
     sky.scale.setScalar(45000);
     scene.add(sky);
 
-    CommonGUI.initSkyGUI(gui, sky, sunSphere);
+    CommonGUI.initSkyGUI(gui, sky, sunSphere, renderer);
   }
 }

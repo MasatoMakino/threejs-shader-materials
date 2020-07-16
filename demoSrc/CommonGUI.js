@@ -6,7 +6,7 @@ export class CommonGUI {
     const prop = {};
     const targetColor = mat[propName];
     prop[propName] = targetColor.getHex();
-    folder.addColor(prop, propName).onChange(val => {
+    folder.addColor(prop, propName).onChange((val) => {
       targetColor.setHex(val);
     });
     return prop;
@@ -36,7 +36,7 @@ export class CommonGUI {
 
     const prop = {
       mask: "",
-      alphaMap: ""
+      alphaMap: "",
     };
 
     const folder = gui.addFolder("WavyGridMaterial");
@@ -48,9 +48,9 @@ export class CommonGUI {
     folder
       .add(prop, "mask", {
         none: "",
-        earth: "./textures/landmask.png"
+        earth: "./textures/landmask.png",
       })
-      .onChange(val => {
+      .onChange((val) => {
         if (val === "") {
           mat.maskTexture = null;
         } else {
@@ -61,9 +61,9 @@ export class CommonGUI {
     folder
       .add(prop, "alphaMap", {
         none: "",
-        earth: "./textures/landmask.png"
+        earth: "./textures/landmask.png",
       })
-      .onChange(val => {
+      .onChange((val) => {
         if (val === "") {
           mat.alphaMap = null;
         } else {
@@ -86,7 +86,7 @@ export class CommonGUI {
     animationFolder.add(mat, "direction", {
       horizontal: Directions.horizontal,
       vertical: Directions.vertical,
-      radial: Directions.radial
+      radial: Directions.radial,
     });
     animationFolder.add(mat, "raisedBottom", 0.0, 1.0);
     animationFolder.open();
@@ -126,16 +126,15 @@ export class CommonGUI {
     folder.open();
   }
 
-  static initSkyGUI(gui, sky, sunSphere) {
+  static initSkyGUI(gui, sky, sunSphere, renderer) {
     const effectController = {
       turbidity: 10,
       rayleigh: 0.15,
       mieCoefficient: 0.005,
       mieDirectionalG: 0.8,
-      luminance: 1,
       inclination: 0.07, // elevation / inclination
       azimuth: 0.25, // Facing front,
-      sun: !true
+      exposure: 0.75,
     };
 
     const distance = 400000;
@@ -144,7 +143,6 @@ export class CommonGUI {
       const uniforms = sky.material.uniforms;
       uniforms["turbidity"].value = effectController.turbidity;
       uniforms["rayleigh"].value = effectController.rayleigh;
-      uniforms["luminance"].value = effectController.luminance;
       uniforms["mieCoefficient"].value = effectController.mieCoefficient;
       uniforms["mieDirectionalG"].value = effectController.mieDirectionalG;
       const theta = Math.PI * (effectController.inclination - 0.5);
@@ -152,8 +150,9 @@ export class CommonGUI {
       sunSphere.position.x = distance * Math.cos(phi);
       sunSphere.position.y = distance * Math.sin(phi) * Math.sin(theta);
       sunSphere.position.z = distance * Math.sin(phi) * Math.cos(theta);
-      sunSphere.visible = effectController.sun;
       uniforms["sunPosition"].value.copy(sunSphere.position);
+
+      renderer.toneMappingExposure = effectController.exposure;
     }
     guiChanged();
 
@@ -170,12 +169,11 @@ export class CommonGUI {
     folder
       .add(effectController, "mieDirectionalG", 0.0, 1, 0.001)
       .onChange(guiChanged);
-    folder.add(effectController, "luminance", 0.0, 2).onChange(guiChanged);
     folder
       .add(effectController, "inclination", 0, 1, 0.0001)
       .onChange(guiChanged);
     folder.add(effectController, "azimuth", 0, 1, 0.0001).onChange(guiChanged);
-    folder.add(effectController, "sun").onChange(guiChanged);
+    folder.add(effectController, "exposure", 0, 1, 0.0001).onChange(guiChanged);
     folder.open();
   }
 }

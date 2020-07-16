@@ -20,9 +20,9 @@ export class Study {
     const mat = this.initObject(scene);
 
     const gui = new dat.GUI();
-    Common.initSky(scene, gui);
+    Common.initSky(scene, gui, renderer);
     this.initGUI(gui, mat);
-    RAFTicker.addEventListener(RAFTickerEventType.tick, e => {
+    RAFTicker.addEventListener(RAFTickerEventType.tick, (e) => {
       renderer.render(scene, camera);
     });
   }
@@ -30,7 +30,7 @@ export class Study {
   initObject(scene) {
     const mat = new SpriteCloudMaterial({
       fog: scene.fog !== undefined,
-      transparent: true
+      transparent: true,
     });
     mat.color = new Color(0xdddddd);
     const loader = new TextureLoader();

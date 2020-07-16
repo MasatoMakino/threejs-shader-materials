@@ -19,9 +19,9 @@ export class Study {
     Common.initHelper(scene);
 
     const gui = new dat.GUI();
-    Common.initSky(scene, gui);
+    Common.initSky(scene, gui, renderer);
     const mat = this.initObject(scene);
-    RAFTicker.addEventListener(RAFTickerEventType.tick, e => {
+    RAFTicker.addEventListener(RAFTickerEventType.tick, (e) => {
       renderer.render(scene, camera);
     });
     this.initGUI(gui, mat);
@@ -31,7 +31,7 @@ export class Study {
     const size = 20000;
     const geo = new PlaneGeometry(size, size);
     const mat = new SkyCloudMaterial({
-      fog: scene.fog !== undefined
+      fog: scene.fog !== undefined,
     });
     const mesh = new Mesh(geo, mat);
     mesh.position.y = 800;
