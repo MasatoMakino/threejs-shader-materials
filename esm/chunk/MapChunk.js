@@ -1,5 +1,6 @@
-import { UniformsUtils } from "three";
-import { GLSLChunk } from "./GLSLChunk";
+import {UniformsUtils} from "three";
+import {GLSLChunk} from "./GLSLChunk";
+
 /**
  * マスクテクスチャを利用するShaderMaterial用Chunk。
  * マスクテクスチャがどのように描画に反映されるかは、各Materialのシェーダー実装による。
@@ -16,8 +17,8 @@ export class MapChunk extends GLSLChunk {
             super.getUniform(),
             {
                 hasMap: { value: false },
-                map: { value: null }
-            }
+                map: { value: null },
+            },
         ]);
     }
     static getMap(_self) {
@@ -47,7 +48,6 @@ class MapFragmentChunk extends GLSLChunk {
         return `
       if( hasMap ){
         vec4 texelColor = texture2D( map, mapUV );
-        texelColor = mapTexelToLinear( texelColor );
         diffuseColor *= texelColor;
       }
     `;
