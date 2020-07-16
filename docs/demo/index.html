@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>demo</title>
     <link
             rel="stylesheet"
@@ -9,47 +10,14 @@
             integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47"
             crossorigin="anonymous"
     />
-    <style>
-        html, body, #layout{
-            height:100%;
-        }
-        #layout{
-            padding-left: 360px;
-        }
+    <link rel="stylesheet" href="styles.css" type="text/css"/>
 
-        #menu {
-            width: 360px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            z-index: 1000; /* so the menu or its navicon stays above all content */
-            background: #222;
-            overflow-y: auto;
-        }
-        #menu a {
-            color: #bbb;
-            border: none;
-            padding: 0.6em 0 0.6em 0.6em;
-        }
-        #menu a:hover,
-        #menu a:focus {
-            background: #444;
-        }
-        #menu .pure-menu-selected a{
-            color: #fff;
-            background: #18d;
-        }
-
-        iframe{
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
     <script>
         document.addEventListener("DOMContentLoaded", function(e) {
 
+            /**
+             * init menu items
+             */
             var menuItems = document.getElementsByClassName('pure-menu-item');
 
             function init() {
@@ -75,51 +43,85 @@
 
             init();
 
+            /**
+             * init toggle menu
+             */
+            function initToggleMenu(){
+                var layout   = document.getElementById('layout'),
+                    menu     = document.getElementById('menu'),
+                    menuLink = document.getElementById('menuLink');
+
+                function toggleClass(element, className) {
+                    var classes = element.className.split(/\s+/),
+                        length = classes.length,
+                        i = 0;
+
+                    for (; i < length; i++) {
+                        if (classes[i] === className) {
+                            classes.splice(i, 1);
+                            break;
+                        }
+                    }
+                    // The className is not found
+                    if (length === classes.length) {
+                        classes.push(className);
+                    }
+
+                    element.className = classes.join(' ');
+                }
+
+                function toggleAll(e) {
+                    var active = 'active';
+                    toggleClass(layout, active);
+                    toggleClass(menu, active);
+                    toggleClass(menuLink, active);
+                }
+
+                function handleEvent(e) {
+                    if (e.target.id === menuLink.id) {
+                        return toggleAll(e);
+                    }
+                    if (menu.className.indexOf('active') !== -1) {
+                        return toggleAll(e);
+                    }
+                }
+
+                document.addEventListener('click', handleEvent);
+            }
+            initToggleMenu();
+
         });
     </script>
 
 </head>
 <body>
 <div id="layout">
+    <a href="#menu" id="menuLink" class="menu-link">
+        <span></span>
+    </a>
     <div id="menu">
         <div class="pure-menu">
-        <ul class="pure-menu-list">
-            
-            <li class="pure-menu-item"><a class="pure-menu-link" href="demoCellular.html" target="demo-frame">demoCellular.html</a></li>
-            
-            <li class="pure-menu-item"><a class="pure-menu-link" href="demoContour.html" target="demo-frame">demoContour.html</a></li>
-            
-            <li class="pure-menu-item"><a class="pure-menu-link" href="demoCrossGrid.html" target="demo-frame">demoCrossGrid.html</a></li>
-            
-            <li class="pure-menu-item"><a class="pure-menu-link" href="demoExpansion.html" target="demo-frame">demoExpansion.html</a></li>
-            
-            <li class="pure-menu-item"><a class="pure-menu-link" href="demoExpansionDissolve.html" target="demo-frame">demoExpansionDissolve.html</a></li>
-            
-            <li class="pure-menu-item"><a class="pure-menu-link" href="demoFBMDissolve.html" target="demo-frame">demoFBMDissolve.html</a></li>
-            
-            <li class="pure-menu-item"><a class="pure-menu-link" href="demoFBMFire.html" target="demo-frame">demoFBMFire.html</a></li>
-            
-            <li class="pure-menu-item"><a class="pure-menu-link" href="demoHalftoneGrid.html" target="demo-frame">demoHalftoneGrid.html</a></li>
-            
-            <li class="pure-menu-item"><a class="pure-menu-link" href="demoHexDissolve.html" target="demo-frame">demoHexDissolve.html</a></li>
-            
-            <li class="pure-menu-item"><a class="pure-menu-link" href="demoHexGrid.html" target="demo-frame">demoHexGrid.html</a></li>
-            
-            <li class="pure-menu-item"><a class="pure-menu-link" href="demoOuterGlow.html" target="demo-frame">demoOuterGlow.html</a></li>
-            
-            <li class="pure-menu-item"><a class="pure-menu-link" href="demoRimEffect.html" target="demo-frame">demoRimEffect.html</a></li>
-            
-            <li class="pure-menu-item"><a class="pure-menu-link" href="demoSkyCloud.html" target="demo-frame">demoSkyCloud.html</a></li>
-            
-            <li class="pure-menu-item"><a class="pure-menu-link" href="demoSolidClipping.html" target="demo-frame">demoSolidClipping.html</a></li>
-            
-            <li class="pure-menu-item"><a class="pure-menu-link" href="demoSpriteCloud.html" target="demo-frame">demoSpriteCloud.html</a></li>
-            
-            <li class="pure-menu-item"><a class="pure-menu-link" href="demoSquareGrid.html" target="demo-frame">demoSquareGrid.html</a></li>
-            
-            <li class="pure-menu-item"><a class="pure-menu-link" href="demoSwirl.html" target="demo-frame">demoSwirl.html</a></li>
-            
-        </ul>
+            <a class="pure-menu-heading" href="https://MasatoMakino@github.com/MasatoMakino/threejs-shader-materials.git">threejs-shader-materials<img src="GitHub-Mark-Light-32px.png"></a>
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a class="pure-menu-link" href="demoCellular.html" target="demo-frame">demoCellular.html</a></li>
+                <li class="pure-menu-item"><a class="pure-menu-link" href="demoContour.html" target="demo-frame">demoContour.html</a></li>
+                <li class="pure-menu-item"><a class="pure-menu-link" href="demoCrossGrid.html" target="demo-frame">demoCrossGrid.html</a></li>
+                <li class="pure-menu-item"><a class="pure-menu-link" href="demoExpansion.html" target="demo-frame">demoExpansion.html</a></li>
+                <li class="pure-menu-item"><a class="pure-menu-link" href="demoExpansionDissolve.html" target="demo-frame">demoExpansionDissolve.html</a></li>
+                <li class="pure-menu-item"><a class="pure-menu-link" href="demoFBMDissolve.html" target="demo-frame">demoFBMDissolve.html</a></li>
+                <li class="pure-menu-item"><a class="pure-menu-link" href="demoFBMFire.html" target="demo-frame">demoFBMFire.html</a></li>
+                <li class="pure-menu-item"><a class="pure-menu-link" href="demoHalftoneGrid.html" target="demo-frame">demoHalftoneGrid.html</a></li>
+                <li class="pure-menu-item"><a class="pure-menu-link" href="demoHexDissolve.html" target="demo-frame">demoHexDissolve.html</a></li>
+                <li class="pure-menu-item"><a class="pure-menu-link" href="demoHexGrid.html" target="demo-frame">demoHexGrid.html</a></li>
+                <li class="pure-menu-item"><a class="pure-menu-link" href="demoOuterGlow.html" target="demo-frame">demoOuterGlow.html</a></li>
+                <li class="pure-menu-item"><a class="pure-menu-link" href="demoRimEffect.html" target="demo-frame">demoRimEffect.html</a></li>
+                <li class="pure-menu-item"><a class="pure-menu-link" href="demoSkyCloud.html" target="demo-frame">demoSkyCloud.html</a></li>
+                <li class="pure-menu-item"><a class="pure-menu-link" href="demoSolidClipping.html" target="demo-frame">demoSolidClipping.html</a></li>
+                <li class="pure-menu-item"><a class="pure-menu-link" href="demoSpriteCloud.html" target="demo-frame">demoSpriteCloud.html</a></li>
+                <li class="pure-menu-item"><a class="pure-menu-link" href="demoSquareGrid.html" target="demo-frame">demoSquareGrid.html</a></li>
+                <li class="pure-menu-item"><a class="pure-menu-link" href="demoSwirl.html" target="demo-frame">demoSwirl.html</a></li>
+                
+            </ul>
         </div>
     </div>
     <iframe name="demo-frame" id="demo-frame" src="demoCellular.html"></iframe>

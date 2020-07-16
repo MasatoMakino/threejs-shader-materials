@@ -44,6 +44,14 @@ uniform float cloudBottomSaturation;
 #include <logdepthbuf_pars_fragment>
 #include <clipping_planes_pars_fragment>
 
+// <https://www.shadertoy.com/view/4dS3Wd>
+// <https://gist.github.com/patriciogonzalezvivo/670c22f3966e662d2f83>
+// By Morgan McGuire @morgan3d, http://graphicscodex.com
+// Reuse permitted under the BSD license.
+float hash(vec2 p)
+{
+  return fract(1e4 * sin(17.0 * p.x + p.y * 0.1) * (0.1 + abs(sin(p.y * 13.0 + p.x))));
+}
 
 /**
  * Based on Morgan McGuire @morgan3d
@@ -54,10 +62,10 @@ float noise (in vec2 _st) {
     vec2 f = fract(_st);
 
     // Four corners in 2D of a tile
-    float a = rand(i);
-    float b = rand(i + vec2(1.0, 0.0));
-    float c = rand(i + vec2(0.0, 1.0));
-    float d = rand(i + vec2(1.0, 1.0));
+    float a = hash(i);
+    float b = hash(i + vec2(1.0, 0.0));
+    float c = hash(i + vec2(0.0, 1.0));
+    float d = hash(i + vec2(1.0, 1.0));
 
     vec2 u = f * f * (3.0 - 2.0 * f);
 
