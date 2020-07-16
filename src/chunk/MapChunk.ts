@@ -1,4 +1,4 @@
-import { Texture, IUniform, UniformsUtils } from "three";
+import { IUniform, Texture, UniformsUtils } from "three";
 import { GLSLChunk } from "./GLSLChunk";
 
 /**
@@ -29,8 +29,8 @@ export class MapChunk extends GLSLChunk {
       super.getUniform(),
       {
         hasMap: { value: false },
-        map: { value: null }
-      }
+        map: { value: null },
+      },
     ]);
   }
 
@@ -65,7 +65,6 @@ class MapFragmentChunk extends GLSLChunk {
     return `
       if( hasMap ){
         vec4 texelColor = texture2D( map, mapUV );
-        texelColor = mapTexelToLinear( texelColor );
         diffuseColor *= texelColor;
       }
     `;
