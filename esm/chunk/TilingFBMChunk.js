@@ -1,4 +1,5 @@
-import { GLSLChunk } from "./GLSLChunk";
+import {GLSLChunk} from "./GLSLChunk";
+
 export class TilingFBMChunk extends GLSLChunk {
     static registerChunk() {
         TilingFBMFunctionChunk.registerChunk();
@@ -8,12 +9,12 @@ export class TilingFBMChunk extends GLSLChunk {
         return {
             tiles: { value: 2.0 },
             hashLoop: { value: 8.0 },
-            amp: { value: 0.5 }
+            amp: { value: 0.5 },
         };
     }
     static getDefines() {
         return {
-            NUM_OCTAVES: 3.0
+            NUM_OCTAVES: 3.0,
         };
     }
 }
@@ -22,14 +23,15 @@ class TilingFBMFunctionChunk extends GLSLChunk {
         return "tiling_fbm_function_chunk";
     }
     static getChunk() {
+        //language=GLSL
         return `
         // Based On Dave_Hoskins 
         // https://www.shadertoy.com/view/4dlGW2
         
-        highp float hash(in vec2 p, in float hashLoop)
+        float hash(in vec2 p, in float hashLoop)
         {
             p = mod(p, hashLoop);
-            return rand(p);
+            return fract(1e4 * sin(17.0 * p.x + p.y * 0.1) * (0.1 + abs(sin(p.y * 13.0 + p.x))));
         }
         
         float noise(in vec2 p, in float hashLoop)
@@ -73,6 +75,7 @@ class TilingFBMUniformChunk extends GLSLChunk {
         return "tiling_fbm_uniform_chunk";
     }
     static getChunk() {
+        //language=GLSL
         return `
       uniform float tiles;  
       uniform float hashLoop;
