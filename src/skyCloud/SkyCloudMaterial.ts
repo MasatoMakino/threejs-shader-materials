@@ -1,11 +1,11 @@
-import { ShaderMaterialParameters, UniformsUtils, Color } from "three";
-
-import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
+import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { Color, ShaderMaterialParameters, UniformsUtils } from "three";
 import { AnimationChunk, IAnimatable } from "../chunk/AnimationChunk";
 
-import FragmentShader from "./SkyCloudMaterial.frag.glsl";
+import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
 import VertexShader from "../ShaderPhongMaterial.vert.glsl";
-import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+
+import FragmentShader from "./SkyCloudMaterial.frag.glsl";
 
 export class SkyCloudMaterial extends ShaderPhongMaterial
   implements IAnimatable {
@@ -105,8 +105,8 @@ export class SkyCloudMaterial extends ShaderPhongMaterial
         cloudBottomVolume: { value: 0.08 },
         cloudBottomSaturation: { value: 0.5 },
 
-        skyColor: { value: new Color(0.101961, 0.619608, 0.666667) }
-      }
+        skyColor: { value: new Color(0.101961, 0.619608, 0.666667) },
+      },
     ]);
   }
 
@@ -123,21 +123,15 @@ export class SkyCloudMaterial extends ShaderPhongMaterial
   /*
    * IAnimatable implements
    */
-  private animationListener = e => {
+  private animationListener = (e) => {
     this.addTime(e.delta / 1000);
   };
 
   protected startAnimation() {
-    RAFTicker.addEventListener(
-      RAFTickerEventType.onBeforeTick,
-      this.animationListener
-    );
+    RAFTicker.on(RAFTickerEventType.onBeforeTick, this.animationListener);
   }
 
   protected stopAnimation(): void {
-    RAFTicker.removeEventListener(
-      RAFTickerEventType.onBeforeTick,
-      this.animationListener
-    );
+    RAFTicker.off(RAFTickerEventType.onBeforeTick, this.animationListener);
   }
 }

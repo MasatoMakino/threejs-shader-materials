@@ -1,9 +1,13 @@
-import { ShaderPhongMaterial, IAnimatable, AnimationChunk } from "../index";
-import { Vector2, ShaderMaterialParameters, UniformsUtils } from "three";
-import FragmentShader from "./SwirlMaterial.frag.glsl";
-import { Texture } from "three";
-import { RepeatWrapping } from "three";
 import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import {
+  RepeatWrapping,
+  ShaderMaterialParameters,
+  Texture,
+  UniformsUtils,
+  Vector2,
+} from "three";
+import { AnimationChunk, IAnimatable, ShaderPhongMaterial } from "../index";
+import FragmentShader from "./SwirlMaterial.frag.glsl";
 
 export class SwirlMaterial extends ShaderPhongMaterial implements IAnimatable {
   /*
@@ -94,29 +98,23 @@ export class SwirlMaterial extends ShaderPhongMaterial implements IAnimatable {
         uvRotation: { value: 0.0 },
         swirlRotation: { value: 3.14 },
         radius: { value: 0.5 },
-        center: { value: new Vector2(0.5, 0.5) }
-      }
+        center: { value: new Vector2(0.5, 0.5) },
+      },
     ]);
   }
 
   /*
    * IAnimatable implements
    */
-  private animationListener = e => {
+  private animationListener = (e) => {
     this.addTime(e.delta / 1000);
   };
 
   protected startAnimation() {
-    RAFTicker.addEventListener(
-      RAFTickerEventType.onBeforeTick,
-      this.animationListener
-    );
+    RAFTicker.on(RAFTickerEventType.onBeforeTick, this.animationListener);
   }
 
   protected stopAnimation(): void {
-    RAFTicker.removeEventListener(
-      RAFTickerEventType.onBeforeTick,
-      this.animationListener
-    );
+    RAFTicker.off(RAFTickerEventType.onBeforeTick, this.animationListener);
   }
 }

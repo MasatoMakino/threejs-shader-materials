@@ -1,8 +1,8 @@
 # threejs-shader-materials
 
-Collection of shader materials for three.js
+> Collection of shader materials for three.js
 
-[Github repository](https://github.com/MasatoMakino/threejs-shader-materials)
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=MasatoMakino&repo=threejs-shader-materials&show_owner=true)](https://github.com/MasatoMakino/threejs-shader-materials)
 
 ## Demo
 

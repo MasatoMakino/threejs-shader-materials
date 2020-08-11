@@ -25,14 +25,13 @@
     "husky": "^4.2.5",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
-    "three": "^0.118.3",
-    "typescript": "^3.9.6"
+    "three": "^0.119.1",
+    "typescript": "^3.9.7"
   },
   "scripts": {
     "start:dev": "gulp start_dev",
-    "build": "gulp build && npm run doc:card",
-    "build:clean": "gulp build_clean && npm run doc:card",
-    "doc:card": "repoimg -n MasatoMakino/threejs-shader-materials -o ./docs/card.png",
+    "build": "gulp build",
+    "build:clean": "gulp build_clean",
     "checkout:docs": "git checkout HEAD ./docs/"
   },
   "husky": {

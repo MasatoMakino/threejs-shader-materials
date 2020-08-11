@@ -1,15 +1,14 @@
-import { UniformsUtils } from "three";
-import { ShaderMaterialParameters } from "three";
+import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { ShaderMaterialParameters, UniformsUtils } from "three";
+import { AnimationChunk } from "./chunk/AnimationChunk";
+import { MaskMapChunk } from "./chunk/MaskMapChunk";
+import { ReversibleChunk } from "./chunk/ReversibleChunk";
 import {
   Directions,
   IWavyAnimatable,
-  WavyAnimationChunk
+  WavyAnimationChunk,
 } from "./chunk/WavyAnimationChunk";
-import { MaskMapChunk } from "./chunk/MaskMapChunk";
-import { ReversibleChunk } from "./chunk/ReversibleChunk";
-import { AnimationChunk } from "./chunk/AnimationChunk";
 import { GridMaterial } from "./GridMaterial";
-import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 
 /**
  * グリッド状に分割され、Wavyアニメーションを行うマテリアル。
@@ -103,7 +102,7 @@ export abstract class WavyGridMaterial extends GridMaterial
       super.getBasicUniforms(),
       ReversibleChunk.getUniform(),
       WavyAnimationChunk.getUniform(),
-      MaskMapChunk.getUniform()
+      MaskMapChunk.getUniform(),
     ]);
   }
 
@@ -114,21 +113,15 @@ export abstract class WavyGridMaterial extends GridMaterial
   /*
    * IAnimatable implements
    */
-  private animationListener = e => {
+  private animationListener = (e) => {
     this.addTime(e.delta / 1000);
   };
 
   protected startAnimation() {
-    RAFTicker.addEventListener(
-      RAFTickerEventType.onBeforeTick,
-      this.animationListener
-    );
+    RAFTicker.on(RAFTickerEventType.onBeforeTick, this.animationListener);
   }
 
   protected stopAnimation(): void {
-    RAFTicker.removeEventListener(
-      RAFTickerEventType.onBeforeTick,
-      this.animationListener
-    );
+    RAFTicker.off(RAFTickerEventType.onBeforeTick, this.animationListener);
   }
 }

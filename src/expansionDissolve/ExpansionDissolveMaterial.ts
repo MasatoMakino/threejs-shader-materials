@@ -1,11 +1,15 @@
-import { UniformsUtils, ShaderMaterialParameters, Color } from "three";
-import { ShaderPhongMaterial } from "../index";
-import { ITiledFBM, TilingFBMChunk } from "../index";
+import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { Color, ShaderMaterialParameters, UniformsUtils } from "three";
+import {
+  AnimationChunk,
+  IAnimatable,
+  ITiledFBM,
+  ShaderPhongMaterial,
+  TilingFBMChunk,
+} from "../index";
+import FragmentShader from "./ExpansionDissolveMaterial.frag.glsl";
 
 import VertexShader from "./ExpansionDissolveMaterial.vert.glsl";
-import FragmentShader from "./ExpansionDissolveMaterial.frag.glsl";
-import { IAnimatable, AnimationChunk } from "../index";
-import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 
 /**
  * FBMノイズによるジオメトリの膨張でディゾルブを行うマテリアル。
@@ -104,8 +108,8 @@ export class ExpansionDissolveMaterial extends ShaderPhongMaterial
         scaleMax: { value: 20.0 },
         progress: { value: 0.0 },
         dissolveColor: { value: new Color(1.0, 1.0, 1.0) },
-        dissolveOutColor: { value: new Color(0.0, 0.0, 0.0) }
-      }
+        dissolveOutColor: { value: new Color(0.0, 0.0, 0.0) },
+      },
     ]);
   }
 
@@ -123,21 +127,15 @@ export class ExpansionDissolveMaterial extends ShaderPhongMaterial
   /*
    * IAnimatable implements
    */
-  private animationListener = e => {
+  private animationListener = (e) => {
     this.addTime(e.delta / 1000);
   };
 
   protected startAnimation() {
-    RAFTicker.addEventListener(
-      RAFTickerEventType.onBeforeTick,
-      this.animationListener
-    );
+    RAFTicker.on(RAFTickerEventType.onBeforeTick, this.animationListener);
   }
 
   protected stopAnimation(): void {
-    RAFTicker.removeEventListener(
-      RAFTickerEventType.onBeforeTick,
-      this.animationListener
-    );
+    RAFTicker.off(RAFTickerEventType.onBeforeTick, this.animationListener);
   }
 }

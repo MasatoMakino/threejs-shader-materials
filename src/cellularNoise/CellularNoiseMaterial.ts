@@ -1,7 +1,7 @@
-import { ShaderPhongMaterial, IAnimatable, AnimationChunk } from "../index";
-import { ShaderMaterialParameters, UniformsUtils } from "three";
-import FragmentShader from "./CellularNoiseMaterial.frag.glsl";
 import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { ShaderMaterialParameters, UniformsUtils } from "three";
+import { AnimationChunk, IAnimatable, ShaderPhongMaterial } from "../index";
+import FragmentShader from "./CellularNoiseMaterial.frag.glsl";
 
 export class CellularNoiseMaterial extends ShaderPhongMaterial
   implements IAnimatable {
@@ -57,28 +57,22 @@ export class CellularNoiseMaterial extends ShaderPhongMaterial
       AnimationChunk.getUniform(),
       {
         grid: { value: 3.0 },
-        divisionScaleX: { value: 1.0 }
-      }
+        divisionScaleX: { value: 1.0 },
+      },
     ]);
   }
   /*
    * IAnimatable implements
    */
-  private animationListener = e => {
+  private animationListener = (e) => {
     this.addTime(e.delta / 1000);
   };
 
   protected startAnimation() {
-    RAFTicker.addEventListener(
-      RAFTickerEventType.onBeforeTick,
-      this.animationListener
-    );
+    RAFTicker.on(RAFTickerEventType.onBeforeTick, this.animationListener);
   }
 
   protected stopAnimation(): void {
-    RAFTicker.removeEventListener(
-      RAFTickerEventType.onBeforeTick,
-      this.animationListener
-    );
+    RAFTicker.off(RAFTickerEventType.onBeforeTick, this.animationListener);
   }
 }
