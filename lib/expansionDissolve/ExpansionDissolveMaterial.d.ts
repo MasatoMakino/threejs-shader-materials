@@ -1,7 +1,6 @@
-import { ShaderMaterialParameters, Color } from "three";
-import { ShaderPhongMaterial } from "../index";
-import { ITiledFBM } from "../index";
-import { IAnimatable } from "../index";
+import {Color, ShaderMaterialParameters} from "three";
+import {IAnimatable, ITiledFBM, ShaderPhongMaterial} from "../index";
+
 /**
  * FBMノイズによるジオメトリの膨張でディゾルブを行うマテリアル。
  * 爆発しながら消滅するような表現になる。

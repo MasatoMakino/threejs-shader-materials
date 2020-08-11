@@ -1,10 +1,11 @@
-import { UniformsUtils } from "three";
-import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
+import {RAFTicker, RAFTickerEventType} from "raf-ticker";
+import {UniformsUtils} from "three";
+import {AnimationChunk} from "../chunk/AnimationChunk";
+import {TilingFBMChunk} from "../chunk/TilingFBMChunk";
+import {ShaderPhongMaterial} from "../ShaderPhongMaterial";
 import VertexShader from "../ShaderPhongMaterial.vert.glsl";
 import FragmentShader from "./FBMFireMaterial.frag.glsl";
-import { TilingFBMChunk } from "../chunk/TilingFBMChunk";
-import { AnimationChunk } from "../chunk/AnimationChunk";
-import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+
 export class FBMFireMaterial extends ShaderPhongMaterial {
     /**
      *
@@ -21,7 +22,7 @@ export class FBMFireMaterial extends ShaderPhongMaterial {
         /*
          * IAnimatable implements
          */
-        this.animationListener = e => {
+        this.animationListener = (e) => {
             this.addTime(e.delta / 1000);
         };
         this.isAnimate = this.isAnimate; //reset and start animation
@@ -104,8 +105,8 @@ export class FBMFireMaterial extends ShaderPhongMaterial {
                 strength: { value: 0.45 },
                 bloom: { value: 0.1 },
                 rimStrength: { value: 1.0 },
-                rimPow: { value: 1.0 }
-            }
+                rimPow: { value: 1.0 },
+            },
         ]);
     }
     initChunks() {
@@ -128,9 +129,9 @@ export class FBMFireMaterial extends ShaderPhongMaterial {
         }
     }
     startAnimation() {
-        RAFTicker.addEventListener(RAFTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.on(RAFTickerEventType.onBeforeTick, this.animationListener);
     }
     stopAnimation() {
-        RAFTicker.removeEventListener(RAFTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.off(RAFTickerEventType.onBeforeTick, this.animationListener);
     }
 }

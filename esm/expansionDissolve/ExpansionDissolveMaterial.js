@@ -1,10 +1,9 @@
-import { UniformsUtils, Color } from "three";
-import { ShaderPhongMaterial } from "../index";
-import { TilingFBMChunk } from "../index";
-import VertexShader from "./ExpansionDissolveMaterial.vert.glsl";
+import {RAFTicker, RAFTickerEventType} from "raf-ticker";
+import {Color, UniformsUtils} from "three";
+import {AnimationChunk, ShaderPhongMaterial, TilingFBMChunk,} from "../index";
 import FragmentShader from "./ExpansionDissolveMaterial.frag.glsl";
-import { AnimationChunk } from "../index";
-import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import VertexShader from "./ExpansionDissolveMaterial.vert.glsl";
+
 /**
  * FBMノイズによるジオメトリの膨張でディゾルブを行うマテリアル。
  * 爆発しながら消滅するような表現になる。
@@ -22,7 +21,7 @@ export class ExpansionDissolveMaterial extends ShaderPhongMaterial {
         /*
          * IAnimatable implements
          */
-        this.animationListener = e => {
+        this.animationListener = (e) => {
             this.addTime(e.delta / 1000);
         };
         this.isAnimate = this.isAnimate;
@@ -102,8 +101,8 @@ export class ExpansionDissolveMaterial extends ShaderPhongMaterial {
                 scaleMax: { value: 20.0 },
                 progress: { value: 0.0 },
                 dissolveColor: { value: new Color(1.0, 1.0, 1.0) },
-                dissolveOutColor: { value: new Color(0.0, 0.0, 0.0) }
-            }
+                dissolveOutColor: { value: new Color(0.0, 0.0, 0.0) },
+            },
         ]);
     }
     initChunks() {
@@ -116,9 +115,9 @@ export class ExpansionDissolveMaterial extends ShaderPhongMaterial {
         this.defines.USE_EXPANSION = true;
     }
     startAnimation() {
-        RAFTicker.addEventListener(RAFTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.on(RAFTickerEventType.onBeforeTick, this.animationListener);
     }
     stopAnimation() {
-        RAFTicker.removeEventListener(RAFTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.off(RAFTickerEventType.onBeforeTick, this.animationListener);
     }
 }

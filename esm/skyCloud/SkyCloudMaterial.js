@@ -1,9 +1,10 @@
-import { UniformsUtils, Color } from "three";
-import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
-import { AnimationChunk } from "../chunk/AnimationChunk";
-import FragmentShader from "./SkyCloudMaterial.frag.glsl";
+import {RAFTicker, RAFTickerEventType} from "raf-ticker";
+import {Color, UniformsUtils} from "three";
+import {AnimationChunk} from "../chunk/AnimationChunk";
+import {ShaderPhongMaterial} from "../ShaderPhongMaterial";
 import VertexShader from "../ShaderPhongMaterial.vert.glsl";
-import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import FragmentShader from "./SkyCloudMaterial.frag.glsl";
+
 export class SkyCloudMaterial extends ShaderPhongMaterial {
     /**
      *
@@ -20,7 +21,7 @@ export class SkyCloudMaterial extends ShaderPhongMaterial {
         /*
          * IAnimatable implements
          */
-        this.animationListener = e => {
+        this.animationListener = (e) => {
             this.addTime(e.delta / 1000);
         };
         this.isAnimate = this.isAnimate; //reset and start animation
@@ -90,8 +91,8 @@ export class SkyCloudMaterial extends ShaderPhongMaterial {
                 cloudVolume: { value: 16.0 },
                 cloudBottomVolume: { value: 0.08 },
                 cloudBottomSaturation: { value: 0.5 },
-                skyColor: { value: new Color(0.101961, 0.619608, 0.666667) }
-            }
+                skyColor: { value: new Color(0.101961, 0.619608, 0.666667) },
+            },
         ]);
     }
     initDefaultSetting(parameters) {
@@ -104,9 +105,9 @@ export class SkyCloudMaterial extends ShaderPhongMaterial {
         }
     }
     startAnimation() {
-        RAFTicker.addEventListener(RAFTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.on(RAFTickerEventType.onBeforeTick, this.animationListener);
     }
     stopAnimation() {
-        RAFTicker.removeEventListener(RAFTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.off(RAFTickerEventType.onBeforeTick, this.animationListener);
     }
 }

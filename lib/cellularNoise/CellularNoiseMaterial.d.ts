@@ -1,5 +1,6 @@
-import { ShaderPhongMaterial, IAnimatable } from "../index";
-import { ShaderMaterialParameters } from "three";
+import {ShaderMaterialParameters} from "three";
+import {IAnimatable, ShaderPhongMaterial} from "../index";
+
 export declare class CellularNoiseMaterial extends ShaderPhongMaterial implements IAnimatable {
     speed: number;
     addTime(delta: number): void;

@@ -1,6 +1,6 @@
-import { ShaderPhongMaterial, IAnimatable } from "../index";
-import { Vector2, ShaderMaterialParameters } from "three";
-import { Texture } from "three";
+import {ShaderMaterialParameters, Texture, Vector2} from "three";
+import {IAnimatable, ShaderPhongMaterial} from "../index";
+
 export declare class SwirlMaterial extends ShaderPhongMaterial implements IAnimatable {
     speed: number;
     addTime(delta: number): void;
