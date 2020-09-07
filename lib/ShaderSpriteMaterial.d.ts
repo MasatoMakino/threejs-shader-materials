@@ -1,4 +1,5 @@
-import { ShaderMaterial, ShaderMaterialParameters, Color, Vector2, Matrix3, Texture } from "three";
+import {Color, Matrix3, ShaderMaterial, ShaderMaterialParameters, Texture, Vector2} from "three";
+
 export declare abstract class ShaderSpriteMaterial extends ShaderMaterial {
     /**
      * コンストラクタ。
@@ -28,6 +29,8 @@ export declare abstract class ShaderSpriteMaterial extends ShaderMaterial {
     protected initDefaultSetting(parameters?: ShaderMaterialParameters): void;
     /**
      * 透明度
+     *
+     * @see https://github.com/microsoft/TypeScript/pull/37894
      */
     get opacity(): number;
     /**
@@ -35,6 +38,8 @@ export declare abstract class ShaderSpriteMaterial extends ShaderMaterial {
      * この段階でuniformsはundefinedなので、そのままでは初期化できない。
      * このsetterでは受け取った値をprivate変数に保存して、初期化後にuniformsに再代入する。
      * @param value
+     *
+     * @see https://github.com/microsoft/TypeScript/pull/37894
      */
     set opacity(value: number);
     protected _opacity: number;

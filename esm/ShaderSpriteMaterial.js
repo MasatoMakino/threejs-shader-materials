@@ -1,7 +1,8 @@
-import { ShaderMaterial, UniformsUtils } from "three";
-import { SpriteChunk } from "./chunk/SpriteChunk";
-import VertexShader from "./ShaderSpriteMaterial.vert.glsl";
+import {ShaderMaterial, UniformsUtils,} from "three";
+import {SpriteChunk} from "./chunk/SpriteChunk";
 import FragmentShader from "./ShaderSpriteMaterial.frag.glsl";
+import VertexShader from "./ShaderSpriteMaterial.vert.glsl";
+
 export class ShaderSpriteMaterial extends ShaderMaterial {
     /**
      * コンストラクタ。
@@ -55,7 +56,10 @@ export class ShaderSpriteMaterial extends ShaderMaterial {
     }
     /**
      * 透明度
+     *
+     * @see https://github.com/microsoft/TypeScript/pull/37894
      */
+    //@ts-ignore : これはopacityプロパティとuniforms.opacityプロパティを同期するために利用されます。
     get opacity() {
         return this._opacity;
     }
@@ -64,7 +68,10 @@ export class ShaderSpriteMaterial extends ShaderMaterial {
      * この段階でuniformsはundefinedなので、そのままでは初期化できない。
      * このsetterでは受け取った値をprivate変数に保存して、初期化後にuniformsに再代入する。
      * @param value
+     *
+     * @see https://github.com/microsoft/TypeScript/pull/37894
      */
+    //@ts-ignore : これはopacityプロパティとuniforms.opacityプロパティを同期するために利用されます。
     set opacity(value) {
         this._opacity = value;
         if (this.uniforms && this.uniforms.opacity) {

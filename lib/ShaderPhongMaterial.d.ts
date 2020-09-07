@@ -1,5 +1,6 @@
-import { ShaderMaterial, Color, Texture, ShaderMaterialParameters } from "three";
-import { IMap } from "./chunk/MapChunk";
+import {Color, ShaderMaterial, ShaderMaterialParameters, Texture} from "three";
+import {IMap} from "./chunk/MapChunk";
+
 /**
  * MeshPhongMaterialに準じるShaderMaterialクラス。
  *
@@ -43,6 +44,8 @@ export declare abstract class ShaderPhongMaterial extends ShaderMaterial impleme
     set color(value: Color);
     /**
      * 透明度
+     *
+     * @see https://github.com/microsoft/TypeScript/pull/37894
      */
     get opacity(): number;
     /**
@@ -50,6 +53,8 @@ export declare abstract class ShaderPhongMaterial extends ShaderMaterial impleme
      * この段階でuniformsはundefinedなので、そのままでは初期化できない。
      * このsetterでは受け取った値をprivate変数に保存して、初期化後にuniformsに再代入する。
      * @param value
+     *
+     * @see https://github.com/microsoft/TypeScript/pull/37894
      */
     set opacity(value: number);
     protected _opacity: number;

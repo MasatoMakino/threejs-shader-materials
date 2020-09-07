@@ -1,10 +1,11 @@
-import { ShaderMaterial, Color, AdditiveBlending, UniformsUtils, UniformsLib } from "three";
-import { MeshPhongChunk } from "./chunk/MeshPhongChunk";
-import { SurfaceNormalChunk } from "./chunk/SurfaceNormalChunk";
-import { ExpansionChunk } from "./chunk/ExpansionChunk";
-import { MapChunk } from "./chunk/MapChunk";
-import VertexShader from "./ShaderPhongMaterial.vert.glsl";
+import {AdditiveBlending, Color, ShaderMaterial, UniformsLib, UniformsUtils,} from "three";
+import {ExpansionChunk} from "./chunk/ExpansionChunk";
+import {MapChunk} from "./chunk/MapChunk";
+import {MeshPhongChunk} from "./chunk/MeshPhongChunk";
+import {SurfaceNormalChunk} from "./chunk/SurfaceNormalChunk";
 import FragmentShader from "./ShaderPhongMaterial.frag.glsl";
+import VertexShader from "./ShaderPhongMaterial.vert.glsl";
+
 /**
  * MeshPhongMaterialに準じるShaderMaterialクラス。
  *
@@ -55,11 +56,11 @@ export class ShaderPhongMaterial extends ShaderMaterial {
                 emissive: { value: new Color(0x000000) },
                 specular: { value: new Color(0x111111) },
                 shininess: { value: 30 },
-                hasAlphaMap: { value: false }
+                hasAlphaMap: { value: false },
             },
             SurfaceNormalChunk.getUniform(),
             ExpansionChunk.getUniform(),
-            MapChunk.getUniform()
+            MapChunk.getUniform(),
         ]);
     }
     /**
@@ -78,7 +79,7 @@ export class ShaderPhongMaterial extends ShaderMaterial {
         this.uniforms = UniformsUtils.merge([
             ShaderPhongMaterial.getBasicUniforms(),
             ExpansionChunk.getUniform(),
-            {}
+            {},
         ]);
     }
     /**
@@ -108,7 +109,10 @@ export class ShaderPhongMaterial extends ShaderMaterial {
     }
     /**
      * 透明度
+     *
+     * @see https://github.com/microsoft/TypeScript/pull/37894
      */
+    //@ts-ignore : これはopacityプロパティとuniforms.opacityプロパティを同期するために利用されます。
     get opacity() {
         return this._opacity;
     }
@@ -117,7 +121,10 @@ export class ShaderPhongMaterial extends ShaderMaterial {
      * この段階でuniformsはundefinedなので、そのままでは初期化できない。
      * このsetterでは受け取った値をprivate変数に保存して、初期化後にuniformsに再代入する。
      * @param value
+     *
+     * @see https://github.com/microsoft/TypeScript/pull/37894
      */
+    //@ts-ignore : これはopacityプロパティとuniforms.opacityプロパティを同期するために利用されます。
     set opacity(value) {
         this._opacity = value;
         if (this.uniforms && this.uniforms.opacity) {
