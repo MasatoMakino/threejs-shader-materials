@@ -23,10 +23,10 @@
     "gulptask-tsc": "https://github.com/MasatoMakino/gulptask-tsc.git",
     "gulptask-tsdoc": "https://github.com/MasatoMakino/gulptask-tsdoc.git",
     "husky": "^4.2.5",
-    "prettier": "^2.0.5",
-    "pretty-quick": "^2.0.1",
-    "three": "^0.119.1",
-    "typescript": "^3.9.7"
+    "prettier": "^2.1.1",
+    "pretty-quick": "^3.0.0",
+    "three": "^0.120.1",
+    "typescript": "^4.0.2"
   },
   "scripts": {
     "start:dev": "gulp start_dev",
