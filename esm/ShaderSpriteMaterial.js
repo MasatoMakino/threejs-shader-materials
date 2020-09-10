@@ -1,8 +1,7 @@
-import {ShaderMaterial, UniformsUtils,} from "three";
-import {SpriteChunk} from "./chunk/SpriteChunk";
+import { ShaderMaterial, UniformsUtils, } from "three";
+import { SpriteChunk } from "./chunk/SpriteChunk";
 import FragmentShader from "./ShaderSpriteMaterial.frag.glsl";
 import VertexShader from "./ShaderSpriteMaterial.vert.glsl";
-
 export class ShaderSpriteMaterial extends ShaderMaterial {
     /**
      * コンストラクタ。
@@ -12,14 +11,10 @@ export class ShaderSpriteMaterial extends ShaderMaterial {
      */
     constructor(vertexShader, fragmentShader, parameters) {
         super(parameters);
-        if (parameters == null)
-            parameters = {};
-        if (vertexShader == null) {
-            vertexShader = VertexShader();
-        }
-        if (fragmentShader == null) {
-            fragmentShader = FragmentShader();
-        }
+        this._opacity = 1.0;
+        parameters !== null && parameters !== void 0 ? parameters : (parameters = {});
+        vertexShader !== null && vertexShader !== void 0 ? vertexShader : (vertexShader = VertexShader());
+        fragmentShader !== null && fragmentShader !== void 0 ? fragmentShader : (fragmentShader = FragmentShader());
         this.initChunks();
         this.initUniforms();
         this.initDefines();
@@ -52,11 +47,11 @@ export class ShaderSpriteMaterial extends ShaderMaterial {
      * @param parameters
      */
     initDefaultSetting(parameters) {
-        this.opacity = this._opacity;
+        this.uniformOpacity = this._opacity;
     }
     /**
      * 透明度
-     *
+     * @deprecated Use uniformOpacity, To be removed in version 0.3.0
      * @see https://github.com/microsoft/TypeScript/pull/37894
      */
     //@ts-ignore : これはopacityプロパティとuniforms.opacityプロパティを同期するために利用されます。
@@ -64,17 +59,31 @@ export class ShaderSpriteMaterial extends ShaderMaterial {
         return this._opacity;
     }
     /**
+     * 透明度
+     */
+    get uniformOpacity() {
+        return this._opacity;
+    }
+    /**
+     * 透明度
+     * @deprecated Use uniformOpacity, To be removed in version 0.3.0
+     * @param value
+     */
+    //@ts-ignore : これはopacityプロパティとuniforms.opacityプロパティを同期するために利用されます。
+    set opacity(value) {
+        this.uniformOpacity = value;
+    }
+    /**
+     * 透明度
      * opacityは基底クラスのMaterialのコンストラクタ内で明示的に1.0が代入される。
      * この段階でuniformsはundefinedなので、そのままでは初期化できない。
      * このsetterでは受け取った値をprivate変数に保存して、初期化後にuniformsに再代入する。
      * @param value
-     *
-     * @see https://github.com/microsoft/TypeScript/pull/37894
      */
-    //@ts-ignore : これはopacityプロパティとuniforms.opacityプロパティを同期するために利用されます。
-    set opacity(value) {
+    set uniformOpacity(value) {
+        var _a;
         this._opacity = value;
-        if (this.uniforms && this.uniforms.opacity) {
+        if ((_a = this.uniforms) === null || _a === void 0 ? void 0 : _a.opacity) {
             this.uniforms.opacity.value = value;
         }
     }

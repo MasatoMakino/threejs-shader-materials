@@ -1,11 +1,10 @@
-import {RAFTicker, RAFTickerEventType} from "raf-ticker";
-import {UniformsUtils} from "three";
-import {AnimationChunk} from "../chunk/AnimationChunk";
-import {TilingFBMChunk} from "../chunk/TilingFBMChunk";
-import {ShaderPhongMaterial} from "../ShaderPhongMaterial";
+import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { UniformsUtils } from "three";
+import { AnimationChunk } from "../chunk/AnimationChunk";
+import { TilingFBMChunk } from "../chunk/TilingFBMChunk";
+import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
 import VertexShader from "../ShaderPhongMaterial.vert.glsl";
 import FragmentShader from "./FBMFireMaterial.frag.glsl";
-
 export class FBMFireMaterial extends ShaderPhongMaterial {
     /**
      *

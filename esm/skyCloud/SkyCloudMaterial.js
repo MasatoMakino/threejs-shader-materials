@@ -1,10 +1,9 @@
-import {RAFTicker, RAFTickerEventType} from "raf-ticker";
-import {Color, UniformsUtils} from "three";
-import {AnimationChunk} from "../chunk/AnimationChunk";
-import {ShaderPhongMaterial} from "../ShaderPhongMaterial";
+import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { Color, UniformsUtils } from "three";
+import { AnimationChunk } from "../chunk/AnimationChunk";
+import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
 import VertexShader from "../ShaderPhongMaterial.vert.glsl";
 import FragmentShader from "./SkyCloudMaterial.frag.glsl";
-
 export class SkyCloudMaterial extends ShaderPhongMaterial {
     /**
      *

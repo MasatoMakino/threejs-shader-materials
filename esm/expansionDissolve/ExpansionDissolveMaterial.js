@@ -1,9 +1,8 @@
-import {RAFTicker, RAFTickerEventType} from "raf-ticker";
-import {Color, UniformsUtils} from "three";
-import {AnimationChunk, ShaderPhongMaterial, TilingFBMChunk,} from "../index";
+import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { Color, UniformsUtils } from "three";
+import { AnimationChunk, ShaderPhongMaterial, TilingFBMChunk, } from "../index";
 import FragmentShader from "./ExpansionDissolveMaterial.frag.glsl";
 import VertexShader from "./ExpansionDissolveMaterial.vert.glsl";
-
 /**
  * FBMノイズによるジオメトリの膨張でディゾルブを行うマテリアル。
  * 爆発しながら消滅するような表現になる。

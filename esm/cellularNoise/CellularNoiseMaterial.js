@@ -1,8 +1,7 @@
-import {RAFTicker, RAFTickerEventType} from "raf-ticker";
-import {UniformsUtils} from "three";
-import {AnimationChunk, ShaderPhongMaterial} from "../index";
+import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { UniformsUtils } from "three";
+import { AnimationChunk, ShaderPhongMaterial } from "../index";
 import FragmentShader from "./CellularNoiseMaterial.frag.glsl";
-
 export class CellularNoiseMaterial extends ShaderPhongMaterial {
     constructor(parameters) {
         super(null, FragmentShader(), parameters);

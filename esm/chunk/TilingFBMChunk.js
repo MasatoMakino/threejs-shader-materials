@@ -1,5 +1,4 @@
-import {GLSLChunk} from "./GLSLChunk";
-
+import { GLSLChunk } from "./GLSLChunk";
 export class TilingFBMChunk extends GLSLChunk {
     static registerChunk() {
         TilingFBMFunctionChunk.registerChunk();

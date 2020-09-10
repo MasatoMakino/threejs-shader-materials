@@ -1,6 +1,5 @@
-import {UniformsUtils} from "three";
-import {GLSLChunk} from "./GLSLChunk";
-
+import { UniformsUtils } from "three";
+import { GLSLChunk } from "./GLSLChunk";
 /**
  * マスクテクスチャを利用するShaderMaterial用Chunk。
  * マスクテクスチャがどのように描画に反映されるかは、各Materialのシェーダー実装による。

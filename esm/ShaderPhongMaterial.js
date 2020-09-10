@@ -1,11 +1,10 @@
-import {AdditiveBlending, Color, ShaderMaterial, UniformsLib, UniformsUtils,} from "three";
-import {ExpansionChunk} from "./chunk/ExpansionChunk";
-import {MapChunk} from "./chunk/MapChunk";
-import {MeshPhongChunk} from "./chunk/MeshPhongChunk";
-import {SurfaceNormalChunk} from "./chunk/SurfaceNormalChunk";
+import { AdditiveBlending, Color, ShaderMaterial, UniformsLib, UniformsUtils, } from "three";
+import { ExpansionChunk } from "./chunk/ExpansionChunk";
+import { MapChunk } from "./chunk/MapChunk";
+import { MeshPhongChunk } from "./chunk/MeshPhongChunk";
+import { SurfaceNormalChunk } from "./chunk/SurfaceNormalChunk";
 import FragmentShader from "./ShaderPhongMaterial.frag.glsl";
 import VertexShader from "./ShaderPhongMaterial.vert.glsl";
-
 /**
  * MeshPhongMaterialに準じるShaderMaterialクラス。
  *
@@ -20,14 +19,10 @@ export class ShaderPhongMaterial extends ShaderMaterial {
      */
     constructor(vertexShader, fragmentShader, parameters) {
         super(parameters);
-        if (parameters == null)
-            parameters = {};
-        if (vertexShader == null) {
-            vertexShader = VertexShader();
-        }
-        if (fragmentShader == null) {
-            fragmentShader = FragmentShader();
-        }
+        this._opacity = 1.0;
+        parameters !== null && parameters !== void 0 ? parameters : (parameters = {});
+        vertexShader !== null && vertexShader !== void 0 ? vertexShader : (vertexShader = VertexShader());
+        fragmentShader !== null && fragmentShader !== void 0 ? fragmentShader : (fragmentShader = FragmentShader());
         this.initChunks();
         this.initUniforms();
         this.initDefines();
@@ -95,7 +90,7 @@ export class ShaderPhongMaterial extends ShaderMaterial {
      * @param parameters
      */
     initDefaultSetting(parameters) {
-        this.opacity = this._opacity;
+        this.uniformOpacity = this._opacity;
         this.lights = true; //FIXME シェーダーがエラーを起こすのでlights設定は強制でON
     }
     /**
@@ -109,25 +104,40 @@ export class ShaderPhongMaterial extends ShaderMaterial {
     }
     /**
      * 透明度
-     *
+     * @deprecated Use uniformOpacity, To be removed in version 0.3.0
      * @see https://github.com/microsoft/TypeScript/pull/37894
      */
     //@ts-ignore : これはopacityプロパティとuniforms.opacityプロパティを同期するために利用されます。
     get opacity() {
+        return this.uniformOpacity;
+    }
+    /**
+     * 透明度
+     */
+    get uniformOpacity() {
         return this._opacity;
     }
     /**
-     * opacityは基底クラスのMaterialのコンストラクタ内で明示的に1.0が代入される。
-     * この段階でuniformsはundefinedなので、そのままでは初期化できない。
-     * このsetterでは受け取った値をprivate変数に保存して、初期化後にuniformsに再代入する。
+     * 透明度
      * @param value
-     *
+     * @deprecated Use uniformOpacity, To be removed in version 0.3.0
      * @see https://github.com/microsoft/TypeScript/pull/37894
      */
     //@ts-ignore : これはopacityプロパティとuniforms.opacityプロパティを同期するために利用されます。
     set opacity(value) {
+        this.uniformOpacity = value;
+    }
+    /**
+     * 透明度
+     * opacityは基底クラスのMaterialのコンストラクタ内で明示的に1.0が代入される。
+     * この段階でuniformsはundefinedなので、そのままでは初期化できない。
+     * このsetterでは受け取った値をprivate変数に保存して、初期化後にuniformsに再代入する。
+     * @param value
+     */
+    set uniformOpacity(value) {
+        var _a;
         this._opacity = value;
-        if (this.uniforms && this.uniforms.opacity) {
+        if ((_a = this.uniforms) === null || _a === void 0 ? void 0 : _a.opacity) {
             this.uniforms.opacity.value = value;
         }
     }
