@@ -22,7 +22,7 @@ export class CommonGUI {
   static initMaterialFolder(folder, mat) {
     this.initColorGUI(folder, mat);
     folder.add(mat, "transparent");
-    folder.add(mat, "opacity", 0.0, 1.0);
+    folder.add(mat, "uniformOpacity", 0.0, 1.0);
   }
 
   static initSpriteMaterialGUI(gui, mat, folderName = "Material") {
