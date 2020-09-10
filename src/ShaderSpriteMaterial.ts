@@ -25,14 +25,9 @@ export abstract class ShaderSpriteMaterial extends ShaderMaterial {
   ) {
     super(parameters);
 
-    if (parameters == null) parameters = {};
-
-    if (vertexShader == null) {
-      vertexShader = VertexShader();
-    }
-    if (fragmentShader == null) {
-      fragmentShader = FragmentShader();
-    }
+    parameters ??= {};
+    vertexShader ??= VertexShader();
+    fragmentShader ??= FragmentShader();
 
     this.initChunks();
     this.initUniforms();
@@ -94,7 +89,7 @@ export abstract class ShaderSpriteMaterial extends ShaderMaterial {
   //@ts-ignore : これはopacityプロパティとuniforms.opacityプロパティを同期するために利用されます。
   set opacity(value: number) {
     this._opacity = value;
-    if (this.uniforms && this.uniforms.opacity) {
+    if (this.uniforms?.opacity) {
       this.uniforms.opacity.value = value;
     }
   }
