@@ -65,12 +65,12 @@ export abstract class ShaderSpriteMaterial extends ShaderMaterial {
    * @param parameters
    */
   protected initDefaultSetting(parameters?: ShaderMaterialParameters): void {
-    this.opacity = this._opacity;
+    this.uniformOpacity = this._opacity;
   }
 
   /**
    * 透明度
-   *
+   * @deprecated Use uniformOpacity, To be removed in version 0.3.0
    * @see https://github.com/microsoft/TypeScript/pull/37894
    */
   //@ts-ignore : これはopacityプロパティとuniforms.opacityプロパティを同期するために利用されます。
@@ -79,21 +79,36 @@ export abstract class ShaderSpriteMaterial extends ShaderMaterial {
   }
 
   /**
+   * 透明度
+   */
+  get uniformOpacity(): number {
+    return this._opacity;
+  }
+
+  /**
+   * 透明度
+   * @deprecated Use uniformOpacity, To be removed in version 0.3.0
+   * @param value
+   */
+  //@ts-ignore : これはopacityプロパティとuniforms.opacityプロパティを同期するために利用されます。
+  set opacity(value: number) {
+    this.uniformOpacity = value;
+  }
+
+  /**
+   * 透明度
    * opacityは基底クラスのMaterialのコンストラクタ内で明示的に1.0が代入される。
    * この段階でuniformsはundefinedなので、そのままでは初期化できない。
    * このsetterでは受け取った値をprivate変数に保存して、初期化後にuniformsに再代入する。
    * @param value
-   *
-   * @see https://github.com/microsoft/TypeScript/pull/37894
    */
-  //@ts-ignore : これはopacityプロパティとuniforms.opacityプロパティを同期するために利用されます。
-  set opacity(value: number) {
+  set uniformOpacity(value: number) {
     this._opacity = value;
     if (this.uniforms?.opacity) {
       this.uniforms.opacity.value = value;
     }
   }
-  protected _opacity: number;
+  protected _opacity: number = 1.0;
 
   /**
    * Spriteマテリアルと互換性を持つために、colorプロパティはdiffuseへ代入される。

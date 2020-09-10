@@ -118,7 +118,7 @@ export abstract class ShaderPhongMaterial
    * @param parameters
    */
   protected initDefaultSetting(parameters?: ShaderMaterialParameters): void {
-    this.opacity = this._opacity;
+    this.uniformOpacity = this._opacity;
     this.lights = true; //FIXME シェーダーがエラーを起こすのでlights設定は強制でON
   }
 
@@ -134,30 +134,46 @@ export abstract class ShaderPhongMaterial
 
   /**
    * 透明度
-   *
+   * @deprecated Use uniformOpacity, To be removed in version 0.3.0
    * @see https://github.com/microsoft/TypeScript/pull/37894
    */
   //@ts-ignore : これはopacityプロパティとuniforms.opacityプロパティを同期するために利用されます。
   get opacity(): number {
+    return this.uniformOpacity;
+  }
+
+  /**
+   * 透明度
+   */
+  get uniformOpacity(): number {
     return this._opacity;
   }
 
   /**
-   * opacityは基底クラスのMaterialのコンストラクタ内で明示的に1.0が代入される。
-   * この段階でuniformsはundefinedなので、そのままでは初期化できない。
-   * このsetterでは受け取った値をprivate変数に保存して、初期化後にuniformsに再代入する。
+   * 透明度
    * @param value
-   *
+   * @deprecated Use uniformOpacity, To be removed in version 0.3.0
    * @see https://github.com/microsoft/TypeScript/pull/37894
    */
   //@ts-ignore : これはopacityプロパティとuniforms.opacityプロパティを同期するために利用されます。
   set opacity(value: number) {
+    this.uniformOpacity = value;
+  }
+
+  /**
+   * 透明度
+   * opacityは基底クラスのMaterialのコンストラクタ内で明示的に1.0が代入される。
+   * この段階でuniformsはundefinedなので、そのままでは初期化できない。
+   * このsetterでは受け取った値をprivate変数に保存して、初期化後にuniformsに再代入する。
+   * @param value
+   */
+  set uniformOpacity(value: number) {
     this._opacity = value;
     if (this.uniforms?.opacity) {
       this.uniforms.opacity.value = value;
     }
   }
-  protected _opacity: number;
+  protected _opacity: number = 1.0;
 
   get emissive(): Color {
     return this.uniforms.emissive.value;
