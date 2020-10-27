@@ -4,7 +4,7 @@ body,
   height: 100%;
 }
 
-iframe{
+iframe {
   width: 100%;
   height: 100%;
   border: none;
@@ -81,21 +81,22 @@ This styles the menu heading.
   text-transform: none;
   display: flex;
   align-items: center;
-  padding: 1.0rem 0 1.0rem 0.8rem;
+  padding: 1rem 0 1rem 0.8rem;
 
-  background-image:url('GitHub-Mark-Light-64px.png');
-  background-color:rgba(34,34,34,0.6);
+  background-image: url("GitHub-Mark-Light-64px.png");
+  background-color: rgba(34, 34, 34, 0.6);
   background-repeat: no-repeat;
   background-position: right -4px bottom -3px;
-  background-blend-mode:darken;
+  background-blend-mode: darken;
 }
 
+#menu .pure-menu-heading:focus,
 #menu .pure-menu-heading:hover {
-  background-image:url('GitHub-Mark-Light-64px.png');
-  background-color:rgba(68,68,68,0.6);
+  background-image: url("GitHub-Mark-Light-64px.png");
+  background-color: rgba(68, 68, 68, 0.6);
   background-repeat: no-repeat;
   background-position: right -4px bottom -3px;
-  background-blend-mode:darken;
+  background-blend-mode: darken;
 }
 
 /* -- Dynamic Button For Responsive Menu -------------------------------------*/
