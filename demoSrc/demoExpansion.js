@@ -1,5 +1,4 @@
 import {
-  BufferGeometry,
   Color,
   Fog,
   Mesh,
@@ -9,7 +8,6 @@ import {
 } from "three";
 import { Common } from "./Common";
 import { ExpansionMaterial } from "../lib/expansion/ExpansionMaterial";
-import { ExplodeModifier } from "three/examples/jsm/modifiers/ExplodeModifier";
 import * as dat from "dat.gui";
 import { CommonGUI } from "./CommonGUI";
 import { RAFTicker, RAFTickerEventType } from "raf-ticker";
@@ -43,8 +41,6 @@ export class Study {
     const seg = 32;
     const geo = new TorusGeometry(10, 4, seg, seg);
     const geoExp = new TorusGeometry(10, 4, seg, seg);
-    const modifier = new ExplodeModifier();
-    modifier.modify(geoExp);
 
     const mat = new ExpansionMaterial({
       fog: scene.fog !== undefined
