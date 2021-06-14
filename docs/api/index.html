@@ -7,6 +7,7 @@
 	<meta name="description" content="Documentation for threejs-shader-materials">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -40,8 +41,6 @@
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
 							<input type="checkbox" id="tsd-filter-externals" checked />
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -51,11 +50,6 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="globals.html">Globals</a>
-				</li>
-			</ul>
 			<h1>threejs-shader-materials</h1>
 		</div>
 	</div>
@@ -81,18 +75,21 @@
 				<a href="#install" id="install" style="color: inherit; text-decoration: none;">
 					<h3>Install</h3>
 				</a>
-				<pre><code class="language-bash">npm install https://github.com/MasatoMakino/threejs-shader-materials.git --save-dev</code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">npm install https://github.com/MasatoMakino/threejs-shader-materials.git --save-dev</span>
+</code></pre>
 				<a href="#import" id="import" style="color: inherit; text-decoration: none;">
 					<h3>Import</h3>
 				</a>
 				<p>threejs-shader-materials is composed of ES6 modules and TypeScript d.ts files.</p>
 				<p>At first, import classes,</p>
-				<pre><code class="language-js"><span class="hljs-keyword">import</span> { HexGridMaterial } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;threejs-shader-materials&quot;</span>;</code></pre>
+				<pre><code class="language-js"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">HexGridMaterial</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;threejs-shader-materials&quot;</span><span style="color: #000000">;</span>
+</code></pre>
 				<p>and set material.</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> geo = <span class="hljs-keyword">new</span> SphereGeometry(<span class="hljs-number">10</span>, <span class="hljs-number">64</span>, <span class="hljs-number">64</span>);
-<span class="hljs-keyword">const</span> mat = <span class="hljs-keyword">new</span> HexGridMaterial();
-<span class="hljs-keyword">const</span> mesh = <span class="hljs-keyword">new</span> Mesh(geo, mat);
-scene.add(mesh);</code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">geo</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">SphereGeometry</span><span style="color: #000000">(</span><span style="color: #098658">10</span><span style="color: #000000">, </span><span style="color: #098658">64</span><span style="color: #000000">, </span><span style="color: #098658">64</span><span style="color: #000000">);</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">mat</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">HexGridMaterial</span><span style="color: #000000">();</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">mesh</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Mesh</span><span style="color: #000000">(</span><span style="color: #001080">geo</span><span style="color: #000000">, </span><span style="color: #001080">mat</span><span style="color: #000000">);</span>
+<span style="color: #001080">scene</span><span style="color: #000000">.</span><span style="color: #795E26">add</span><span style="color: #000000">(</span><span style="color: #001080">mesh</span><span style="color: #000000">);</span>
+</code></pre>
 				<a href="#api-documents" id="api-documents" style="color: inherit; text-decoration: none;">
 					<h2>API documents</h2>
 				</a>
@@ -106,8 +103,8 @@ scene.add(mesh);</code></pre>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
 					</li>
 				</ul>
 			</nav>
@@ -153,9 +150,6 @@ scene.add(mesh);</code></pre>
 						<a href="classes/glslchunk.html" class="tsd-kind-icon">GLSLChunk</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/gridmaterial.html" class="tsd-kind-icon">Grid<wbr>Material</a>
-					</li>
-					<li class=" tsd-kind-class">
 						<a href="classes/halftonegridmaterial.html" class="tsd-kind-icon">Halftone<wbr>Grid<wbr>Material</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -165,49 +159,16 @@ scene.add(mesh);</code></pre>
 						<a href="classes/hexgridchunk.html" class="tsd-kind-icon">Hex<wbr>Grid<wbr>Chunk</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/hexgridfunctionchunk.html" class="tsd-kind-icon">Hex<wbr>Grid<wbr>Function<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-class">
 						<a href="classes/hexgridmaterial.html" class="tsd-kind-icon">Hex<wbr>Grid<wbr>Material</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/mapchunk.html" class="tsd-kind-icon">Map<wbr>Chunk</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/mapfragmentbeginchunk.html" class="tsd-kind-icon">Map<wbr>Fragment<wbr>Begin<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/mapfragmentchunk.html" class="tsd-kind-icon">Map<wbr>Fragment<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/mapuniformchunk.html" class="tsd-kind-icon">Map<wbr>Uniform<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-class">
 						<a href="classes/maskmapchunk.html" class="tsd-kind-icon">Mask<wbr>Map<wbr>Chunk</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/maskmapfragmentchunk.html" class="tsd-kind-icon">Mask<wbr>Map<wbr>Fragment<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/maskmapuniformchunk.html" class="tsd-kind-icon">Mask<wbr>Map<wbr>Uniform<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-class">
 						<a href="classes/meshphongchunk.html" class="tsd-kind-icon">Mesh<wbr>Phong<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/meshphongdiffusecolorchunk.html" class="tsd-kind-icon">Mesh<wbr>Phong<wbr>Diffuse<wbr>Color<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/meshphongswitchingalphamapchunk.html" class="tsd-kind-icon">Mesh<wbr>Phong<wbr>Switching<wbr>Alpha<wbr>Map<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/meshphonguniformchunk.html" class="tsd-kind-icon">Mesh<wbr>Phong<wbr>Uniform<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/meshpositionvaryingchunk.html" class="tsd-kind-icon">Mesh<wbr>Position<wbr>Varying<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/meshpositionvertexchunk.html" class="tsd-kind-icon">Mesh<wbr>Position<wbr>Vertex<wbr>Chunk</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/outerglowmaterial.html" class="tsd-kind-icon">Outer<wbr>Glow<wbr>Material</a>
@@ -216,16 +177,7 @@ scene.add(mesh);</code></pre>
 						<a href="classes/repeatpatternchunk.html" class="tsd-kind-icon">Repeat<wbr>Pattern<wbr>Chunk</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/repeatpatternfragmentchunk.html" class="tsd-kind-icon">Repeat<wbr>Pattern<wbr>Fragment<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/repeatpatternuniformchunk.html" class="tsd-kind-icon">Repeat<wbr>Pattern<wbr>Uniform<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-class">
 						<a href="classes/reversiblechunk.html" class="tsd-kind-icon">Reversible<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/reversibleuniformchunk.html" class="tsd-kind-icon">Reversible<wbr>Uniform<wbr>Chunk</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/rimeffectmaterial.html" class="tsd-kind-icon">Rim<wbr>Effect<wbr>Material</a>
@@ -249,18 +201,6 @@ scene.add(mesh);</code></pre>
 						<a href="classes/spritecloudmaterial.html" class="tsd-kind-icon">Sprite<wbr>Cloud<wbr>Material</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/spritediffusecolorchunk.html" class="tsd-kind-icon">Sprite<wbr>Diffuse<wbr>Color<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/spritefragmentuniformchunk.html" class="tsd-kind-icon">Sprite<wbr>Fragment<wbr>Uniform<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/spritemvpositionchunk.html" class="tsd-kind-icon">SpriteMVPosition<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/spritevertexuniformchunk.html" class="tsd-kind-icon">Sprite<wbr>Vertex<wbr>Uniform<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-class">
 						<a href="classes/squaregridmaterial.html" class="tsd-kind-icon">Square<wbr>Grid<wbr>Material</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -279,25 +219,7 @@ scene.add(mesh);</code></pre>
 						<a href="classes/tilingfbmchunk.html" class="tsd-kind-icon">TilingFBMChunk</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/tilingfbmfunctionchunk.html" class="tsd-kind-icon">TilingFBMFunction<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/tilingfbmuniformchunk.html" class="tsd-kind-icon">TilingFBMUniform<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/timeanimationuniformchunk.html" class="tsd-kind-icon">Time<wbr>Animation<wbr>Uniform<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-class">
 						<a href="classes/wavyanimationchunk.html" class="tsd-kind-icon">Wavy<wbr>Animation<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/wavyanimationfragmentchunk.html" class="tsd-kind-icon">Wavy<wbr>Animation<wbr>Fragment<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/wavyanimationuniformchunk.html" class="tsd-kind-icon">Wavy<wbr>Animation<wbr>Uniform<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/wavygridmaterial.html" class="tsd-kind-icon">Wavy<wbr>Grid<wbr>Material</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/ianimatable.html" class="tsd-kind-icon">IAnimatable</a>

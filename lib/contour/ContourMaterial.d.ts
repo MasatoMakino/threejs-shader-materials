@@ -1,4 +1,4 @@
-import { ShaderMaterialParameters, Texture, Geometry, BufferGeometry } from "three";
+import { ShaderMaterialParameters, Texture, BufferGeometry } from "three";
 import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
 /**
  * テクスチャを等高線状にマップするマテリアル。
@@ -6,7 +6,7 @@ import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
  */
 export declare class ContourMaterial extends ShaderPhongMaterial {
     get map(): Texture;
-    loadMap(url: string, geo: Geometry | BufferGeometry): void;
+    loadMap(url: string, geo: BufferGeometry): void;
     private _map;
     constructor(parameters?: ShaderMaterialParameters);
     protected initDefines(): void;
