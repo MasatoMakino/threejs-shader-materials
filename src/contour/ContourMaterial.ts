@@ -4,7 +4,6 @@ import {
   Texture,
   TextureLoader,
   DoubleSide,
-  Geometry,
   BufferGeometry
 } from "three";
 import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
@@ -20,7 +19,7 @@ export class ContourMaterial extends ShaderPhongMaterial {
   get map(): Texture {
     return this._map;
   }
-  public loadMap(url: string, geo: Geometry | BufferGeometry) {
+  public loadMap(url: string, geo: BufferGeometry) {
     this._map = new TextureLoader().load(url, texture => {
       if (this.uniforms && this.uniforms.map) {
         this.uniforms.map.value = texture;

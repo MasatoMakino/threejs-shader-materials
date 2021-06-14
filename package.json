@@ -13,20 +13,21 @@
   "author": "MasatoMakino <unagiinu.g@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
-    "three": "^0.121.1"
+    "three": ">=0.126.0 <1.0.0"
   },
   "devDependencies": {
+    "@types/three": "^0.129.1",
     "dat.gui": "^0.7.7",
     "gulp": "^4.0.2",
     "gulptask-demo-page": "https://github.com/MasatoMakino/gulptask-demo-page.git",
     "gulptask-dev-server": "https://github.com/MasatoMakino/gulptask-dev-server.git",
     "gulptask-tsc": "https://github.com/MasatoMakino/gulptask-tsc.git",
     "gulptask-tsdoc": "https://github.com/MasatoMakino/gulptask-tsdoc.git",
-    "husky": "^5.0.9",
-    "prettier": "^2.2.1",
+    "husky": "^6.0.0",
+    "prettier": "^2.3.1",
     "pretty-quick": "^3.1.0",
-    "three": "^0.125.2",
-    "typescript": "^4.1.5"
+    "three": "^0.129.0",
+    "typescript": "4.2.x"
   },
   "scripts": {
     "start:dev": "gulp start_dev",
