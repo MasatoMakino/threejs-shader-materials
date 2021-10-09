@@ -19,7 +19,7 @@ export class ExpansionChunk extends GLSLChunk {
 }
 export class ExpansionUniformChunk extends GLSLChunk {
     static getChunkName() {
-        return "expansion_uniform_chunk";
+        return "__expansion_uniform_chunk";
     }
     static getChunk() {
         return `
@@ -31,7 +31,7 @@ export class ExpansionUniformChunk extends GLSLChunk {
 }
 export class ExpansionVertexChunk extends GLSLChunk {
     static getChunkName() {
-        return "expansion_vertex_chunk";
+        return "__expansion_vertex_chunk";
     }
     static getChunk() {
         return `

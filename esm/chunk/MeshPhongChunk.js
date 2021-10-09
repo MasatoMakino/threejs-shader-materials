@@ -12,7 +12,7 @@ export class MeshPhongChunk extends GLSLChunk {
     }
     static getDefines() {
         return {
-            USE_MESH_POSITION: false
+            USE_MESH_POSITION: false,
         };
     }
 }
