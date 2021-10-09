@@ -14,7 +14,7 @@ export class MeshPhongChunk extends GLSLChunk {
 
   public static getDefines(): Object {
     return {
-      USE_MESH_POSITION: false
+      USE_MESH_POSITION: false,
     };
   }
 }

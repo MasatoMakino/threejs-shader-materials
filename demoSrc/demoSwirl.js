@@ -8,7 +8,6 @@ import {
   PointLight,
   PointLightHelper,
   TextureLoader,
-  RepeatWrapping
 } from "three";
 import { CommonGUI } from "./CommonGUI";
 import { SwirlMaterial } from "../lib";
@@ -28,7 +27,7 @@ export class Study {
     Common.initHelper(scene);
     const mat = this.initObject(scene);
 
-    RAFTicker.addEventListener(RAFTickerEventType.tick, e => {
+    RAFTicker.addEventListener(RAFTickerEventType.tick, (e) => {
       renderer.render(scene, camera);
     });
 
@@ -45,7 +44,7 @@ export class Study {
     const geo = new PlaneBufferGeometry(20, 20);
 
     const mat = new SwirlMaterial({
-      fog: scene.fog !== undefined
+      fog: scene.fog !== undefined,
     });
     mat.color = new Color(0x00aaff);
     mat.swirlRotation = Math.PI * 2 * 3;
@@ -74,7 +73,7 @@ export class Study {
 
     const prop = {
       centerX: mat.center.x,
-      centerY: mat.center.y
+      centerY: mat.center.y,
     };
     const onChangeCenter = () => {
       mat.center.x = prop.centerX;
@@ -85,14 +84,8 @@ export class Study {
     folder.add(mat, "swirlRotation", 0.0, Math.PI * 2 * 6).step(0.01);
     folder.add(mat, "radius", 0.0, 1.4142 / 2).step(0.01);
 
-    folder
-      .add(prop, "centerX", 0.0, 1.0)
-      .step(0.01)
-      .onChange(onChangeCenter);
-    folder
-      .add(prop, "centerY", 0.0, 1.0)
-      .step(0.01)
-      .onChange(onChangeCenter);
+    folder.add(prop, "centerX", 0.0, 1.0).step(0.01).onChange(onChangeCenter);
+    folder.add(prop, "centerY", 0.0, 1.0).step(0.01).onChange(onChangeCenter);
 
     folder.open();
   }
