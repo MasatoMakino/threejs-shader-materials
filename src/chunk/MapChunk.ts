@@ -73,7 +73,7 @@ class MapFragmentChunk extends GLSLChunk {
 
 class MapFragmentBeginChunk extends GLSLChunk {
   protected static getChunkName(): string {
-    return "map_fragment_begin_chunk";
+    return "__ShaderMaterial__map_fragment_begin_chunk";
   }
 
   protected static getChunk(): string {

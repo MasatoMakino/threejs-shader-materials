@@ -9,13 +9,8 @@ export default () => {
 varying vec3 vViewPosition;
 varying vec2 uvPosition;
 #include <mesh_position_varying>
-
-#ifndef FLAT_SHADED
-  varying vec3 vNormal;
-#endif
-
 #include <surface_normal_varying_chunk>
-#include <expansion_uniform_chunk>
+#include <__expansion_uniform_chunk>
 #include <tiling_fbm_uniform_chunk>
 uniform float scaleMax;
 uniform float time;
@@ -29,6 +24,7 @@ varying float vFbm;
 #include <envmap_pars_vertex>
 #include <color_pars_vertex>
 #include <fog_pars_vertex>
+#include <normal_pars_vertex>
 #include <morphtarget_pars_vertex>
 #include <skinning_pars_vertex>
 #include <shadowmap_pars_vertex>
@@ -44,16 +40,14 @@ void main() {
     #include <uv_vertex>
     #include <uv2_vertex>
     #include <color_vertex>
-
+    
     #include <beginnormal_vertex>
     #include <morphnormal_vertex>
     #include <skinbase_vertex>
     #include <skinnormal_vertex>
     #include <defaultnormal_vertex>
-
-    #ifndef FLAT_SHADED // Normal computed with derivatives when FLAT_SHADED
-      vNormal = normalize( transformedNormal );
-    #endif
+    #include <normal_vertex>
+    
     #include <surface_normal_vertex_chunk>
 
     #include <begin_vertex>
@@ -84,7 +78,7 @@ void main() {
     #include <project_vertex>
     #include <logdepthbuf_vertex>
     #include <clipping_planes_vertex>
-
+    
     vViewPosition = - mvPosition.xyz;
 
     #include <worldpos_vertex>
