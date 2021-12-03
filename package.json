@@ -29,9 +29,9 @@
   },
   "scripts": {
     "start:dev": "npm run server & npm run watch:tsc & npm run watch:demo",
-    "build": "npm run demo & npm run buildTS",
+    "build": "npm run buildTS && npm run demo && npm run typedocs",
     "demo": "npx gulptask-demo-page --body '<canvas id=\"webgl-canvas\" width=\"640\" height=\"480\"></canvas>'",
-    "buildTS": "npx tsc --project tsconfig.json & tsc --project tsconfig.esm.json",
+    "buildTS": "tsc --project tsconfig.json & tsc --project tsconfig.esm.json",
     "typedocs": "npx typedoc --out ./docs/api src/index.ts",
     "server": "npx gulptask-dev-server -b ./docs/demo",
     "watch:demo": "npm run demo -- -W",

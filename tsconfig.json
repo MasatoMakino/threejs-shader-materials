@@ -7,7 +7,6 @@
     "declarationMap": true /* Generates a sourcemap for each corresponding '.d.ts' file. */,
     "outDir": "./lib" /* Redirect output structure to the directory. */,
     "rootDir": "./src",
-    "incremental": true,
 
     /* Module Resolution Options */
     "moduleResolution": "node",
