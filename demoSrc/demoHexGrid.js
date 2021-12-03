@@ -1,4 +1,4 @@
-import * as dat from "dat.gui";
+import GUI from 'lil-gui';
 import { Common } from "./Common";
 import { CommonGUI } from "./CommonGUI";
 import {
@@ -54,7 +54,7 @@ export class StudyHexGrid {
   }
 
   initGUI(mat) {
-    const gui = new dat.GUI();
+    const gui = new GUI();
     CommonGUI.initWavyMaterialGUI(gui, mat);
     this.initGUIMaterial(gui, mat);
   }

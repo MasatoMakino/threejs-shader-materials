@@ -8,7 +8,7 @@ import {
 } from "three";
 import { Common } from "./Common";
 import { ExpansionMaterial } from "../lib/expansion/ExpansionMaterial";
-import * as dat from "dat.gui";
+import GUI from 'lil-gui';
 import { CommonGUI } from "./CommonGUI";
 import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 
@@ -58,7 +58,7 @@ export class Study {
   }
 
   initGUI(mat) {
-    const gui = new dat.GUI();
+    const gui = new GUI();
     CommonGUI.initMaterialGUI(gui, mat);
     CommonGUI.initExpansionGUI(gui, mat);
   }

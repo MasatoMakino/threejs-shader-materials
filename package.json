@@ -17,10 +17,10 @@
   },
   "devDependencies": {
     "@types/three": "^0.134.0",
-    "dat.gui": "^0.7.7",
     "gulptask-demo-page": "github:MasatoMakino/gulptask-demo-page",
     "gulptask-dev-server": "github:MasatoMakino/gulptask-dev-server",
     "husky": "^7.0.4",
+    "lil-gui": "^0.14.0",
     "prettier": "^2.5.0",
     "pretty-quick": "^3.1.2",
     "three": "^0.135.0",

@@ -10,7 +10,7 @@ import {
   TorusGeometry
 } from "three";
 import { Common } from "./Common";
-import * as dat from "dat.gui";
+import GUI from 'lil-gui';
 import { CommonGUI } from "./CommonGUI";
 import { OuterGlowMaterial } from "../lib/rimEffect/OuterGlowMaterial";
 import { RAFTicker, RAFTickerEventType } from "raf-ticker";
@@ -72,7 +72,7 @@ export class Study {
   }
 
   initGUI(mat) {
-    const gui = new dat.GUI();
+    const gui = new GUI();
     CommonGUI.initMaterialGUI(gui, mat);
     CommonGUI.initExpansionGUI(gui, mat);
     CommonGUI.initRimGUI(gui, mat);

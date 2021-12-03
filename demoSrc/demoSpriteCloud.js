@@ -1,7 +1,7 @@
 import { Color, Fog, Sprite, TextureLoader } from "three";
 import { Common } from "./Common";
 import { SpriteCloudMaterial } from "../lib";
-import * as dat from "dat.gui";
+import GUI from 'lil-gui';
 import { CommonGUI } from "./CommonGUI";
 import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 
@@ -19,7 +19,7 @@ export class Study {
     Common.initHelper(scene);
     const mat = this.initObject(scene);
 
-    const gui = new dat.GUI();
+    const gui = new GUI();
     Common.initSky(scene, gui, renderer);
     this.initGUI(gui, mat);
     RAFTicker.addEventListener(RAFTickerEventType.tick, (e) => {

@@ -1,4 +1,4 @@
-import * as dat from "dat.gui";
+import GUI from 'lil-gui';
 import { Common } from "./Common";
 import {
   Color,
@@ -53,7 +53,7 @@ export class StudyCrossGrid {
   }
 
   initGUI(mat) {
-    const gui = new dat.GUI();
+    const gui = new GUI();
     CommonGUI.initWavyMaterialGUI(gui, mat);
     this.initGUIMaterial(gui, mat);
   }
