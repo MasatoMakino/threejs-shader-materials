@@ -1,0 +1,33 @@
+name: Publish github pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "demoSrc/**"
+      - "package.json"
+      - "README.md"
+      - "tsconfig**.json"
+
+jobs:
+  publish:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+          cache: "npm"
+      - run: npm ci
+      - name: Genarate API Pages
+        run: npm run typedocs
+      - name: Generate Demo Pages
+        run: npm run demo
+      - name: Deploy Github pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs

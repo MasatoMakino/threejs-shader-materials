@@ -1,0 +1,43 @@
+# JSビルドプロセス
+# ビルド後に直接mainブランチへコンパイルされたJSをpushするパターン
+#
+# デメリット
+#   コンパイル済みファイルはgit管理下から外せない
+#   mainプッシュ後にpullしないとコンフリクトが発生する
+# メリット
+#   リポジトリURLを変更しなくても運用可能
+
+name: Build JavaScript binary
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "package.json"
+      - "README.md"
+      - "tsconfig**.json"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+          cache: "npm"
+      - run: npm ci
+      - name: build binary
+        run: npm run buildTS
+      - name: push dist
+        run: |
+          git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          if (git diff --shortstat HEAD | grep '[0-9]'); then
+            git add .
+            git commit -m "Build binary by github-actions"
+            git push origin HEAD:${GITHUB_REF}
+          fi
