@@ -1,5 +1,5 @@
 import { Common } from "./Common";
-import * as dat from "dat.gui";
+import GUI from 'lil-gui';
 import {
   Color,
   Fog,
@@ -62,7 +62,7 @@ export class Study {
   }
 
   initGUI(mat) {
-    const gui = new dat.GUI();
+    const gui = new GUI();
     CommonGUI.initMaterialGUI(gui, mat);
     this.initGUIMaterial(gui, mat);
     CommonGUI.initAnimationGUI(gui, mat);

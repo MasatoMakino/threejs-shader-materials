@@ -1,4 +1,4 @@
-import * as dat from "dat.gui";
+import GUI from 'lil-gui';
 import { Common } from "./Common";
 import { Color, Fog, Mesh, PlaneGeometry } from "three";
 import { SkyCloudMaterial } from "../lib";
@@ -18,7 +18,7 @@ export class Study {
     const control = Common.initControl(camera, renderer);
     Common.initHelper(scene);
 
-    const gui = new dat.GUI();
+    const gui = new GUI();
     Common.initSky(scene, gui, renderer);
     const mat = this.initObject(scene);
     RAFTicker.addEventListener(RAFTickerEventType.tick, (e) => {
