@@ -16,24 +16,26 @@
     "three": ">=0.132.0 <1.0.0"
   },
   "devDependencies": {
-    "@types/three": "^0.133.0",
+    "@types/three": "^0.134.0",
     "dat.gui": "^0.7.7",
-    "gulp": "^4.0.2",
-    "gulptask-demo-page": "https://github.com/MasatoMakino/gulptask-demo-page.git",
-    "gulptask-dev-server": "https://github.com/MasatoMakino/gulptask-dev-server.git",
-    "gulptask-tsc": "https://github.com/MasatoMakino/gulptask-tsc.git",
-    "gulptask-tsdoc": "https://github.com/MasatoMakino/gulptask-tsdoc.git",
-    "husky": "^7.0.2",
-    "prettier": "^2.4.1",
-    "pretty-quick": "^3.1.1",
-    "three": "^0.133.1",
-    "typescript": "4.4.3"
+    "gulptask-demo-page": "github:MasatoMakino/gulptask-demo-page",
+    "gulptask-dev-server": "github:MasatoMakino/gulptask-dev-server",
+    "husky": "^7.0.4",
+    "prettier": "^2.5.0",
+    "pretty-quick": "^3.1.2",
+    "three": "^0.135.0",
+    "typedoc": "^0.22.10",
+    "typescript": "4.5.2"
   },
   "scripts": {
-    "start:dev": "gulp start_dev",
-    "build": "gulp build",
-    "build:clean": "gulp build_clean",
-    "checkout:docs": "git checkout HEAD ./docs/"
+    "start:dev": "npm run server & npm run watch:tsc & npm run watch:demo",
+    "build": "npm run demo & npm run buildTS",
+    "demo": "npx gulptask-demo-page --body '<canvas id=\"webgl-canvas\" width=\"640\" height=\"480\"></canvas>'",
+    "buildTS": "npx tsc --project tsconfig.json & tsc --project tsconfig.esm.json",
+    "typedocs": "npx typedoc --out ./docs/api src/index.ts",
+    "server": "npx gulptask-dev-server -b ./docs/demo",
+    "watch:demo": "npm run demo -- -W",
+    "watch:tsc": "tsc -W --incremental --project tsconfig.json & tsc -W --incremental --project tsconfig.esm.json"
   },
   "husky": {
     "hooks": {
@@ -41,6 +43,6 @@
     }
   },
   "dependencies": {
-    "raf-ticker": "https://github.com/MasatoMakino/raf-ticker.git"
+    "raf-ticker": "github:MasatoMakino/raf-ticker"
   }
 }
