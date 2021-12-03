@@ -13,7 +13,7 @@
 ### Install
 
 ```bash
-npm install https://github.com/MasatoMakino/threejs-shader-materials.git --save-dev
+npm install MasatoMakino/threejs-shader-materials --save-dev
 ```
 
 ### Import
