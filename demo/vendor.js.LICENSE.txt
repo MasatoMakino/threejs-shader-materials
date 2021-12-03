@@ -3,3 +3,11 @@
  * Copyright 2010-2021 Three.js Authors
  * SPDX-License-Identifier: MIT
  */
+
+/**
+ * lil-gui
+ * https://lil-gui.georgealways.com
+ * @version 0.14.0
+ * @author George Michael Brower
+ * @license MIT
+ */
