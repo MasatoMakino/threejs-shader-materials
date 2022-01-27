@@ -23,7 +23,7 @@
     "lil-gui": "^0.14.0",
     "prettier": "^2.5.0",
     "pretty-quick": "^3.1.2",
-    "three": "^0.135.0",
+    "three": "^0.137.0",
     "typedoc": "^0.22.10",
     "typescript": "4.5.2"
   },
