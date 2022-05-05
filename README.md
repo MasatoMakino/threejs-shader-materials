@@ -6,6 +6,8 @@
 
 ## Demo
 
+[![Demo Page](./readme/demo.gif)](https://masatomakino.github.io/threejs-shader-materials/demo/)
+
 [Demo page](https://masatomakino.github.io/threejs-shader-materials/demo/)
 
 ## Getting Started
