@@ -50,7 +50,6 @@ void main() {
     #ifdef USE_MAP
       float mapY = ( meshPosition.y - bottom ) / ( top - bottom );
       vec4 texelColor = texture2D( map, vec2(0.5, mapY) );
-      texelColor = mapTexelToLinear( texelColor );
       diffuseColor *= texelColor;
     #endif
     #include <color_fragment>
