@@ -1,19 +1,18 @@
 import {
   AdditiveBlending,
-  BufferGeometry,
   Color,
   Fog,
   Mesh,
   MeshBasicMaterial,
   PointLight,
   PointLightHelper,
-  TorusGeometry
+  TorusGeometry,
 } from "three";
 import { Common } from "./Common";
-import GUI from 'lil-gui';
+import GUI from "lil-gui";
 import { CommonGUI } from "./CommonGUI";
-import { OuterGlowMaterial } from "../lib/rimEffect/OuterGlowMaterial";
-import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { OuterGlowMaterial } from "..";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 
 export class Study {
   constructor() {
@@ -28,7 +27,7 @@ export class Study {
     const control = Common.initControl(camera, renderer);
     Common.initHelper(scene);
     const mat = this.initObject(scene);
-    RAFTicker.addEventListener(RAFTickerEventType.tick, e => {
+    RAFTicker.addEventListener(RAFTickerEventType.tick, (e) => {
       renderer.render(scene, camera);
     });
     this.initGUI(mat);
@@ -47,7 +46,7 @@ export class Study {
     const matBase = new MeshBasicMaterial({ color: 0xff0000 });
 
     const matGlow = new OuterGlowMaterial({
-      fog: scene.fog !== undefined
+      fog: scene.fog !== undefined,
     });
     matGlow.color = new Color(0x000000);
     matGlow.rimStrength = 0.0;

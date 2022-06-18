@@ -1,20 +1,19 @@
 import { Common } from "./Common";
-import GUI from 'lil-gui';
+import GUI from "lil-gui";
 import {
   Color,
+  Fog,
   Mesh,
+  Plane,
+  PlaneHelper,
   PointLight,
   PointLightHelper,
   TorusKnotBufferGeometry,
-  Fog,
-  DoubleSide,
-  Plane,
   Vector3,
-  PlaneHelper
 } from "three";
 import { CommonGUI } from "./CommonGUI";
-import { SolidClippingMaterial } from "../lib";
-import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { SolidClippingMaterial } from "..";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 
 export class Study {
   constructor() {
@@ -33,11 +32,11 @@ export class Study {
     const mat = this.initObject(scene);
     const mesh = this.initMesh(mat, scene);
 
-    RAFTicker.addEventListener(RAFTickerEventType.tick, e => {
+    RAFTicker.addEventListener(RAFTickerEventType.tick, (e) => {
       renderer.render(scene, camera);
     });
-    RAFTicker.addEventListener(RAFTickerEventType.onBeforeTick, e => {
-      mesh.forEach(m => {
+    RAFTicker.addEventListener(RAFTickerEventType.onBeforeTick, (e) => {
+      mesh.forEach((m) => {
         m.rotation.x += e.delta / 500;
       });
     });
@@ -53,7 +52,7 @@ export class Study {
     scene.add(helper);
 
     const mat = new SolidClippingMaterial({
-      fog: scene.fog !== undefined
+      fog: scene.fog !== undefined,
     });
     mat.color = new Color(0x003311);
     mat.cutSectionColor = new Color(0xaaff11);

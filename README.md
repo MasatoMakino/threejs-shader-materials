@@ -2,11 +2,11 @@
 
 > Collection of shader materials for three.js
 
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=MasatoMakino&repo=threejs-shader-materials&show_owner=true)](https://github.com/MasatoMakino/threejs-shader-materials)
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=MasatoMakino&repo=threejs-shader-materials)](https://github.com/MasatoMakino/threejs-shader-materials)
 
 ## Demo
 
-[![Demo Page](https://github.com/MasatoMakino/threejs-shader-materials/blob/main/readme/demo.gif)](https://masatomakino.github.io/threejs-shader-materials/demo/)
+[![Demo Page ](./readme/demo.gif)](https://masatomakino.github.io/threejs-shader-materials/demo/)
 
 [Demo page](https://masatomakino.github.io/threejs-shader-materials/demo/)
 

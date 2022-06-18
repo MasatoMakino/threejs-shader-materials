@@ -1,4 +1,4 @@
-import GUI from 'lil-gui';
+import GUI from "lil-gui";
 import { Common } from "./Common";
 import {
   Color,
@@ -6,12 +6,11 @@ import {
   Mesh,
   PointLight,
   PointLightHelper,
-  SphereGeometry
+  SphereGeometry,
 } from "three";
-import { Directions } from "../lib/chunk/WavyAnimationChunk";
-import { CrossGridMaterial } from "../lib/crossGrid/CrossGridMaterial";
+import { CrossGridMaterial, Directions } from "..";
 import { CommonGUI } from "./CommonGUI";
-import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 
 export class StudyCrossGrid {
   constructor() {
@@ -26,7 +25,7 @@ export class StudyCrossGrid {
     const control = Common.initControl(camera, renderer);
     Common.initHelper(scene);
     const mat = this.initObject(scene);
-    RAFTicker.addEventListener(RAFTickerEventType.tick, e => {
+    RAFTicker.addEventListener(RAFTickerEventType.tick, (e) => {
       renderer.render(scene, camera);
     });
     this.initGUI(mat);
@@ -42,7 +41,7 @@ export class StudyCrossGrid {
     const geo = new SphereGeometry(10, 64, 64);
 
     const mat = new CrossGridMaterial({
-      fog: scene.fog !== undefined
+      fog: scene.fog !== undefined,
     });
     mat.color = new Color(0xff6666);
     mat.direction = Directions.vertical;

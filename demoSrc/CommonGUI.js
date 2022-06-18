@@ -1,5 +1,5 @@
 import { TextureLoader } from "three";
-import { Directions } from "../lib";
+import { Directions } from "..";
 
 export class CommonGUI {
   static initColorGUI(folder, mat, propName = "color") {

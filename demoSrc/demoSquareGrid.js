@@ -1,4 +1,4 @@
-import GUI from 'lil-gui';
+import GUI from "lil-gui";
 import { Common } from "./Common";
 import { CommonGUI } from "./CommonGUI";
 import {
@@ -7,11 +7,10 @@ import {
   Mesh,
   PointLight,
   PointLightHelper,
-  SphereGeometry
+  SphereGeometry,
 } from "three";
-import { Directions } from "../lib/";
-import { SquareGridMaterial } from "../lib/";
-import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { Directions, SquareGridMaterial } from "..";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 
 export class StudySquareGrid {
   constructor() {
@@ -26,7 +25,7 @@ export class StudySquareGrid {
     const control = Common.initControl(camera, renderer);
     Common.initHelper(scene);
     const mat = this.initObject(scene);
-    RAFTicker.addEventListener(RAFTickerEventType.tick, e => {
+    RAFTicker.addEventListener(RAFTickerEventType.tick, (e) => {
       renderer.render(scene, camera);
     });
 
@@ -44,7 +43,7 @@ export class StudySquareGrid {
 
     const mat = new SquareGridMaterial({
       // side:DoubleSide,
-      fog: scene.fog !== undefined
+      fog: scene.fog !== undefined,
     });
     mat.color = new Color(0xff6666);
     mat.direction = Directions.vertical;

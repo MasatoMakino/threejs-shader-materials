@@ -7,10 +7,13 @@ import {
   UniformsLib,
   UniformsUtils,
 } from "three";
-import { ExpansionChunk } from "./chunk/ExpansionChunk";
-import { IMap, MapChunk } from "./chunk/MapChunk";
-import { MeshPhongChunk } from "./chunk/MeshPhongChunk";
-import { SurfaceNormalChunk } from "./chunk/SurfaceNormalChunk";
+import {
+  ExpansionChunk,
+  IMap,
+  MapChunk,
+  MeshPhongChunk,
+  SurfaceNormalChunk,
+} from "./chunk/";
 import FragmentShader from "./ShaderPhongMaterial.frag.glsl";
 import VertexShader from "./ShaderPhongMaterial.vert.glsl";
 
@@ -22,7 +25,8 @@ import VertexShader from "./ShaderPhongMaterial.vert.glsl";
 
 export abstract class ShaderPhongMaterial
   extends ShaderMaterial
-  implements IMap {
+  implements IMap
+{
   /**
    * コンストラクタ。
    * @param vertexShader

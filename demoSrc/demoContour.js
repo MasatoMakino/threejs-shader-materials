@@ -4,11 +4,11 @@ import {
   Mesh,
   PointLight,
   PointLightHelper,
-  TorusGeometry
+  TorusGeometry,
 } from "three";
 import { Common } from "./Common";
-import { ContourMaterial } from "../lib/contour/ContourMaterial";
-import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { ContourMaterial } from "..";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 
 export class StudyContourMap {
   constructor() {
@@ -23,7 +23,7 @@ export class StudyContourMap {
     const control = Common.initControl(camera, renderer);
     Common.initHelper(scene);
     this.initObject(scene);
-    RAFTicker.addEventListener(RAFTickerEventType.tick, e => {
+    RAFTicker.addEventListener(RAFTickerEventType.tick, (e) => {
       renderer.render(scene, camera);
     });
   }
@@ -39,7 +39,7 @@ export class StudyContourMap {
 
     const mat = new ContourMaterial({
       opacity: 0.75,
-      fog: scene.fog !== undefined
+      fog: scene.fog !== undefined,
     });
     mat.loadMap("./textures/contour_glow.png", geo);
     mat.startGlow();

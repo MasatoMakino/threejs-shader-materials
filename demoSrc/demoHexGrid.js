@@ -1,4 +1,4 @@
-import GUI from 'lil-gui';
+import GUI from "lil-gui";
 import { Common } from "./Common";
 import { CommonGUI } from "./CommonGUI";
 import {
@@ -7,11 +7,10 @@ import {
   Mesh,
   PointLight,
   PointLightHelper,
-  SphereGeometry
+  SphereGeometry,
 } from "three";
-import { HexGridMaterial } from "../lib";
-import { Directions } from "../lib";
-import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { Directions, HexGridMaterial } from "..";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 
 export class StudyHexGrid {
   constructor() {
@@ -26,7 +25,7 @@ export class StudyHexGrid {
     const control = Common.initControl(camera, renderer);
     Common.initHelper(scene);
     const mat = this.initObject(scene);
-    RAFTicker.addEventListener(RAFTickerEventType.tick, e => {
+    RAFTicker.addEventListener(RAFTickerEventType.tick, (e) => {
       renderer.render(scene, camera);
     });
     this.initGUI(mat);
@@ -43,7 +42,7 @@ export class StudyHexGrid {
 
     const mat = new HexGridMaterial({
       // side:DoubleSide,
-      fog: scene.fog !== undefined
+      fog: scene.fog !== undefined,
     });
     mat.color = new Color(0xff6666);
     mat.direction = Directions.vertical;

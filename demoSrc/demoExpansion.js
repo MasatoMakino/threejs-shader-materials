@@ -4,13 +4,13 @@ import {
   Mesh,
   PointLight,
   PointLightHelper,
-  TorusGeometry
+  TorusGeometry,
 } from "three";
 import { Common } from "./Common";
-import { ExpansionMaterial } from "../lib/expansion/ExpansionMaterial";
-import GUI from 'lil-gui';
+import { ExpansionMaterial } from "..";
+import GUI from "lil-gui";
 import { CommonGUI } from "./CommonGUI";
-import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 
 export class Study {
   constructor() {
@@ -25,7 +25,7 @@ export class Study {
     const control = Common.initControl(camera, renderer);
     Common.initHelper(scene);
     const mat = this.initObject(scene);
-    RAFTicker.addEventListener(RAFTickerEventType.tick, e => {
+    RAFTicker.addEventListener(RAFTickerEventType.tick, (e) => {
       renderer.render(scene, camera);
     });
     this.initGUI(mat);
@@ -43,7 +43,7 @@ export class Study {
     const geoExp = new TorusGeometry(10, 4, seg, seg);
 
     const mat = new ExpansionMaterial({
-      fog: scene.fog !== undefined
+      fog: scene.fog !== undefined,
     });
     mat.color = new Color(0xff0000);
 

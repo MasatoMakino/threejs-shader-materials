@@ -1,9 +1,9 @@
 import { Color, Fog, Sprite, TextureLoader } from "three";
 import { Common } from "./Common";
-import { SpriteCloudMaterial } from "../lib";
-import GUI from 'lil-gui';
+import { SpriteCloudMaterial } from "..";
+import GUI from "lil-gui";
 import { CommonGUI } from "./CommonGUI";
-import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 
 export class Study {
   constructor() {
