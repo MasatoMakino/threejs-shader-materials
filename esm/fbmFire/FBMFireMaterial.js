@@ -1,7 +1,7 @@
-import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 import { UniformsUtils } from "three";
-import { AnimationChunk } from "../chunk/AnimationChunk";
-import { TilingFBMChunk } from "../chunk/TilingFBMChunk";
+import { AnimationChunk } from "../chunk";
+import { TilingFBMChunk } from "../chunk";
 import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
 import VertexShader from "../ShaderPhongMaterial.vert.glsl";
 import FragmentShader from "./FBMFireMaterial.frag.glsl";

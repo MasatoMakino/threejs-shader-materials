@@ -1,4 +1,4 @@
-import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 import { RepeatWrapping, UniformsUtils, Vector2, } from "three";
 import { AnimationChunk, ShaderPhongMaterial } from "../index";
 import FragmentShader from "./SwirlMaterial.frag.glsl";

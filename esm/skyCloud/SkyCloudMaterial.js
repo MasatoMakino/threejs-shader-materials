@@ -1,4 +1,4 @@
-import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 import { Color, UniformsUtils } from "three";
 import { AnimationChunk } from "../chunk/AnimationChunk";
 import { ShaderPhongMaterial } from "../ShaderPhongMaterial";

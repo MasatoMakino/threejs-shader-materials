@@ -1,5 +1,5 @@
 import { ShaderMaterialParameters } from "three";
-import { Directions, IWavyAnimatable } from "./chunk/WavyAnimationChunk";
+import { Directions, IWavyAnimatable } from "./chunk";
 import { GridMaterial } from "./GridMaterial";
 /**
  * グリッド状に分割され、Wavyアニメーションを行うマテリアル。

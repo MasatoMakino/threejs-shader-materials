@@ -1,5 +1,5 @@
 import { Color, ShaderMaterial, ShaderMaterialParameters, Texture } from "three";
-import { IMap } from "./chunk/MapChunk";
+import { IMap } from "./chunk/";
 /**
  * MeshPhongMaterialに準じるShaderMaterialクラス。
  *

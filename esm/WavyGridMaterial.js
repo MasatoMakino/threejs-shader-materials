@@ -1,9 +1,9 @@
-import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 import { UniformsUtils } from "three";
-import { AnimationChunk } from "./chunk/AnimationChunk";
-import { MaskMapChunk } from "./chunk/MaskMapChunk";
-import { ReversibleChunk } from "./chunk/ReversibleChunk";
-import { WavyAnimationChunk, } from "./chunk/WavyAnimationChunk";
+import { AnimationChunk } from "./chunk";
+import { MaskMapChunk } from "./chunk";
+import { ReversibleChunk } from "./chunk";
+import { WavyAnimationChunk, } from "./chunk";
 import { GridMaterial } from "./GridMaterial";
 /**
  * グリッド状に分割され、Wavyアニメーションを行うマテリアル。

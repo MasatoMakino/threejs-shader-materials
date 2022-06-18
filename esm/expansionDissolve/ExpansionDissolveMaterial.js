@@ -1,4 +1,4 @@
-import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 import { Color, UniformsUtils } from "three";
 import { AnimationChunk, ShaderPhongMaterial, TilingFBMChunk, } from "../index";
 import FragmentShader from "./ExpansionDissolveMaterial.frag.glsl";
