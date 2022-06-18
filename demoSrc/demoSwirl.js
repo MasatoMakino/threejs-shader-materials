@@ -1,5 +1,5 @@
 import { Common } from "./Common";
-import GUI from 'lil-gui';
+import GUI from "lil-gui";
 import {
   Color,
   Fog,
@@ -10,8 +10,8 @@ import {
   TextureLoader,
 } from "three";
 import { CommonGUI } from "./CommonGUI";
-import { SwirlMaterial } from "../lib";
-import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { SwirlMaterial } from "..";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 
 export class Study {
   constructor() {

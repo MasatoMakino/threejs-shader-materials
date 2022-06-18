@@ -1,17 +1,16 @@
 import { Common } from "./Common";
 import { CommonGUI } from "./CommonGUI";
-import GUI from 'lil-gui';
+import GUI from "lil-gui";
 import {
   Color,
   Fog,
   Mesh,
   PointLight,
   PointLightHelper,
-  SphereGeometry
+  SphereGeometry,
 } from "three";
-import { HalftoneGridMaterial } from "../lib/halftoneGrid/HalftoneGridMaterial";
-import { Directions } from "../lib/chunk/WavyAnimationChunk";
-import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { Directions, HalftoneGridMaterial } from "..";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 
 export class StudyHalftoneGrid {
   constructor() {
@@ -26,7 +25,7 @@ export class StudyHalftoneGrid {
     const control = Common.initControl(camera, renderer);
     Common.initHelper(scene);
     const mat = this.initObject(scene);
-    RAFTicker.addEventListener(RAFTickerEventType.tick, e => {
+    RAFTicker.addEventListener(RAFTickerEventType.tick, (e) => {
       renderer.render(scene, camera);
     });
     this.initGUI(mat);
@@ -43,7 +42,7 @@ export class StudyHalftoneGrid {
 
     const mat = new HalftoneGridMaterial({
       // side:DoubleSide,
-      fog: scene.fog !== undefined
+      fog: scene.fog !== undefined,
     });
     mat.color = new Color(0xff6666);
     mat.direction = Directions.vertical;

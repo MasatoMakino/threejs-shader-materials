@@ -1,5 +1,5 @@
 import { RimEffectMaterial } from "./RimEffectMaterial";
-import { IExpandable } from "../chunk/ExpansionChunk";
+import { IExpandable } from "../chunk/";
 
 export class OuterGlowMaterial extends RimEffectMaterial
   implements IExpandable {

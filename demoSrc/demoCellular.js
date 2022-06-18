@@ -1,16 +1,16 @@
 import { Common } from "./Common";
-import GUI from 'lil-gui';
+import GUI from "lil-gui";
 import {
   Color,
   Fog,
   Mesh,
   PointLight,
   PointLightHelper,
-  SphereGeometry
+  SphereGeometry,
 } from "three";
-import { CellularNoiseMaterial } from "../lib/";
+import { CellularNoiseMaterial } from "..";
 import { CommonGUI } from "./CommonGUI";
-import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 
 export class Study {
   constructor() {
@@ -25,7 +25,7 @@ export class Study {
     const control = Common.initControl(camera, renderer);
     Common.initHelper(scene);
     const mat = this.initObject(scene);
-    RAFTicker.addEventListener(RAFTickerEventType.tick, e => {
+    RAFTicker.addEventListener(RAFTickerEventType.tick, (e) => {
       renderer.render(scene, camera);
     });
 
@@ -43,7 +43,7 @@ export class Study {
     const geo = new SphereGeometry(30, seg, seg);
 
     const mat = new CellularNoiseMaterial({
-      fog: scene.fog !== undefined
+      fog: scene.fog !== undefined,
     });
     mat.color = new Color(0x0055ff);
     mat.transparent = true;

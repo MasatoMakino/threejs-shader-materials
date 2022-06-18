@@ -1,15 +1,15 @@
 import { Common } from "./Common";
-import GUI from 'lil-gui';
+import GUI from "lil-gui";
 import {
   Color,
   Mesh,
   PointLight,
   PointLightHelper,
-  TorusGeometry
+  TorusGeometry,
 } from "three";
-import { RimEffectMaterial } from "../lib/";
+import { RimEffectMaterial } from "..";
 import { CommonGUI } from "./CommonGUI";
-import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 
 export class Study {
   constructor() {
@@ -24,7 +24,7 @@ export class Study {
     const control = Common.initControl(camera, renderer);
     Common.initHelper(scene);
     const mat = this.initObject(scene);
-    RAFTicker.addEventListener(RAFTickerEventType.tick, e => {
+    RAFTicker.addEventListener(RAFTickerEventType.tick, (e) => {
       renderer.render(scene, camera);
     });
     this.initGUI(mat);
@@ -40,7 +40,7 @@ export class Study {
     const geo = new TorusGeometry(12, 6, 32, 32);
 
     const mat = new RimEffectMaterial({
-      fog: scene.fog !== undefined
+      fog: scene.fog !== undefined,
     });
     mat.transparent = true;
     mat.color = new Color(0x003311);

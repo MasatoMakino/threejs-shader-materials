@@ -1,13 +1,13 @@
-import { RAFTicker, RAFTickerEventType } from "raf-ticker";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 import { ShaderMaterialParameters, UniformsUtils } from "three";
-import { AnimationChunk } from "./chunk/AnimationChunk";
-import { MaskMapChunk } from "./chunk/MaskMapChunk";
-import { ReversibleChunk } from "./chunk/ReversibleChunk";
+import { AnimationChunk } from "./chunk";
+import { MaskMapChunk } from "./chunk";
+import { ReversibleChunk } from "./chunk";
 import {
   Directions,
   IWavyAnimatable,
   WavyAnimationChunk,
-} from "./chunk/WavyAnimationChunk";
+} from "./chunk";
 import { GridMaterial } from "./GridMaterial";
 
 /**
