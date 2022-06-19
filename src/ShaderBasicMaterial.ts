@@ -1,4 +1,5 @@
 import {
+  Color,
   ShaderMaterial,
   ShaderMaterialParameters,
   UniformsLib,
@@ -11,6 +12,8 @@ import VertexShader from "./ShaderBasicMaterial.vert.glsl";
  * MeshBasicMaterialに準じたShaderMaterial
  */
 export class ShaderBasicMaterial extends ShaderMaterial {
+  protected _opacity: number = 1.0;
+
   constructor(
     vertexShader: string,
     fragmentShader: string,
@@ -18,11 +21,10 @@ export class ShaderBasicMaterial extends ShaderMaterial {
   ) {
     super(parameters);
 
-    parameters ??= {};
-
     this.uniforms = ShaderBasicMaterial.getBasicUniforms();
     this.vertexShader = vertexShader ?? VertexShader();
     this.fragmentShader = fragmentShader ?? FragmentShader();
+    this.uniformOpacity = this._opacity;
   }
 
   /**
@@ -39,5 +41,23 @@ export class ShaderBasicMaterial extends ShaderMaterial {
       UniformsLib.lightmap,
       UniformsLib.fog,
     ]);
+  }
+
+  get color(): Color {
+    return this.uniforms.diffuse.value;
+  }
+  set color(value: Color) {
+    this.uniforms.diffuse.value = value;
+  }
+
+  get uniformOpacity(): number {
+    return this._opacity;
+  }
+
+  set uniformOpacity(value: number) {
+    this._opacity = value;
+    if (this.uniforms?.opacity) {
+      this.uniforms.opacity.value = value;
+    }
   }
 }
