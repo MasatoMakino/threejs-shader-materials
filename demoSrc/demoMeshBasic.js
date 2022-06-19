@@ -1,0 +1,58 @@
+import { Common } from "./Common";
+import {
+  Fog,
+  Mesh,
+  PlaneBufferGeometry,
+  Color,
+} from "three";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
+import { ShaderBasicMaterial } from "..";
+import GUI from "lil-gui";
+import { CommonGUI } from "./CommonGUI";
+
+export class Study {
+  constructor() {
+    const W = 640;
+    const H = 480;
+
+    const scene = Common.initScene();
+    scene.fog = new Fog(0x000000, 80, 160);
+    Common.initLight(scene);
+
+    const camera = Common.initCamera(scene, W, H);
+    const renderer = Common.initRenderer(W, H);
+    Common.initControl(camera, renderer);
+    Common.initHelper(scene);
+
+    const mat = this.initObject(scene);
+    RAFTicker.on(RAFTickerEventType.tick, (e) => {
+      renderer.render(scene, camera);
+    });
+    this.initGUI(mat);
+  }
+
+  initObject(scene) {
+    const geo = new PlaneBufferGeometry(20, 20);
+    const mat = new ShaderBasicMaterial(null, null, {
+      fog: scene.fog !== undefined,
+    });
+
+    mat.color = new Color(0xffffff);
+    mat.uniformOpacity = 1.0;
+    mat.transparent = true;
+
+    const mesh = new Mesh(geo, mat);
+    scene.add(mesh);
+
+    return mat;
+  }
+
+  initGUI(mat) {
+    const gui = new GUI();
+    CommonGUI.initMaterialGUI(gui, mat);
+  }
+}
+
+window.onload = () => {
+  const study = new Study();
+};
