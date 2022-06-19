@@ -1,12 +1,10 @@
 import { Common } from "./Common";
 import {
   BoxGeometry,
-  Color, CylinderBufferGeometry,
+  Color,
+  CylinderBufferGeometry,
   Fog,
   Mesh,
-  PlaneBufferGeometry,
-  PointLight,
-  PointLightHelper,
   TorusGeometry,
 } from "three";
 import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
@@ -36,8 +34,8 @@ export class Study {
   }
 
   initObject(scene) {
-    const cubeGeo = new BoxGeometry( 20, 20 , 20);
-    const cylinderGeo = new CylinderBufferGeometry( 6, 6, 20, 32);
+    const cubeGeo = new BoxGeometry(20, 20, 20);
+    const cylinderGeo = new CylinderBufferGeometry(6, 6, 20, 32);
     const torusGeo = new TorusGeometry(12, 6, 32, 32);
 
     const mat = new RimBasicMaterial({
@@ -56,7 +54,7 @@ export class Study {
     const cubeMesh = new Mesh(cubeGeo, mat);
     cubeMesh.position.x = -40;
     const torusMesh = new Mesh(torusGeo, mat);
-    const cylinder = new Mesh( cylinderGeo, mat);
+    const cylinder = new Mesh(cylinderGeo, mat);
     cylinder.position.x = 40;
     scene.add(cubeMesh, torusMesh, cylinder);
 
