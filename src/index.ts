@@ -12,6 +12,7 @@ export * from "./squareGrid/SquareGridMaterial";
 export * from "./skyCloud/SkyCloudMaterial";
 export * from "./fbmDissolve/FBMDissolveMaterial";
 export * from "./fbmFire/FBMFireMaterial";
+export * from "./rimBasic/RimBasicMaterial";
 export * from "./rimEffect/RimEffectMaterial";
 export * from "./rimEffect/OuterGlowMaterial";
 export * from "./expansion/ExpansionMaterial";

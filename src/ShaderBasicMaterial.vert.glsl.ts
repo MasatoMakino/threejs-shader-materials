@@ -2,6 +2,7 @@ export default () => {
   //language=glsl
   return `
 
+#include <surface_normal_varying_chunk>
 varying vec3 vViewPosition;
 varying vec2 uvPosition;
 
@@ -36,6 +37,10 @@ void main() {
 	#include <logdepthbuf_vertex>
 	#include <clipping_planes_vertex>
 
+    //For Rim Effect
+    #include <beginnormal_vertex>
+    #include <defaultnormal_vertex>
+    #include <surface_normal_vertex_chunk>
     vViewPosition = - mvPosition.xyz;
   
 	#include <worldpos_vertex>
