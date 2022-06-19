@@ -12,11 +12,16 @@ export class CommonGUI {
     return prop;
   }
 
-  static initMaterialGUI(gui, mat, folderName = "Material") {
+  static initBasicMaterialGUI(gui, mat, folderName = "Material") {
     const folder = gui.addFolder(folderName);
     this.initMaterialFolder(folder, mat);
-    this.initColorGUI(folder, mat, "emissive");
     folder.open();
+    return folder;
+  }
+
+  static initMaterialGUI(gui, mat, folderName = "Material") {
+    const folder = this.initBasicMaterialGUI(gui, mat, folderName);
+    this.initColorGUI(folder, mat, "emissive");
   }
 
   static initMaterialFolder(folder, mat) {

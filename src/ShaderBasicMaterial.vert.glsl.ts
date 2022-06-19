@@ -1,6 +1,11 @@
 export default () => {
   //language=glsl
   return `
+
+#include <surface_normal_varying_chunk>
+varying vec3 vViewPosition;
+varying vec2 uvPosition;
+
 #include <common>
 #include <uv_pars_vertex>
 #include <uv2_pars_vertex>
@@ -14,7 +19,9 @@ export default () => {
 void main() {
 	#include <uv_vertex>
 	#include <uv2_vertex>
-	#include <color_vertex>
+    uvPosition = uv;
+	
+    #include <color_vertex>
 	#include <morphcolor_vertex>
 	#if defined ( USE_ENVMAP ) || defined ( USE_SKINNING )
 		#include <beginnormal_vertex>
@@ -29,6 +36,13 @@ void main() {
 	#include <project_vertex>
 	#include <logdepthbuf_vertex>
 	#include <clipping_planes_vertex>
+
+    //For Rim Effect
+    #include <beginnormal_vertex>
+    #include <defaultnormal_vertex>
+    #include <surface_normal_vertex_chunk>
+    vViewPosition = - mvPosition.xyz;
+  
 	#include <worldpos_vertex>
 	#include <envmap_vertex>
 	#include <fog_vertex>

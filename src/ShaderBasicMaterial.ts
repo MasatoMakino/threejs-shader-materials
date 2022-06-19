@@ -1,3 +1,4 @@
+import {SurfaceNormalChunk} from "./chunk";
 import {
   Color,
   ShaderMaterial,
@@ -14,6 +15,11 @@ import VertexShader from "./ShaderBasicMaterial.vert.glsl";
 export class ShaderBasicMaterial extends ShaderMaterial {
   protected _opacity: number = 1.0;
 
+  /**
+   * @param vertexShader
+   * @param fragmentShader
+   * @param parameters
+   */
   constructor(
     vertexShader: string,
     fragmentShader: string,
@@ -24,6 +30,8 @@ export class ShaderBasicMaterial extends ShaderMaterial {
     this.uniforms = ShaderBasicMaterial.getBasicUniforms();
     this.vertexShader = vertexShader ?? VertexShader();
     this.fragmentShader = fragmentShader ?? FragmentShader();
+    SurfaceNormalChunk.registerChunk();
+    this.initDefines();
     this.uniformOpacity = this._opacity;
   }
 
@@ -59,5 +67,13 @@ export class ShaderBasicMaterial extends ShaderMaterial {
     if (this.uniforms?.opacity) {
       this.uniforms.opacity.value = value;
     }
+  }
+
+  public initDefines(): void {
+    this.defines = Object.assign(
+        {},
+        SurfaceNormalChunk.getDefines(),
+        this.defines,
+    )
   }
 }
