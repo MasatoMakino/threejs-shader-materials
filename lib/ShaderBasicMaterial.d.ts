@@ -4,6 +4,11 @@ import { Color, ShaderMaterial, ShaderMaterialParameters } from "three";
  */
 export declare class ShaderBasicMaterial extends ShaderMaterial {
     protected _opacity: number;
+    /**
+     * @param vertexShader
+     * @param fragmentShader
+     * @param parameters
+     */
     constructor(vertexShader: string, fragmentShader: string, parameters?: ShaderMaterialParameters);
     /**
      * このMaterialに必要なuniformsを生成する。
@@ -15,5 +20,6 @@ export declare class ShaderBasicMaterial extends ShaderMaterial {
     set color(value: Color);
     get uniformOpacity(): number;
     set uniformOpacity(value: number);
+    initDefines(): void;
 }
 //# sourceMappingURL=ShaderBasicMaterial.d.ts.map
