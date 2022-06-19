@@ -22,10 +22,7 @@ jobs:
           node-version: "14"
           cache: "npm"
       - run: npm ci
-      - name: Genarate API Pages
-        run: npm run typedocs
-      - name: Generate Demo Pages
-        run: npm run demo
+      - run: npm run build
       - name: Deploy Github pages
         uses: peaceiris/actions-gh-pages@v3
         with:
