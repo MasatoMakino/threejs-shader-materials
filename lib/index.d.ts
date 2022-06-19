@@ -1,5 +1,6 @@
 export * from "./ShaderPhongMaterial";
 export * from "./ShaderSpriteMaterial";
+export * from "./ShaderBasicMaterial";
 export * from "./chunk/";
 export * from "./contour/ContourMaterial";
 export * from "./crossGrid/CrossGridMaterial";
