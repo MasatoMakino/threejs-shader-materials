@@ -12,8 +12,8 @@ uniform vec3 skyColor;
 
 uniform float rimCenter;
 uniform float rimRange;
-
 #include <sprite_fragment_uniform_chunk>
+
 #include <common>
 #include <uv_pars_fragment>
 #include <map_pars_fragment>
@@ -46,9 +46,8 @@ void main() {
     
     outgoingLight = mix( diffuse, skyColor, bottom);
     outgoingLight += rimColor * edge * rimStrength;
-    
-    gl_FragColor = vec4( outgoingLight, diffuseColor.a );
-    
+
+    #include <output_fragment>
 	#include <tonemapping_fragment>
 	#include <encodings_fragment>
 	#include <fog_fragment>

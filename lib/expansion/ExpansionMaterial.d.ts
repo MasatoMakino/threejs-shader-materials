@@ -1,6 +1,6 @@
-import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
 import { ShaderMaterialParameters } from "three";
-import { IExpandable } from "../chunk/ExpansionChunk";
+import { IExpandable } from "..";
+import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
 export declare class ExpansionMaterial extends ShaderPhongMaterial implements IExpandable {
     get expansionStrength(): number;
     set expansionStrength(value: number);

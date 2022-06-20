@@ -16,6 +16,7 @@ uniform float scaleMax;
 uniform float time;
 uniform float progress;
 varying float vFbm;
+#include <tiling_fbm_function_chunk>
 
 #include <common>
 #include <uv_pars_vertex>
@@ -30,9 +31,6 @@ varying float vFbm;
 #include <shadowmap_pars_vertex>
 #include <logdepthbuf_pars_vertex>
 #include <clipping_planes_pars_vertex>
-
-#include <tiling_fbm_function_chunk>
-
 void main() {
     #include <mesh_position_vertex>
     uvPosition = uv;
@@ -40,16 +38,14 @@ void main() {
     #include <uv_vertex>
     #include <uv2_vertex>
     #include <color_vertex>
-    
+    #include <morphcolor_vertex>
     #include <beginnormal_vertex>
     #include <morphnormal_vertex>
     #include <skinbase_vertex>
     #include <skinnormal_vertex>
     #include <defaultnormal_vertex>
     #include <normal_vertex>
-    
     #include <surface_normal_vertex_chunk>
-
     #include <begin_vertex>
     
     vec2 uvFBM = uvPosition;
@@ -78,14 +74,11 @@ void main() {
     #include <project_vertex>
     #include <logdepthbuf_vertex>
     #include <clipping_planes_vertex>
-    
     vViewPosition = - mvPosition.xyz;
-
     #include <worldpos_vertex>
     #include <envmap_vertex>
     #include <shadowmap_vertex>
     #include <fog_vertex>
-
 }
 `;
 };
