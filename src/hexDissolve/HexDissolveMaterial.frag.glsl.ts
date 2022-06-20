@@ -22,6 +22,7 @@ uniform bool isAscending;
 
 uniform vec3 gridEmissive;
 uniform float gridEmissiveWeight;
+#include <hex_grid_function_chunk>
 
 #include <common>
 #include <packing>
@@ -30,6 +31,7 @@ uniform float gridEmissiveWeight;
 #include <uv_pars_fragment>
 #include <uv2_pars_fragment>
 #include <map_pars_fragment>
+// #include <alphamap_pars_fragment>
 #include <alphatest_pars_fragment>
 #include <aomap_pars_fragment>
 #include <lightmap_pars_fragment>
@@ -48,13 +50,9 @@ uniform float gridEmissiveWeight;
 #include <specularmap_pars_fragment>
 #include <logdepthbuf_pars_fragment>
 #include <clipping_planes_pars_fragment>
-
-#include <hex_grid_function_chunk>
-
 float reverse( float val, bool isReversed){
   return isReversed ? 1.0 - val : val;
 }
-
 void main() {
     #include <clipping_planes_fragment>
   
@@ -95,24 +93,23 @@ void main() {
     diffuseColor.rgb += gridEmissive * emissiveVal;
 
     #include <mesh_phong_switching_alpha_map>
-    
+
+    // #include <alphamap_fragment>
     #include <alphatest_fragment>
     #include <specularmap_fragment>
     #include <normal_fragment_begin>
     #include <normal_fragment_maps>
     #include <emissivemap_fragment>
-    
     // accumulation
     #include <lights_phong_fragment>
     #include <lights_fragment_begin>
     #include <lights_fragment_maps>
     #include <lights_fragment_end>
-    
     // modulation
     #include <aomap_fragment>
     vec3 outgoingLight = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse + reflectedLight.directSpecular + reflectedLight.indirectSpecular + totalEmissiveRadiance;
     #include <envmap_fragment>
-    gl_FragColor = vec4( outgoingLight, diffuseColor.a );
+    #include <output_fragment>
     #include <tonemapping_fragment>
     #include <encodings_fragment>
     #include <fog_fragment>
