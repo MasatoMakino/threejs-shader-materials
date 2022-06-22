@@ -4,6 +4,6 @@ import * as glsl from "./RimEdgesMaterial.glsl";
 
 export class RimEdgesMaterial extends ShaderLineMaterial {
   constructor(param: ShaderMaterialParameters) {
-    super(glsl.vertex, glsl.fragment, param);
+    super(glsl.vertex, null, param);
   }
 }
