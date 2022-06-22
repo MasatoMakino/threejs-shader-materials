@@ -1,118 +1,168 @@
-import { BufferGeometry } from "three";
-import { Float32BufferAttribute } from "three";
-import { MathUtils } from "three";
-import { Triangle } from "three";
-import { Vector3 } from "three";
+import {
+  BufferGeometry,
+  Float32BufferAttribute,
+  MathUtils,
+  Triangle,
+  Vector3,
+} from "three";
+import { mergeVertices } from "three/examples/jsm/utils/BufferGeometryUtils";
 
-const _v0 = new Vector3();
-const _v1 = new Vector3();
-const _normal = new Vector3();
-const _triangle = new Triangle();
+interface FaceNormalInfo {
+  a?: number;
+  b?: number;
+  c?: number;
+  normal?: Vector3;
+}
+
+interface EdgeData {
+  index1: number;
+  index2: number;
+  face1: number;
+  face2?: number;
+}
 
 export class RimEdgesGeometry extends BufferGeometry {
-
-  constructor(geometry:BufferGeometry = null, thresholdAngle:number = 1) {
-
+  constructor(geometry: BufferGeometry = null, thresholdAngle: number = 1) {
     super();
-    this.type = "EdgesGeometry";
 
-    if (geometry !== null) {
-      const precisionPoints = 4;
-      const precision = Math.pow(10, precisionPoints);
-      const thresholdDot = Math.cos(MathUtils.DEG2RAD * thresholdAngle);
+    // buffer
+    const vertices: number[] = [];
+    const control0: number[] = [];
+    const control1: number[] = [];
+    const direction: number[] = [];
+    const collapse: number[] = [];
 
-      const indexAttr = geometry.getIndex();
-      const positionAttr = geometry.getAttribute("position");
-      const indexCount = indexAttr ? indexAttr.count : positionAttr.count;
+    const thresholdDot = Math.cos(MathUtils.DEG2RAD * thresholdAngle);
 
-      const indexArr = [0, 0, 0];
-      const vertKeys = ["a", "b", "c"];
-      const hashes = new Array(3);
+    const edgeData: Map<string, EdgeData> = new Map<string, EdgeData>();
 
-      const edgeData = {};
-      const vertices = [];
-      for (let i = 0; i < indexCount; i += 3) {
-        if (indexAttr) {
-          indexArr[0] = indexAttr.getX(i);
-          indexArr[1] = indexAttr.getX(i + 1);
-          indexArr[2] = indexAttr.getX(i + 2);
-        } else {
-          indexArr[0] = i;
-          indexArr[1] = i + 1;
-          indexArr[2] = i + 2;
-        }
+    let key;
+    const keys = ["a", "b", "c"];
 
-        const { a, b, c } = _triangle;
-        a.fromBufferAttribute(positionAttr, indexArr[0]);
-        b.fromBufferAttribute(positionAttr, indexArr[1]);
-        c.fromBufferAttribute(positionAttr, indexArr[2]);
-        _triangle.getNormal(_normal);
+    // prepare source geometry
+    const geometry2a = geometry.clone();
+    const ratio =
+      geometry2a.attributes.position.array.length / geometry2a.index.count;
+    const geometry2 = mergeVertices(geometry2a, ratio);
+    geometry2.computeVertexNormals();
 
-        // create hashes for the edge from the vertices
-        hashes[0] = `${Math.round(a.x * precision)},${Math.round(
-          a.y * precision
-        )},${Math.round(a.z * precision)}`;
-        hashes[1] = `${Math.round(b.x * precision)},${Math.round(
-          b.y * precision
-        )},${Math.round(b.z * precision)}`;
-        hashes[2] = `${Math.round(c.x * precision)},${Math.round(
-          c.y * precision
-        )},${Math.round(c.z * precision)}`;
+    const sourceVertices = geometry2.attributes.position;
+    const sv = [];
 
-        // skip degenerate triangles
-        if (
-          hashes[0] === hashes[1] ||
-          hashes[1] === hashes[2] ||
-          hashes[2] === hashes[0]
-        ) {
-          continue;
-        }
-
-        // iterate over every edge
-        for (let j = 0; j < 3; j++) {
-          // get the first and next vertex making up the edge
-          const jNext = (j + 1) % 3;
-          const vecHash0 = hashes[j];
-          const vecHash1 = hashes[jNext];
-          const v0 = _triangle[vertKeys[j]];
-          const v1 = _triangle[vertKeys[jNext]];
-
-          const hash = `${vecHash0}_${vecHash1}`;
-          const reverseHash = `${vecHash1}_${vecHash0}`;
-
-          if (reverseHash in edgeData && edgeData[reverseHash]) {
-            // if we found a sibling edge add it into the vertex array if
-            // it meets the angle threshold and delete the edge from the map.
-            if (_normal.dot(edgeData[reverseHash].normal) <= thresholdDot) {
-              vertices.push(v0.x, v0.y, v0.z);
-              vertices.push(v1.x, v1.y, v1.z);
-            }
-
-            edgeData[reverseHash] = null;
-          } else if (!(hash in edgeData)) {
-            // if we've already got an edge here then skip adding a new one
-            edgeData[hash] = {
-              index0: indexArr[j],
-              index1: indexArr[jNext],
-              normal: _normal.clone(),
-            };
-          }
-        }
-      }
-
-      // iterate over all remaining, unmatched edges and add them to the vertex array
-      for (const key in edgeData) {
-        if (edgeData[key]) {
-          const { index0, index1 } = edgeData[key];
-          _v0.fromBufferAttribute(positionAttr, index0);
-          _v1.fromBufferAttribute(positionAttr, index1);
-
-          vertices.push(_v0.x, _v0.y, _v0.z);
-          vertices.push(_v1.x, _v1.y, _v1.z);
-        }
-      }
-
-      this.setAttribute("position", new Float32BufferAttribute(vertices, 3));
+    for (let s = 0; s < sourceVertices.array.length; s++) {
+      sv.push(
+        new Vector3(
+          sourceVertices.array[s * 3],
+          sourceVertices.array[s * 3 + 1],
+          sourceVertices.array[s * 3 + 2]
+        )
+      );
     }
+
+    const index = geometry2.index;
+    const faceCount = index.count / 3;
+    const faceNormalInfos: FaceNormalInfo[] = [];
+    const _triangle = new Triangle();
+    const a = new Vector3();
+    const b = new Vector3();
+    const c = new Vector3();
+    for (let i = 0; i < faceCount; i++) {
+      const aIndex = index.array[i * 3];
+      const bIndex = index.array[i * 3 + 1];
+      const cIndex = index.array[i * 3 + 2];
+
+      a.fromBufferAttribute(sourceVertices, aIndex);
+      b.fromBufferAttribute(sourceVertices, bIndex);
+      c.fromBufferAttribute(sourceVertices, cIndex);
+      _triangle.set(a, b, c);
+
+      const faceNormalInfo = {
+        a: aIndex,
+        b: bIndex,
+        c: cIndex,
+        normal: _triangle.getNormal(new Vector3()),
+      };
+      faceNormalInfos.push(faceNormalInfo);
+    }
+
+    for (let i = 0; i < faceNormalInfos.length; i++) {
+      const faceNormalInfo = faceNormalInfos[i];
+
+      for (let j = 0; j < 3; j++) {
+        const edge1 = faceNormalInfo[keys[j]];
+        const edge2 = faceNormalInfo[keys[(j + 1) % 3]];
+        const edgeMin = Math.min(edge1, edge2);
+        const edgeMax = Math.max(edge1, edge2);
+
+        key = edgeMin + "," + edgeMax;
+
+        if (edgeData[key] === undefined) {
+          edgeData[key] = {
+            index1: edgeMin,
+            index2: edgeMax,
+            face1: i,
+            face2: undefined,
+          };
+        } else {
+          edgeData[key].face2 = i;
+        }
+      }
+    }
+
+    // generate vertices
+    const v3 = new Vector3();
+    const n = new Vector3();
+    const n1 = new Vector3();
+    const n2 = new Vector3();
+    const d = new Vector3();
+
+    for (key in edgeData) {
+      const edge = edgeData[key];
+
+      // an edge is only rendered if the angle (in degrees) between the face normals of the adjoining faces exceeds this value. default = 1 degree.
+      if (
+        edge.face2 === undefined ||
+        faceNormalInfos[edge.face1].normal.dot(
+          faceNormalInfos[edge.face2].normal
+        ) <= thresholdDot
+      ) {
+        const vertex1 = sv[edge.index1];
+        const vertex2 = sv[edge.index2];
+
+        vertices.push(vertex1.x, vertex1.y, vertex1.z);
+        vertices.push(vertex2.x, vertex2.y, vertex2.z);
+
+        collapse.push(0, 1);
+
+        d.subVectors(vertex2, vertex1);
+        n.copy(d).normalize();
+        direction.push(d.x, d.y, d.z);
+        n1.copy(faceNormalInfos[edge.face1].normal);
+        n1.crossVectors(n, n1);
+
+        d.subVectors(vertex1, vertex2);
+        n.copy(d).normalize();
+        n2.copy(faceNormalInfos[edge.face2].normal);
+        n2.crossVectors(n, n2);
+        direction.push(d.x, d.y, d.z);
+
+        v3.copy(vertex1).add(n1); // control0
+        control0.push(v3.x, v3.y, v3.z);
+        v3.copy(vertex1).add(n2); // control1
+        control1.push(v3.x, v3.y, v3.z);
+
+        v3.copy(vertex2).add(n1); // control0
+        control0.push(v3.x, v3.y, v3.z);
+        v3.copy(vertex2).add(n2); // control1
+        control1.push(v3.x, v3.y, v3.z);
+      }
+    }
+
+    // build geometry
+    this.setAttribute("position", new Float32BufferAttribute(vertices, 3));
+    this.setAttribute("control0", new Float32BufferAttribute(control0, 3));
+    this.setAttribute("control1", new Float32BufferAttribute(control1, 3));
+    this.setAttribute("direction", new Float32BufferAttribute(direction, 3));
+    this.setAttribute("collapse", new Float32BufferAttribute(collapse, 1));
   }
 }
