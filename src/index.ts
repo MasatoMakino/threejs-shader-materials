@@ -23,5 +23,3 @@ export * from "./swirl/SwirlMaterial";
 export * from "./cellularNoise/CellularNoiseMaterial";
 export * from "./solidClipping/SolidClippingMaterial";
 export * from "./hexDissolve/HexDissolveMaterial";
-export * from "./rimEdges/RimEdgesMaterial";
-export * from "./rimEdges/RimEdgesGeometry";

@@ -23,6 +23,14 @@ interface EdgeData {
   face2?: number;
 }
 
+/**
+ * 法線によって描画を切り分けるEdgesGeometryの習作
+ *
+ * 未解決の問題点 :
+ * 1. SphereGeometryのように、閉じていない（切れ目のある）ジオメトリでは、正常に境界線が描画できない。
+ *   mergeVertices関数が期待通りに動作していない？
+ * 2. 複数のジオメトリをマージした場合、描画が正常に行われない。
+ */
 export class RimEdgesGeometry extends BufferGeometry {
   constructor(geometry: BufferGeometry = null, thresholdAngle: number = 1) {
     super();
@@ -62,6 +70,7 @@ export class RimEdgesGeometry extends BufferGeometry {
 
       // an edge is only rendered if the angle (in degrees) between the face normals of the adjoining faces exceeds this value. default = 1 degree.
       if (
+        // edge.face2 == null ||
         faceNormalInfos[edge.face1].normal.dot(
           faceNormalInfos[edge.face2].normal
         ) <= thresholdDot
@@ -85,7 +94,7 @@ export class RimEdgesGeometry extends BufferGeometry {
         n.copy(d).normalize();
         direction.push(d.x, d.y, d.z);
 
-        n2.copy(faceNormalInfos[edge.face2]?.normal ?? new Vector3(0, 0, 0));
+        n2.copy(faceNormalInfos[edge.face2].normal );
         n2.crossVectors(n, n2);
 
         v3.copy(vertex1).add(n1); // control0
@@ -101,18 +110,30 @@ export class RimEdgesGeometry extends BufferGeometry {
     }
 
     // build geometry
-    this.setAttribute("position", new Float32BufferAttribute(vertices, 3));
-    this.setAttribute("control0", new Float32BufferAttribute(control0, 3));
-    this.setAttribute("control1", new Float32BufferAttribute(control1, 3));
-    this.setAttribute("direction", new Float32BufferAttribute(direction, 3));
-    this.setAttribute("collapse", new Float32BufferAttribute(collapse, 1));
+    this.setAttribute(
+      "position",
+      new Float32BufferAttribute(vertices, 3, false)
+    );
+    this.setAttribute(
+      "control0",
+      new Float32BufferAttribute(control0, 3, false)
+    );
+    this.setAttribute(
+      "control1",
+      new Float32BufferAttribute(control1, 3, false)
+    );
+    this.setAttribute(
+      "direction",
+      new Float32BufferAttribute(direction, 3, false)
+    );
+    this.setAttribute(
+      "collapse",
+      new Float32BufferAttribute(collapse, 1, false)
+    );
   }
 
   private static margeGeometry(geometry: BufferGeometry): BufferGeometry {
-    const geometry2a = geometry.clone();
-    const ratio =
-      geometry2a.attributes.position.array.length / geometry2a.index.count;
-    const geometry2 = mergeVertices(geometry2a, ratio);
+    const geometry2 = mergeVertices(geometry.clone());
     geometry2.computeVertexNormals();
     return geometry2;
   }
@@ -188,22 +209,18 @@ export class RimEdgesGeometry extends BufferGeometry {
       for (let j = 0; j < keys.length; j++) {
         const edge1 = faceNormalInfo[keys[j]];
         const edge2 = faceNormalInfo[keys[(j + 1) % 3]];
-        const edgeMin = Math.min(edge1, edge2);
-        const edgeMax = Math.max(edge1, edge2);
+        const hash = `${edge1}_${edge2}`;
+        const reverseHash = `${edge2}_${edge1}`;
 
-        const key = edgeMin + "," + edgeMax;
-        const hash = `${ edge1 }_${ edge2 }`;
-        const reverseHash = `${ edge2 }_${ edge1 }`;
-
-        if (edgeData[key] === undefined) {
-          edgeData[key] = {
-            index1: edgeMin,
-            index2: edgeMax,
+        if (reverseHash in edgeData) {
+          edgeData[reverseHash].face2 = i;
+        } else {
+          edgeData[hash] = {
+            index1: edge1,
+            index2: edge2,
             face1: i,
             face2: null,
           };
-        } else {
-          edgeData[key].face2 = i;
         }
       }
     }
