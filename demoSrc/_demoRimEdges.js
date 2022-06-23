@@ -5,12 +5,15 @@ import {
   CylinderGeometry,
   Fog,
   IcosahedronGeometry,
-  LineSegments, Mesh, MeshBasicMaterial,
-  SphereGeometry, TorusKnotGeometry,
+  LineSegments,
+  Mesh,
+  MeshBasicMaterial,
+  SphereGeometry,
+  TorusKnotGeometry,
 } from "three";
 import { mergeBufferGeometries } from "three/examples/jsm/utils/BufferGeometryUtils";
 import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
-import { RimEdgesMaterial, RimEdgesGeometry } from "..";
+import { RimEdgesGeometry, RimEdgesMaterial } from "..";
 import GUI from "lil-gui";
 import { CommonGUI } from "./CommonGUI";
 
@@ -39,10 +42,10 @@ export class Study {
     const box = new BoxBufferGeometry(20, 20, 20);
     box.translate(-30, 0, 0);
     const sphere = new SphereGeometry(20);
-    const icosahedron = new IcosahedronGeometry( 20, 3)
-    const cylinder = new CylinderGeometry( 10, 5, 10);
-    cylinder.translate( 40, 0, 0);
-    const torusKnot = new TorusKnotGeometry(20,4)
+    const icosahedron = new IcosahedronGeometry(20, 3);
+    const cylinder = new CylinderGeometry(10, 5, 10);
+    cylinder.translate(40, 0, 0);
+    const torusKnot = new TorusKnotGeometry(20, 4);
     const geo = mergeBufferGeometries([sphere]);
 
     const edge = new RimEdgesGeometry(geo, 0.01);
@@ -50,7 +53,14 @@ export class Study {
       fog: scene.fog !== undefined,
     });
 
-    const mesh = new Mesh( geo, new MeshBasicMaterial({color:0x333333, transparent:true, opacity:0.5}));
+    const mesh = new Mesh(
+      geo,
+      new MeshBasicMaterial({
+        color: 0x333333,
+        transparent: true,
+        opacity: 0.5,
+      })
+    );
 
     mat.color = new Color(0xffffff);
     mat.uniformOpacity = 1.0;

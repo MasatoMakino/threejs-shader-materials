@@ -94,7 +94,7 @@ export class RimEdgesGeometry extends BufferGeometry {
         n.copy(d).normalize();
         direction.push(d.x, d.y, d.z);
 
-        n2.copy(faceNormalInfos[edge.face2].normal );
+        n2.copy(faceNormalInfos[edge.face2].normal);
         n2.crossVectors(n, n2);
 
         v3.copy(vertex1).add(n1); // control0
