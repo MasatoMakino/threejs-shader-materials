@@ -1,7 +1,6 @@
-import { UniformsUtils } from "three";
-import { Color } from "three";
 import { ShaderSpriteMaterial } from "../ShaderSpriteMaterial";
 import FragmentShader from "./SpriteCloudMaterial.frag.glsl";
+import { Color, UniformsUtils } from "three";
 export class SpriteCloudMaterial extends ShaderSpriteMaterial {
     constructor(parameters) {
         super(null, FragmentShader(), parameters);
@@ -19,8 +18,8 @@ export class SpriteCloudMaterial extends ShaderSpriteMaterial {
                 rimColor: { value: new Color(0xffffff) },
                 skyColor: { value: new Color(0xcccccc) },
                 rimCenter: { value: 0.6 },
-                rimRange: { value: 0.15 }
-            }
+                rimRange: { value: 0.15 },
+            },
         ]);
     }
     initDefaultSetting(parameters) {

@@ -1,7 +1,7 @@
-import { UniformsUtils, TextureLoader, DoubleSide } from "three";
 import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
-import FragmentShader from "./ContourMaterial.frag.glsl";
 import VertexShader from "../ShaderPhongMaterial.vert.glsl";
+import FragmentShader from "./ContourMaterial.frag.glsl";
+import { DoubleSide, TextureLoader, UniformsUtils, } from "three";
 /**
  * テクスチャを等高線状にマップするマテリアル。
  * マッピング以外の機能はMeshPhongMaterialに準じる。
@@ -14,7 +14,7 @@ export class ContourMaterial extends ShaderPhongMaterial {
         return this._map;
     }
     loadMap(url, geo) {
-        this._map = new TextureLoader().load(url, texture => {
+        this._map = new TextureLoader().load(url, (texture) => {
             if (this.uniforms && this.uniforms.map) {
                 this.uniforms.map.value = texture;
             }
@@ -32,8 +32,8 @@ export class ContourMaterial extends ShaderPhongMaterial {
             ShaderPhongMaterial.getBasicUniforms(),
             {
                 top: { value: 1.0 },
-                bottom: { value: -1.0 }
-            }
+                bottom: { value: -1.0 },
+            },
         ]);
     }
     initDefaultSetting(parameters) {

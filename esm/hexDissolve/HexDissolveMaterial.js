@@ -1,8 +1,7 @@
-import { UniformsUtils } from "three";
-import FragmentShader from "./HexDissolveMaterial.frag.glsl";
-import { HexGridChunk } from "../index";
 import { GridMaterial } from "../GridMaterial";
-import { Color } from "three";
+import { HexGridChunk } from "../index";
+import FragmentShader from "./HexDissolveMaterial.frag.glsl";
+import { Color, UniformsUtils } from "three";
 /**
  * 六角形グリッドマテリアル
  */
@@ -76,8 +75,8 @@ export class HexDissolveMaterial extends GridMaterial {
                 gridWeight: { value: 0.0 },
                 isAscending: { value: true },
                 gridEmissive: { value: new Color(0x000000) },
-                gridEmissiveWeight: { value: 2.5 }
-            }
+                gridEmissiveWeight: { value: 2.5 },
+            },
         ]);
     }
     initChunks() {

@@ -1,7 +1,6 @@
+import { ShaderPhongMaterial } from "..";
+import { IAnimatable, ITiledFBM } from "../chunk";
 import { ShaderMaterialParameters } from "three";
-import { IAnimatable } from "../chunk";
-import { ITiledFBM } from "../chunk";
-import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
 export declare class FBMFireMaterial extends ShaderPhongMaterial implements ITiledFBM, IAnimatable {
     get tiles(): number;
     set tiles(value: number);

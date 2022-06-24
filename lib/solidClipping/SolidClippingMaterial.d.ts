@@ -1,8 +1,8 @@
 /**
  * ライトに影響を受けない、ソリッドな切断面をもつマテリアル
  */
-import { ShaderPhongMaterial } from "../index";
-import { Vector3, ShaderMaterialParameters } from "three";
+import { ShaderPhongMaterial } from "..";
+import { ShaderMaterialParameters, Vector3 } from "three";
 export declare class SolidClippingMaterial extends ShaderPhongMaterial {
     get cutSectionColor(): Vector3;
     set cutSectionColor(value: Vector3);

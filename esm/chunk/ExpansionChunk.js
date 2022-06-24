@@ -6,14 +6,14 @@ export class ExpansionChunk extends GLSLChunk {
     }
     static getDefines() {
         return {
-            USE_EXPANSION: false
+            USE_EXPANSION: false,
         };
     }
     static getUniform() {
         return {
             expansionStrength: {
-                value: 0.0
-            }
+                value: 0.0,
+            },
         };
     }
 }

@@ -1,7 +1,7 @@
-import { ShaderMaterial, UniformsUtils, } from "three";
-import { SpriteChunk } from "./chunk/SpriteChunk";
 import FragmentShader from "./ShaderSpriteMaterial.frag.glsl";
 import VertexShader from "./ShaderSpriteMaterial.vert.glsl";
+import { SpriteChunk } from "./chunk/";
+import { ShaderMaterial, UniformsUtils, } from "three";
 export class ShaderSpriteMaterial extends ShaderMaterial {
     /**
      * コンストラクタ。

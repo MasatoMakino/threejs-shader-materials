@@ -5,7 +5,7 @@ export class ReversibleChunk extends GLSLChunk {
     }
     static getUniform() {
         return {
-            isReversed: { value: false }
+            isReversed: { value: false },
         };
     }
 }

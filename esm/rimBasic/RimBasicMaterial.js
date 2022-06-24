@@ -1,6 +1,6 @@
 import { ShaderBasicMaterial } from "..";
-import { Color, UniformsUtils } from "three";
 import FragmentShader from "./RimBasicMaterial.frag.glsl";
+import { Color, UniformsUtils } from "three";
 export class RimBasicMaterial extends ShaderBasicMaterial {
     get rimPow() {
         return this.uniforms.rimPow.value;

@@ -11,7 +11,7 @@ export class AnimationChunk extends GLSLChunk {
     static getUniform() {
         return {
             time: { value: 0.0 },
-            isAnimate: { value: true }
+            isAnimate: { value: true },
         };
     }
     static addTime(self, delta) {

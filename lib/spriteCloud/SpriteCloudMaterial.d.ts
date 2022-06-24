@@ -1,6 +1,5 @@
-import { ShaderMaterialParameters } from "three";
-import { Color } from "three";
 import { ShaderSpriteMaterial } from "../ShaderSpriteMaterial";
+import { Color, ShaderMaterialParameters } from "three";
 export declare class SpriteCloudMaterial extends ShaderSpriteMaterial {
     constructor(parameters?: ShaderMaterialParameters);
     /**

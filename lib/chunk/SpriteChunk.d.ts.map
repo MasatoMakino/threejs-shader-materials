@@ -1,1 +1,1 @@
-{"version":3,"file":"SpriteChunk.d.ts","sourceRoot":"","sources":["../../src/chunk/SpriteChunk.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,MAAM,aAAa,CAAC;AAIxC;;GAEG;AACH,qBAAa,WAAY,SAAQ,SAAS;WAC1B,aAAa,IAAI,IAAI;WAOrB,UAAU,IAAI,MAAM;WAMpB,UAAU,IAAI,GAAG;CAQhC"}
+{"version":3,"file":"SpriteChunk.d.ts","sourceRoot":"","sources":["../../src/chunk/SpriteChunk.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,MAAM,aAAa,CAAC;AAGxC;;GAEG;AACH,qBAAa,WAAY,SAAQ,SAAS;WAC1B,aAAa,IAAI,IAAI;WAOrB,UAAU,IAAI,MAAM;WAMpB,UAAU,IAAI,GAAG;CAQhC"}

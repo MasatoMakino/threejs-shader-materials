@@ -1,5 +1,5 @@
-import { IUniform } from "three";
 import { GLSLChunk } from "./GLSLChunk";
+import { IUniform } from "three";
 /**
  * 時間経過によりアニメーションするマテリアルのインターフェース。
  *

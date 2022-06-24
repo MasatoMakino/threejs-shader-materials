@@ -6,7 +6,7 @@ export class SurfaceNormalChunk extends GLSLChunk {
     }
     static getDefines() {
         return {
-            USE_SURFACE_NORMAL: false
+            USE_SURFACE_NORMAL: false,
         };
     }
     static getUniform() {

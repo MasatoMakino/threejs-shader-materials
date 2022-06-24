@@ -1,4 +1,4 @@
-import { IAnimatable, AnimationChunk } from "./AnimationChunk";
+import { AnimationChunk, IAnimatable } from "./AnimationChunk";
 /**
  * Wavyアニメーションマテリアルのインターフェース。
  * - アニメーションの波長

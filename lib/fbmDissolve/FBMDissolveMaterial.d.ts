@@ -1,7 +1,6 @@
-import { ShaderMaterialParameters } from "three";
-import { Color } from "three";
-import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
-import { ITiledFBM } from "../chunk/TilingFBMChunk";
+import { ShaderPhongMaterial } from "..";
+import { ITiledFBM } from "../chunk";
+import { Color, ShaderMaterialParameters } from "three";
 export declare class FBMDissolveMaterial extends ShaderPhongMaterial implements ITiledFBM {
     get tiles(): number;
     set tiles(value: number);

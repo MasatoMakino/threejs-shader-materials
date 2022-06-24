@@ -1,5 +1,5 @@
-import { ShaderMaterialParameters } from "three";
 import { WavyGridMaterial } from "../WavyGridMaterial";
+import { ShaderMaterialParameters } from "three";
 /**
  * 四角形グリッドマテリアル
  */

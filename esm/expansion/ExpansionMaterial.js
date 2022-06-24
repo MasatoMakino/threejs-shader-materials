@@ -1,4 +1,4 @@
-import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
+import { ShaderPhongMaterial } from "..";
 export class ExpansionMaterial extends ShaderPhongMaterial {
     get expansionStrength() {
         return this.uniforms.expansionStrength.value;

@@ -1,6 +1,5 @@
-import { ShaderMaterialParameters } from "three";
 import { GridMaterial } from "../GridMaterial";
-import { Color } from "three";
+import { Color, ShaderMaterialParameters } from "three";
 /**
  * 六角形グリッドマテリアル
  */

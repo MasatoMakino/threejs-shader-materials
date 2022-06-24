@@ -1,5 +1,5 @@
-import { ShaderMaterialParameters, Texture, BufferGeometry } from "three";
 import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
+import { BufferGeometry, ShaderMaterialParameters, Texture } from "three";
 /**
  * テクスチャを等高線状にマップするマテリアル。
  * マッピング以外の機能はMeshPhongMaterialに準じる。

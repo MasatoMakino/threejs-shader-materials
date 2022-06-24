@@ -1,5 +1,5 @@
-import { Texture, IUniform } from "three";
 import { IRepeatablePattern, RepeatPatternChunk } from "./RepeatPatternChunk";
+import { IUniform, Texture } from "three";
 /**
  * Maskテクスチャを設定可能なマテリアル用のインターフェース
  * - maskTexture変数

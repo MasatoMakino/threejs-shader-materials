@@ -1,6 +1,6 @@
-import { Color, ShaderMaterialParameters } from "three";
-import { IAnimatable } from "../chunk/AnimationChunk";
 import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
+import { IAnimatable } from "../chunk/";
+import { Color, ShaderMaterialParameters } from "three";
 export declare class SkyCloudMaterial extends ShaderPhongMaterial implements IAnimatable {
     get scale(): number;
     set scale(value: number);

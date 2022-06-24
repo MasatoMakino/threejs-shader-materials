@@ -1,7 +1,6 @@
 import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
 import FragmentShader from "./RimEffectMaterial.frag.glsl";
-import { UniformsUtils } from "three";
-import { Color } from "three";
+import { Color, UniformsUtils } from "three";
 export class RimEffectMaterial extends ShaderPhongMaterial {
     get rimPow() {
         return this.uniforms.rimPow.value;
@@ -55,8 +54,8 @@ export class RimEffectMaterial extends ShaderPhongMaterial {
                 rimPow: { value: 1.0 },
                 insideColor: { value: new Color(0.0, 0.0, 0.0) },
                 insideStrength: { value: 1.0 },
-                insidePow: { value: 1.0 }
-            }
+                insidePow: { value: 1.0 },
+            },
         ]);
     }
     initDefines() {

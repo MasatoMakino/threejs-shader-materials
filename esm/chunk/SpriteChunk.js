@@ -1,6 +1,5 @@
 import { GLSLChunk } from "./GLSLChunk";
-import { UniformsUtils } from "three";
-import { UniformsLib } from "three";
+import { UniformsLib, UniformsUtils } from "three";
 /**
  * SpriteMaterialと同等の機能を備えたShaderMaterialを実装するために必要なGLSLコードを格納したクラス。
  */
@@ -13,7 +12,7 @@ export class SpriteChunk extends GLSLChunk {
     }
     static getDefines() {
         return {
-            USE_SIZEATTENUATION: true
+            USE_SIZEATTENUATION: true,
         };
     }
     static getUniform() {
@@ -21,7 +20,7 @@ export class SpriteChunk extends GLSLChunk {
         return UniformsUtils.merge([
             UniformsLib.sprite,
             UniformsLib.fog,
-            UniformsLib.lights
+            UniformsLib.lights,
         ]);
     }
 }

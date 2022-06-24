@@ -1,7 +1,7 @@
+import { AnimationChunk, ShaderPhongMaterial } from "..";
+import FragmentShader from "./SwirlMaterial.frag.glsl";
 import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 import { RepeatWrapping, UniformsUtils, Vector2, } from "three";
-import { AnimationChunk, ShaderPhongMaterial } from "../index";
-import FragmentShader from "./SwirlMaterial.frag.glsl";
 export class SwirlMaterial extends ShaderPhongMaterial {
     constructor(parameters) {
         super(null, FragmentShader(), parameters);

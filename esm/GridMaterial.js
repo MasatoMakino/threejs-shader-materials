@@ -1,7 +1,6 @@
-import { UniformsUtils } from "three";
 import { ShaderPhongMaterial } from "./ShaderPhongMaterial";
-import { ReversibleChunk } from "./chunk/ReversibleChunk";
-import { MaskMapChunk } from "./chunk/MaskMapChunk";
+import { MaskMapChunk, ReversibleChunk } from "./chunk";
+import { UniformsUtils } from "three";
 /**
  * グリッド状に分割されたマテリアル。
  */
@@ -39,7 +38,7 @@ export class GridMaterial extends ShaderPhongMaterial {
         return UniformsUtils.merge([
             ShaderPhongMaterial.getBasicUniforms(),
             ReversibleChunk.getUniform(),
-            MaskMapChunk.getUniform()
+            MaskMapChunk.getUniform(),
         ]);
     }
     initDefaultSetting(parameters) {

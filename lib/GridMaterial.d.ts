@@ -1,7 +1,6 @@
-import { Texture, ShaderMaterialParameters } from "three";
 import { ShaderPhongMaterial } from "./ShaderPhongMaterial";
-import { IReversible } from "./chunk/ReversibleChunk";
-import { IMaskable } from "./chunk/MaskMapChunk";
+import { IMaskable, IReversible } from "./chunk";
+import { ShaderMaterialParameters, Texture } from "three";
 /**
  * グリッド状に分割されたマテリアル。
  */

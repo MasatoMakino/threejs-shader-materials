@@ -1,7 +1,7 @@
-import { SurfaceNormalChunk } from "./chunk";
-import { ShaderMaterial, UniformsLib, UniformsUtils, } from "three";
 import FragmentShader from "./ShaderBasicMaterial.frag.glsl";
 import VertexShader from "./ShaderBasicMaterial.vert.glsl";
+import { SurfaceNormalChunk } from "./chunk";
+import { ShaderMaterial, UniformsLib, UniformsUtils, } from "three";
 /**
  * MeshBasicMaterialに準じたShaderMaterial
  */
