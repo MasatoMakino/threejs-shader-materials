@@ -14,15 +14,15 @@ export class ExpansionChunk extends GLSLChunk {
 
   public static getDefines(): Object {
     return {
-      USE_EXPANSION: false
+      USE_EXPANSION: false,
     };
   }
 
   public static getUniform(): { [uniform: string]: IUniform } {
     return {
       expansionStrength: {
-        value: 0.0
-      }
+        value: 0.0,
+      },
     };
   }
 }

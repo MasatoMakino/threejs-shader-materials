@@ -1,6 +1,6 @@
+import { AnimationChunk, IAnimatable } from "./AnimationChunk";
 import { GLSLChunk } from "./GLSLChunk";
 import { UniformsUtils } from "three";
-import { IAnimatable, AnimationChunk } from "./AnimationChunk";
 
 /**
  * Wavyアニメーションマテリアルのインターフェース。
@@ -36,8 +36,8 @@ export class WavyAnimationChunk extends AnimationChunk {
         raisedBottom: { value: 0.05 },
         waveFrequency: { value: 0.2 },
         wavePow: { value: 4.0 },
-        direction: { value: Directions.vertical }
-      }
+        direction: { value: Directions.vertical },
+      },
     ]);
   }
 }
@@ -89,5 +89,5 @@ export enum Directions {
   /**
    * id値(0,0)を中心に同心円状に波及する。
    */
-  radial = 5
+  radial = 5,
 }

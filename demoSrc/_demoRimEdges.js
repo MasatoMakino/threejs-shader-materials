@@ -1,4 +1,8 @@
+import { RimEdgesGeometry, RimEdgesMaterial } from "..";
 import { Common } from "./Common";
+import { CommonGUI } from "./CommonGUI";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
+import GUI from "lil-gui";
 import {
   BoxBufferGeometry,
   Color,
@@ -12,10 +16,6 @@ import {
   TorusKnotGeometry,
 } from "three";
 import { mergeBufferGeometries } from "three/examples/jsm/utils/BufferGeometryUtils";
-import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
-import { RimEdgesGeometry, RimEdgesMaterial } from "..";
-import GUI from "lil-gui";
-import { CommonGUI } from "./CommonGUI";
 
 export class Study {
   constructor() {

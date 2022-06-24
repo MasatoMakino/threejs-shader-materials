@@ -8,7 +8,7 @@ export class SurfaceNormalChunk extends GLSLChunk {
 
   public static getDefines(): Object {
     return {
-      USE_SURFACE_NORMAL: false
+      USE_SURFACE_NORMAL: false,
     };
   }
 

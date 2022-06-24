@@ -1,5 +1,5 @@
-import { IUniform, Texture, UniformsUtils } from "three";
 import { GLSLChunk } from "./GLSLChunk";
+import { IUniform, Texture, UniformsUtils } from "three";
 
 /**
  * Maskテクスチャを設定可能なマテリアル用のインターフェース

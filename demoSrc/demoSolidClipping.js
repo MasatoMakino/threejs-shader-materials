@@ -1,4 +1,7 @@
+import { SolidClippingMaterial } from "..";
 import { Common } from "./Common";
+import { CommonGUI } from "./CommonGUI";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 import GUI from "lil-gui";
 import {
   Color,
@@ -11,9 +14,6 @@ import {
   TorusKnotBufferGeometry,
   Vector3,
 } from "three";
-import { CommonGUI } from "./CommonGUI";
-import { SolidClippingMaterial } from "..";
-import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 
 export class Study {
   constructor() {

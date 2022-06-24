@@ -1,6 +1,8 @@
-import GUI from "lil-gui";
+import { HexDissolveMaterial } from "..";
 import { Common } from "./Common";
 import { CommonGUI } from "./CommonGUI";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
+import GUI from "lil-gui";
 import {
   Color,
   Fog,
@@ -9,8 +11,6 @@ import {
   PointLightHelper,
   SphereGeometry,
 } from "three";
-import { HexDissolveMaterial } from "..";
-import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 
 export class StudyHexGrid {
   constructor() {

@@ -1,3 +1,12 @@
+import FragmentShader from "./ShaderPhongMaterial.frag.glsl";
+import VertexShader from "./ShaderPhongMaterial.vert.glsl";
+import {
+  ExpansionChunk,
+  IMap,
+  MapChunk,
+  MeshPhongChunk,
+  SurfaceNormalChunk,
+} from "./chunk/";
 import {
   AdditiveBlending,
   Color,
@@ -7,15 +16,6 @@ import {
   UniformsLib,
   UniformsUtils,
 } from "three";
-import {
-  ExpansionChunk,
-  IMap,
-  MapChunk,
-  MeshPhongChunk,
-  SurfaceNormalChunk,
-} from "./chunk/";
-import FragmentShader from "./ShaderPhongMaterial.frag.glsl";
-import VertexShader from "./ShaderPhongMaterial.vert.glsl";
 
 /**
  * MeshPhongMaterialに準じるShaderMaterialクラス。

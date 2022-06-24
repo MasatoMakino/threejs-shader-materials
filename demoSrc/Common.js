@@ -1,3 +1,4 @@
+import { CommonGUI } from "./CommonGUI";
 import {
   ACESFilmicToneMapping,
   AmbientLight,
@@ -11,9 +12,7 @@ import {
   WebGLRenderer,
 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-
 import { Sky } from "three/examples/jsm/objects/Sky";
-import { CommonGUI } from "./CommonGUI";
 
 export class Common {
   static initScene() {

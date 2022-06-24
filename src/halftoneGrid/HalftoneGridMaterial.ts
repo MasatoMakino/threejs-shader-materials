@@ -1,7 +1,7 @@
-import { ShaderMaterialParameters, UniformsUtils } from "three";
-import FragmentShader from "./HalftoneGridMaterial.frag.glsl";
 import VertexShader from "../ShaderPhongMaterial.vert.glsl";
 import { WavyGridMaterial } from "../WavyGridMaterial";
+import FragmentShader from "./HalftoneGridMaterial.frag.glsl";
+import { ShaderMaterialParameters, UniformsUtils } from "three";
 
 /**
  * MaskMapをハーフトーン分解するマテリアル
@@ -22,8 +22,8 @@ export class HalftoneGridMaterial extends WavyGridMaterial {
     this.uniforms = UniformsUtils.merge([
       WavyGridMaterial.getBasicUniforms(),
       {
-        radius: { value: 0.75 }
-      }
+        radius: { value: 0.75 },
+      },
     ]);
   }
 }

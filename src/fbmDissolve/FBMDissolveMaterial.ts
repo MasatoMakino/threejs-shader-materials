@@ -1,15 +1,13 @@
-import { ShaderMaterialParameters } from "three";
-import { UniformsUtils } from "three";
-import { Color } from "three";
-
-import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
-import { TilingFBMChunk, ITiledFBM } from "../chunk/TilingFBMChunk";
-
+import { ShaderPhongMaterial } from "..";
 import VertexShader from "../ShaderPhongMaterial.vert.glsl";
+import { ITiledFBM, TilingFBMChunk } from "../chunk";
 import FragmentShader from "./FBMDissolveMaterial.frag.glsl";
+import { Color, ShaderMaterialParameters, UniformsUtils } from "three";
 
-export class FBMDissolveMaterial extends ShaderPhongMaterial
-  implements ITiledFBM {
+export class FBMDissolveMaterial
+  extends ShaderPhongMaterial
+  implements ITiledFBM
+{
   get tiles(): number {
     return this.uniforms.tiles.value;
   }
@@ -65,8 +63,8 @@ export class FBMDissolveMaterial extends ShaderPhongMaterial
       {
         progress: { value: 0.0 },
         edgeWeight: { value: 0.1 },
-        edgeColor: { value: new Color(1.0, 1.0, 1.0) }
-      }
+        edgeColor: { value: new Color(1.0, 1.0, 1.0) },
+      },
     ]);
   }
 

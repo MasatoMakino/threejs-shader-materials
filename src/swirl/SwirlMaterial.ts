@@ -1,3 +1,5 @@
+import { AnimationChunk, IAnimatable, ShaderPhongMaterial } from "..";
+import FragmentShader from "./SwirlMaterial.frag.glsl";
 import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 import {
   RepeatWrapping,
@@ -6,8 +8,6 @@ import {
   UniformsUtils,
   Vector2,
 } from "three";
-import { AnimationChunk, IAnimatable, ShaderPhongMaterial } from "../index";
-import FragmentShader from "./SwirlMaterial.frag.glsl";
 
 export class SwirlMaterial extends ShaderPhongMaterial implements IAnimatable {
   /*

@@ -1,4 +1,7 @@
+import { RimEffectMaterial } from "..";
 import { Common } from "./Common";
+import { CommonGUI } from "./CommonGUI";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 import GUI from "lil-gui";
 import {
   Color,
@@ -7,9 +10,6 @@ import {
   PointLightHelper,
   TorusGeometry,
 } from "three";
-import { RimEffectMaterial } from "..";
-import { CommonGUI } from "./CommonGUI";
-import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 
 export class Study {
   constructor() {

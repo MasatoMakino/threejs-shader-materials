@@ -1,8 +1,10 @@
-import { RimEffectMaterial } from "./RimEffectMaterial";
 import { IExpandable } from "../chunk/";
+import { RimEffectMaterial } from "./RimEffectMaterial";
 
-export class OuterGlowMaterial extends RimEffectMaterial
-  implements IExpandable {
+export class OuterGlowMaterial
+  extends RimEffectMaterial
+  implements IExpandable
+{
   get expansionStrength(): number {
     return this.uniforms.expansionStrength.value;
   }
