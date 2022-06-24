@@ -1,4 +1,8 @@
+import { RimBasicMaterial } from "..";
 import { Common } from "./Common";
+import { CommonGUI } from "./CommonGUI";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
+import GUI from "lil-gui";
 import {
   BoxGeometry,
   Color,
@@ -7,10 +11,6 @@ import {
   Mesh,
   TorusGeometry,
 } from "three";
-import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
-import { RimBasicMaterial } from "..";
-import GUI from "lil-gui";
-import { CommonGUI } from "./CommonGUI";
 
 export class Study {
   constructor() {

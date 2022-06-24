@@ -1,5 +1,7 @@
+import { Directions, HalftoneGridMaterial } from "..";
 import { Common } from "./Common";
 import { CommonGUI } from "./CommonGUI";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 import GUI from "lil-gui";
 import {
   Color,
@@ -9,8 +11,6 @@ import {
   PointLightHelper,
   SphereGeometry,
 } from "three";
-import { Directions, HalftoneGridMaterial } from "..";
-import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 
 export class StudyHalftoneGrid {
   constructor() {

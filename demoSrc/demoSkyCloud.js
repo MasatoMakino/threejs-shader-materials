@@ -1,9 +1,9 @@
-import GUI from "lil-gui";
-import { Common } from "./Common";
-import { Color, Fog, Mesh, PlaneGeometry } from "three";
 import { SkyCloudMaterial } from "..";
+import { Common } from "./Common";
 import { CommonGUI } from "./CommonGUI";
 import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
+import GUI from "lil-gui";
+import { Color, Fog, Mesh, PlaneGeometry } from "three";
 
 export class Study {
   constructor() {

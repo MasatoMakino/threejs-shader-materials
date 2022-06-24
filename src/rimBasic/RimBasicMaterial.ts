@@ -1,6 +1,6 @@
-import {ShaderBasicMaterial, SurfaceNormalChunk} from "..";
-import { Color, ShaderMaterialParameters, UniformsUtils } from "three";
+import { ShaderBasicMaterial } from "..";
 import FragmentShader from "./RimBasicMaterial.frag.glsl";
+import { Color, ShaderMaterialParameters, UniformsUtils } from "three";
 
 export class RimBasicMaterial extends ShaderBasicMaterial {
   get rimPow(): number {

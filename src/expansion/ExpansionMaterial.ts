@@ -1,6 +1,5 @@
+import { IExpandable, ShaderPhongMaterial } from "..";
 import { ShaderMaterialParameters } from "three";
-import { IExpandable } from "..";
-import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
 
 export class ExpansionMaterial
   extends ShaderPhongMaterial

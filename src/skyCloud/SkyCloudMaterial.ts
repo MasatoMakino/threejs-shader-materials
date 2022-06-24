@@ -1,14 +1,14 @@
-import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
-import { Color, ShaderMaterialParameters, UniformsUtils } from "three";
-import { AnimationChunk, IAnimatable } from "../chunk/AnimationChunk";
-
 import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
 import VertexShader from "../ShaderPhongMaterial.vert.glsl";
-
+import { AnimationChunk, IAnimatable } from "../chunk/";
 import FragmentShader from "./SkyCloudMaterial.frag.glsl";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
+import { Color, ShaderMaterialParameters, UniformsUtils } from "three";
 
-export class SkyCloudMaterial extends ShaderPhongMaterial
-  implements IAnimatable {
+export class SkyCloudMaterial
+  extends ShaderPhongMaterial
+  implements IAnimatable
+{
   get scale(): number {
     return this.uniforms.scale.value;
   }

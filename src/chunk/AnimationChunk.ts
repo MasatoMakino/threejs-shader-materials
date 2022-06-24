@@ -1,5 +1,5 @@
-import { IUniform } from "three";
 import { GLSLChunk } from "./GLSLChunk";
+import { IUniform } from "three";
 
 /**
  * 時間経過によりアニメーションするマテリアルのインターフェース。
@@ -34,7 +34,7 @@ export class AnimationChunk extends GLSLChunk {
   public static getUniform() {
     return {
       time: { value: 0.0 },
-      isAnimate: { value: true }
+      isAnimate: { value: true },
     };
   }
 

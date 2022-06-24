@@ -1,3 +1,6 @@
+import { ContourMaterial } from "..";
+import { Common } from "./Common";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 import {
   Color,
   Fog,
@@ -6,9 +9,6 @@ import {
   PointLightHelper,
   TorusGeometry,
 } from "three";
-import { Common } from "./Common";
-import { ContourMaterial } from "..";
-import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 
 export class StudyContourMap {
   constructor() {

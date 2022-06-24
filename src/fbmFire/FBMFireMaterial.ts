@@ -1,14 +1,19 @@
+import { ShaderPhongMaterial } from "..";
+import VertexShader from "../ShaderPhongMaterial.vert.glsl";
+import {
+  AnimationChunk,
+  IAnimatable,
+  ITiledFBM,
+  TilingFBMChunk,
+} from "../chunk";
+import FragmentShader from "./FBMFireMaterial.frag.glsl";
 import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 import { ShaderMaterialParameters, UniformsUtils } from "three";
-import { AnimationChunk, IAnimatable } from "../chunk";
-import { ITiledFBM, TilingFBMChunk } from "../chunk";
-import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
 
-import VertexShader from "../ShaderPhongMaterial.vert.glsl";
-import FragmentShader from "./FBMFireMaterial.frag.glsl";
-
-export class FBMFireMaterial extends ShaderPhongMaterial
-  implements ITiledFBM, IAnimatable {
+export class FBMFireMaterial
+  extends ShaderPhongMaterial
+  implements ITiledFBM, IAnimatable
+{
   get tiles(): number {
     return this.uniforms.tiles.value;
   }

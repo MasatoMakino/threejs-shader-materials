@@ -1,14 +1,15 @@
-import { Texture, UniformsUtils, ShaderMaterialParameters } from "three";
 import { ShaderPhongMaterial } from "./ShaderPhongMaterial";
-import { IReversible, ReversibleChunk } from "./chunk/ReversibleChunk";
-import { IMaskable, MaskMapChunk } from "./chunk/MaskMapChunk";
+import { IMaskable, IReversible, MaskMapChunk, ReversibleChunk } from "./chunk";
+import { ShaderMaterialParameters, Texture, UniformsUtils } from "three";
 
 /**
  * グリッド状に分割されたマテリアル。
  */
 
-export abstract class GridMaterial extends ShaderPhongMaterial
-  implements IReversible, IMaskable {
+export abstract class GridMaterial
+  extends ShaderPhongMaterial
+  implements IReversible, IMaskable
+{
   get division(): number {
     return this.uniforms.division.value;
   }
@@ -47,7 +48,7 @@ export abstract class GridMaterial extends ShaderPhongMaterial
     return UniformsUtils.merge([
       ShaderPhongMaterial.getBasicUniforms(),
       ReversibleChunk.getUniform(),
-      MaskMapChunk.getUniform()
+      MaskMapChunk.getUniform(),
     ]);
   }
 

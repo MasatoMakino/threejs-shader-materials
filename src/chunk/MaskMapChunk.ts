@@ -1,6 +1,6 @@
-import { Texture, IUniform, UniformsUtils } from "three";
 import { GLSLChunk } from "./GLSLChunk";
 import { IRepeatablePattern, RepeatPatternChunk } from "./RepeatPatternChunk";
+import { IUniform, Texture, UniformsUtils } from "three";
 
 /**
  * Maskテクスチャを設定可能なマテリアル用のインターフェース
@@ -29,8 +29,8 @@ export class MaskMapChunk extends RepeatPatternChunk {
       super.getUniform(),
       {
         hasMaskTexture: { value: false },
-        maskTexture: { value: null }
-      }
+        maskTexture: { value: null },
+      },
     ]);
   }
 

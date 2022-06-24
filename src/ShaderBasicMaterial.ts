@@ -1,4 +1,6 @@
-import {SurfaceNormalChunk} from "./chunk";
+import FragmentShader from "./ShaderBasicMaterial.frag.glsl";
+import VertexShader from "./ShaderBasicMaterial.vert.glsl";
+import { SurfaceNormalChunk } from "./chunk";
 import {
   Color,
   ShaderMaterial,
@@ -6,8 +8,6 @@ import {
   UniformsLib,
   UniformsUtils,
 } from "three";
-import FragmentShader from "./ShaderBasicMaterial.frag.glsl";
-import VertexShader from "./ShaderBasicMaterial.vert.glsl";
 
 /**
  * MeshBasicMaterialに準じたShaderMaterial
@@ -71,9 +71,9 @@ export class ShaderBasicMaterial extends ShaderMaterial {
 
   public initDefines(): void {
     this.defines = Object.assign(
-        {},
-        SurfaceNormalChunk.getDefines(),
-        this.defines,
-    )
+      {},
+      SurfaceNormalChunk.getDefines(),
+      this.defines
+    );
   }
 }

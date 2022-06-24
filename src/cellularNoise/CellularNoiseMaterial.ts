@@ -1,10 +1,12 @@
-import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
-import { ShaderMaterialParameters, UniformsUtils } from "three";
 import { AnimationChunk, IAnimatable, ShaderPhongMaterial } from "../";
 import FragmentShader from "./CellularNoiseMaterial.frag.glsl";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
+import { ShaderMaterialParameters, UniformsUtils } from "three";
 
-export class CellularNoiseMaterial extends ShaderPhongMaterial
-  implements IAnimatable {
+export class CellularNoiseMaterial
+  extends ShaderPhongMaterial
+  implements IAnimatable
+{
   /*
    * implements IAnimatable
    */

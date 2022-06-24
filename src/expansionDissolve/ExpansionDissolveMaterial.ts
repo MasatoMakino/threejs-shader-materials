@@ -1,5 +1,3 @@
-import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
-import { Color, ShaderMaterialParameters, UniformsUtils } from "three";
 import {
   AnimationChunk,
   IAnimatable,
@@ -8,16 +6,19 @@ import {
   TilingFBMChunk,
 } from "../index";
 import FragmentShader from "./ExpansionDissolveMaterial.frag.glsl";
-
 import VertexShader from "./ExpansionDissolveMaterial.vert.glsl";
+import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
+import { Color, ShaderMaterialParameters, UniformsUtils } from "three";
 
 /**
  * FBMノイズによるジオメトリの膨張でディゾルブを行うマテリアル。
  * 爆発しながら消滅するような表現になる。
  * 膨張の進行度合いはprogressで制御する。
  */
-export class ExpansionDissolveMaterial extends ShaderPhongMaterial
-  implements ITiledFBM, IAnimatable {
+export class ExpansionDissolveMaterial
+  extends ShaderPhongMaterial
+  implements ITiledFBM, IAnimatable
+{
   // IAnimatable //
   speed: number = -0.5;
   addTime(delta: number): void {

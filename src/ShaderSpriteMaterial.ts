@@ -1,3 +1,6 @@
+import FragmentShader from "./ShaderSpriteMaterial.frag.glsl";
+import VertexShader from "./ShaderSpriteMaterial.vert.glsl";
+import { SpriteChunk } from "./chunk/";
 import {
   Color,
   Matrix3,
@@ -7,9 +10,6 @@ import {
   UniformsUtils,
   Vector2,
 } from "three";
-import { SpriteChunk } from "./chunk/SpriteChunk";
-import FragmentShader from "./ShaderSpriteMaterial.frag.glsl";
-import VertexShader from "./ShaderSpriteMaterial.vert.glsl";
 
 export abstract class ShaderSpriteMaterial extends ShaderMaterial {
   /**
