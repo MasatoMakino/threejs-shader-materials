@@ -45,23 +45,14 @@ export class Common {
     return control;
   }
 
-  static initRenderer(
-    W,
-    H,
-    color = 0x000000,
-    id = "webgl-canvas",
-    antialias = true
-  ) {
-    const element = document.getElementById(id);
-    element.style.zIndex = 0;
-    element.style.position = "absolute";
+  static initRenderer(W, H, color = 0x000000, antialias = true) {
     const renderer = new WebGLRenderer({
-      canvas: element,
       antialias: antialias,
     });
     renderer.setClearColor(new Color(color));
     renderer.setSize(W, H);
     renderer.setPixelRatio(window.devicePixelRatio);
+    document.body.appendChild(renderer.domElement);
     return renderer;
   }
 

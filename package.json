@@ -16,10 +16,10 @@
     "three": ">=0.132.0 <1.0.0"
   },
   "devDependencies": {
-    "@types/three": "^0.141.0",
     "@masatomakino/gulptask-demo-page": "^0.5.0",
-    "@masatomakino/gulptask-dev-server": "^0.4.1",
-    "husky": "^7.0.4",
+    "@types/three": "^0.141.0",
+    "browser-sync": "^2.27.10",
+    "husky": "^8.0.1",
     "lil-gui": "^0.16.1",
     "prettier": "^2.7.1",
     "pretty-quick": "^3.1.3",
@@ -30,17 +30,12 @@
   "scripts": {
     "start:dev": "npm run server & npm run watch:tsc & npm run watch:demo",
     "build": "npm run buildTS && npm run demo && npm run typedocs",
-    "demo": "npx gulptask-demo-page --body '<canvas id=\"webgl-canvas\" width=\"640\" height=\"480\"></canvas>'",
+    "demo": "npx @masatomakino/gulptask-demo-page",
     "buildTS": "tsc --project tsconfig.json & tsc --project tsconfig.esm.json",
     "typedocs": "npx typedoc --out ./docs/api src/index.ts",
-    "server": "npx gulptask-dev-server -b ./docs/demo",
+    "server": "npx browser-sync ./docs/demo -w",
     "watch:demo": "npm run demo -- -W",
     "watch:tsc": "tsc -W --incremental --project tsconfig.json & tsc -W --incremental --project tsconfig.esm.json"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
   },
   "dependencies": {
     "@masatomakino/raf-ticker": "^0.2.9"
