@@ -19,7 +19,7 @@
     "@masatomakino/gulptask-demo-page": "^0.5.0",
     "@trivago/prettier-plugin-sort-imports": "^3.2.0",
     "@types/three": "^0.141.0",
-    "browser-sync": "^2.27.10",
+    "browser-sync": "^2.27.11",
     "husky": "^8.0.1",
     "lil-gui": "^0.16.1",
     "prettier": "^2.7.1",
