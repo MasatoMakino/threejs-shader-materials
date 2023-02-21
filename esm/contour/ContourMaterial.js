@@ -7,9 +7,6 @@ import { DoubleSide, TextureLoader, UniformsUtils, } from "three";
  * マッピング以外の機能はMeshPhongMaterialに準じる。
  */
 export class ContourMaterial extends ShaderPhongMaterial {
-    constructor(parameters) {
-        super(VertexShader(), FragmentShader(), parameters);
-    }
     get map() {
         return this._map;
     }
@@ -22,6 +19,9 @@ export class ContourMaterial extends ShaderPhongMaterial {
         geo.computeBoundingBox();
         this.uniforms.top.value = geo.boundingBox.max.y;
         this.uniforms.bottom.value = geo.boundingBox.min.y;
+    }
+    constructor(parameters) {
+        super(VertexShader(), FragmentShader(), parameters);
     }
     initDefines() {
         super.initDefines();

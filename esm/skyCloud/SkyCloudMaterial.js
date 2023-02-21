@@ -5,26 +5,6 @@ import FragmentShader from "./SkyCloudMaterial.frag.glsl";
 import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 import { Color, UniformsUtils } from "three";
 export class SkyCloudMaterial extends ShaderPhongMaterial {
-    /**
-     *
-     * @param parameters
-     */
-    constructor(parameters) {
-        super(VertexShader(), FragmentShader(), parameters);
-        /**
-         * 波の速度
-         * 0.5にすると1の半分の速度になる。
-         * マイナスを指定すると、波の進行方向が反転する。
-         */
-        this.speed = -0.02;
-        /*
-         * IAnimatable implements
-         */
-        this.animationListener = (e) => {
-            this.addTime(e.delta / 1000);
-        };
-        this.isAnimate = this.isAnimate; //reset and start animation
-    }
     get scale() {
         return this.uniforms.scale.value;
     }
@@ -75,6 +55,26 @@ export class SkyCloudMaterial extends ShaderPhongMaterial {
     }
     set cloudTransformSpeed(value) {
         this.uniforms.cloudTransformSpeed.value = value;
+    }
+    /**
+     *
+     * @param parameters
+     */
+    constructor(parameters) {
+        super(VertexShader(), FragmentShader(), parameters);
+        /**
+         * 波の速度
+         * 0.5にすると1の半分の速度になる。
+         * マイナスを指定すると、波の進行方向が反転する。
+         */
+        this.speed = -0.02;
+        /*
+         * IAnimatable implements
+         */
+        this.animationListener = (e) => {
+            this.addTime(e.delta / 1000);
+        };
+        this.isAnimate = this.isAnimate; //reset and start animation
     }
     initChunks() {
         super.initChunks();

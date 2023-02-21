@@ -9,22 +9,6 @@ import { Color, UniformsUtils } from "three";
  * 膨張の進行度合いはprogressで制御する。
  */
 export class ExpansionDissolveMaterial extends ShaderPhongMaterial {
-    /**
-     *
-     * @param parameters
-     */
-    constructor(parameters) {
-        super(VertexShader(), FragmentShader(), parameters);
-        // IAnimatable //
-        this.speed = -0.5;
-        /*
-         * IAnimatable implements
-         */
-        this.animationListener = (e) => {
-            this.addTime(e.delta / 1000);
-        };
-        this.isAnimate = this.isAnimate;
-    }
     addTime(delta) {
         if (this.isAnimate) {
             AnimationChunk.addTime(this, delta);
@@ -90,6 +74,22 @@ export class ExpansionDissolveMaterial extends ShaderPhongMaterial {
     }
     set dissolveOutColor(value) {
         this.uniforms.dissolveOutColor.value = value;
+    }
+    /**
+     *
+     * @param parameters
+     */
+    constructor(parameters) {
+        super(VertexShader(), FragmentShader(), parameters);
+        // IAnimatable //
+        this.speed = -0.5;
+        /*
+         * IAnimatable implements
+         */
+        this.animationListener = (e) => {
+            this.addTime(e.delta / 1000);
+        };
+        this.isAnimate = this.isAnimate;
     }
     initUniforms() {
         this.uniforms = UniformsUtils.merge([

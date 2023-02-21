@@ -5,26 +5,6 @@ import FragmentShader from "./FBMFireMaterial.frag.glsl";
 import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 import { UniformsUtils } from "three";
 export class FBMFireMaterial extends ShaderPhongMaterial {
-    /**
-     *
-     * @param parameters
-     */
-    constructor(parameters) {
-        super(VertexShader(), FragmentShader(), parameters);
-        /**
-         * 波の速度
-         * 0.5にすると1の半分の速度になる。
-         * マイナスを指定すると、波の進行方向が反転する。
-         */
-        this.speed = -0.5;
-        /*
-         * IAnimatable implements
-         */
-        this.animationListener = (e) => {
-            this.addTime(e.delta / 1000);
-        };
-        this.isAnimate = this.isAnimate; //reset and start animation
-    }
     get tiles() {
         return this.uniforms.tiles.value;
     }
@@ -93,6 +73,26 @@ export class FBMFireMaterial extends ShaderPhongMaterial {
     }
     set rimStrength(value) {
         this.uniforms.rimStrength.value = value;
+    }
+    /**
+     *
+     * @param parameters
+     */
+    constructor(parameters) {
+        super(VertexShader(), FragmentShader(), parameters);
+        /**
+         * 波の速度
+         * 0.5にすると1の半分の速度になる。
+         * マイナスを指定すると、波の進行方向が反転する。
+         */
+        this.speed = -0.5;
+        /*
+         * IAnimatable implements
+         */
+        this.animationListener = (e) => {
+            this.addTime(e.delta / 1000);
+        };
+        this.isAnimate = this.isAnimate; //reset and start animation
     }
     initUniforms() {
         this.uniforms = UniformsUtils.merge([

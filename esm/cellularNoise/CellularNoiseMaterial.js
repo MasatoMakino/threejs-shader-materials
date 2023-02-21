@@ -3,20 +3,6 @@ import FragmentShader from "./CellularNoiseMaterial.frag.glsl";
 import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 import { UniformsUtils } from "three";
 export class CellularNoiseMaterial extends ShaderPhongMaterial {
-    constructor(parameters) {
-        super(null, FragmentShader(), parameters);
-        /*
-         * implements IAnimatable
-         */
-        this.speed = -0.02;
-        /*
-         * IAnimatable implements
-         */
-        this.animationListener = (e) => {
-            this.addTime(e.delta / 1000);
-        };
-        this.isAnimate = this.isAnimate;
-    }
     addTime(delta) {
         if (this.isAnimate) {
             AnimationChunk.addTime(this, delta);
@@ -45,6 +31,20 @@ export class CellularNoiseMaterial extends ShaderPhongMaterial {
     }
     set divisionScaleX(value) {
         this.uniforms.divisionScaleX.value = value;
+    }
+    constructor(parameters) {
+        super(null, FragmentShader(), parameters);
+        /*
+         * implements IAnimatable
+         */
+        this.speed = -0.02;
+        /*
+         * IAnimatable implements
+         */
+        this.animationListener = (e) => {
+            this.addTime(e.delta / 1000);
+        };
+        this.isAnimate = this.isAnimate;
     }
     initChunks() {
         super.initChunks();

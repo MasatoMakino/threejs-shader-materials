@@ -3,20 +3,6 @@ import FragmentShader from "./SwirlMaterial.frag.glsl";
 import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
 import { RepeatWrapping, UniformsUtils, Vector2, } from "three";
 export class SwirlMaterial extends ShaderPhongMaterial {
-    constructor(parameters) {
-        super(null, FragmentShader(), parameters);
-        /*
-         * implements IAnimatable
-         */
-        this.speed = -0.02;
-        /*
-         * IAnimatable implements
-         */
-        this.animationListener = (e) => {
-            this.addTime(e.delta / 1000);
-        };
-        this.isAnimate = this.isAnimate;
-    }
     addTime(delta) {
         if (this.isAnimate) {
             AnimationChunk.addTime(this, delta);
@@ -75,6 +61,20 @@ export class SwirlMaterial extends ShaderPhongMaterial {
     }
     set center(value) {
         this.uniforms.center.value = value;
+    }
+    constructor(parameters) {
+        super(null, FragmentShader(), parameters);
+        /*
+         * implements IAnimatable
+         */
+        this.speed = -0.02;
+        /*
+         * IAnimatable implements
+         */
+        this.animationListener = (e) => {
+            this.addTime(e.delta / 1000);
+        };
+        this.isAnimate = this.isAnimate;
     }
     initChunks() {
         super.initChunks();

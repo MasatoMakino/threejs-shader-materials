@@ -6,22 +6,6 @@ import { UniformsUtils } from "three";
  * グリッド状に分割され、Wavyアニメーションを行うマテリアル。
  */
 export class WavyGridMaterial extends GridMaterial {
-    constructor(vertexShader, fragmentShader, parameters) {
-        super(vertexShader, fragmentShader, parameters);
-        /**
-         * 波の速度
-         * 0.5にすると1の半分の速度になる。
-         * マイナスを指定すると、波の進行方向が反転する。
-         */
-        this.speed = -0.5;
-        /*
-         * IAnimatable implements
-         */
-        this.animationListener = (e) => {
-            this.addTime(e.delta / 1000);
-        };
-        this.isAnimate = this.isAnimate; //reset and start animation
-    }
     addTime(delta) {
         AnimationChunk.addTime(this, delta);
     }
@@ -74,6 +58,22 @@ export class WavyGridMaterial extends GridMaterial {
     }
     set direction(value) {
         this.uniforms.direction.value = value;
+    }
+    constructor(vertexShader, fragmentShader, parameters) {
+        super(vertexShader, fragmentShader, parameters);
+        /**
+         * 波の速度
+         * 0.5にすると1の半分の速度になる。
+         * マイナスを指定すると、波の進行方向が反転する。
+         */
+        this.speed = -0.5;
+        /*
+         * IAnimatable implements
+         */
+        this.animationListener = (e) => {
+            this.addTime(e.delta / 1000);
+        };
+        this.isAnimate = this.isAnimate; //reset and start animation
     }
     initChunks() {
         super.initChunks();
