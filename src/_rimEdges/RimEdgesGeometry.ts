@@ -46,7 +46,7 @@ export class RimEdgesGeometry extends BufferGeometry {
     const geometry2 = RimEdgesGeometry.margeGeometry(geometry);
 
     const indexedPositions = RimEdgesGeometry.convertAttributeToVector3Array(
-      geometry2.attributes.position
+      geometry2.attributes.position as BufferAttribute
     );
     const faceNormalInfos: FaceNormalInfo[] =
       RimEdgesGeometry.getFaceNormalInfo(geometry2);
@@ -144,7 +144,7 @@ export class RimEdgesGeometry extends BufferGeometry {
    * @private
    */
   private static convertAttributeToVector3Array(
-    attribute: BufferAttribute | InterleavedBufferAttribute
+    attribute: BufferAttribute
   ): Vector3[] {
     const array = [];
     for (let s = 0; s < attribute.array.length; s++) {
@@ -168,7 +168,7 @@ export class RimEdgesGeometry extends BufferGeometry {
   private static getFaceNormalInfo(geometry: BufferGeometry): FaceNormalInfo[] {
     const index = geometry.index;
     const faceCount = index.count / 3;
-    const sourceVertices = geometry.attributes.position;
+    const sourceVertices = geometry.attributes.position as BufferAttribute;
 
     const faceNormalInfos: FaceNormalInfo[] = [];
     const _triangle = new Triangle();
