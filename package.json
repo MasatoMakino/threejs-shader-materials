@@ -20,7 +20,7 @@
     "@trivago/prettier-plugin-sort-imports": "^4.0.0",
     "@types/node": "^18.14.0",
     "@types/three": "^0.149.0",
-    "browser-sync": "^2.27.11",
+    "browser-sync": "^2.28.1",
     "husky": "^8.0.3",
     "lil-gui": "^0.18.0",
     "prettier": "^2.8.4",
