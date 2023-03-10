@@ -8,6 +8,7 @@ iframe {
   width: 100%;
   height: 100%;
   border: none;
+  vertical-align:bottom;
 }
 
 #layout,
@@ -47,6 +48,7 @@ appears on the left side of the page.
   bottom: 0;
   z-index: 1000; /* so the menu or its navicon stays above all content */
   background: #222;
+  overflow-x: hidden;
   overflow-y: auto;
 }
 
