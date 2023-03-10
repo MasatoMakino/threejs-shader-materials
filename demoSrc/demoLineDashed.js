@@ -1,7 +1,7 @@
 import { ShaderLineMaterial } from "..";
 import { Common } from "./Common";
 import { CommonGUI } from "./CommonGUI";
-import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
+import { RAFTicker } from "@masatomakino/raf-ticker";
 import GUI from "lil-gui";
 import { BoxGeometry, Color, EdgesGeometry, Fog, LineSegments } from "three";
 
@@ -20,7 +20,7 @@ export class Study {
     Common.initHelper(scene);
 
     const mat = this.initObject(scene);
-    RAFTicker.on(RAFTickerEventType.tick, () => {
+    RAFTicker.on("tick", () => {
       renderer.render(scene, camera);
     });
     this.initGUI(mat);

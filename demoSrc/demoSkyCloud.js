@@ -1,7 +1,7 @@
 import { SkyCloudMaterial } from "..";
 import { Common } from "./Common";
 import { CommonGUI } from "./CommonGUI";
-import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
+import { RAFTicker } from "@masatomakino/raf-ticker";
 import GUI from "lil-gui";
 import { Color, Fog, Mesh, PlaneGeometry } from "three";
 
@@ -21,7 +21,7 @@ export class Study {
     const gui = new GUI();
     Common.initSky(scene, gui, renderer);
     const mat = this.initObject(scene);
-    RAFTicker.addEventListener(RAFTickerEventType.tick, (e) => {
+    RAFTicker.on("tick", (e) => {
       renderer.render(scene, camera);
     });
     this.initGUI(gui, mat);

@@ -7,7 +7,7 @@ import {
   TilingFBMChunk,
 } from "../chunk";
 import FragmentShader from "./FBMFireMaterial.frag.glsl";
-import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
+import { RAFTicker } from "@masatomakino/raf-ticker";
 import { ShaderMaterialParameters, UniformsUtils } from "three";
 
 export class FBMFireMaterial
@@ -149,10 +149,10 @@ export class FBMFireMaterial
   };
 
   protected startAnimation() {
-    RAFTicker.on(RAFTickerEventType.onBeforeTick, this.animationListener);
+    RAFTicker.on("onBeforeTick", this.animationListener);
   }
 
   protected stopAnimation(): void {
-    RAFTicker.off(RAFTickerEventType.onBeforeTick, this.animationListener);
+    RAFTicker.off("onBeforeTick", this.animationListener);
   }
 }

@@ -1,6 +1,6 @@
 import { ContourMaterial } from "..";
 import { Common } from "./Common";
-import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
+import { RAFTicker } from "@masatomakino/raf-ticker";
 import {
   Color,
   Fog,
@@ -23,7 +23,7 @@ export class StudyContourMap {
     const control = Common.initControl(camera, renderer);
     Common.initHelper(scene);
     this.initObject(scene);
-    RAFTicker.addEventListener(RAFTickerEventType.tick, (e) => {
+    RAFTicker.on("tick", (e) => {
       renderer.render(scene, camera);
     });
   }

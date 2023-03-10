@@ -7,7 +7,7 @@ import {
 } from "../index";
 import FragmentShader from "./ExpansionDissolveMaterial.frag.glsl";
 import VertexShader from "./ExpansionDissolveMaterial.vert.glsl";
-import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
+import { RAFTicker } from "@masatomakino/raf-ticker";
 import { Color, ShaderMaterialParameters, UniformsUtils } from "three";
 
 /**
@@ -133,10 +133,10 @@ export class ExpansionDissolveMaterial
   };
 
   protected startAnimation() {
-    RAFTicker.on(RAFTickerEventType.onBeforeTick, this.animationListener);
+    RAFTicker.on("onBeforeTick", this.animationListener);
   }
 
   protected stopAnimation(): void {
-    RAFTicker.off(RAFTickerEventType.onBeforeTick, this.animationListener);
+    RAFTicker.off("onBeforeTick", this.animationListener);
   }
 }

@@ -1,7 +1,7 @@
 import { SolidClippingMaterial } from "..";
 import { Common } from "./Common";
 import { CommonGUI } from "./CommonGUI";
-import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
+import { RAFTicker } from "@masatomakino/raf-ticker";
 import GUI from "lil-gui";
 import {
   Color,
@@ -32,10 +32,10 @@ export class Study {
     const mat = this.initObject(scene);
     const mesh = this.initMesh(mat, scene);
 
-    RAFTicker.addEventListener(RAFTickerEventType.tick, (e) => {
+    RAFTicker.on("tick", (e) => {
       renderer.render(scene, camera);
     });
-    RAFTicker.addEventListener(RAFTickerEventType.onBeforeTick, (e) => {
+    RAFTicker.on("onBeforeTick", (e) => {
       mesh.forEach((m) => {
         m.rotation.x += e.delta / 500;
       });
