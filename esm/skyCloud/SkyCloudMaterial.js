@@ -2,7 +2,7 @@ import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
 import VertexShader from "../ShaderPhongMaterial.vert.glsl";
 import { AnimationChunk } from "../chunk/";
 import FragmentShader from "./SkyCloudMaterial.frag.glsl";
-import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
+import { RAFTicker } from "@masatomakino/raf-ticker";
 import { Color, UniformsUtils } from "three";
 export class SkyCloudMaterial extends ShaderPhongMaterial {
     get scale() {
@@ -104,9 +104,9 @@ export class SkyCloudMaterial extends ShaderPhongMaterial {
         }
     }
     startAnimation() {
-        RAFTicker.on(RAFTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.on("onBeforeTick", this.animationListener);
     }
     stopAnimation() {
-        RAFTicker.off(RAFTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.off("onBeforeTick", this.animationListener);
     }
 }

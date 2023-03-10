@@ -1,6 +1,6 @@
 import { AnimationChunk, ShaderPhongMaterial } from "../";
 import FragmentShader from "./CellularNoiseMaterial.frag.glsl";
-import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
+import { RAFTicker } from "@masatomakino/raf-ticker";
 import { UniformsUtils } from "three";
 export class CellularNoiseMaterial extends ShaderPhongMaterial {
     addTime(delta) {
@@ -61,9 +61,9 @@ export class CellularNoiseMaterial extends ShaderPhongMaterial {
         ]);
     }
     startAnimation() {
-        RAFTicker.on(RAFTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.on("onBeforeTick", this.animationListener);
     }
     stopAnimation() {
-        RAFTicker.off(RAFTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.off("onBeforeTick", this.animationListener);
     }
 }

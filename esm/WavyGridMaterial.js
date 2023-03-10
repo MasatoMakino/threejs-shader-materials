@@ -1,6 +1,6 @@
 import { GridMaterial } from "./GridMaterial";
 import { AnimationChunk, MaskMapChunk, ReversibleChunk, WavyAnimationChunk, } from "./chunk";
-import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
+import { RAFTicker } from "@masatomakino/raf-ticker";
 import { UniformsUtils } from "three";
 /**
  * グリッド状に分割され、Wavyアニメーションを行うマテリアル。
@@ -91,9 +91,9 @@ export class WavyGridMaterial extends GridMaterial {
         super.initDefaultSetting(parameters);
     }
     startAnimation() {
-        RAFTicker.on(RAFTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.on("onBeforeTick", this.animationListener);
     }
     stopAnimation() {
-        RAFTicker.off(RAFTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.off("onBeforeTick", this.animationListener);
     }
 }

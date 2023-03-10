@@ -1,6 +1,6 @@
 import { AnimationChunk, ShaderPhongMaterial } from "..";
 import FragmentShader from "./SwirlMaterial.frag.glsl";
-import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
+import { RAFTicker } from "@masatomakino/raf-ticker";
 import { RepeatWrapping, UniformsUtils, Vector2, } from "three";
 export class SwirlMaterial extends ShaderPhongMaterial {
     addTime(delta) {
@@ -93,9 +93,9 @@ export class SwirlMaterial extends ShaderPhongMaterial {
         ]);
     }
     startAnimation() {
-        RAFTicker.on(RAFTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.on("onBeforeTick", this.animationListener);
     }
     stopAnimation() {
-        RAFTicker.off(RAFTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.off("onBeforeTick", this.animationListener);
     }
 }

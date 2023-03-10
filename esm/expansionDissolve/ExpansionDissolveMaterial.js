@@ -1,7 +1,7 @@
 import { AnimationChunk, ShaderPhongMaterial, TilingFBMChunk, } from "../index";
 import FragmentShader from "./ExpansionDissolveMaterial.frag.glsl";
 import VertexShader from "./ExpansionDissolveMaterial.vert.glsl";
-import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
+import { RAFTicker } from "@masatomakino/raf-ticker";
 import { Color, UniformsUtils } from "three";
 /**
  * FBMノイズによるジオメトリの膨張でディゾルブを行うマテリアル。
@@ -114,9 +114,9 @@ export class ExpansionDissolveMaterial extends ShaderPhongMaterial {
         this.defines.USE_EXPANSION = true;
     }
     startAnimation() {
-        RAFTicker.on(RAFTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.on("onBeforeTick", this.animationListener);
     }
     stopAnimation() {
-        RAFTicker.off(RAFTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.off("onBeforeTick", this.animationListener);
     }
 }

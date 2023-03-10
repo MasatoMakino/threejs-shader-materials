@@ -2,7 +2,7 @@ import { ShaderPhongMaterial } from "..";
 import VertexShader from "../ShaderPhongMaterial.vert.glsl";
 import { AnimationChunk, TilingFBMChunk, } from "../chunk";
 import FragmentShader from "./FBMFireMaterial.frag.glsl";
-import { RAFTicker, RAFTickerEventType } from "@masatomakino/raf-ticker";
+import { RAFTicker } from "@masatomakino/raf-ticker";
 import { UniformsUtils } from "three";
 export class FBMFireMaterial extends ShaderPhongMaterial {
     get tiles() {
@@ -127,9 +127,9 @@ export class FBMFireMaterial extends ShaderPhongMaterial {
         }
     }
     startAnimation() {
-        RAFTicker.on(RAFTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.on("onBeforeTick", this.animationListener);
     }
     stopAnimation() {
-        RAFTicker.off(RAFTickerEventType.onBeforeTick, this.animationListener);
+        RAFTicker.off("onBeforeTick", this.animationListener);
     }
 }
