@@ -6,6 +6,7 @@ on:
     paths:
       - "src/**"
       - "__test__/**"
+      - ".github/**"
       - "package.json"
       - "tsconfig*.json"
   pull_request:
@@ -13,6 +14,7 @@ on:
     paths:
       - "src/**"
       - "__test__/**"
+      - ".github/**"
       - "package.json"
       - "tsconfig*.json"
 
@@ -22,7 +24,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x, 18.x]
+        node-version: [18.x, 20.x]
 
     steps:
       - uses: actions/checkout@v4
