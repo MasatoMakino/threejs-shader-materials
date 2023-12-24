@@ -6,6 +6,7 @@ on:
     paths:
       - "src/**"
       - "demoSrc/**"
+      - ".github/**"
       - "package.json"
       - "README.md"
       - "tsconfig**.json"

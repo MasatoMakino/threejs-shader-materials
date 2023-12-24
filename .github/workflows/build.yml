@@ -17,6 +17,7 @@ on:
       - "package.json"
       - "README.md"
       - "tsconfig**.json"
+      - ".github/**"
 
 jobs:
   build:
