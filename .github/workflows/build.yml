@@ -19,6 +19,9 @@ on:
       - "tsconfig**.json"
       - ".github/**"
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
