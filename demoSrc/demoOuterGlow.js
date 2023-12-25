@@ -47,6 +47,7 @@ export class Study {
 
     const matGlow = new OuterGlowMaterial({
       fog: scene.fog !== undefined,
+      transparent: false,
     });
     matGlow.color = new Color(0x000000);
     matGlow.rimStrength = 0.0;

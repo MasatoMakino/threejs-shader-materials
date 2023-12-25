@@ -36,7 +36,7 @@ export abstract class ShaderPhongMaterial
   constructor(
     vertexShader: string,
     fragmentShader: string,
-    parameters?: ShaderMaterialParameters
+    parameters?: ShaderMaterialParameters,
   ) {
     super(parameters);
 
@@ -111,7 +111,7 @@ export abstract class ShaderPhongMaterial
       MeshPhongChunk.getDefines(),
       SurfaceNormalChunk.getDefines(),
       ExpansionChunk.getDefines(),
-      this.defines
+      this.defines,
     );
   }
 
@@ -124,6 +124,9 @@ export abstract class ShaderPhongMaterial
   protected initDefaultSetting(parameters?: ShaderMaterialParameters): void {
     this.uniformOpacity = this._opacity;
     this.lights = true; //FIXME シェーダーがエラーを起こすのでlights設定は強制でON
+    if (parameters?.transparent == null) {
+      this.transparent = true;
+    }
   }
 
   /**
