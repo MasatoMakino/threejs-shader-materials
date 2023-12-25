@@ -89,6 +89,9 @@ export class ShaderPhongMaterial extends ShaderMaterial {
     initDefaultSetting(parameters) {
         this.uniformOpacity = this._opacity;
         this.lights = true; //FIXME シェーダーがエラーを起こすのでlights設定は強制でON
+        if ((parameters === null || parameters === void 0 ? void 0 : parameters.transparent) == null) {
+            this.transparent = true;
+        }
     }
     /**
      * MeshPhongマテリアルと互換性を持つために、colorプロパティはdiffuseへ代入される。
