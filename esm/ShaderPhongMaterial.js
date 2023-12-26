@@ -92,6 +92,9 @@ export class ShaderPhongMaterial extends ShaderMaterial {
         if ((parameters === null || parameters === void 0 ? void 0 : parameters.transparent) == null) {
             this.transparent = true;
         }
+        else {
+            this.transparent = parameters.transparent;
+        }
     }
     /**
      * MeshPhongマテリアルと互換性を持つために、colorプロパティはdiffuseへ代入される。
