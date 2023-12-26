@@ -126,6 +126,8 @@ export abstract class ShaderPhongMaterial
     this.lights = true; //FIXME シェーダーがエラーを起こすのでlights設定は強制でON
     if (parameters?.transparent == null) {
       this.transparent = true;
+    } else {
+      this.transparent = parameters.transparent;
     }
   }
 

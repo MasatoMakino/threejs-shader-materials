@@ -4,7 +4,7 @@ import { CommonGUI } from "./CommonGUI";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import GUI from "lil-gui";
 import {
-  BoxBufferGeometry,
+  BoxGeometry,
   Color,
   CylinderGeometry,
   Fog,
@@ -39,7 +39,7 @@ export class Study {
   }
 
   initObject(scene) {
-    const box = new BoxBufferGeometry(20, 20, 20);
+    const box = new BoxGeometry(20, 20, 20);
     box.translate(-30, 0, 0);
     const sphere = new SphereGeometry(20);
     const icosahedron = new IcosahedronGeometry(20, 3);
@@ -59,7 +59,7 @@ export class Study {
         color: 0x333333,
         transparent: true,
         opacity: 0.5,
-      })
+      }),
     );
 
     mat.color = new Color(0xffffff);

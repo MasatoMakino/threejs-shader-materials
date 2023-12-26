@@ -7,7 +7,7 @@ import {
   Color,
   Fog,
   Mesh,
-  PlaneBufferGeometry,
+  PlaneGeometry,
   PointLight,
   PointLightHelper,
   TextureLoader,
@@ -41,7 +41,7 @@ export class Study {
     const helper = new PointLightHelper(spot);
     scene.add(helper);
 
-    const geo = new PlaneBufferGeometry(20, 20);
+    const geo = new PlaneGeometry(20, 20);
 
     const mat = new SwirlMaterial({
       fog: scene.fog !== undefined,

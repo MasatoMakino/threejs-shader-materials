@@ -6,7 +6,7 @@ import GUI from "lil-gui";
 import {
   BoxGeometry,
   Color,
-  CylinderBufferGeometry,
+  CylinderGeometry,
   Fog,
   Mesh,
   TorusGeometry,
@@ -35,7 +35,7 @@ export class Study {
 
   initObject(scene) {
     const cubeGeo = new BoxGeometry(20, 20, 20);
-    const cylinderGeo = new CylinderBufferGeometry(6, 6, 20, 32);
+    const cylinderGeo = new CylinderGeometry(6, 6, 20, 32);
     const torusGeo = new TorusGeometry(12, 6, 32, 32);
 
     const mat = new RimBasicMaterial({
