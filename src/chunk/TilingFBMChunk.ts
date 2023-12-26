@@ -33,7 +33,7 @@ class TilingFBMFunctionChunk extends GLSLChunk {
 
   protected static getChunk(): string {
     //language=GLSL
-    return `
+    return /* GLSL */ `
         // Based On Dave_Hoskins 
         // https://www.shadertoy.com/view/4dlGW2
         
@@ -87,7 +87,7 @@ class TilingFBMUniformChunk extends GLSLChunk {
 
   protected static getChunk(): string {
     //language=GLSL
-    return `
+    return /* GLSL */ `
       uniform float tiles;  
       uniform float hashLoop;
       uniform float amp;

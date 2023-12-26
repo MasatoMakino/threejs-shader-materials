@@ -26,7 +26,7 @@ class ReversibleUniformChunk extends GLSLChunk {
   }
 
   protected static getChunk(): string {
-    return `
+    return /* GLSL */ `
       uniform bool isReversed;
     `;
   }

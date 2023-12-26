@@ -3,7 +3,7 @@
  */
 export default () => {
   // language=GLSL
-  return `
+  return /* GLSL */ `
 #include <sprite_vertex_uniform_chunk>
 #include <common>
 #include <uv_pars_vertex>

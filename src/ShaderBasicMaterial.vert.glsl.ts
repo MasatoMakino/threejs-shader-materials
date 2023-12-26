@@ -1,6 +1,6 @@
 export default () => {
   //language=glsl
-  return `
+  return /* GLSL */ `
 
 #include <surface_normal_varying_chunk>
 varying vec3 vViewPosition;

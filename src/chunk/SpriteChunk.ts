@@ -34,7 +34,7 @@ class SpriteVertexUniformChunk extends GLSLChunk {
   }
 
   protected static getChunk(): string {
-    return `
+    return /* GLSL */ `
       uniform float rotation;
       uniform vec2 center;
     `;
@@ -47,7 +47,7 @@ class SpriteFragmentUniformChunk extends GLSLChunk {
   }
 
   protected static getChunk(): string {
-    return `
+    return /* GLSL */ `
       uniform vec3 diffuse;
       uniform float opacity;
     `;
@@ -60,7 +60,7 @@ class SpriteDiffuseColorChunk extends GLSLChunk {
   }
 
   protected static getChunk(): string {
-    return `
+    return /* GLSL */ `
       vec3 outgoingLight = vec3( 0.0 );
       vec4 diffuseColor = vec4( diffuse, opacity );
     `;
@@ -73,7 +73,7 @@ class SpriteMVPositionChunk extends GLSLChunk {
   }
 
   protected static getChunk(): string {
-    return `
+    return /* GLSL */ `
 	vec4 mvPosition = modelViewMatrix * vec4( 0.0, 0.0, 0.0, 1.0 );
 
 	vec2 scale;
