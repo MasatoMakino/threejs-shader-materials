@@ -9,14 +9,16 @@ export const vertex = /* GLSL */ `
 #define PHONG
 
 varying vec3 vViewPosition;
+
+//added by threejs-shader-materials
 varying vec2 uvPosition;
 #include <mesh_position_varying>
 #include <surface_normal_varying_chunk>
 #include <__expansion_uniform_chunk>
 
 #include <common>
+#include <batching_pars_vertex>
 #include <uv_pars_vertex>
-#include <uv2_pars_vertex>
 #include <displacementmap_pars_vertex>
 #include <envmap_pars_vertex>
 #include <color_pars_vertex>
@@ -33,15 +35,15 @@ void main() {
     uvPosition = uv;
 
     #include <uv_vertex>
-    #include <uv2_vertex>
     #include <color_vertex>
+    #include <morphcolor_vertex>
+    #include <batching_vertex>
     
     #include <beginnormal_vertex>
     #include <morphnormal_vertex>
     #include <skinbase_vertex>
     #include <skinnormal_vertex>
     #include <defaultnormal_vertex>
-    #include <surface_normal_vertex_chunk>
     #include <normal_vertex>
     
     #include <begin_vertex>
@@ -61,6 +63,7 @@ void main() {
     #include <envmap_vertex>
     #include <shadowmap_vertex>
     #include <fog_vertex>
+
 }`;
 
 // language=GLSL
@@ -68,6 +71,8 @@ export const fragment = /* GLSL */ `
 #define PHONG
 
 #include <mesh_phong_uniform>
+
+//added by threejs-shader-materials
 #include <mesh_position_varying>
 varying vec2 uvPosition;
 
@@ -76,16 +81,15 @@ varying vec2 uvPosition;
 #include <dithering_pars_fragment>
 #include <color_pars_fragment>
 #include <uv_pars_fragment>
-#include <uv2_pars_fragment>
 #include <map_pars_fragment>
 // #include <alphamap_pars_fragment>
 #include <alphatest_pars_fragment>
+#include <alphahash_pars_fragment>
 #include <aomap_pars_fragment>
 #include <lightmap_pars_fragment>
 #include <emissivemap_pars_fragment>
 #include <envmap_common_pars_fragment>
 #include <envmap_pars_fragment>
-#include <cube_uv_reflection_fragment>
 #include <fog_pars_fragment>
 #include <bsdfs>
 #include <lights_pars_begin>
@@ -97,7 +101,9 @@ varying vec2 uvPosition;
 #include <specularmap_pars_fragment>
 #include <logdepthbuf_pars_fragment>
 #include <clipping_planes_pars_fragment>
+
 void main() {
+
     #include <clipping_planes_fragment>
     
     #include <mesh_phong_diffuse_color>
@@ -109,23 +115,29 @@ void main() {
     // #include <alphamap_fragment>
     #include <mesh_phong_switching_alpha_map>
     #include <alphatest_fragment>
+    #include <alphahash_fragment>
     #include <specularmap_fragment>
     #include <normal_fragment_begin>
     #include <normal_fragment_maps>
     #include <emissivemap_fragment>
+
     // accumulation
     #include <lights_phong_fragment>
     #include <lights_fragment_begin>
     #include <lights_fragment_maps>
     #include <lights_fragment_end>
+
     // modulation
     #include <aomap_fragment>
+
     vec3 outgoingLight = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse + reflectedLight.directSpecular + reflectedLight.indirectSpecular + totalEmissiveRadiance;
+    
     #include <envmap_fragment>
-    #include <output_fragment>
+    #include <opaque_fragment>
     #include <tonemapping_fragment>
-    #include <encodings_fragment>
+    #include <colorspace_fragment>
     #include <fog_fragment>
     #include <premultiplied_alpha_fragment>
     #include <dithering_fragment>
+
 }`;

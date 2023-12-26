@@ -21,7 +21,7 @@ export class Common {
   }
 
   static initLight(scene) {
-    const ambientLight = new AmbientLight(0xffffff, 1.0);
+    const ambientLight = new AmbientLight(0xffffff, Math.PI);
     scene.add(ambientLight);
     return ambientLight;
   }

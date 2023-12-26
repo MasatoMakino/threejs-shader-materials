@@ -13,12 +13,12 @@
   "author": "MasatoMakino <unagiinu.g@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
-    "three": "^0.149.0"
+    "three": "^0.160.0"
   },
   "devDependencies": {
     "@masatomakino/gulptask-demo-page": "^0.8.0",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
-    "@types/three": "^0.149.0",
+    "@types/three": "^0.160.0",
     "browser-sync": "2.29.3",
     "husky": "^8.0.3",
     "lil-gui": "^0.18.0",
