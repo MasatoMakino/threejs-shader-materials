@@ -3,7 +3,7 @@ import { Common } from "./Common";
 import { CommonGUI } from "./CommonGUI";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import GUI from "lil-gui";
-import { Color, Fog, Mesh, PlaneBufferGeometry } from "three";
+import { Color, Fog, Mesh, PlaneGeometry } from "three";
 
 export class Study {
   constructor() {
@@ -27,7 +27,7 @@ export class Study {
   }
 
   initObject(scene) {
-    const geo = new PlaneBufferGeometry(20, 20);
+    const geo = new PlaneGeometry(20, 20);
     const mat = new ShaderBasicMaterial(null, null, {
       fog: scene.fog !== undefined,
     });

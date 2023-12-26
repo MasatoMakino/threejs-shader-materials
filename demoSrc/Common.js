@@ -8,7 +8,7 @@ import {
   MeshBasicMaterial,
   PerspectiveCamera,
   Scene,
-  SphereBufferGeometry,
+  SphereGeometry,
   WebGLRenderer,
 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
@@ -64,8 +64,8 @@ export class Common {
     renderer.toneMapping = ACESFilmicToneMapping;
 
     const sunSphere = new Mesh(
-      new SphereBufferGeometry(20000, 16, 8),
-      new MeshBasicMaterial({ color: 0xffffff })
+      new SphereGeometry(20000, 16, 8),
+      new MeshBasicMaterial({ color: 0xffffff }),
     );
     sunSphere.position.y = -700000;
     sunSphere.visible = false;
