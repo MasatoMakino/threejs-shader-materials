@@ -49,7 +49,7 @@ class MapUniformChunk extends GLSLChunk {
   }
 
   protected static getChunk(): string {
-    return `
+    return /* GLSL */ `
       uniform bool hasMap;
       uniform sampler2D map;
     `;
@@ -62,7 +62,7 @@ class MapFragmentChunk extends GLSLChunk {
   }
 
   protected static getChunk(): string {
-    return `
+    return /* GLSL */ `
       if( hasMap ){
         vec4 texelColor = texture2D( map, mapUV );
         diffuseColor *= texelColor;
@@ -77,7 +77,7 @@ class MapFragmentBeginChunk extends GLSLChunk {
   }
 
   protected static getChunk(): string {
-    return `
+    return /* GLSL */ `
       vec2 mapUV = uvPosition;
     `;
   }

@@ -3,7 +3,7 @@
  */
 export default () => {
   // language=GLSL
-  return `
+  return /* GLSL */ `
 #define PHONG
 
 varying vec3 vViewPosition;

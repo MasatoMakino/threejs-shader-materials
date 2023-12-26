@@ -1,6 +1,6 @@
 export default () => {
   //language=glsl
-  return `
+  return /* GLSL */ `
 uniform vec3 diffuse;
 uniform float opacity;
 #ifndef FLAT_SHADED

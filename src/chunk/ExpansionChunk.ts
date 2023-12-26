@@ -33,7 +33,7 @@ export class ExpansionUniformChunk extends GLSLChunk {
   }
 
   protected static getChunk(): string {
-    return `
+    return /* GLSL */ `
     #ifdef USE_EXPANSION
       uniform float expansionStrength;
     #endif
