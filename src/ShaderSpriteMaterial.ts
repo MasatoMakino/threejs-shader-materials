@@ -1,5 +1,4 @@
-import FragmentShader from "./ShaderSpriteMaterial.frag.glsl";
-import VertexShader from "./ShaderSpriteMaterial.vert.glsl";
+import { vertex, fragment } from "./ShaderSpriteMaterial.glsl";
 import { SpriteChunk } from "./chunk/";
 import {
   Color,
@@ -21,13 +20,13 @@ export abstract class ShaderSpriteMaterial extends ShaderMaterial {
   constructor(
     vertexShader: string,
     fragmentShader: string,
-    parameters?: ShaderMaterialParameters
+    parameters?: ShaderMaterialParameters,
   ) {
     super(parameters);
 
     parameters ??= {};
-    vertexShader ??= VertexShader();
-    fragmentShader ??= FragmentShader();
+    vertexShader ??= vertex;
+    fragmentShader ??= fragment;
 
     this.initChunks();
     this.initUniforms();
