@@ -1,16 +1,25 @@
 /**
- * ライトに影響を受けない、ソリッドな切断面をもつマテリアル
+ * 6角形グリッドマテリアルのフラグメントシェーダー
+ * {@link https://qiita.com/edo_m18/items/37d8773a5295bc6aba3d}
+ * @see : https://github.com/mrdoob/three.js/blob/master/src/renderers/shaders/ShaderLib/meshphong.glsl.js
  */
-export default () => {
-  // language=GLSL
-  return /* GLSL */ `
+
+// language=GLSL
+export const fragment = /* GLSL */ `
 #define PHONG
 
 #include <mesh_phong_uniform>
 varying vec2 uvPosition;
 #include <mesh_position_varying>
 
-uniform vec3 cutSectionColor;
+//user settings
+#include <time_animation_uniform_chunk>
+#include <wavy_animation_uniform_chunk>
+#include <repeat_pattern_uniform_chunk>
+#include <mask_map_uniform_chunk>
+#include <reversible_uniform_chunk>
+uniform float gridWeight;
+#include <hex_grid_function_chunk>
 
 #include <common>
 #include <packing>
@@ -19,7 +28,6 @@ uniform vec3 cutSectionColor;
 #include <uv_pars_fragment>
 #include <uv2_pars_fragment>
 #include <map_pars_fragment>
-// #include <alphamap_pars_fragment>
 #include <alphatest_pars_fragment>
 #include <aomap_pars_fragment>
 #include <lightmap_pars_fragment>
@@ -47,6 +55,25 @@ void main() {
     #include <__ShaderMaterial__map_fragment_begin_chunk>
     #include <map_fragment>
     #include <color_fragment>
+
+    #include <repeat_pattern_fragment_chunk>    
+    vec4 hc = hexCoords( uv );
+    vec2 id = hc.zw;
+    #include <wavy_animation_fragment_chunk>
+
+    #include <mask_map_fragment_chunk>
+    float w = gridWeight + (1.0-mask);
+    w = clamp( w, 0.0, 1.0);
+
+    float margin = clamp ( w * 0.33, 0.00, 0.02 );
+    float stepMax = w + margin;
+
+    float gridLine = smoothstep(w, stepMax, hc.y);
+    gridLine = isReversed
+        ? 1.0 - gridLine
+        : gridLine;
+    diffuseColor.a *= gridLine ;
+
     #include <mesh_phong_switching_alpha_map>
 
     // #include <alphamap_fragment>
@@ -64,18 +91,10 @@ void main() {
     #include <aomap_fragment>
     vec3 outgoingLight = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse + reflectedLight.directSpecular + reflectedLight.indirectSpecular + totalEmissiveRadiance;
     #include <envmap_fragment>
-  
-    outgoingLight = gl_FrontFacing ? outgoingLight : cutSectionColor;
-    gl_FragColor = vec4( outgoingLight, diffuseColor.a );
-    
+    #include <output_fragment>
     #include <tonemapping_fragment>
     #include <encodings_fragment>
-    
-    vec4 fragment = vec4(gl_FragColor);
     #include <fog_fragment>
-    gl_FragColor = gl_FrontFacing ? gl_FragColor : fragment;
-    
     #include <premultiplied_alpha_fragment>
     #include <dithering_fragment>
 }`;
-};

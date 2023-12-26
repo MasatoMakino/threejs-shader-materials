@@ -1,19 +1,24 @@
-export default () => {
-  // language=GLSL
-  return /* GLSL */ `
+/**
+ * ハーフトーンマテリアル
+ *
+ * @see : https://github.com/mrdoob/three.js/blob/master/src/renderers/shaders/ShaderLib/meshphong.glsl.js
+ */
+
+// language=GLSL
+export const fragment = /* GLSL */ `
 #define PHONG
 
 #include <mesh_phong_uniform>
 varying vec2 uvPosition;
-#include <surface_normal_varying_chunk>
+#include <mesh_position_varying>
 
-uniform vec3 rimColor;
-uniform float rimStrength;
-uniform float rimPow;
-
-uniform vec3 insideColor;
-uniform float insideStrength;
-uniform float insidePow;
+//user settings
+#include <time_animation_uniform_chunk>
+#include <wavy_animation_uniform_chunk>
+#include <repeat_pattern_uniform_chunk>
+#include <mask_map_uniform_chunk>
+#include <reversible_uniform_chunk>
+uniform float radius;
 
 #include <common>
 #include <packing>
@@ -49,20 +54,35 @@ void main() {
     #include <logdepthbuf_fragment>
     #include <__ShaderMaterial__map_fragment_begin_chunk>
     #include <map_fragment>
-    
-    vec3 viewDir = normalize(vViewPosition);    
-    
-    float rimGlow = 1.0 - max(0.0, dot(surfaceNormal, viewDir));
-    rimGlow = pow( rimGlow, rimPow);
-    diffuseColor.rgb += rimColor * rimGlow * rimStrength;
-
-    float insideGlow = max(0.0, dot(surfaceNormal, viewDir));
-    insideGlow = pow( insideGlow, insidePow);
-    diffuseColor.rgb += insideColor * insideGlow * insideStrength;
-
     #include <color_fragment>
-    #include <mesh_phong_switching_alpha_map>
+
+    #include <repeat_pattern_fragment_chunk> 
+    // hex angle
+    vec2 r = normalize(vec2(1.0, 1.73));
+    vec2 halfR = r * 0.5;
+
+    vec2 p1 = mod(uv, r) - halfR;
+    vec2 p2 = mod(uv - halfR, r) - halfR;
+
+    vec2 localPos = length(p1) < length(p2) ? p1 : p2;
+
+    vec2 id = uv - localPos;
+    #include <wavy_animation_fragment_chunk>
+
+    #include <mask_map_fragment_chunk>
+    float ln = length(localPos);
+    float current = 1.0 - ( ln * 4.0 / radius / mask );
+    current = clamp( current, 0.0, 1.0 );
+
+    float alpha = smoothstep ( 0.0, 0.1, current );
+    alpha = isReversed
+        ? 1.0 - alpha
+        : alpha;
     
+    diffuseColor.a *= alpha;
+
+    #include <mesh_phong_switching_alpha_map>
+
     // #include <alphamap_fragment>
     #include <alphatest_fragment>
     #include <specularmap_fragment>
@@ -78,15 +98,10 @@ void main() {
     #include <aomap_fragment>
     vec3 outgoingLight = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse + reflectedLight.directSpecular + reflectedLight.indirectSpecular + totalEmissiveRadiance;
     #include <envmap_fragment>
-    #ifdef USE_LIGHT
-      gl_FragColor = vec4( outgoingLight, diffuseColor.a );
-    #else
-      gl_FragColor = diffuseColor;
-    #endif
+    #include <output_fragment>
     #include <tonemapping_fragment>
     #include <encodings_fragment>
     #include <fog_fragment>
     #include <premultiplied_alpha_fragment>
     #include <dithering_fragment>
 }`;
-};

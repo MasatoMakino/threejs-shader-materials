@@ -1,9 +1,11 @@
 /**
- * ハーフトーンマテリアル
+ * 四角形のグリッドを描画するシェーダー
+ *
+ * @see : https://github.com/mrdoob/three.js/blob/master/src/renderers/shaders/ShaderLib/meshphong.glsl.js
  */
-export default () => {
-  // language=GLSL
-  return /* GLSL */ `
+
+// language=GLSL
+export const fragment = /* GLSL */ `
 #define PHONG
 
 #include <mesh_phong_uniform>
@@ -16,7 +18,7 @@ varying vec2 uvPosition;
 #include <repeat_pattern_uniform_chunk>
 #include <mask_map_uniform_chunk>
 #include <reversible_uniform_chunk>
-uniform float radius;
+uniform float gridWeight;
 
 #include <common>
 #include <packing>
@@ -54,34 +56,33 @@ void main() {
     #include <map_fragment>
     #include <color_fragment>
 
-    #include <repeat_pattern_fragment_chunk> 
-    // hex angle
-    vec2 r = normalize(vec2(1.0, 1.73));
-    vec2 halfR = r * 0.5;
-
-    vec2 p1 = mod(uv, r) - halfR;
-    vec2 p2 = mod(uv - halfR, r) - halfR;
-
-    vec2 localPos = length(p1) < length(p2) ? p1 : p2;
-
+    #include <repeat_pattern_fragment_chunk>    
+    vec2 localPos = mod(uv, 1.0) - 0.5;
     vec2 id = uv - localPos;
     #include <wavy_animation_fragment_chunk>
 
     #include <mask_map_fragment_chunk>
-    float ln = length(localPos);
-    float current = 1.0 - ( ln * 4.0 / radius / mask );
-    current = clamp( current, 0.0, 1.0 );
-
-    float alpha = smoothstep ( 0.0, 0.1, current );
-    alpha = isReversed
-        ? 1.0 - alpha
-        : alpha;
+    float w = gridWeight + (1.0-mask);
+    w = clamp( w, 0.0, 1.0);
+    float margin = clamp ( w * 0.33, 0.03, 0.1 );
     
-    diffuseColor.a *= alpha;
+    float stepHigh = 0.5-(w+margin);
+    float stepLow = -0.5+w+margin;
+    
+    //float gridLine = smoothstep(w, stepMax, hc.y);
+    float gridLine = smoothstep ( 0.5-w, stepHigh, localPos.x );
+    gridLine *= smoothstep ( 0.5-w, stepHigh, localPos.y );
+    gridLine *= smoothstep ( -0.5+w, stepLow, localPos.x );
+    gridLine *= smoothstep ( -0.5+w, stepLow, localPos.y );
+    
+    gridLine = isReversed
+        ? 1.0 - gridLine
+        : gridLine;
+    diffuseColor.a *= gridLine;
 
     #include <mesh_phong_switching_alpha_map>
 
-    // #include <alphamap_fragment>
+    //#include <alphamap_fragment>
     #include <alphatest_fragment>
     #include <specularmap_fragment>
     #include <normal_fragment_begin>
@@ -103,4 +104,3 @@ void main() {
     #include <premultiplied_alpha_fragment>
     #include <dithering_fragment>
 }`;
-};

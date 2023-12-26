@@ -6,7 +6,7 @@ import {
   ITiledFBM,
   TilingFBMChunk,
 } from "../chunk";
-import FragmentShader from "./FBMFireMaterial.frag.glsl";
+import { fragment } from "./FBMFireMaterial.glsl";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import { ShaderMaterialParameters, UniformsUtils } from "three";
 
@@ -101,7 +101,7 @@ export class FBMFireMaterial
    * @param parameters
    */
   constructor(parameters?: ShaderMaterialParameters) {
-    super(VertexShader(), FragmentShader(), parameters);
+    super(VertexShader(), fragment, parameters);
     this.isAnimate = this.isAnimate; //reset and start animation
   }
 

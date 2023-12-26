@@ -1,22 +1,18 @@
 /**
- * 四角形のグリッドを描画するシェーダー
+ * ライトに影響を受けない、ソリッドな切断面をもつマテリアル
+ *
+ * @see : https://github.com/mrdoob/three.js/blob/master/src/renderers/shaders/ShaderLib/meshphong.glsl.js
  */
-export default () => {
-  // language=GLSL
-  return /* GLSL */ `
+
+// language=GLSL
+export const fragment = /* GLSL */ `
 #define PHONG
 
 #include <mesh_phong_uniform>
 varying vec2 uvPosition;
 #include <mesh_position_varying>
 
-//user settings
-#include <time_animation_uniform_chunk>
-#include <wavy_animation_uniform_chunk>
-#include <repeat_pattern_uniform_chunk>
-#include <mask_map_uniform_chunk>
-#include <reversible_uniform_chunk>
-uniform float gridWeight;
+uniform vec3 cutSectionColor;
 
 #include <common>
 #include <packing>
@@ -53,34 +49,9 @@ void main() {
     #include <__ShaderMaterial__map_fragment_begin_chunk>
     #include <map_fragment>
     #include <color_fragment>
-
-    #include <repeat_pattern_fragment_chunk>    
-    vec2 localPos = mod(uv, 1.0) - 0.5;
-    vec2 id = uv - localPos;
-    #include <wavy_animation_fragment_chunk>
-
-    #include <mask_map_fragment_chunk>
-    float w = gridWeight + (1.0-mask);
-    w = clamp( w, 0.0, 1.0);
-    float margin = clamp ( w * 0.33, 0.03, 0.1 );
-    
-    float stepHigh = 0.5-(w+margin);
-    float stepLow = -0.5+w+margin;
-    
-    //float gridLine = smoothstep(w, stepMax, hc.y);
-    float gridLine = smoothstep ( 0.5-w, stepHigh, localPos.x );
-    gridLine *= smoothstep ( 0.5-w, stepHigh, localPos.y );
-    gridLine *= smoothstep ( -0.5+w, stepLow, localPos.x );
-    gridLine *= smoothstep ( -0.5+w, stepLow, localPos.y );
-    
-    gridLine = isReversed
-        ? 1.0 - gridLine
-        : gridLine;
-    diffuseColor.a *= gridLine;
-
     #include <mesh_phong_switching_alpha_map>
 
-    //#include <alphamap_fragment>
+    // #include <alphamap_fragment>
     #include <alphatest_fragment>
     #include <specularmap_fragment>
     #include <normal_fragment_begin>
@@ -95,11 +66,17 @@ void main() {
     #include <aomap_fragment>
     vec3 outgoingLight = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse + reflectedLight.directSpecular + reflectedLight.indirectSpecular + totalEmissiveRadiance;
     #include <envmap_fragment>
-    #include <output_fragment>
+  
+    outgoingLight = gl_FrontFacing ? outgoingLight : cutSectionColor;
+    gl_FragColor = vec4( outgoingLight, diffuseColor.a );
+    
     #include <tonemapping_fragment>
     #include <encodings_fragment>
+    
+    vec4 fragment = vec4(gl_FragColor);
     #include <fog_fragment>
+    gl_FragColor = gl_FrontFacing ? gl_FragColor : fragment;
+    
     #include <premultiplied_alpha_fragment>
     #include <dithering_fragment>
 }`;
-};

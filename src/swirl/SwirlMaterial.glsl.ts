@@ -1,24 +1,23 @@
 /**
- * 6角形グリッドマテリアルのフラグメントシェーダー
- * {@link https://qiita.com/edo_m18/items/37d8773a5295bc6aba3d}
+ * 渦巻き状にUV座標を変形させるシェーダー
+ *
+ * @see : https://github.com/mrdoob/three.js/blob/master/src/renderers/shaders/ShaderLib/meshphong.glsl.js
  */
-export default () => {
-  // language=GLSL
-  return /* GLSL */ `
+
+// language=GLSL
+export const fragment = /* GLSL */ `
 #define PHONG
 
 #include <mesh_phong_uniform>
 varying vec2 uvPosition;
 #include <mesh_position_varying>
 
-//user settings
 #include <time_animation_uniform_chunk>
-#include <wavy_animation_uniform_chunk>
-#include <repeat_pattern_uniform_chunk>
-#include <mask_map_uniform_chunk>
-#include <reversible_uniform_chunk>
-uniform float gridWeight;
-#include <hex_grid_function_chunk>
+uniform float uvRotation;
+uniform float swirlRotation;
+uniform float radius;
+uniform vec2 center;
+#include <map_uniform_chunk>
 
 #include <common>
 #include <packing>
@@ -27,6 +26,7 @@ uniform float gridWeight;
 #include <uv_pars_fragment>
 #include <uv2_pars_fragment>
 #include <map_pars_fragment>
+// #include <alphamap_pars_fragment>
 #include <alphatest_pars_fragment>
 #include <aomap_pars_fragment>
 #include <lightmap_pars_fragment>
@@ -45,6 +45,37 @@ uniform float gridWeight;
 #include <specularmap_pars_fragment>
 #include <logdepthbuf_pars_fragment>
 #include <clipping_planes_pars_fragment>
+
+/**
+ * UV座標を回転する
+ */
+vec2 rotateUV(vec2 uv, float rotation, vec2 center)
+{
+  return vec2(
+    cos(rotation) * (uv.x - center.x) + sin(rotation) * (uv.y - center.y) + center.x,
+    cos(rotation) * (uv.y - center.y) - sin(rotation) * (uv.x - center.x) + center.y
+  );
+}
+
+/**
+ * UV座標をツイストする
+ */
+vec2 swirl(vec2 uv, float radius, float rotation, vec2 center)
+{
+  vec2 tc = uv - center;
+  float dist = length(tc);
+  if (dist < radius) 
+  {
+    float percent = (radius - dist) / radius;
+    float theta = percent * percent * rotation;
+    float s = sin(theta);
+    float c = cos(theta);
+    tc = vec2(dot(tc, vec2(c, -s)), dot(tc, vec2(s, c)));
+  }
+  tc += center;
+  return tc;
+}
+
 void main() {
     #include <clipping_planes_fragment>
   
@@ -53,28 +84,16 @@ void main() {
     #include <logdepthbuf_fragment>
     #include <__ShaderMaterial__map_fragment_begin_chunk>
     #include <map_fragment>
+  
+    mapUV = rotateUV( mapUV, uvRotation , center);
+    mapUV = swirl( mapUV, radius, swirlRotation, center );
+    // offset Texture 
+    mapUV += vec2(time);
+    #include <map_fragment_chunk>
+    
     #include <color_fragment>
-
-    #include <repeat_pattern_fragment_chunk>    
-    vec4 hc = hexCoords( uv );
-    vec2 id = hc.zw;
-    #include <wavy_animation_fragment_chunk>
-
-    #include <mask_map_fragment_chunk>
-    float w = gridWeight + (1.0-mask);
-    w = clamp( w, 0.0, 1.0);
-
-    float margin = clamp ( w * 0.33, 0.00, 0.02 );
-    float stepMax = w + margin;
-
-    float gridLine = smoothstep(w, stepMax, hc.y);
-    gridLine = isReversed
-        ? 1.0 - gridLine
-        : gridLine;
-    diffuseColor.a *= gridLine ;
-
     #include <mesh_phong_switching_alpha_map>
-
+    
     // #include <alphamap_fragment>
     #include <alphatest_fragment>
     #include <specularmap_fragment>
@@ -97,4 +116,3 @@ void main() {
     #include <premultiplied_alpha_fragment>
     #include <dithering_fragment>
 }`;
-};

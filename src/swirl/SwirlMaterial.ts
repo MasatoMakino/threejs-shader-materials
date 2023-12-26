@@ -1,5 +1,5 @@
 import { AnimationChunk, IAnimatable, ShaderPhongMaterial } from "..";
-import FragmentShader from "./SwirlMaterial.frag.glsl";
+import { fragment } from "./SwirlMaterial.glsl";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import {
   RepeatWrapping,
@@ -81,7 +81,7 @@ export class SwirlMaterial extends ShaderPhongMaterial implements IAnimatable {
   }
 
   constructor(parameters?: ShaderMaterialParameters) {
-    super(null, FragmentShader(), parameters);
+    super(null, fragment, parameters);
     this.isAnimate = this.isAnimate;
   }
 

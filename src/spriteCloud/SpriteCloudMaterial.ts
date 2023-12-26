@@ -1,10 +1,10 @@
 import { ShaderSpriteMaterial } from "../ShaderSpriteMaterial";
-import FragmentShader from "./SpriteCloudMaterial.frag.glsl";
+import { fragment } from "./SpriteCloudMaterial.glsl";
 import { Color, ShaderMaterialParameters, UniformsUtils } from "three";
 
 export class SpriteCloudMaterial extends ShaderSpriteMaterial {
   constructor(parameters?: ShaderMaterialParameters) {
-    super(null, FragmentShader(), parameters);
+    super(null, fragment, parameters);
   }
 
   /**

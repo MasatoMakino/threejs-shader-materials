@@ -5,8 +5,7 @@ import {
   ShaderPhongMaterial,
   TilingFBMChunk,
 } from "../index";
-import FragmentShader from "./ExpansionDissolveMaterial.frag.glsl";
-import VertexShader from "./ExpansionDissolveMaterial.vert.glsl";
+import { vertex, fragment } from "./ExpansionDissolveMaterial.glsl";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import { Color, ShaderMaterialParameters, UniformsUtils } from "three";
 
@@ -96,7 +95,7 @@ export class ExpansionDissolveMaterial
    * @param parameters
    */
   constructor(parameters?: ShaderMaterialParameters) {
-    super(VertexShader(), FragmentShader(), parameters);
+    super(vertex, fragment, parameters);
     this.isAnimate = this.isAnimate;
   }
 

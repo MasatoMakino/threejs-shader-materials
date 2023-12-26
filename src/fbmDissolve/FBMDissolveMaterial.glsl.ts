@@ -1,17 +1,22 @@
 /**
- * 等高線状にテクスチャをマッピングするシェーダー
+ * FBMノイズを使ったディゾルブマテリアル
+ *
+ * @see : https://github.com/mrdoob/three.js/blob/master/src/renderers/shaders/ShaderLib/meshphong.glsl.js
  */
-export default () => {
-  // language=GLSL
-  return /* GLSL */ `
+
+// language=GLSL
+export const fragment = /* GLSL */ `
 #define PHONG
 
 #include <mesh_phong_uniform>
 varying vec2 uvPosition;
 #include <mesh_position_varying>
 
-uniform float bottom;
-uniform float top;
+#include <tiling_fbm_uniform_chunk>
+uniform float progress;
+uniform vec3 edgeColor;
+uniform float edgeWeight;
+#include <tiling_fbm_function_chunk>
 
 #include <common>
 #include <packing>
@@ -39,21 +44,35 @@ uniform float top;
 #include <specularmap_pars_fragment>
 #include <logdepthbuf_pars_fragment>
 #include <clipping_planes_pars_fragment>
-void main() {
+void main()
+{
     #include <clipping_planes_fragment>
   
     #include <mesh_phong_diffuse_color>
     
     #include <logdepthbuf_fragment>
-
     #include <__ShaderMaterial__map_fragment_begin_chunk>
-    #ifdef USE_MAP
-      float mapY = ( meshPosition.y - bottom ) / ( top - bottom );
-      vec4 texelColor = texture2D( map, vec2(0.5, mapY) );
-      diffuseColor *= texelColor;
-    #endif
+    #include <map_fragment>
     #include <color_fragment>
+    
+    vec2 uv = uvPosition * tiles;
+
+    float fbmVal = fbm(uv);
+    float bri = 1.0 - smoothstep( progress-0.01, progress, fbmVal );
+
+    float edge = 
+          smoothstep( progress-edgeWeight, progress, fbmVal )
+        - smoothstep( progress, progress+edgeWeight, fbmVal );
+    edge = clamp( edge, 0.0, 1.0 );
+
+    vec3 col = diffuseColor.rgb;
+    col += edgeColor * edge;
+
+    diffuseColor.rgb = col;
+    diffuseColor.a *= bri;
+    
     #include <mesh_phong_switching_alpha_map>
+
     // #include <alphamap_fragment>
     #include <alphatest_fragment>
     #include <specularmap_fragment>
@@ -76,4 +95,3 @@ void main() {
     #include <premultiplied_alpha_fragment>
     #include <dithering_fragment>
 }`;
-};

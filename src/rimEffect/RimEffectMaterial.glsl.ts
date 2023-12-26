@@ -1,22 +1,24 @@
-export default () => {
-  // language=GLSL
-  return /* GLSL */ `
+/**
+ * 縁を発光させるマテリアル
+ *
+ * @see : https://github.com/mrdoob/three.js/blob/master/src/renderers/shaders/ShaderLib/meshphong.glsl.js
+ */
+
+// language=GLSL
+export const fragment = /* GLSL */ `
 #define PHONG
 
 #include <mesh_phong_uniform>
 varying vec2 uvPosition;
-#include <mesh_position_varying>
-
-#include <tiling_fbm_uniform_chunk>
-#include <tiling_fbm_function_chunk>
-#include <time_animation_uniform_chunk>
-
-uniform float strength;
-uniform float bloom;
-
 #include <surface_normal_varying_chunk>
+
+uniform vec3 rimColor;
 uniform float rimStrength;
 uniform float rimPow;
+
+uniform vec3 insideColor;
+uniform float insideStrength;
+uniform float insidePow;
 
 #include <common>
 #include <packing>
@@ -44,8 +46,7 @@ uniform float rimPow;
 #include <specularmap_pars_fragment>
 #include <logdepthbuf_pars_fragment>
 #include <clipping_planes_pars_fragment>
-void main()
-{
+void main() {
     #include <clipping_planes_fragment>
   
     #include <mesh_phong_diffuse_color>
@@ -53,40 +54,20 @@ void main()
     #include <logdepthbuf_fragment>
     #include <__ShaderMaterial__map_fragment_begin_chunk>
     #include <map_fragment>
-    #include <color_fragment>
-    
-    vec2 uv = uvPosition;
-    float uVy = uv.y;
-    uv *= tiles;
-
-    vec2 q = vec2(0.0);
-    q.x = fbm( uv + vec2(1.7,9.2) +.16  * time );
-    q.y = fbm( uv + vec2(8.3,2.8) +.356 * time );
-
-    float fbmVal = fbm(uv + q);
-    fbmVal += 1.0-(uVy * 1.0 );
-    fbmVal *= 1.0-uVy;
     
     vec3 viewDir = normalize(vViewPosition);    
+    
     float rimGlow = 1.0 - max(0.0, dot(surfaceNormal, viewDir));
-    rimGlow = pow(rimGlow, rimPow) * rimStrength;
-    rimGlow = clamp( rimGlow, 0.0, 1.0);
-    fbmVal *= 1.0-rimGlow;
-    
-    vec3 color = diffuseColor.rgb;
-    
-    float st = 1.0 - strength;
-    float bri = smoothstep( max( st - 0.4, 0.0 ), st, fbmVal );
-    
-    float blm = 1.0 - bloom;
-    float bloomVal = smoothstep( blm - 0.4, blm, fbmVal );
-    color += bloomVal;
+    rimGlow = pow( rimGlow, rimPow);
+    diffuseColor.rgb += rimColor * rimGlow * rimStrength;
 
-    diffuseColor.rgb = color;
-    diffuseColor.a *= bri;
-    
+    float insideGlow = max(0.0, dot(surfaceNormal, viewDir));
+    insideGlow = pow( insideGlow, insidePow);
+    diffuseColor.rgb += insideColor * insideGlow * insideStrength;
+
+    #include <color_fragment>
     #include <mesh_phong_switching_alpha_map>
-
+    
     // #include <alphamap_fragment>
     #include <alphatest_fragment>
     #include <specularmap_fragment>
@@ -102,11 +83,14 @@ void main()
     #include <aomap_fragment>
     vec3 outgoingLight = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse + reflectedLight.directSpecular + reflectedLight.indirectSpecular + totalEmissiveRadiance;
     #include <envmap_fragment>
-    #include <output_fragment>
+    #ifdef USE_LIGHT
+      gl_FragColor = vec4( outgoingLight, diffuseColor.a );
+    #else
+      gl_FragColor = diffuseColor;
+    #endif
     #include <tonemapping_fragment>
     #include <encodings_fragment>
     #include <fog_fragment>
     #include <premultiplied_alpha_fragment>
     #include <dithering_fragment>
 }`;
-};

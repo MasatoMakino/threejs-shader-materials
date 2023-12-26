@@ -1,6 +1,6 @@
 import VertexShader from "../ShaderPhongMaterial.vert.glsl";
 import { WavyGridMaterial } from "../WavyGridMaterial";
-import FragmentShader from "./HalftoneGridMaterial.frag.glsl";
+import { fragment } from "./HalftoneGridMaterial.glsl";
 import { ShaderMaterialParameters, UniformsUtils } from "three";
 
 /**
@@ -15,7 +15,7 @@ export class HalftoneGridMaterial extends WavyGridMaterial {
   }
 
   constructor(parameters?: ShaderMaterialParameters) {
-    super(VertexShader(), FragmentShader(), parameters);
+    super(VertexShader(), fragment, parameters);
   }
 
   protected initUniforms(): void {

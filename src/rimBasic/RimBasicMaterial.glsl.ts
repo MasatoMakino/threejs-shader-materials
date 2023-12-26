@@ -1,6 +1,11 @@
-export default () => {
-  //language=glsl
-  return /* GLSL */ `
+/**
+ * ジオメトリの縁を強調するマテリアル
+ *
+ * @see : https://github.com/mrdoob/three.js/blob/master/src/renderers/shaders/ShaderLib/meshbasic.glsl.js
+ */
+
+//language=glsl
+export const fragment = /* GLSL */ `
 //for Rim Effect
 varying vec2 uvPosition;
 #include <surface_normal_varying_chunk>
@@ -79,4 +84,3 @@ void main() {
 	#include <dithering_fragment>
 }
 `;
-};

@@ -1,5 +1,5 @@
 import { ShaderBasicMaterial } from "..";
-import FragmentShader from "./RimBasicMaterial.frag.glsl";
+import { fragment } from "./RimBasicMaterial.glsl";
 import { Color, ShaderMaterialParameters, UniformsUtils } from "three";
 
 export class RimBasicMaterial extends ShaderBasicMaterial {
@@ -45,7 +45,7 @@ export class RimBasicMaterial extends ShaderBasicMaterial {
   }
 
   constructor(param: ShaderMaterialParameters) {
-    super(null, FragmentShader(), param);
+    super(null, fragment, param);
 
     this.uniforms = UniformsUtils.merge([
       ShaderBasicMaterial.getBasicUniforms(),
