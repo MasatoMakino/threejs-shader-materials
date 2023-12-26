@@ -11,7 +11,7 @@ import {
   PlaneHelper,
   PointLight,
   PointLightHelper,
-  TorusKnotBufferGeometry,
+  TorusKnotGeometry,
   Vector3,
 } from "three";
 
@@ -53,6 +53,7 @@ export class Study {
 
     const mat = new SolidClippingMaterial({
       fog: scene.fog !== undefined,
+      transparent: false,
     });
     mat.color = new Color(0x003311);
     mat.cutSectionColor = new Color(0xaaff11);
@@ -67,7 +68,7 @@ export class Study {
   }
 
   initMesh(mat, scene) {
-    const geo = new TorusKnotBufferGeometry(10, 3, 100, 16);
+    const geo = new TorusKnotGeometry(10, 3, 100, 16);
 
     const mesh = new Mesh(geo, mat);
     mesh.position.x = 24;
