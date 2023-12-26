@@ -16,7 +16,7 @@ class RepeatPatternUniformChunk extends GLSLChunk {
         return "repeat_pattern_uniform_chunk";
     }
     static getChunk() {
-        return `
+        return /* GLSL */ `
       uniform float division;
       uniform float divisionScaleX;
     `;
@@ -27,7 +27,7 @@ class RepeatPatternFragmentChunk extends GLSLChunk {
         return "repeat_pattern_fragment_chunk";
     }
     static getChunk() {
-        return `
+        return /* GLSL */ `
       vec2 uv =
         uvPosition
         * vec2( division * divisionScaleX, division);

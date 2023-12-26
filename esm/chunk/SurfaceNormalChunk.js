@@ -18,7 +18,7 @@ export class SurfaceNormalVaryingChunk extends GLSLChunk {
         return "surface_normal_varying_chunk";
     }
     static getChunk() {
-        return `
+        return /* GLSL */ `
     #ifdef USE_SURFACE_NORMAL
       varying vec3 surfaceNormal;
     #endif
@@ -30,7 +30,7 @@ export class SurfaceNormalVertexChunk extends GLSLChunk {
         return "surface_normal_vertex_chunk";
     }
     static getChunk() {
-        return `
+        return /* GLSL */ `
     #ifdef USE_SURFACE_NORMAL
       surfaceNormal = normalize( transformedNormal );
     #endif

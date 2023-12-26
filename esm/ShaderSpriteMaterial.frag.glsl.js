@@ -3,7 +3,7 @@
  */
 export default () => {
     // language=GLSL
-    return `
+    return /* GLSL */ `
 #include <sprite_fragment_uniform_chunk>
 #include <common>
 #include <uv_pars_fragment>

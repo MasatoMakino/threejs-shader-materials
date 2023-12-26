@@ -29,7 +29,7 @@ class WavyAnimationFragmentChunk extends GLSLChunk {
         return "wavy_animation_fragment_chunk";
     }
     static getChunk() {
-        return `
+        return /* GLSL */ `
     float distance = id.y;
     if( direction == ${Directions.horizontal}){
       distance = id.x;
@@ -50,7 +50,7 @@ class WavyAnimationUniformChunk extends GLSLChunk {
         return "wavy_animation_uniform_chunk";
     }
     static getChunk() {
-        return `
+        return /* GLSL */ `
     uniform float raisedBottom;
     uniform float waveFrequency;
     uniform float wavePow;

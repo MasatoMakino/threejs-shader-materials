@@ -33,7 +33,7 @@ class MaskMapUniformChunk extends GLSLChunk {
         return "mask_map_uniform_chunk";
     }
     static getChunk() {
-        return `
+        return /* GLSL */ `
       uniform bool hasMaskTexture;
       uniform sampler2D maskTexture;
     `;
@@ -44,7 +44,7 @@ class MaskMapFragmentChunk extends GLSLChunk {
         return "mask_map_fragment_chunk";
     }
     static getChunk() {
-        return `
+        return /* GLSL */ `
       float mask = 1.0;
       if( hasMaskTexture ){
         vec2 uVm = id / vec2( division * divisionScaleX, division);

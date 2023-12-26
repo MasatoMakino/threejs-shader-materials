@@ -4,7 +4,7 @@
  */
 export default () => {
     // language=GLSL
-    return `
+    return /* GLSL */ `
 #define PHONG
 
 #include <mesh_phong_uniform>

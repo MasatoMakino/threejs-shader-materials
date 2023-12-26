@@ -11,7 +11,7 @@ class HexGridFunctionChunk extends GLSLChunk {
     }
     static getChunk() {
         // language=GLSL
-        return `
+        return /* GLSL */ `
     /**
      * ヘックスの縁までの距離を取得する。
      */

@@ -23,7 +23,7 @@ class TimeAnimationUniformChunk extends GLSLChunk {
         return "time_animation_uniform_chunk";
     }
     static getChunk() {
-        return `
+        return /* GLSL */ `
     uniform float time;
     uniform bool isAnimate;
     `;

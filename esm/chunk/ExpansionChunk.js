@@ -22,7 +22,7 @@ export class ExpansionUniformChunk extends GLSLChunk {
         return "__expansion_uniform_chunk";
     }
     static getChunk() {
-        return `
+        return /* GLSL */ `
     #ifdef USE_EXPANSION
       uniform float expansionStrength;
     #endif

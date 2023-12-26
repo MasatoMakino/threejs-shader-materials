@@ -3,7 +3,7 @@
  */
 export default () => {
     // language=GLSL
-    return `
+    return /* GLSL */ `
 
 uniform float rimStrength;
 uniform float bottomStrength;

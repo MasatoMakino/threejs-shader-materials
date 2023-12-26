@@ -1,6 +1,6 @@
 export default () => {
     //language=glsl
-    return `
+    return /* GLSL */ `
 //for Rim Effect
 varying vec2 uvPosition;
 #include <surface_normal_varying_chunk>

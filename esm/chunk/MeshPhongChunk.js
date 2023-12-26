@@ -21,7 +21,7 @@ class MeshPhongUniformChunk extends GLSLChunk {
         return "mesh_phong_uniform";
     }
     static getChunk() {
-        return `
+        return /* GLSL */ `
       uniform vec3 diffuse;
       uniform vec3 emissive;
       uniform vec3 specular;
@@ -37,7 +37,7 @@ class MeshPhongDiffuseColorChunk extends GLSLChunk {
         return "mesh_phong_diffuse_color";
     }
     static getChunk() {
-        return `
+        return /* GLSL */ `
       vec4 diffuseColor = vec4( diffuse, opacity );
       ReflectedLight reflectedLight = ReflectedLight( vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ) );
       vec3 totalEmissiveRadiance = emissive;
@@ -49,7 +49,7 @@ class MeshPhongSwitchingAlphaMapChunk extends GLSLChunk {
         return "mesh_phong_switching_alpha_map";
     }
     static getChunk() {
-        return `
+        return /* GLSL */ `
       if( hasAlphaMap ){
         diffuseColor.a *= texture2D( alphaMap, mapUV ).g;
       }
@@ -61,7 +61,7 @@ class MeshPositionVaryingChunk extends GLSLChunk {
         return "mesh_position_varying";
     }
     static getChunk() {
-        return `
+        return /* GLSL */ `
     #ifdef USE_MESH_POSITION
     varying vec3 meshPosition;
     #endif
@@ -73,7 +73,7 @@ class MeshPositionVertexChunk extends GLSLChunk {
         return "mesh_position_vertex";
     }
     static getChunk() {
-        return `
+        return /* GLSL */ `
     #ifdef USE_MESH_POSITION
     meshPosition = position;
     #endif
