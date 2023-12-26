@@ -1,5 +1,5 @@
 import { ShaderPhongMaterial } from "..";
-import VertexShader from "../ShaderPhongMaterial.vert.glsl";
+import { vertex } from "../ShaderPhongMaterial.glsl";
 import { ITiledFBM, TilingFBMChunk } from "../chunk";
 import { fragment } from "./FBMDissolveMaterial.glsl";
 import { Color, ShaderMaterialParameters, UniformsUtils } from "three";
@@ -53,7 +53,7 @@ export class FBMDissolveMaterial
    * @param parameters
    */
   constructor(parameters?: ShaderMaterialParameters) {
-    super(VertexShader(), fragment, parameters);
+    super(vertex, fragment, parameters);
   }
 
   protected initUniforms(): void {

@@ -1,5 +1,5 @@
 import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
-import VertexShader from "../ShaderPhongMaterial.vert.glsl";
+import { vertex } from "../ShaderPhongMaterial.glsl";
 import { AnimationChunk, IAnimatable } from "../chunk/";
 import { fragment } from "./SkyCloudMaterial.glsl";
 import { RAFTicker } from "@masatomakino/raf-ticker";
@@ -84,7 +84,7 @@ export class SkyCloudMaterial
    * @param parameters
    */
   constructor(parameters?: ShaderMaterialParameters) {
-    super(VertexShader(), fragment, parameters);
+    super(vertex, fragment, parameters);
     this.isAnimate = this.isAnimate; //reset and start animation
   }
 

@@ -1,4 +1,4 @@
-import VertexShader from "../ShaderPhongMaterial.vert.glsl";
+import { vertex } from "../ShaderPhongMaterial.glsl";
 import { WavyGridMaterial } from "../WavyGridMaterial";
 import { HexGridChunk } from "../chunk";
 import { fragment } from "./HexGridMaterial.glsl";
@@ -20,7 +20,7 @@ export class HexGridMaterial extends WavyGridMaterial {
   }
 
   constructor(parameters?: ShaderMaterialParameters) {
-    super(VertexShader(), fragment, parameters);
+    super(vertex, fragment, parameters);
   }
 
   protected initUniforms(): void {

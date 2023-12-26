@@ -1,5 +1,5 @@
 import { ShaderPhongMaterial } from "..";
-import VertexShader from "../ShaderPhongMaterial.vert.glsl";
+import { vertex } from "../ShaderPhongMaterial.glsl";
 import {
   AnimationChunk,
   IAnimatable,
@@ -101,7 +101,7 @@ export class FBMFireMaterial
    * @param parameters
    */
   constructor(parameters?: ShaderMaterialParameters) {
-    super(VertexShader(), fragment, parameters);
+    super(vertex, fragment, parameters);
     this.isAnimate = this.isAnimate; //reset and start animation
   }
 

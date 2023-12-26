@@ -1,5 +1,4 @@
-import FragmentShader from "./ShaderPhongMaterial.frag.glsl";
-import VertexShader from "./ShaderPhongMaterial.vert.glsl";
+import { vertex, fragment } from "./ShaderPhongMaterial.glsl";
 import {
   ExpansionChunk,
   IMap,
@@ -41,8 +40,8 @@ export abstract class ShaderPhongMaterial
     super(parameters);
 
     parameters ??= {};
-    vertexShader ??= VertexShader();
-    fragmentShader ??= FragmentShader();
+    vertexShader ??= vertex;
+    fragmentShader ??= fragment;
 
     this.initChunks();
     this.initUniforms();

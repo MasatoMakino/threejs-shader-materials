@@ -1,4 +1,4 @@
-import VertexShader from "../ShaderPhongMaterial.vert.glsl";
+import { vertex } from "../ShaderPhongMaterial.glsl";
 import { WavyGridMaterial } from "../WavyGridMaterial";
 import { fragment } from "./SquareGridMaterial.glsl";
 import { ShaderMaterialParameters, UniformsUtils } from "three";
@@ -19,7 +19,7 @@ export class SquareGridMaterial extends WavyGridMaterial {
   }
 
   constructor(parameters?: ShaderMaterialParameters) {
-    super(VertexShader(), fragment, parameters);
+    super(vertex, fragment, parameters);
   }
 
   protected initUniforms(): void {

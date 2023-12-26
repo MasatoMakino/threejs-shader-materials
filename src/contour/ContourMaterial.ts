@@ -1,5 +1,5 @@
 import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
-import VertexShader from "../ShaderPhongMaterial.vert.glsl";
+import { vertex } from "../ShaderPhongMaterial.glsl";
 import { fragment } from "./ContourMaterial.glsl";
 import {
   BufferGeometry,
@@ -32,7 +32,7 @@ export class ContourMaterial extends ShaderPhongMaterial {
   private _map: Texture;
 
   constructor(parameters?: ShaderMaterialParameters) {
-    super(VertexShader(), fragment, parameters);
+    super(vertex, fragment, parameters);
   }
 
   protected initDefines(): void {
