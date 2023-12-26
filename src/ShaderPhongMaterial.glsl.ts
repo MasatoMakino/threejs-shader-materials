@@ -1,19 +1,75 @@
-export default () => {
-  // language=GLSL
-  return /* GLSL */ `
+/**
+ * MeshPhongMaterialに準じたシェーダー
+ *
+ * @see : https://github.com/mrdoob/three.js/blob/dev/src/renderers/shaders/ShaderLib/meshphong.glsl.js
+ */
+
+// language=GLSL
+export const vertex = /* GLSL */ `
+#define PHONG
+
+varying vec3 vViewPosition;
+varying vec2 uvPosition;
+#include <mesh_position_varying>
+#include <surface_normal_varying_chunk>
+#include <__expansion_uniform_chunk>
+
+#include <common>
+#include <uv_pars_vertex>
+#include <uv2_pars_vertex>
+#include <displacementmap_pars_vertex>
+#include <envmap_pars_vertex>
+#include <color_pars_vertex>
+#include <fog_pars_vertex>
+#include <normal_pars_vertex>
+#include <morphtarget_pars_vertex>
+#include <skinning_pars_vertex>
+#include <shadowmap_pars_vertex>
+#include <logdepthbuf_pars_vertex>
+#include <clipping_planes_pars_vertex>
+
+void main() {
+    #include <mesh_position_vertex>
+    uvPosition = uv;
+
+    #include <uv_vertex>
+    #include <uv2_vertex>
+    #include <color_vertex>
+    
+    #include <beginnormal_vertex>
+    #include <morphnormal_vertex>
+    #include <skinbase_vertex>
+    #include <skinnormal_vertex>
+    #include <defaultnormal_vertex>
+    #include <surface_normal_vertex_chunk>
+    #include <normal_vertex>
+    
+    #include <begin_vertex>
+    
+    #include <__expansion_vertex_chunk>
+    
+    #include <morphtarget_vertex>
+    #include <skinning_vertex>
+    #include <displacementmap_vertex>
+    #include <project_vertex>
+    #include <logdepthbuf_vertex>
+    #include <clipping_planes_vertex>
+    
+    vViewPosition = - mvPosition.xyz;
+
+    #include <worldpos_vertex>
+    #include <envmap_vertex>
+    #include <shadowmap_vertex>
+    #include <fog_vertex>
+}`;
+
+// language=GLSL
+export const fragment = /* GLSL */ `
 #define PHONG
 
 #include <mesh_phong_uniform>
+#include <mesh_position_varying>
 varying vec2 uvPosition;
-#include <surface_normal_varying_chunk>
-
-uniform vec3 rimColor;
-uniform float rimStrength;
-uniform float rimPow;
-
-uniform vec3 insideColor;
-uniform float insideStrength;
-uniform float insidePow;
 
 #include <common>
 #include <packing>
@@ -43,27 +99,15 @@ uniform float insidePow;
 #include <clipping_planes_pars_fragment>
 void main() {
     #include <clipping_planes_fragment>
-  
+    
     #include <mesh_phong_diffuse_color>
     
     #include <logdepthbuf_fragment>
     #include <__ShaderMaterial__map_fragment_begin_chunk>
     #include <map_fragment>
-    
-    vec3 viewDir = normalize(vViewPosition);    
-    
-    float rimGlow = 1.0 - max(0.0, dot(surfaceNormal, viewDir));
-    rimGlow = pow( rimGlow, rimPow);
-    diffuseColor.rgb += rimColor * rimGlow * rimStrength;
-
-    float insideGlow = max(0.0, dot(surfaceNormal, viewDir));
-    insideGlow = pow( insideGlow, insidePow);
-    diffuseColor.rgb += insideColor * insideGlow * insideStrength;
-
     #include <color_fragment>
-    #include <mesh_phong_switching_alpha_map>
-    
     // #include <alphamap_fragment>
+    #include <mesh_phong_switching_alpha_map>
     #include <alphatest_fragment>
     #include <specularmap_fragment>
     #include <normal_fragment_begin>
@@ -78,15 +122,10 @@ void main() {
     #include <aomap_fragment>
     vec3 outgoingLight = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse + reflectedLight.directSpecular + reflectedLight.indirectSpecular + totalEmissiveRadiance;
     #include <envmap_fragment>
-    #ifdef USE_LIGHT
-      gl_FragColor = vec4( outgoingLight, diffuseColor.a );
-    #else
-      gl_FragColor = diffuseColor;
-    #endif
+    #include <output_fragment>
     #include <tonemapping_fragment>
     #include <encodings_fragment>
     #include <fog_fragment>
     #include <premultiplied_alpha_fragment>
     #include <dithering_fragment>
 }`;
-};

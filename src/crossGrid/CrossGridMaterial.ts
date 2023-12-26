@@ -1,6 +1,6 @@
-import VertexShader from "../ShaderPhongMaterial.vert.glsl";
+import { vertex } from "../ShaderPhongMaterial.glsl";
 import { WavyGridMaterial } from "../WavyGridMaterial";
-import FragmentShader from "./CrossGridMaterial.frag.glsl";
+import { fragment } from "./CrossGridMaterial.glsl";
 import { ShaderMaterialParameters, UniformsUtils } from "three";
 
 /**
@@ -26,7 +26,7 @@ export class CrossGridMaterial extends WavyGridMaterial {
   }
 
   constructor(parameters?: ShaderMaterialParameters) {
-    super(VertexShader(), FragmentShader(), parameters);
+    super(vertex, fragment, parameters);
   }
 
   protected initUniforms(): void {

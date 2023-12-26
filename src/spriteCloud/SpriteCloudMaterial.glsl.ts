@@ -1,9 +1,11 @@
 /**
- * https://github.com/mrdoob/three.js/blob/dev/src/renderers/shaders/ShaderLib/sprite_frag.glsl.js
+ * スプライトで雲を描画するマテリアル
+ *
+ * @see : https://github.com/mrdoob/three.js/blob/dev/src/renderers/shaders/ShaderLib/sprite.glsl.js
  */
-export default () => {
-  // language=GLSL
-  return /* GLSL */ `
+
+// language=GLSL
+export const fragment = /* GLSL */ `
 
 uniform float rimStrength;
 uniform float bottomStrength;
@@ -53,4 +55,3 @@ void main() {
 	#include <fog_fragment>
 }
 `;
-};

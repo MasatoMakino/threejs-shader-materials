@@ -2,7 +2,7 @@
  * ライトに影響を受けない、ソリッドな切断面をもつマテリアル
  */
 import { ShaderPhongMaterial } from "..";
-import FragmentShader from "./SolidClippingMaterial.frag.glsl";
+import { fragment } from "./SolidClippingMaterial.glsl";
 import {
   Color,
   DoubleSide,
@@ -20,7 +20,7 @@ export class SolidClippingMaterial extends ShaderPhongMaterial {
   }
 
   constructor(parameters?: ShaderMaterialParameters) {
-    super(null, FragmentShader(), parameters);
+    super(null, fragment, parameters);
   }
 
   protected initUniforms(): void {

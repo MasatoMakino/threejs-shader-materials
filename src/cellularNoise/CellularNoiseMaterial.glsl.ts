@@ -1,24 +1,20 @@
 /**
- * 十字のラインでグリッドを分割するシェーダー
+ * Cellular Noise Fragment Shader
+ *
+ * @see : https://github.com/mrdoob/three.js/blob/master/src/renderers/shaders/ShaderLib/meshphong.glsl.js
  */
 
-export default () => {
-  // language=GLSL
-  return /* GLSL */ `
+// language=GLSL
+export const fragment = /* GLSL */ `
 #define PHONG
 
 #include <mesh_phong_uniform>
 varying vec2 uvPosition;
 #include <mesh_position_varying>
 
-//user settings
+uniform float grid;
+uniform float divisionScaleX;
 #include <time_animation_uniform_chunk>
-#include <wavy_animation_uniform_chunk>
-#include <repeat_pattern_uniform_chunk>
-#include <mask_map_uniform_chunk>
-#include <reversible_uniform_chunk>
-uniform float gridWeight;
-uniform float radius;
 
 #include <common>
 #include <packing>
@@ -47,6 +43,51 @@ uniform float radius;
 #include <logdepthbuf_pars_fragment>
 #include <clipping_planes_pars_fragment>
 
+vec2 rand2D(vec2 p, vec2 scale) {
+    p = mod(p, scale);
+    const float a = 12.9898, b = 78.233, c = 43758.5453;
+    const float a2 = 26.7, b2 = 14.879;
+    
+    highp float dt = dot(p, vec2(a, b)), sn = mod(dt, PI);
+    highp float dt2 = dot(p, vec2(a2, b2)), sn2 = mod(dt2, PI);
+    return fract(sin(vec2(dt, dt2)) * c);
+}
+
+/*!
+ * Cellular Noise
+ *
+ * The inherits function is :
+ * Author : patriciogv
+ * see https://thebookofshaders.com/12/
+ * LICENSE : https://github.com/patriciogonzalezvivo/thebookofshaders/issues/235
+ */
+float cellularNoise(vec2 uv, float grid, float divisionScaleX, float time){
+  
+    vec2 scale = grid * vec2 ( divisionScaleX, 1.0 );
+    uv *= scale;
+    
+    vec2 i_uv = floor(uv);
+    vec2 f_uv = fract(uv);
+    
+    float minDist = 1.;
+    
+    for (int y= -1; y <= 1; y++) {
+        for (int x= -1; x <= 1; x++) {
+            vec2 neighbor = vec2(float(x), float(y));
+            vec2 point = rand2D(i_uv + neighbor, scale);
+            
+            point = 0.5 + 0.5 * sin(time + PI2 * point);
+            
+            vec2 diff = neighbor + point - f_uv;
+            float dist = length(diff);
+            
+            minDist = min(minDist, dist);
+        }
+    }
+    
+    return minDist;
+}
+
 void main() {
     #include <clipping_planes_fragment>
   
@@ -57,38 +98,10 @@ void main() {
     #include <map_fragment>
     #include <color_fragment>
 
-    #include <repeat_pattern_fragment_chunk>    
-    vec2 localPos = mod(uv, 1.0) - 0.5;
-    vec2 id = uv - localPos;
-    #include <wavy_animation_fragment_chunk>
-
-    #include <mask_map_fragment_chunk>
-    float w = gridWeight;
-    w = clamp( w, 0.0, 1.0);
+    float dist = cellularNoise( mapUV, grid, divisionScaleX, time );
+    diffuseColor.rgb *= dist;
+    diffuseColor.a *= dist;
     
-    float margin = clamp ( w * 0.33, 0.00, 0.05 );
-    
-    //十字を描画
-    float gridLine;
-    gridLine  = smoothstep ( -w-margin, -w, localPos.x );
-    gridLine -= smoothstep ( w, w+margin, localPos.x );
-    gridLine += smoothstep ( -w-margin, -w, localPos.y );
-    gridLine -= smoothstep ( w, w+margin, localPos.y );
-    gridLine  = clamp( gridLine, 0.0, 1.0 ); 
-
-    //半径でマスク
-    float r = radius - (1.0-mask);
-    gridLine -= smoothstep( r, r+margin, localPos.x);
-    gridLine -= smoothstep( -r, -r-margin, localPos.x);
-    gridLine -= smoothstep( r, r+margin, localPos.y);
-    gridLine -= smoothstep( -r, -r-margin, localPos.y);
-    gridLine = clamp( gridLine, 0.0, 1.0 );
-    
-    gridLine = isReversed
-        ? 1.0 - gridLine
-        : gridLine;
-    diffuseColor.a *= gridLine;
-
     #include <mesh_phong_switching_alpha_map>
 
     // #include <alphamap_fragment>
@@ -113,4 +126,3 @@ void main() {
     #include <premultiplied_alpha_fragment>
     #include <dithering_fragment>
 }`;
-};

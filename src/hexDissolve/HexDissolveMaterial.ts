@@ -1,6 +1,6 @@
 import { GridMaterial } from "../GridMaterial";
 import { HexGridChunk } from "../index";
-import FragmentShader from "./HexDissolveMaterial.frag.glsl";
+import { fragment } from "./HexDissolveMaterial.glsl";
 import { Color, ShaderMaterialParameters, UniformsUtils } from "three";
 
 /**
@@ -71,7 +71,7 @@ export class HexDissolveMaterial extends GridMaterial {
   }
 
   constructor(parameters?: ShaderMaterialParameters) {
-    super(null, FragmentShader(), parameters);
+    super(null, fragment, parameters);
   }
 
   protected initUniforms(): void {

@@ -1,23 +1,62 @@
-export default () => {
-  //language=glsl
-  return /* GLSL */ `
-//for Rim Effect
-varying vec2 uvPosition;
+/**
+ * MeshBasicMaterialに準じたShaderMaterial
+ *
+ * @see : https://github.com/mrdoob/three.js/blob/master/src/renderers/shaders/ShaderLib/meshbasic.glsl.js
+ */
+
+//language=glsl
+export const vertex = /* GLSL */ `
+
 #include <surface_normal_varying_chunk>
 varying vec3 vViewPosition;
+varying vec2 uvPosition;
 
-uniform vec3 rimColor;
-uniform float rimStrength;
-uniform float rimPow;
+#include <common>
+#include <uv_pars_vertex>
+#include <uv2_pars_vertex>
+#include <envmap_pars_vertex>
+#include <color_pars_vertex>
+#include <fog_pars_vertex>
+#include <morphtarget_pars_vertex>
+#include <skinning_pars_vertex>
+#include <logdepthbuf_pars_vertex>
+#include <clipping_planes_pars_vertex>
+void main() {
+	#include <uv_vertex>
+	#include <uv2_vertex>
+    uvPosition = uv;
+	
+    #include <color_vertex>
+	#include <morphcolor_vertex>
+	#if defined ( USE_ENVMAP ) || defined ( USE_SKINNING )
+		#include <beginnormal_vertex>
+		#include <morphnormal_vertex>
+		#include <skinbase_vertex>
+		#include <skinnormal_vertex>
+		#include <defaultnormal_vertex>
+	#endif
+	#include <begin_vertex>
+	#include <morphtarget_vertex>
+	#include <skinning_vertex>
+	#include <project_vertex>
+	#include <logdepthbuf_vertex>
+	#include <clipping_planes_vertex>
 
-uniform vec3 insideColor;
-uniform float insideStrength;
-uniform float insidePow;
+    //For Rim Effect
+    #include <beginnormal_vertex>
+    #include <defaultnormal_vertex>
+    #include <surface_normal_vertex_chunk>
+    vViewPosition = - mvPosition.xyz;
+  
+	#include <worldpos_vertex>
+	#include <envmap_vertex>
+	#include <fog_vertex>
+}`;
 
-//original
+//language=glsl
+export const fragment = /* GLSL */ `
 uniform vec3 diffuse;
 uniform float opacity;
-
 #ifndef FLAT_SHADED
 	varying vec3 vNormal;
 #endif
@@ -43,18 +82,7 @@ void main() {
 	vec4 diffuseColor = vec4( diffuse, opacity );
 	#include <logdepthbuf_fragment>
 	#include <map_fragment>
-
-    //for Rim Effect
-    vec3 viewDir = normalize(vViewPosition);
-    float rimGlow = 1.0 - max(0.0, dot(surfaceNormal, viewDir));
-    rimGlow = pow(rimGlow, rimPow);
-    diffuseColor.rgb += rimColor * rimGlow * rimStrength;
-  
-    float insideGlow = max(0.0, dot(surfaceNormal, viewDir));
-    insideGlow = pow(insideGlow, insidePow);
-    diffuseColor.rgb += insideColor * insideGlow * insideStrength;
-    
-    #include <color_fragment> 
+	#include <color_fragment>
 	#include <alphamap_fragment>
 	#include <alphatest_fragment>
 	#include <specularmap_fragment>
@@ -77,6 +105,4 @@ void main() {
 	#include <fog_fragment>
 	#include <premultiplied_alpha_fragment>
 	#include <dithering_fragment>
-}
-`;
-};
+}`;

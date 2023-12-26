@@ -1,22 +1,25 @@
-export default () => {
-  // language=GLSL
-  return /* GLSL */ `
+/**
+ * 十字のラインでグリッドを分割するシェーダー
+ *
+ * @see : https://github.com/mrdoob/three.js/blob/master/src/renderers/shaders/ShaderLib/meshphong.glsl.js
+ */
+
+// language=GLSL
+export const fragment = /* GLSL */ `
 #define PHONG
 
 #include <mesh_phong_uniform>
 varying vec2 uvPosition;
 #include <mesh_position_varying>
 
-#include <tiling_fbm_uniform_chunk>
-#include <tiling_fbm_function_chunk>
+//user settings
 #include <time_animation_uniform_chunk>
-
-uniform float strength;
-uniform float bloom;
-
-#include <surface_normal_varying_chunk>
-uniform float rimStrength;
-uniform float rimPow;
+#include <wavy_animation_uniform_chunk>
+#include <repeat_pattern_uniform_chunk>
+#include <mask_map_uniform_chunk>
+#include <reversible_uniform_chunk>
+uniform float gridWeight;
+uniform float radius;
 
 #include <common>
 #include <packing>
@@ -44,8 +47,8 @@ uniform float rimPow;
 #include <specularmap_pars_fragment>
 #include <logdepthbuf_pars_fragment>
 #include <clipping_planes_pars_fragment>
-void main()
-{
+
+void main() {
     #include <clipping_planes_fragment>
   
     #include <mesh_phong_diffuse_color>
@@ -54,37 +57,39 @@ void main()
     #include <__ShaderMaterial__map_fragment_begin_chunk>
     #include <map_fragment>
     #include <color_fragment>
-    
-    vec2 uv = uvPosition;
-    float uVy = uv.y;
-    uv *= tiles;
 
-    vec2 q = vec2(0.0);
-    q.x = fbm( uv + vec2(1.7,9.2) +.16  * time );
-    q.y = fbm( uv + vec2(8.3,2.8) +.356 * time );
+    #include <repeat_pattern_fragment_chunk>    
+    vec2 localPos = mod(uv, 1.0) - 0.5;
+    vec2 id = uv - localPos;
+    #include <wavy_animation_fragment_chunk>
 
-    float fbmVal = fbm(uv + q);
-    fbmVal += 1.0-(uVy * 1.0 );
-    fbmVal *= 1.0-uVy;
+    #include <mask_map_fragment_chunk>
+    float w = gridWeight;
+    w = clamp( w, 0.0, 1.0);
     
-    vec3 viewDir = normalize(vViewPosition);    
-    float rimGlow = 1.0 - max(0.0, dot(surfaceNormal, viewDir));
-    rimGlow = pow(rimGlow, rimPow) * rimStrength;
-    rimGlow = clamp( rimGlow, 0.0, 1.0);
-    fbmVal *= 1.0-rimGlow;
+    float margin = clamp ( w * 0.33, 0.00, 0.05 );
     
-    vec3 color = diffuseColor.rgb;
-    
-    float st = 1.0 - strength;
-    float bri = smoothstep( max( st - 0.4, 0.0 ), st, fbmVal );
-    
-    float blm = 1.0 - bloom;
-    float bloomVal = smoothstep( blm - 0.4, blm, fbmVal );
-    color += bloomVal;
+    //十字を描画
+    float gridLine;
+    gridLine  = smoothstep ( -w-margin, -w, localPos.x );
+    gridLine -= smoothstep ( w, w+margin, localPos.x );
+    gridLine += smoothstep ( -w-margin, -w, localPos.y );
+    gridLine -= smoothstep ( w, w+margin, localPos.y );
+    gridLine  = clamp( gridLine, 0.0, 1.0 ); 
 
-    diffuseColor.rgb = color;
-    diffuseColor.a *= bri;
+    //半径でマスク
+    float r = radius - (1.0-mask);
+    gridLine -= smoothstep( r, r+margin, localPos.x);
+    gridLine -= smoothstep( -r, -r-margin, localPos.x);
+    gridLine -= smoothstep( r, r+margin, localPos.y);
+    gridLine -= smoothstep( -r, -r-margin, localPos.y);
+    gridLine = clamp( gridLine, 0.0, 1.0 );
     
+    gridLine = isReversed
+        ? 1.0 - gridLine
+        : gridLine;
+    diffuseColor.a *= gridLine;
+
     #include <mesh_phong_switching_alpha_map>
 
     // #include <alphamap_fragment>
@@ -109,4 +114,3 @@ void main()
     #include <premultiplied_alpha_fragment>
     #include <dithering_fragment>
 }`;
-};

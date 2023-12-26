@@ -1,14 +1,18 @@
 /**
+ * ライトに影響を受けない、ソリッドな切断面をもつマテリアル
  *
+ * @see : https://github.com/mrdoob/three.js/blob/master/src/renderers/shaders/ShaderLib/meshphong.glsl.js
  */
-export default () => {
-  // language=GLSL
-  return /* GLSL */ `
+
+// language=GLSL
+export const fragment = /* GLSL */ `
 #define PHONG
 
 #include <mesh_phong_uniform>
-#include <mesh_position_varying>
 varying vec2 uvPosition;
+#include <mesh_position_varying>
+
+uniform vec3 cutSectionColor;
 
 #include <common>
 #include <packing>
@@ -38,15 +42,16 @@ varying vec2 uvPosition;
 #include <clipping_planes_pars_fragment>
 void main() {
     #include <clipping_planes_fragment>
-    
+  
     #include <mesh_phong_diffuse_color>
     
     #include <logdepthbuf_fragment>
     #include <__ShaderMaterial__map_fragment_begin_chunk>
     #include <map_fragment>
     #include <color_fragment>
-    // #include <alphamap_fragment>
     #include <mesh_phong_switching_alpha_map>
+
+    // #include <alphamap_fragment>
     #include <alphatest_fragment>
     #include <specularmap_fragment>
     #include <normal_fragment_begin>
@@ -61,11 +66,17 @@ void main() {
     #include <aomap_fragment>
     vec3 outgoingLight = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse + reflectedLight.directSpecular + reflectedLight.indirectSpecular + totalEmissiveRadiance;
     #include <envmap_fragment>
-    #include <output_fragment>
+  
+    outgoingLight = gl_FrontFacing ? outgoingLight : cutSectionColor;
+    gl_FragColor = vec4( outgoingLight, diffuseColor.a );
+    
     #include <tonemapping_fragment>
     #include <encodings_fragment>
+    
+    vec4 fragment = vec4(gl_FragColor);
     #include <fog_fragment>
+    gl_FragColor = gl_FrontFacing ? gl_FragColor : fragment;
+    
     #include <premultiplied_alpha_fragment>
     #include <dithering_fragment>
 }`;
-};

@@ -1,9 +1,11 @@
 /**
  * 平面上に雲模様を描画するシェーダー
+ *
+ * @see : https://github.com/mrdoob/three.js/blob/master/src/renderers/shaders/ShaderLib/meshphong.glsl.js
  */
-export default () => {
-  // language=GLSL
-  return /* GLSL */ `
+
+// language=GLSL
+export const fragment = /* GLSL */ `
 #define PHONG
 
 #include <mesh_phong_uniform>
@@ -157,4 +159,3 @@ void main() {
     #include <premultiplied_alpha_fragment>
     #include <dithering_fragment>
 }`;
-};

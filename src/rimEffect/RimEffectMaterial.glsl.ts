@@ -1,22 +1,24 @@
 /**
- * 四角形のグリッドを描画するシェーダー
+ * 縁を発光させるマテリアル
+ *
+ * @see : https://github.com/mrdoob/three.js/blob/master/src/renderers/shaders/ShaderLib/meshphong.glsl.js
  */
-export default () => {
-  // language=GLSL
-  return /* GLSL */ `
+
+// language=GLSL
+export const fragment = /* GLSL */ `
 #define PHONG
 
 #include <mesh_phong_uniform>
 varying vec2 uvPosition;
-#include <mesh_position_varying>
+#include <surface_normal_varying_chunk>
 
-//user settings
-#include <time_animation_uniform_chunk>
-#include <wavy_animation_uniform_chunk>
-#include <repeat_pattern_uniform_chunk>
-#include <mask_map_uniform_chunk>
-#include <reversible_uniform_chunk>
-uniform float gridWeight;
+uniform vec3 rimColor;
+uniform float rimStrength;
+uniform float rimPow;
+
+uniform vec3 insideColor;
+uniform float insideStrength;
+uniform float insidePow;
 
 #include <common>
 #include <packing>
@@ -52,35 +54,21 @@ void main() {
     #include <logdepthbuf_fragment>
     #include <__ShaderMaterial__map_fragment_begin_chunk>
     #include <map_fragment>
+    
+    vec3 viewDir = normalize(vViewPosition);    
+    
+    float rimGlow = 1.0 - max(0.0, dot(surfaceNormal, viewDir));
+    rimGlow = pow( rimGlow, rimPow);
+    diffuseColor.rgb += rimColor * rimGlow * rimStrength;
+
+    float insideGlow = max(0.0, dot(surfaceNormal, viewDir));
+    insideGlow = pow( insideGlow, insidePow);
+    diffuseColor.rgb += insideColor * insideGlow * insideStrength;
+
     #include <color_fragment>
-
-    #include <repeat_pattern_fragment_chunk>    
-    vec2 localPos = mod(uv, 1.0) - 0.5;
-    vec2 id = uv - localPos;
-    #include <wavy_animation_fragment_chunk>
-
-    #include <mask_map_fragment_chunk>
-    float w = gridWeight + (1.0-mask);
-    w = clamp( w, 0.0, 1.0);
-    float margin = clamp ( w * 0.33, 0.03, 0.1 );
-    
-    float stepHigh = 0.5-(w+margin);
-    float stepLow = -0.5+w+margin;
-    
-    //float gridLine = smoothstep(w, stepMax, hc.y);
-    float gridLine = smoothstep ( 0.5-w, stepHigh, localPos.x );
-    gridLine *= smoothstep ( 0.5-w, stepHigh, localPos.y );
-    gridLine *= smoothstep ( -0.5+w, stepLow, localPos.x );
-    gridLine *= smoothstep ( -0.5+w, stepLow, localPos.y );
-    
-    gridLine = isReversed
-        ? 1.0 - gridLine
-        : gridLine;
-    diffuseColor.a *= gridLine;
-
     #include <mesh_phong_switching_alpha_map>
-
-    //#include <alphamap_fragment>
+    
+    // #include <alphamap_fragment>
     #include <alphatest_fragment>
     #include <specularmap_fragment>
     #include <normal_fragment_begin>
@@ -95,11 +83,14 @@ void main() {
     #include <aomap_fragment>
     vec3 outgoingLight = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse + reflectedLight.directSpecular + reflectedLight.indirectSpecular + totalEmissiveRadiance;
     #include <envmap_fragment>
-    #include <output_fragment>
+    #ifdef USE_LIGHT
+      gl_FragColor = vec4( outgoingLight, diffuseColor.a );
+    #else
+      gl_FragColor = diffuseColor;
+    #endif
     #include <tonemapping_fragment>
     #include <encodings_fragment>
     #include <fog_fragment>
     #include <premultiplied_alpha_fragment>
     #include <dithering_fragment>
 }`;
-};

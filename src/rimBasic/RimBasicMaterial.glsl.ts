@@ -1,8 +1,28 @@
-export default () => {
-  //language=glsl
-  return /* GLSL */ `
+/**
+ * ジオメトリの縁を強調するマテリアル
+ *
+ * @see : https://github.com/mrdoob/three.js/blob/master/src/renderers/shaders/ShaderLib/meshbasic.glsl.js
+ */
+
+//language=glsl
+export const fragment = /* GLSL */ `
+//for Rim Effect
+varying vec2 uvPosition;
+#include <surface_normal_varying_chunk>
+varying vec3 vViewPosition;
+
+uniform vec3 rimColor;
+uniform float rimStrength;
+uniform float rimPow;
+
+uniform vec3 insideColor;
+uniform float insideStrength;
+uniform float insidePow;
+
+//original
 uniform vec3 diffuse;
 uniform float opacity;
+
 #ifndef FLAT_SHADED
 	varying vec3 vNormal;
 #endif
@@ -28,7 +48,18 @@ void main() {
 	vec4 diffuseColor = vec4( diffuse, opacity );
 	#include <logdepthbuf_fragment>
 	#include <map_fragment>
-	#include <color_fragment>
+
+    //for Rim Effect
+    vec3 viewDir = normalize(vViewPosition);
+    float rimGlow = 1.0 - max(0.0, dot(surfaceNormal, viewDir));
+    rimGlow = pow(rimGlow, rimPow);
+    diffuseColor.rgb += rimColor * rimGlow * rimStrength;
+  
+    float insideGlow = max(0.0, dot(surfaceNormal, viewDir));
+    insideGlow = pow(insideGlow, insidePow);
+    diffuseColor.rgb += insideColor * insideGlow * insideStrength;
+    
+    #include <color_fragment> 
 	#include <alphamap_fragment>
 	#include <alphatest_fragment>
 	#include <specularmap_fragment>
@@ -53,4 +84,3 @@ void main() {
 	#include <dithering_fragment>
 }
 `;
-};

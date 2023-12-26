@@ -1,5 +1,5 @@
 import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
-import FragmentShader from "./RimEffectMaterial.frag.glsl";
+import { fragment } from "./RimEffectMaterial.glsl";
 import { Color, ShaderMaterialParameters, UniformsUtils } from "three";
 
 export class RimEffectMaterial extends ShaderPhongMaterial {
@@ -50,7 +50,7 @@ export class RimEffectMaterial extends ShaderPhongMaterial {
    * @param parameters
    */
   constructor(parameters?: ShaderMaterialParameters) {
-    super(null, FragmentShader(), parameters);
+    super(null, fragment, parameters);
   }
 
   protected initUniforms(): void {
