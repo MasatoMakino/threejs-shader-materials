@@ -1,5 +1,5 @@
 import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
-import FragmentShader from "./RimEffectMaterial.frag.glsl";
+import { fragment } from "./RimEffectMaterial.glsl";
 import { Color, UniformsUtils } from "three";
 export class RimEffectMaterial extends ShaderPhongMaterial {
     get rimPow() {
@@ -43,7 +43,7 @@ export class RimEffectMaterial extends ShaderPhongMaterial {
      * @param parameters
      */
     constructor(parameters) {
-        super(null, FragmentShader(), parameters);
+        super(null, fragment, parameters);
     }
     initUniforms() {
         this.uniforms = UniformsUtils.merge([

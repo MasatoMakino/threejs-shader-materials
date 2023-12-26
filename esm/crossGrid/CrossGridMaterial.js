@@ -1,6 +1,6 @@
-import VertexShader from "../ShaderPhongMaterial.vert.glsl";
+import { vertex } from "../ShaderPhongMaterial.glsl";
 import { WavyGridMaterial } from "../WavyGridMaterial";
-import FragmentShader from "./CrossGridMaterial.frag.glsl";
+import { fragment } from "./CrossGridMaterial.glsl";
 import { UniformsUtils } from "three";
 /**
  * 十字線を正方形グリッドの中心に描画するマテリアル。
@@ -23,7 +23,7 @@ export class CrossGridMaterial extends WavyGridMaterial {
         this.uniforms.radius.value = value;
     }
     constructor(parameters) {
-        super(VertexShader(), FragmentShader(), parameters);
+        super(vertex, fragment, parameters);
     }
     initUniforms() {
         this.uniforms = UniformsUtils.merge([

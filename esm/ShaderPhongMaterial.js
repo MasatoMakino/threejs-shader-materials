@@ -1,5 +1,4 @@
-import FragmentShader from "./ShaderPhongMaterial.frag.glsl";
-import VertexShader from "./ShaderPhongMaterial.vert.glsl";
+import { vertex, fragment } from "./ShaderPhongMaterial.glsl";
 import { ExpansionChunk, MapChunk, MeshPhongChunk, SurfaceNormalChunk, } from "./chunk/";
 import { AdditiveBlending, Color, ShaderMaterial, UniformsLib, UniformsUtils, } from "three";
 /**
@@ -18,8 +17,8 @@ export class ShaderPhongMaterial extends ShaderMaterial {
         super(parameters);
         this._opacity = 1.0;
         parameters !== null && parameters !== void 0 ? parameters : (parameters = {});
-        vertexShader !== null && vertexShader !== void 0 ? vertexShader : (vertexShader = VertexShader());
-        fragmentShader !== null && fragmentShader !== void 0 ? fragmentShader : (fragmentShader = FragmentShader());
+        vertexShader !== null && vertexShader !== void 0 ? vertexShader : (vertexShader = vertex);
+        fragmentShader !== null && fragmentShader !== void 0 ? fragmentShader : (fragmentShader = fragment);
         this.initChunks();
         this.initUniforms();
         this.initDefines();

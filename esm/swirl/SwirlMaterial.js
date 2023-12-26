@@ -1,5 +1,5 @@
 import { AnimationChunk, ShaderPhongMaterial } from "..";
-import FragmentShader from "./SwirlMaterial.frag.glsl";
+import { fragment } from "./SwirlMaterial.glsl";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import { RepeatWrapping, UniformsUtils, Vector2, } from "three";
 export class SwirlMaterial extends ShaderPhongMaterial {
@@ -63,7 +63,7 @@ export class SwirlMaterial extends ShaderPhongMaterial {
         this.uniforms.center.value = value;
     }
     constructor(parameters) {
-        super(null, FragmentShader(), parameters);
+        super(null, fragment, parameters);
         /*
          * implements IAnimatable
          */

@@ -1,6 +1,5 @@
 import { AnimationChunk, ShaderPhongMaterial, TilingFBMChunk, } from "../index";
-import FragmentShader from "./ExpansionDissolveMaterial.frag.glsl";
-import VertexShader from "./ExpansionDissolveMaterial.vert.glsl";
+import { vertex, fragment } from "./ExpansionDissolveMaterial.glsl";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import { Color, UniformsUtils } from "three";
 /**
@@ -80,7 +79,7 @@ export class ExpansionDissolveMaterial extends ShaderPhongMaterial {
      * @param parameters
      */
     constructor(parameters) {
-        super(VertexShader(), FragmentShader(), parameters);
+        super(vertex, fragment, parameters);
         // IAnimatable //
         this.speed = -0.5;
         /*

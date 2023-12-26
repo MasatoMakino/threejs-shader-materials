@@ -1,6 +1,6 @@
-import VertexShader from "../ShaderPhongMaterial.vert.glsl";
+import { vertex } from "../ShaderPhongMaterial.glsl";
 import { WavyGridMaterial } from "../WavyGridMaterial";
-import FragmentShader from "./SquareGridMaterial.frag.glsl";
+import { fragment } from "./SquareGridMaterial.glsl";
 import { UniformsUtils } from "three";
 /**
  * 四角形グリッドマテリアル
@@ -17,7 +17,7 @@ export class SquareGridMaterial extends WavyGridMaterial {
         this.uniforms.gridWeight.value = value;
     }
     constructor(parameters) {
-        super(VertexShader(), FragmentShader(), parameters);
+        super(vertex, fragment, parameters);
     }
     initUniforms() {
         this.uniforms = UniformsUtils.merge([

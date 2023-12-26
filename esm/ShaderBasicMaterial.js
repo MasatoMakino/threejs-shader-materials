@@ -1,5 +1,4 @@
-import FragmentShader from "./ShaderBasicMaterial.frag.glsl";
-import VertexShader from "./ShaderBasicMaterial.vert.glsl";
+import { vertex, fragment } from "./ShaderBasicMaterial.glsl";
 import { SurfaceNormalChunk } from "./chunk";
 import { ShaderMaterial, UniformsLib, UniformsUtils, } from "three";
 /**
@@ -15,8 +14,8 @@ export class ShaderBasicMaterial extends ShaderMaterial {
         super(parameters);
         this._opacity = 1.0;
         this.uniforms = ShaderBasicMaterial.getBasicUniforms();
-        this.vertexShader = vertexShader !== null && vertexShader !== void 0 ? vertexShader : VertexShader();
-        this.fragmentShader = fragmentShader !== null && fragmentShader !== void 0 ? fragmentShader : FragmentShader();
+        this.vertexShader = vertexShader !== null && vertexShader !== void 0 ? vertexShader : vertex;
+        this.fragmentShader = fragmentShader !== null && fragmentShader !== void 0 ? fragmentShader : fragment;
         SurfaceNormalChunk.registerChunk();
         this.initDefines();
         this.uniformOpacity = this._opacity;

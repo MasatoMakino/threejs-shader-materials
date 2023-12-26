@@ -1,9 +1,9 @@
 import { ShaderSpriteMaterial } from "../ShaderSpriteMaterial";
-import FragmentShader from "./SpriteCloudMaterial.frag.glsl";
+import { fragment } from "./SpriteCloudMaterial.glsl";
 import { Color, UniformsUtils } from "three";
 export class SpriteCloudMaterial extends ShaderSpriteMaterial {
     constructor(parameters) {
-        super(null, FragmentShader(), parameters);
+        super(null, fragment, parameters);
     }
     /**
      * uniformsを初期化する。

@@ -1,7 +1,7 @@
 import { ShaderPhongMaterial } from "..";
-import VertexShader from "../ShaderPhongMaterial.vert.glsl";
+import { vertex } from "../ShaderPhongMaterial.glsl";
 import { AnimationChunk, TilingFBMChunk, } from "../chunk";
-import FragmentShader from "./FBMFireMaterial.frag.glsl";
+import { fragment } from "./FBMFireMaterial.glsl";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import { UniformsUtils } from "three";
 export class FBMFireMaterial extends ShaderPhongMaterial {
@@ -79,7 +79,7 @@ export class FBMFireMaterial extends ShaderPhongMaterial {
      * @param parameters
      */
     constructor(parameters) {
-        super(VertexShader(), FragmentShader(), parameters);
+        super(vertex, fragment, parameters);
         /**
          * 波の速度
          * 0.5にすると1の半分の速度になる。

@@ -1,5 +1,5 @@
 import { AnimationChunk, ShaderPhongMaterial } from "../";
-import FragmentShader from "./CellularNoiseMaterial.frag.glsl";
+import { fragment } from "./CellularNoiseMaterial.glsl";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import { UniformsUtils } from "three";
 export class CellularNoiseMaterial extends ShaderPhongMaterial {
@@ -33,7 +33,7 @@ export class CellularNoiseMaterial extends ShaderPhongMaterial {
         this.uniforms.divisionScaleX.value = value;
     }
     constructor(parameters) {
-        super(null, FragmentShader(), parameters);
+        super(null, fragment, parameters);
         /*
          * implements IAnimatable
          */

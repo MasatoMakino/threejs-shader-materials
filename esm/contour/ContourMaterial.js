@@ -1,6 +1,6 @@
 import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
-import VertexShader from "../ShaderPhongMaterial.vert.glsl";
-import FragmentShader from "./ContourMaterial.frag.glsl";
+import { vertex } from "../ShaderPhongMaterial.glsl";
+import { fragment } from "./ContourMaterial.glsl";
 import { DoubleSide, TextureLoader, UniformsUtils, } from "three";
 /**
  * テクスチャを等高線状にマップするマテリアル。
@@ -21,7 +21,7 @@ export class ContourMaterial extends ShaderPhongMaterial {
         this.uniforms.bottom.value = geo.boundingBox.min.y;
     }
     constructor(parameters) {
-        super(VertexShader(), FragmentShader(), parameters);
+        super(vertex, fragment, parameters);
     }
     initDefines() {
         super.initDefines();
