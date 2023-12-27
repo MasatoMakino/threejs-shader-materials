@@ -32,7 +32,7 @@ export class StudyCrossGrid {
   }
 
   initObject(scene) {
-    const spot = new PointLight(0xffffff, 1, 0, 2);
+    const spot = new PointLight(0xffffff, 7_000);
     spot.position.set(10, 20, 30);
     scene.add(spot);
     const helper = new PointLightHelper(spot);
