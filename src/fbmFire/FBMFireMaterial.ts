@@ -133,12 +133,6 @@ export class FBMFireMaterial
 
   protected initDefaultSetting(parameters?: ShaderMaterialParameters): void {
     super.initDefaultSetting(parameters);
-
-    if (parameters.transparent == null) {
-      this.transparent = true;
-    } else {
-      this.transparent = parameters.transparent;
-    }
   }
 
   /*

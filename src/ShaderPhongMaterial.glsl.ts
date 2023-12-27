@@ -44,6 +44,9 @@ void main() {
     #include <skinbase_vertex>
     #include <skinnormal_vertex>
     #include <defaultnormal_vertex>
+    
+    #include <surface_normal_vertex_chunk>
+
     #include <normal_vertex>
     
     #include <begin_vertex>
