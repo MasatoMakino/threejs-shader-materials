@@ -110,16 +110,6 @@ export class SkyCloudMaterial
     ]);
   }
 
-  protected initDefaultSetting(parameters?: ShaderMaterialParameters): void {
-    super.initDefaultSetting(parameters);
-
-    if (parameters.transparent == null) {
-      this.transparent = true;
-    } else {
-      this.transparent = parameters.transparent;
-    }
-  }
-
   /*
    * IAnimatable implements
    */

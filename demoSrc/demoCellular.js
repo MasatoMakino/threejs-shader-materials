@@ -46,7 +46,6 @@ export class Study {
       fog: scene.fog !== undefined,
     });
     mat.color = new Color(0x0055ff);
-    mat.transparent = true;
     mat.grid = 8;
     mat.speed = 2.0;
     mat.divisionScaleX = 2.0;

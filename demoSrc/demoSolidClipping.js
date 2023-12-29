@@ -45,7 +45,7 @@ export class Study {
   }
 
   initObject(scene) {
-    const spot = new PointLight(0xffffff, 0.25, 0, 2);
+    const spot = new PointLight(0xffffff, 7000);
     spot.position.set(10, 20, 30);
     scene.add(spot);
     const helper = new PointLightHelper(spot);
@@ -53,7 +53,6 @@ export class Study {
 
     const mat = new SolidClippingMaterial({
       fog: scene.fog !== undefined,
-      transparent: false,
     });
     mat.color = new Color(0x003311);
     mat.cutSectionColor = new Color(0xaaff11);

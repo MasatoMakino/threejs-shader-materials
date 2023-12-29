@@ -53,12 +53,6 @@ export class ContourMaterial extends ShaderPhongMaterial {
   protected initDefaultSetting(parameters?: ShaderMaterialParameters): void {
     super.initDefaultSetting(parameters);
 
-    if (parameters.transparent == null) {
-      this.transparent = true;
-    } else {
-      this.transparent = parameters.transparent;
-    }
-
     if (this.transparent && parameters.alphaTest == null) {
       this.alphaTest = 0.5;
     }
