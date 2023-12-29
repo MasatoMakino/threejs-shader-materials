@@ -1,5 +1,6 @@
 import { ShaderSpriteMaterial } from "../ShaderSpriteMaterial";
 import { fragment } from "./SpriteCloudMaterial.glsl";
+import { SpriteChunk } from "../chunk/SpriteChunk";
 import { Color, ShaderMaterialParameters, UniformsUtils } from "three";
 
 export class SpriteCloudMaterial extends ShaderSpriteMaterial {
@@ -23,6 +24,16 @@ export class SpriteCloudMaterial extends ShaderSpriteMaterial {
         rimRange: { value: 0.15 },
       },
     ]);
+  }
+
+  protected initDefines(): void {
+    this.defines = Object.assign(
+      {
+        USE_UV: true,
+      },
+      SpriteChunk.getDefines(),
+      this.defines,
+    );
   }
 
   protected initDefaultSetting(parameters?: ShaderMaterialParameters): void {

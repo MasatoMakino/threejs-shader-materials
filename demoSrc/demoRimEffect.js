@@ -31,7 +31,7 @@ export class Study {
   }
 
   initObject(scene) {
-    const spot = new PointLight(0xffffff, 0.25, 0, 2);
+    const spot = new PointLight(0xffffff, 10_000);
     spot.position.set(10, 20, 30);
     scene.add(spot);
     const helper = new PointLightHelper(spot);

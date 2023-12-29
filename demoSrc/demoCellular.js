@@ -33,7 +33,7 @@ export class Study {
   }
 
   initObject(scene) {
-    const spot = new PointLight(0xffffff, 1, 0, 2);
+    const spot = new PointLight(0xffffff, 2_000);
     spot.position.set(10, 20, 30);
     scene.add(spot);
     const helper = new PointLightHelper(spot);
@@ -46,7 +46,6 @@ export class Study {
       fog: scene.fog !== undefined,
     });
     mat.color = new Color(0x0055ff);
-    mat.transparent = true;
     mat.grid = 8;
     mat.speed = 2.0;
     mat.divisionScaleX = 2.0;

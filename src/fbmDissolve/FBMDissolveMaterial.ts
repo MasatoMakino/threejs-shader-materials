@@ -80,14 +80,4 @@ export class FBMDissolveMaterial
     super.initDefines();
     this.defines = Object.assign({}, TilingFBMChunk.getDefines(), this.defines);
   }
-
-  protected initDefaultSetting(parameters?: ShaderMaterialParameters): void {
-    super.initDefaultSetting(parameters);
-
-    if (parameters.transparent == null) {
-      this.transparent = true;
-    } else {
-      this.transparent = parameters.transparent;
-    }
-  }
 }

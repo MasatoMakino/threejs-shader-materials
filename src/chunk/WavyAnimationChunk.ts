@@ -30,15 +30,16 @@ export class WavyAnimationChunk extends AnimationChunk {
   }
 
   static getUniform() {
-    return UniformsUtils.merge([
-      super.getUniform(),
-      {
-        raisedBottom: { value: 0.05 },
-        waveFrequency: { value: 0.2 },
-        wavePow: { value: 4.0 },
-        direction: { value: Directions.vertical },
-      },
-    ]);
+    const uniforms = {
+      raisedBottom: { value: 0.05 },
+      waveFrequency: { value: 0.2 },
+      wavePow: { value: 4.0 },
+      direction: { value: Directions.vertical },
+    };
+    return {
+      ...super.getUniform(),
+      ...uniforms,
+    };
   }
 }
 
