@@ -69,13 +69,4 @@ export class FBMDissolveMaterial extends ShaderPhongMaterial {
         super.initDefines();
         this.defines = Object.assign({}, TilingFBMChunk.getDefines(), this.defines);
     }
-    initDefaultSetting(parameters) {
-        super.initDefaultSetting(parameters);
-        if (parameters.transparent == null) {
-            this.transparent = true;
-        }
-        else {
-            this.transparent = parameters.transparent;
-        }
-    }
 }

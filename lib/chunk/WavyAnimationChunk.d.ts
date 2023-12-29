@@ -20,7 +20,26 @@ export interface IWavyAnimatable extends IAnimatable {
  */
 export declare class WavyAnimationChunk extends AnimationChunk {
     static registerChunk(): void;
-    static getUniform(): any;
+    static getUniform(): {
+        raisedBottom: {
+            value: number;
+        };
+        waveFrequency: {
+            value: number;
+        };
+        wavePow: {
+            value: number;
+        };
+        direction: {
+            value: Directions;
+        };
+        time: {
+            value: number;
+        };
+        isAnimate: {
+            value: boolean;
+        };
+    };
 }
 /**
  * Wavyアニメーションの波及方向を示すenum。

@@ -14,7 +14,9 @@ export declare class RimBasicMaterial extends ShaderBasicMaterial {
     get insideColor(): Color;
     set insideColor(value: Color);
     constructor(param: ShaderMaterialParameters);
-    static getRimUniforms(): any;
+    static getRimUniforms(): {
+        [uniform: string]: import("three").IUniform<any>;
+    };
     initDefines(): void;
 }
 //# sourceMappingURL=RimBasicMaterial.d.ts.map

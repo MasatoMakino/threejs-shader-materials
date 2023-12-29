@@ -25,6 +25,5 @@ export declare class FBMDissolveMaterial extends ShaderPhongMaterial implements 
      * definesを初期化する。
      */
     protected initDefines(): void;
-    protected initDefaultSetting(parameters?: ShaderMaterialParameters): void;
 }
 //# sourceMappingURL=FBMDissolveMaterial.d.ts.map

@@ -32,7 +32,6 @@ export declare class SkyCloudMaterial extends ShaderPhongMaterial implements IAn
     constructor(parameters?: ShaderMaterialParameters);
     protected initChunks(): void;
     protected initUniforms(): void;
-    protected initDefaultSetting(parameters?: ShaderMaterialParameters): void;
     private animationListener;
     protected startAnimation(): void;
     protected stopAnimation(): void;

@@ -119,12 +119,6 @@ export class FBMFireMaterial extends ShaderPhongMaterial {
     }
     initDefaultSetting(parameters) {
         super.initDefaultSetting(parameters);
-        if (parameters.transparent == null) {
-            this.transparent = true;
-        }
-        else {
-            this.transparent = parameters.transparent;
-        }
     }
     startAnimation() {
         RAFTicker.on("onBeforeTick", this.animationListener);

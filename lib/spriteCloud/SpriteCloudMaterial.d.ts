@@ -6,6 +6,7 @@ export declare class SpriteCloudMaterial extends ShaderSpriteMaterial {
      * uniformsを初期化する。
      */
     protected initUniforms(): void;
+    protected initDefines(): void;
     protected initDefaultSetting(parameters?: ShaderMaterialParameters): void;
     get rimCenter(): number;
     set rimCenter(value: number);

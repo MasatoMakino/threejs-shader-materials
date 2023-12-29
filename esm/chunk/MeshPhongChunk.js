@@ -38,9 +38,9 @@ class MeshPhongDiffuseColorChunk extends GLSLChunk {
     }
     static getChunk() {
         return /* GLSL */ `
-      vec4 diffuseColor = vec4( diffuse, opacity );
-      ReflectedLight reflectedLight = ReflectedLight( vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ) );
-      vec3 totalEmissiveRadiance = emissive;
+    vec4 diffuseColor = vec4( diffuse, opacity );
+    ReflectedLight reflectedLight = ReflectedLight( vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ) );
+    vec3 totalEmissiveRadiance = emissive;
     `;
     }
 }

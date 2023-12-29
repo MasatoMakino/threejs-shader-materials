@@ -6,6 +6,7 @@
 // language=GLSL
 export const vertex = /* GLSL */ `
 #include <sprite_vertex_uniform_chunk>
+
 #include <common>
 #include <uv_pars_vertex>
 #include <fog_pars_vertex>
@@ -25,22 +26,35 @@ void main() {
 // language=GLSL
 export const fragment = /* GLSL */ `
 #include <sprite_fragment_uniform_chunk>
+
 #include <common>
 #include <uv_pars_fragment>
 #include <map_pars_fragment>
+#include <alphamap_pars_fragment>
+#include <alphatest_pars_fragment>
+#include <alphahash_pars_fragment>
 #include <fog_pars_fragment>
 #include <logdepthbuf_pars_fragment>
 #include <clipping_planes_pars_fragment>
+
 void main() {
-    #include <clipping_planes_fragment>
-    #include <sprite_diffuse_color_chunk>
+
+	#include <clipping_planes_fragment>
+
+	vec3 outgoingLight = vec3( 0.0 );
+	vec4 diffuseColor = vec4( diffuse, opacity );
 
 	#include <logdepthbuf_fragment>
 	#include <map_fragment>
+	#include <alphamap_fragment>
 	#include <alphatest_fragment>
-    outgoingLight = diffuseColor.rgb;
-    gl_FragColor = vec4( outgoingLight, diffuseColor.a );
+	#include <alphahash_fragment>
+
+	outgoingLight = diffuseColor.rgb;
+
+	#include <opaque_fragment>
 	#include <tonemapping_fragment>
-	#include <encodings_fragment>
+	#include <colorspace_fragment>
 	#include <fog_fragment>
+
 }`;
