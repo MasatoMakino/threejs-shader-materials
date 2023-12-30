@@ -1,11 +1,17 @@
 {
   "name": "threejs-shader-materials",
   "version": "0.5.0",
-  "main": "./lib/index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": {
+        "types": "./esm/index.d.ts",
+        "default": "./esm/index.js"
+      }
+    }
+  },
   "types": "./lib/index.d.ts",
-  "module": "./esm/index.js",
   "files": [
-    "lib",
     "esm"
   ],
   "description": "Collection of shader materials for three.js",
@@ -31,11 +37,11 @@
     "start:dev": "npm run server & npm run watch:tsc & npm run watch:demo",
     "build": "npm run buildTS && npm run demo && npm run typedocs",
     "demo": "npx @masatomakino/gulptask-demo-page",
-    "buildTS": "tsc --project tsconfig.json & tsc --project tsconfig.esm.json",
+    "buildTS": "tsc",
     "typedocs": "npx typedoc --out ./docs/api src/index.ts",
     "server": "npx browser-sync ./docs/demo -w",
     "watch:demo": "npm run demo -- -W",
-    "watch:tsc": "tsc -W --incremental --project tsconfig.json & tsc -W --incremental --project tsconfig.esm.json",
+    "watch:tsc": "tsc -W",
     "prepare": "husky install"
   },
   "dependencies": {

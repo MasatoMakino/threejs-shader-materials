@@ -1,4 +1,4 @@
-import { CommonGUI } from "./CommonGUI";
+import { CommonGUI } from "./CommonGUI.js";
 import {
   ACESFilmicToneMapping,
   AmbientLight,
@@ -11,8 +11,8 @@ import {
   SphereGeometry,
   WebGLRenderer,
 } from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { Sky } from "three/examples/jsm/objects/Sky";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { Sky } from "three/examples/jsm/objects/Sky.js";
 
 export class Common {
   static initScene() {

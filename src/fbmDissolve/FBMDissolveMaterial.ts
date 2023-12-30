@@ -1,7 +1,7 @@
-import { ShaderPhongMaterial } from "..";
-import { vertex } from "../ShaderPhongMaterial.glsl";
-import { ITiledFBM, TilingFBMChunk } from "../chunk";
-import { fragment } from "./FBMDissolveMaterial.glsl";
+import { ShaderPhongMaterial } from "../index.js";
+import { vertex } from "../ShaderPhongMaterial.glsl.js";
+import { ITiledFBM, TilingFBMChunk } from "../chunk/index.js";
+import { fragment } from "./FBMDissolveMaterial.glsl.js";
 import { Color, ShaderMaterialParameters, UniformsUtils } from "three";
 
 export class FBMDissolveMaterial

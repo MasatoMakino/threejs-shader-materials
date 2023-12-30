@@ -1,4 +1,4 @@
-import { Directions } from "..";
+import { Directions } from "../esm/index.js";
 import { TextureLoader } from "three";
 
 export class CommonGUI {

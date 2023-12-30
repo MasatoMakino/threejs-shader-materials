@@ -1,5 +1,5 @@
-import { vertex, fragment } from "./ShaderSpriteMaterial.glsl";
-import { SpriteChunk } from "./chunk/";
+import { vertex, fragment } from "./ShaderSpriteMaterial.glsl.js";
+import { SpriteChunk } from "./chunk/index.js";
 import {
   Color,
   Matrix3,

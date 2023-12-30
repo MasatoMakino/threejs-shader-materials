@@ -2,12 +2,11 @@ import {
   BufferAttribute,
   BufferGeometry,
   Float32BufferAttribute,
-  InterleavedBufferAttribute,
   MathUtils,
   Triangle,
   Vector3,
 } from "three";
-import { mergeVertices } from "three/examples/jsm/utils/BufferGeometryUtils";
+import { mergeVertices } from "three/examples/jsm/utils/BufferGeometryUtils.js";
 
 interface FaceNormalInfo {
   a?: number;
@@ -46,7 +45,7 @@ export class RimEdgesGeometry extends BufferGeometry {
     const geometry2 = RimEdgesGeometry.margeGeometry(geometry);
 
     const indexedPositions = RimEdgesGeometry.convertAttributeToVector3Array(
-      geometry2.attributes.position as BufferAttribute
+      geometry2.attributes.position as BufferAttribute,
     );
     const faceNormalInfos: FaceNormalInfo[] =
       RimEdgesGeometry.getFaceNormalInfo(geometry2);
@@ -72,7 +71,7 @@ export class RimEdgesGeometry extends BufferGeometry {
       if (
         // edge.face2 == null ||
         faceNormalInfos[edge.face1].normal.dot(
-          faceNormalInfos[edge.face2].normal
+          faceNormalInfos[edge.face2].normal,
         ) <= thresholdDot
       ) {
         const vertex1 = indexedPositions[edge.index1];
@@ -112,23 +111,23 @@ export class RimEdgesGeometry extends BufferGeometry {
     // build geometry
     this.setAttribute(
       "position",
-      new Float32BufferAttribute(vertices, 3, false)
+      new Float32BufferAttribute(vertices, 3, false),
     );
     this.setAttribute(
       "control0",
-      new Float32BufferAttribute(control0, 3, false)
+      new Float32BufferAttribute(control0, 3, false),
     );
     this.setAttribute(
       "control1",
-      new Float32BufferAttribute(control1, 3, false)
+      new Float32BufferAttribute(control1, 3, false),
     );
     this.setAttribute(
       "direction",
-      new Float32BufferAttribute(direction, 3, false)
+      new Float32BufferAttribute(direction, 3, false),
     );
     this.setAttribute(
       "collapse",
-      new Float32BufferAttribute(collapse, 1, false)
+      new Float32BufferAttribute(collapse, 1, false),
     );
   }
 
@@ -144,7 +143,7 @@ export class RimEdgesGeometry extends BufferGeometry {
    * @private
    */
   private static convertAttributeToVector3Array(
-    attribute: BufferAttribute
+    attribute: BufferAttribute,
   ): Vector3[] {
     const array = [];
     for (let s = 0; s < attribute.array.length; s++) {
@@ -152,8 +151,8 @@ export class RimEdgesGeometry extends BufferGeometry {
         new Vector3(
           attribute.array[s * 3],
           attribute.array[s * 3 + 1],
-          attribute.array[s * 3 + 2]
-        )
+          attribute.array[s * 3 + 2],
+        ),
       );
     }
     return array;
@@ -198,7 +197,7 @@ export class RimEdgesGeometry extends BufferGeometry {
   }
 
   private static extractEdgeDataMap(
-    faceNormalInfos: FaceNormalInfo[]
+    faceNormalInfos: FaceNormalInfo[],
   ): Map<string, EdgeData> {
     const keys = ["a", "b", "c"];
     const edgeData: Map<string, EdgeData> = new Map<string, EdgeData>();

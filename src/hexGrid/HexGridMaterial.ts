@@ -1,7 +1,7 @@
-import { vertex } from "../ShaderPhongMaterial.glsl";
-import { WavyGridMaterial } from "../WavyGridMaterial";
-import { HexGridChunk } from "../chunk";
-import { fragment } from "./HexGridMaterial.glsl";
+import { vertex } from "../ShaderPhongMaterial.glsl.js";
+import { WavyGridMaterial } from "../WavyGridMaterial.js";
+import { HexGridChunk } from "../chunk/index.js";
+import { fragment } from "./HexGridMaterial.glsl.js";
 import { ShaderMaterialParameters, UniformsUtils } from "three";
 
 /**

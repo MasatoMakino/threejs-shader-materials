@@ -1,12 +1,12 @@
-import { ShaderPhongMaterial } from "..";
-import { vertex } from "../ShaderPhongMaterial.glsl";
+import { ShaderPhongMaterial } from "../index.js";
+import { vertex } from "../ShaderPhongMaterial.glsl.js";
 import {
   AnimationChunk,
   IAnimatable,
   ITiledFBM,
   TilingFBMChunk,
-} from "../chunk";
-import { fragment } from "./FBMFireMaterial.glsl";
+} from "../chunk/index.js";
+import { fragment } from "./FBMFireMaterial.glsl.js";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import { ShaderMaterialParameters, UniformsUtils } from "three";
 

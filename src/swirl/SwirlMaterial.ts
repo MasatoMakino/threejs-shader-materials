@@ -1,5 +1,5 @@
-import { AnimationChunk, IAnimatable, ShaderPhongMaterial } from "..";
-import { fragment } from "./SwirlMaterial.glsl";
+import { AnimationChunk, IAnimatable, ShaderPhongMaterial } from "../index.js";
+import { fragment } from "./SwirlMaterial.glsl.js";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import {
   RepeatWrapping,

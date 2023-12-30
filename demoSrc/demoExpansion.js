@@ -1,6 +1,6 @@
-import { ExpansionMaterial } from "..";
-import { Common } from "./Common";
-import { CommonGUI } from "./CommonGUI";
+import { ExpansionMaterial } from "../esm/index.js";
+import { Common } from "./Common.js";
+import { CommonGUI } from "./CommonGUI.js";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import GUI from "lil-gui";
 import {

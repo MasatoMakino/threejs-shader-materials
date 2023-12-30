@@ -1,5 +1,5 @@
-import { ShaderLineMaterial } from "..";
-import * as glsl from "./RimEdgesMaterial.glsl";
+import { ShaderLineMaterial } from "../index.js";
+import * as glsl from "./RimEdgesMaterial.glsl.js";
 import { ShaderMaterialParameters } from "three";
 
 export class RimEdgesMaterial extends ShaderLineMaterial {

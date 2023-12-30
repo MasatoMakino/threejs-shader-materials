@@ -1,6 +1,6 @@
-import { GridMaterial } from "../GridMaterial";
-import { HexGridChunk } from "../index";
-import { fragment } from "./HexDissolveMaterial.glsl";
+import { GridMaterial } from "../GridMaterial.js";
+import { HexGridChunk } from "../index.js";
+import { fragment } from "./HexDissolveMaterial.glsl.js";
 import { Color, ShaderMaterialParameters, UniformsUtils } from "three";
 
 /**

@@ -1,5 +1,5 @@
-import { vertex, fragment } from "./ShaderBasicMaterial.glsl";
-import { SurfaceNormalChunk } from "./chunk";
+import { vertex, fragment } from "./ShaderBasicMaterial.glsl.js";
+import { SurfaceNormalChunk } from "./chunk/index.js";
 import {
   Color,
   ShaderMaterial,

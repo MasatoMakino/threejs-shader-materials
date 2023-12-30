@@ -1,6 +1,6 @@
-import { ShaderSpriteMaterial } from "../ShaderSpriteMaterial";
-import { fragment } from "./SpriteCloudMaterial.glsl";
-import { SpriteChunk } from "../chunk/SpriteChunk";
+import { ShaderSpriteMaterial } from "../ShaderSpriteMaterial.js";
+import { fragment } from "./SpriteCloudMaterial.glsl.js";
+import { SpriteChunk } from "../chunk/SpriteChunk.js";
 import { Color, ShaderMaterialParameters, UniformsUtils } from "three";
 
 export class SpriteCloudMaterial extends ShaderSpriteMaterial {

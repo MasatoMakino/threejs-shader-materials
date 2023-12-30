@@ -1,6 +1,5 @@
-import { AnimationChunk, IAnimatable } from "./AnimationChunk";
-import { GLSLChunk } from "./GLSLChunk";
-import { UniformsUtils } from "three";
+import { AnimationChunk, IAnimatable } from "./AnimationChunk.js";
+import { GLSLChunk } from "./GLSLChunk.js";
 
 /**
  * Wavyアニメーションマテリアルのインターフェース。

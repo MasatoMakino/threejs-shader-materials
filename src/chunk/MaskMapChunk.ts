@@ -1,5 +1,8 @@
-import { GLSLChunk } from "./GLSLChunk";
-import { IRepeatablePattern, RepeatPatternChunk } from "./RepeatPatternChunk";
+import { GLSLChunk } from "./GLSLChunk.js";
+import {
+  IRepeatablePattern,
+  RepeatPatternChunk,
+} from "./RepeatPatternChunk.js";
 import { IUniform, Texture, UniformsUtils } from "three";
 
 /**

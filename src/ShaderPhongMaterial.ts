@@ -1,11 +1,11 @@
-import { vertex, fragment } from "./ShaderPhongMaterial.glsl";
+import { vertex, fragment } from "./ShaderPhongMaterial.glsl.js";
 import {
   ExpansionChunk,
   IMap,
   MapChunk,
   MeshPhongChunk,
   SurfaceNormalChunk,
-} from "./chunk/";
+} from "./chunk/index.js";
 import {
   AdditiveBlending,
   Color,

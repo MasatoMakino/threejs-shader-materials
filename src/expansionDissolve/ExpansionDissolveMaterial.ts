@@ -4,8 +4,8 @@ import {
   ITiledFBM,
   ShaderPhongMaterial,
   TilingFBMChunk,
-} from "../index";
-import { vertex, fragment } from "./ExpansionDissolveMaterial.glsl";
+} from "../index.js";
+import { vertex, fragment } from "./ExpansionDissolveMaterial.glsl.js";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import { Color, ShaderMaterialParameters, UniformsUtils } from "three";
 

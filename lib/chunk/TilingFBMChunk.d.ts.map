@@ -1,1 +1,0 @@
-{"version":3,"file":"TilingFBMChunk.d.ts","sourceRoot":"","sources":["../../src/chunk/TilingFBMChunk.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,MAAM,aAAa,CAAC;AAExC,MAAM,WAAW,SAAS;IACxB,KAAK,EAAE,MAAM,CAAC;IACd,QAAQ,EAAE,MAAM,CAAC;IACjB,GAAG,EAAE,MAAM,CAAC;CACb;AAED,qBAAa,cAAe,SAAQ,SAAS;WAC7B,aAAa,IAAI,IAAI;WAKrB,UAAU,IAAI,GAAG;WAOjB,UAAU,IAAI,MAAM;CAKnC"}

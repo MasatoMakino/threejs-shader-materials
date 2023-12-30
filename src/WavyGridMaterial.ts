@@ -1,4 +1,4 @@
-import { GridMaterial } from "./GridMaterial";
+import { GridMaterial } from "./GridMaterial.js";
 import {
   AnimationChunk,
   Directions,
@@ -6,7 +6,7 @@ import {
   MaskMapChunk,
   ReversibleChunk,
   WavyAnimationChunk,
-} from "./chunk";
+} from "./chunk/index.js";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import { ShaderMaterialParameters, UniformsUtils } from "three";
 
@@ -88,7 +88,7 @@ export abstract class WavyGridMaterial
   constructor(
     vertexShader: string,
     fragmentShader: string,
-    parameters?: ShaderMaterialParameters
+    parameters?: ShaderMaterialParameters,
   ) {
     super(vertexShader, fragmentShader, parameters);
     this.isAnimate = this.isAnimate; //reset and start animation

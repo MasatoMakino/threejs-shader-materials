@@ -1,5 +1,5 @@
-import { ShaderBasicMaterial } from "..";
-import { fragment } from "./RimBasicMaterial.glsl";
+import { ShaderBasicMaterial } from "../index.js";
+import { fragment } from "./RimBasicMaterial.glsl.js";
 import { Color, ShaderMaterialParameters, UniformsUtils } from "three";
 
 export class RimBasicMaterial extends ShaderBasicMaterial {
