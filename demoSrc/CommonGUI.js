@@ -26,6 +26,7 @@ export class CommonGUI {
 
   static initMaterialFolder(folder, mat) {
     this.initColorGUI(folder, mat);
+    folder.add(mat, "transparent");
     folder.add(mat, "uniformOpacity", 0.0, 1.0);
   }
 
