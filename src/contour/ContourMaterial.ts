@@ -1,6 +1,6 @@
-import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
-import { vertex } from "../ShaderPhongMaterial.glsl";
-import { fragment } from "./ContourMaterial.glsl";
+import { ShaderPhongMaterial } from "../ShaderPhongMaterial.js";
+import { vertex } from "../ShaderPhongMaterial.glsl.js";
+import { fragment } from "./ContourMaterial.glsl.js";
 import {
   BufferGeometry,
   DoubleSide,

@@ -1,4 +1,4 @@
-import { IExpandable, ShaderPhongMaterial } from "..";
+import { IExpandable, ShaderPhongMaterial } from "../index.js";
 import { ShaderMaterialParameters } from "three";
 
 export class ExpansionMaterial

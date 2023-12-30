@@ -1,7 +1,7 @@
-import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
-import { vertex } from "../ShaderPhongMaterial.glsl";
-import { AnimationChunk, IAnimatable } from "../chunk/";
-import { fragment } from "./SkyCloudMaterial.glsl";
+import { ShaderPhongMaterial } from "../ShaderPhongMaterial.js";
+import { vertex } from "../ShaderPhongMaterial.glsl.js";
+import { AnimationChunk, IAnimatable } from "../chunk/index.js";
+import { fragment } from "./SkyCloudMaterial.glsl.js";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import { Color, ShaderMaterialParameters, UniformsUtils } from "three";
 

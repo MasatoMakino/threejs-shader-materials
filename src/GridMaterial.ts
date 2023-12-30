@@ -1,5 +1,10 @@
-import { ShaderPhongMaterial } from "./ShaderPhongMaterial";
-import { IMaskable, IReversible, MaskMapChunk, ReversibleChunk } from "./chunk";
+import { ShaderPhongMaterial } from "./ShaderPhongMaterial.js";
+import {
+  IMaskable,
+  IReversible,
+  MaskMapChunk,
+  ReversibleChunk,
+} from "./chunk/index.js";
 import { ShaderMaterialParameters, Texture, UniformsUtils } from "three";
 
 /**

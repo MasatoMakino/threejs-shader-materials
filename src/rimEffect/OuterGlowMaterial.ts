@@ -1,5 +1,5 @@
-import { IExpandable } from "../chunk/";
-import { RimEffectMaterial } from "./RimEffectMaterial";
+import { IExpandable } from "../chunk/index.js";
+import { RimEffectMaterial } from "./RimEffectMaterial.js";
 
 /**
  * モデルの外周を発光させるマテリアル。

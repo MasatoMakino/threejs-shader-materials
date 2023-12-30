@@ -1,8 +1,8 @@
 /**
  * ライトに影響を受けない、ソリッドな切断面をもつマテリアル
  */
-import { ShaderPhongMaterial } from "..";
-import { fragment } from "./SolidClippingMaterial.glsl";
+import { ShaderPhongMaterial } from "../index.js";
+import { fragment } from "./SolidClippingMaterial.glsl.js";
 import {
   Color,
   DoubleSide,

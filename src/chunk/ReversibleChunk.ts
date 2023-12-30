@@ -1,4 +1,4 @@
-import { GLSLChunk } from "./GLSLChunk";
+import { GLSLChunk } from "./GLSLChunk.js";
 
 /**
  * 反転可能なマテリアル用のインターフェース。

@@ -1,4 +1,4 @@
-import { GLSLChunk } from "./GLSLChunk";
+import { GLSLChunk } from "./GLSLChunk.js";
 import { IUniform, Texture, UniformsUtils } from "three";
 
 /**

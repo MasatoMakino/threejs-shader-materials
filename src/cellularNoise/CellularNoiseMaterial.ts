@@ -1,5 +1,5 @@
-import { AnimationChunk, IAnimatable, ShaderPhongMaterial } from "../";
-import { fragment } from "./CellularNoiseMaterial.glsl";
+import { AnimationChunk, IAnimatable, ShaderPhongMaterial } from "../index.js";
+import { fragment } from "./CellularNoiseMaterial.glsl.js";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import { ShaderMaterialParameters, UniformsUtils } from "three";
 
