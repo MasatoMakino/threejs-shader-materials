@@ -64,3 +64,4 @@ typings/
 *.tsbuildinfo
 
 docs
+lib/**/*
