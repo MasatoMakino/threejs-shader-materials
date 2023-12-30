@@ -45,12 +45,17 @@ export class Common {
   }
 
   static initRenderer(W, H, color = 0x000000, antialias = true) {
+    const convertRGBToHex = (rgb) => {
+      const hex = rgb.toString(16);
+      return "#" + hex.padStart(6, "0");
+    };
     const renderer = new WebGLRenderer({
       antialias: antialias,
     });
     renderer.setClearColor(new Color(color));
     renderer.setSize(W, H);
     renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.domElement.style.backgroundColor = convertRGBToHex(color);
     document.body.appendChild(renderer.domElement);
     return renderer;
   }
