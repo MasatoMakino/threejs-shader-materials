@@ -10,7 +10,7 @@
       }
     }
   },
-  "types": "./lib/index.d.ts",
+  "types": "./esm/index.d.ts",
   "files": [
     "esm"
   ],
