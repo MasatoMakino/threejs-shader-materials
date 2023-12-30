@@ -1,5 +1,5 @@
-import { ContourMaterial } from "..";
-import { Common } from "./Common";
+import { ContourMaterial } from "../esm/index.js";
+import { Common } from "./Common.js";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import {
   Color,

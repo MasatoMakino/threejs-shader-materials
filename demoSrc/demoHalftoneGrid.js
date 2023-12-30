@@ -1,6 +1,6 @@
-import { Directions, HalftoneGridMaterial } from "..";
-import { Common } from "./Common";
-import { CommonGUI } from "./CommonGUI";
+import { Directions, HalftoneGridMaterial } from "../esm/index.js";
+import { Common } from "./Common.js";
+import { CommonGUI } from "./CommonGUI.js";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import GUI from "lil-gui";
 import {

@@ -1,6 +1,6 @@
-import { RimEdgesGeometry, RimEdgesMaterial } from "..";
-import { Common } from "./Common";
-import { CommonGUI } from "./CommonGUI";
+import { RimEdgesGeometry, RimEdgesMaterial } from "../esm/index.js";
+import { Common } from "./Common.js";
+import { CommonGUI } from "./CommonGUI.js";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import GUI from "lil-gui";
 import {
@@ -15,7 +15,7 @@ import {
   SphereGeometry,
   TorusKnotGeometry,
 } from "three";
-import { mergeBufferGeometries } from "three/examples/jsm/utils/BufferGeometryUtils";
+import { mergeBufferGeometries } from "three/examples/jsm/utils/BufferGeometryUtils.js";
 
 export class Study {
   constructor() {
