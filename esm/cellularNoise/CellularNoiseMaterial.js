@@ -1,5 +1,5 @@
-import { AnimationChunk, ShaderPhongMaterial } from "../";
-import { fragment } from "./CellularNoiseMaterial.glsl";
+import { AnimationChunk, ShaderPhongMaterial } from "../index.js";
+import { fragment } from "./CellularNoiseMaterial.glsl.js";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import { UniformsUtils } from "three";
 export class CellularNoiseMaterial extends ShaderPhongMaterial {

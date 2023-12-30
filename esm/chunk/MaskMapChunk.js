@@ -1,5 +1,5 @@
-import { GLSLChunk } from "./GLSLChunk";
-import { RepeatPatternChunk } from "./RepeatPatternChunk";
+import { GLSLChunk } from "./GLSLChunk.js";
+import { RepeatPatternChunk, } from "./RepeatPatternChunk.js";
 import { UniformsUtils } from "three";
 /**
  * マスクテクスチャを利用するShaderMaterial用Chunk。

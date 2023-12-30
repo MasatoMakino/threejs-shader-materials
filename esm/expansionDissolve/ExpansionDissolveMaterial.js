@@ -1,5 +1,5 @@
-import { AnimationChunk, ShaderPhongMaterial, TilingFBMChunk, } from "../index";
-import { vertex, fragment } from "./ExpansionDissolveMaterial.glsl";
+import { AnimationChunk, ShaderPhongMaterial, TilingFBMChunk, } from "../index.js";
+import { vertex, fragment } from "./ExpansionDissolveMaterial.glsl.js";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import { Color, UniformsUtils } from "three";
 /**

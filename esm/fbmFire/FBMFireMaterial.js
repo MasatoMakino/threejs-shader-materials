@@ -1,7 +1,7 @@
-import { ShaderPhongMaterial } from "..";
-import { vertex } from "../ShaderPhongMaterial.glsl";
-import { AnimationChunk, TilingFBMChunk, } from "../chunk";
-import { fragment } from "./FBMFireMaterial.glsl";
+import { ShaderPhongMaterial } from "../index.js";
+import { vertex } from "../ShaderPhongMaterial.glsl.js";
+import { AnimationChunk, TilingFBMChunk, } from "../chunk/index.js";
+import { fragment } from "./FBMFireMaterial.glsl.js";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import { UniformsUtils } from "three";
 export class FBMFireMaterial extends ShaderPhongMaterial {

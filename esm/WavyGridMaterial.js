@@ -1,5 +1,5 @@
-import { GridMaterial } from "./GridMaterial";
-import { AnimationChunk, MaskMapChunk, ReversibleChunk, WavyAnimationChunk, } from "./chunk";
+import { GridMaterial } from "./GridMaterial.js";
+import { AnimationChunk, MaskMapChunk, ReversibleChunk, WavyAnimationChunk, } from "./chunk/index.js";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import { UniformsUtils } from "three";
 /**

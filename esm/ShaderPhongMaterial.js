@@ -1,5 +1,5 @@
-import { vertex, fragment } from "./ShaderPhongMaterial.glsl";
-import { ExpansionChunk, MapChunk, MeshPhongChunk, SurfaceNormalChunk, } from "./chunk/";
+import { vertex, fragment } from "./ShaderPhongMaterial.glsl.js";
+import { ExpansionChunk, MapChunk, MeshPhongChunk, SurfaceNormalChunk, } from "./chunk/index.js";
 import { AdditiveBlending, Color, ShaderMaterial, UniformsLib, UniformsUtils, } from "three";
 /**
  * MeshPhongMaterialに準じるShaderMaterialクラス。
@@ -16,9 +16,9 @@ export class ShaderPhongMaterial extends ShaderMaterial {
     constructor(vertexShader, fragmentShader, parameters) {
         super(parameters);
         this._opacity = 1.0;
-        parameters !== null && parameters !== void 0 ? parameters : (parameters = {});
-        vertexShader !== null && vertexShader !== void 0 ? vertexShader : (vertexShader = vertex);
-        fragmentShader !== null && fragmentShader !== void 0 ? fragmentShader : (fragmentShader = fragment);
+        parameters ??= {};
+        vertexShader ??= vertex;
+        fragmentShader ??= fragment;
         this.initChunks();
         this.initUniforms();
         this.initDefines();
@@ -88,7 +88,7 @@ export class ShaderPhongMaterial extends ShaderMaterial {
     initDefaultSetting(parameters) {
         this.uniformOpacity = this._opacity;
         this.lights = true; //FIXME シェーダーがエラーを起こすのでlights設定は強制でON
-        if ((parameters === null || parameters === void 0 ? void 0 : parameters.transparent) == null) {
+        if (parameters?.transparent == null) {
             this.transparent = true;
         }
         else {
@@ -137,9 +137,8 @@ export class ShaderPhongMaterial extends ShaderMaterial {
      * @param value
      */
     set uniformOpacity(value) {
-        var _a;
         this._opacity = value;
-        if ((_a = this.uniforms) === null || _a === void 0 ? void 0 : _a.opacity) {
+        if (this.uniforms?.opacity) {
             this.uniforms.opacity.value = value;
         }
     }

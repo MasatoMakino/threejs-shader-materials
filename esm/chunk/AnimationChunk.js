@@ -1,4 +1,4 @@
-import { GLSLChunk } from "./GLSLChunk";
+import { GLSLChunk } from "./GLSLChunk.js";
 /**
  * IAnimatableインターフェースで定義されたアニメーションを実行するGLSLチャンク。
  * uniformのtime値を操作する。

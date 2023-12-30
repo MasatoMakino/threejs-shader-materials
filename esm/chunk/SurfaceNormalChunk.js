@@ -1,4 +1,4 @@
-import { GLSLChunk } from "./GLSLChunk";
+import { GLSLChunk } from "./GLSLChunk.js";
 export class SurfaceNormalChunk extends GLSLChunk {
     static registerChunk() {
         SurfaceNormalVaryingChunk.registerChunk();

@@ -1,6 +1,6 @@
-import { vertex } from "../ShaderPhongMaterial.glsl";
-import { WavyGridMaterial } from "../WavyGridMaterial";
-import { fragment } from "./HalftoneGridMaterial.glsl";
+import { vertex } from "../ShaderPhongMaterial.glsl.js";
+import { WavyGridMaterial } from "../WavyGridMaterial.js";
+import { fragment } from "./HalftoneGridMaterial.glsl.js";
 import { UniformsUtils } from "three";
 /**
  * MaskMapをハーフトーン分解するマテリアル

@@ -1,6 +1,6 @@
-import { vertex } from "../ShaderPhongMaterial.glsl";
-import { WavyGridMaterial } from "../WavyGridMaterial";
-import { fragment } from "./CrossGridMaterial.glsl";
+import { vertex } from "../ShaderPhongMaterial.glsl.js";
+import { WavyGridMaterial } from "../WavyGridMaterial.js";
+import { fragment } from "./CrossGridMaterial.glsl.js";
 import { UniformsUtils } from "three";
 /**
  * 十字線を正方形グリッドの中心に描画するマテリアル。

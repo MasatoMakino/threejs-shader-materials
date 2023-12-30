@@ -1,5 +1,5 @@
 import { BufferGeometry, Float32BufferAttribute, MathUtils, Triangle, Vector3, } from "three";
-import { mergeVertices } from "three/examples/jsm/utils/BufferGeometryUtils";
+import { mergeVertices } from "three/examples/jsm/utils/BufferGeometryUtils.js";
 /**
  * 法線によって描画を切り分けるEdgesGeometryの習作
  *

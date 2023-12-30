@@ -1,5 +1,5 @@
-import { AnimationChunk } from "./AnimationChunk";
-import { GLSLChunk } from "./GLSLChunk";
+import { AnimationChunk } from "./AnimationChunk.js";
+import { GLSLChunk } from "./GLSLChunk.js";
 /**
  * IWaveAnimatableインターフェースで定義されたアニメーションを実装するためのGLSLチャンク。
  * 実行にはグリッドid値が必要。idはvec2。
@@ -18,7 +18,10 @@ export class WavyAnimationChunk extends AnimationChunk {
             wavePow: { value: 4.0 },
             direction: { value: Directions.vertical },
         };
-        return Object.assign(Object.assign({}, super.getUniform()), uniforms);
+        return {
+            ...super.getUniform(),
+            ...uniforms,
+        };
     }
 }
 class WavyAnimationFragmentChunk extends GLSLChunk {

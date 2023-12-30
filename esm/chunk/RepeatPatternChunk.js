@@ -1,4 +1,4 @@
-import { GLSLChunk } from "./GLSLChunk";
+import { GLSLChunk } from "./GLSLChunk.js";
 export class RepeatPatternChunk extends GLSLChunk {
     static registerChunk() {
         RepeatPatternUniformChunk.registerChunk();

@@ -3,8 +3,8 @@ export class ShaderLineMaterial extends ShaderMaterial {
     constructor(vertexShader, fragmentShader, parameters) {
         super(parameters);
         this._opacity = 1.0;
-        this.vertexShader = vertexShader !== null && vertexShader !== void 0 ? vertexShader : ShaderChunk.linedashed_vert;
-        this.fragmentShader = fragmentShader !== null && fragmentShader !== void 0 ? fragmentShader : ShaderChunk.linedashed_frag;
+        this.vertexShader = vertexShader ?? ShaderChunk.linedashed_vert;
+        this.fragmentShader = fragmentShader ?? ShaderChunk.linedashed_frag;
         this.uniforms = UniformsUtils.merge([
             UniformsLib.common,
             UniformsLib.lightmap,
@@ -26,9 +26,8 @@ export class ShaderLineMaterial extends ShaderMaterial {
         return this._opacity;
     }
     set uniformOpacity(value) {
-        var _a;
         this._opacity = value;
-        if ((_a = this.uniforms) === null || _a === void 0 ? void 0 : _a.opacity) {
+        if (this.uniforms?.opacity) {
             this.uniforms.opacity.value = value;
         }
     }

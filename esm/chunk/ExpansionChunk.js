@@ -1,4 +1,4 @@
-import { GLSLChunk } from "./GLSLChunk";
+import { GLSLChunk } from "./GLSLChunk.js";
 export class ExpansionChunk extends GLSLChunk {
     static registerChunk() {
         ExpansionUniformChunk.registerChunk();

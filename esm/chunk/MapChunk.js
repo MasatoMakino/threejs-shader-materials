@@ -1,4 +1,4 @@
-import { GLSLChunk } from "./GLSLChunk";
+import { GLSLChunk } from "./GLSLChunk.js";
 import { UniformsUtils } from "three";
 /**
  * マスクテクスチャを利用するShaderMaterial用Chunk。

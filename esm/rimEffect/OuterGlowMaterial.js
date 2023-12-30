@@ -1,4 +1,4 @@
-import { RimEffectMaterial } from "./RimEffectMaterial";
+import { RimEffectMaterial } from "./RimEffectMaterial.js";
 /**
  * モデルの外周を発光させるマテリアル。
  * 縁の発光と膨張を掛け合わせて、元のモデルの周辺を発光させる。

@@ -1,4 +1,4 @@
-import { GLSLChunk } from "./GLSLChunk";
+import { GLSLChunk } from "./GLSLChunk.js";
 export class ReversibleChunk extends GLSLChunk {
     static registerChunk() {
         ReversibleUniformChunk.registerChunk();

@@ -1,5 +1,5 @@
-import { ShaderPhongMaterial } from "../ShaderPhongMaterial";
-import { fragment } from "./RimEffectMaterial.glsl";
+import { ShaderPhongMaterial } from "../ShaderPhongMaterial.js";
+import { fragment } from "./RimEffectMaterial.glsl.js";
 import { Color, UniformsUtils } from "three";
 export class RimEffectMaterial extends ShaderPhongMaterial {
     get rimPow() {

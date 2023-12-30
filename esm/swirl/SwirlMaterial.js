@@ -1,5 +1,5 @@
-import { AnimationChunk, ShaderPhongMaterial } from "..";
-import { fragment } from "./SwirlMaterial.glsl";
+import { AnimationChunk, ShaderPhongMaterial } from "../index.js";
+import { fragment } from "./SwirlMaterial.glsl.js";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import { RepeatWrapping, UniformsUtils, Vector2, } from "three";
 export class SwirlMaterial extends ShaderPhongMaterial {

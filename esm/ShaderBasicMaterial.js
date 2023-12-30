@@ -1,5 +1,5 @@
-import { vertex, fragment } from "./ShaderBasicMaterial.glsl";
-import { SurfaceNormalChunk } from "./chunk";
+import { vertex, fragment } from "./ShaderBasicMaterial.glsl.js";
+import { SurfaceNormalChunk } from "./chunk/index.js";
 import { ShaderMaterial, UniformsLib, UniformsUtils, } from "three";
 /**
  * MeshBasicMaterialに準じたShaderMaterial
@@ -14,8 +14,8 @@ export class ShaderBasicMaterial extends ShaderMaterial {
         super(parameters);
         this._opacity = 1.0;
         this.uniforms = ShaderBasicMaterial.getBasicUniforms();
-        this.vertexShader = vertexShader !== null && vertexShader !== void 0 ? vertexShader : vertex;
-        this.fragmentShader = fragmentShader !== null && fragmentShader !== void 0 ? fragmentShader : fragment;
+        this.vertexShader = vertexShader ?? vertex;
+        this.fragmentShader = fragmentShader ?? fragment;
         SurfaceNormalChunk.registerChunk();
         this.initDefines();
         this.uniformOpacity = this._opacity;
@@ -45,9 +45,8 @@ export class ShaderBasicMaterial extends ShaderMaterial {
         return this._opacity;
     }
     set uniformOpacity(value) {
-        var _a;
         this._opacity = value;
-        if ((_a = this.uniforms) === null || _a === void 0 ? void 0 : _a.opacity) {
+        if (this.uniforms?.opacity) {
             this.uniforms.opacity.value = value;
         }
     }

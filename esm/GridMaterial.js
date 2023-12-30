@@ -1,5 +1,5 @@
-import { ShaderPhongMaterial } from "./ShaderPhongMaterial";
-import { MaskMapChunk, ReversibleChunk } from "./chunk";
+import { ShaderPhongMaterial } from "./ShaderPhongMaterial.js";
+import { MaskMapChunk, ReversibleChunk, } from "./chunk/index.js";
 import { UniformsUtils } from "three";
 /**
  * グリッド状に分割されたマテリアル。
