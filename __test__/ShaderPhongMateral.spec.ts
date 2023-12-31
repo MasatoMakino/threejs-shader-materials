@@ -1,4 +1,4 @@
-import { BoxGeometry, Mesh } from "three";
+import { BoxGeometry, Color, Mesh, Texture } from "three";
 import { describe, expect, it } from "vitest";
 import { ShaderPhongMaterial } from "../src/index.js";
 import { initScene } from "./CommonScene.js";
@@ -18,5 +18,47 @@ describe("ShaderPhongMaterial", () => {
     scene.add(cube);
 
     renderer.render(scene, camera);
+  });
+
+  it("should get and set color correctly", () => {
+    const material = new ShaderPhongMaterial(null, null);
+    const color = new Color(0xff0000);
+
+    material.color = color;
+    const retrievedColor = material.color;
+    expect(retrievedColor).toEqual(color);
+  });
+
+  it("should get and set uniformOpacity correctly", () => {
+    const material = new ShaderPhongMaterial(null, null);
+    const opacity = 0.5;
+
+    material.uniformOpacity = opacity;
+    const retrievedOpacity = material.uniformOpacity;
+    expect(retrievedOpacity).toEqual(opacity);
+  });
+
+  it("should get and set emessive correctly", () => {
+    const material = new ShaderPhongMaterial(null, null);
+    const emissive = new Color(0xff0000);
+
+    material.emissive = emissive;
+    expect(material.emissive).toEqual(emissive);
+  });
+
+  it("should get and set map correctly", () => {
+    const material = new ShaderPhongMaterial(null, null);
+    const map = new Texture();
+
+    material.map = map;
+    expect(material.map).toEqual(map);
+  });
+
+  it("should get and set alphaMap correctly", () => {
+    const material = new ShaderPhongMaterial(null, null);
+    const alphaMap = new Texture();
+
+    material.alphaMap = alphaMap;
+    expect(material.alphaMap).toEqual(alphaMap);
   });
 });

@@ -40,6 +40,7 @@
   },
   "scripts": {
     "test": "vitest",
+    "test:coverage": "vitest --coverage --run",
     "start:dev": "npm run server & npm run watch:tsc & npm run watch:demo",
     "build": "npm run buildTS && npm run demo && npm run typedocs",
     "demo": "npx @masatomakino/gulptask-demo-page",
