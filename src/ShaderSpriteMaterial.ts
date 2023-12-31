@@ -59,7 +59,12 @@ export class ShaderSpriteMaterial extends ShaderMaterial {
    * uniformsを初期化する。
    */
   protected initUniforms(): void {
-    this.uniforms = UniformsUtils.merge([SpriteChunk.getUniform(), {}]);
+    this.uniforms = UniformsUtils.merge([
+      SpriteChunk.getUniform(),
+      {
+        uvTransform: { value: new Matrix3() },
+      },
+    ]);
   }
 
   /**
