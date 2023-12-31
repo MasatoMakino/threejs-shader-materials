@@ -28,6 +28,7 @@
     "@vitest/coverage-istanbul": "^1.1.0",
     "browser-sync": "^3.0.2",
     "canvas": "^2.11.2",
+    "gl": "^6.0.2",
     "husky": "^8.0.3",
     "jsdom": "^23.0.1",
     "lil-gui": "^0.18.0",
@@ -38,6 +39,7 @@
     "vitest": "^1.1.0"
   },
   "scripts": {
+    "test": "vitest",
     "start:dev": "npm run server & npm run watch:tsc & npm run watch:demo",
     "build": "npm run buildTS && npm run demo && npm run typedocs",
     "demo": "npx @masatomakino/gulptask-demo-page",

@@ -20,8 +20,8 @@ export class ShaderBasicMaterial extends ShaderMaterial {
    * @param parameters
    */
   constructor(
-    vertexShader: string,
-    fragmentShader: string,
+    vertexShader: string | undefined | null,
+    fragmentShader: string | undefined | null,
     parameters?: ShaderMaterialParameters,
   ) {
     super(parameters);
