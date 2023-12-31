@@ -3,9 +3,10 @@ import {
   IMaskable,
   IReversible,
   MaskMapChunk,
+  RepeatPatternChunk,
   ReversibleChunk,
 } from "./chunk/index.js";
-import { ShaderMaterialParameters, Texture, UniformsUtils } from "three";
+import { Texture, UniformsUtils } from "three";
 
 /**
  * グリッド状に分割されたマテリアル。
@@ -54,13 +55,7 @@ export abstract class GridMaterial
       ShaderPhongMaterial.getBasicUniforms(),
       ReversibleChunk.getUniform(),
       MaskMapChunk.getUniform(),
+      RepeatPatternChunk.getUniform(),
     ]);
-  }
-
-  protected initDefaultSetting(parameters?: ShaderMaterialParameters): void {
-    super.initDefaultSetting(parameters);
-    if (parameters.transparent == null) {
-      this.transparent = true;
-    }
   }
 }

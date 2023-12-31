@@ -8,6 +8,7 @@ describe("ShaderSpriteMaterial", () => {
     const material = new ShaderSpriteMaterial(null, null);
     expect(material).toBeInstanceOf(ShaderSpriteMaterial);
     expect(material).toBeTruthy();
+    material.dispose();
   });
 
   it("should handle glsl inclusion and render correctly", () => {
@@ -18,6 +19,8 @@ describe("ShaderSpriteMaterial", () => {
     scene.add(sprite);
 
     renderer.render(scene, camera);
+
+    material.dispose();
   });
 
   it("should get and set color correctly", () => {
@@ -56,9 +59,6 @@ describe("ShaderSpriteMaterial", () => {
 
     material.uvTransform = uvTransform;
     const retrievedUvTransform = material.uvTransform;
-
-    console.log(uvTransform);
-    console.log(retrievedUvTransform);
 
     expect(retrievedUvTransform).toEqual(uvTransform);
   });
