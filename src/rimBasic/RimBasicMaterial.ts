@@ -44,7 +44,7 @@ export class RimBasicMaterial extends ShaderBasicMaterial {
     this.uniforms.insideColor.value = value;
   }
 
-  constructor(param: ShaderMaterialParameters) {
+  constructor(param?: ShaderMaterialParameters) {
     super(null, fragment, param);
 
     this.uniforms = UniformsUtils.merge([
