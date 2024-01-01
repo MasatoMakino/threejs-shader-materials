@@ -1,7 +1,7 @@
 import { Color, Mesh, PlaneGeometry } from "three";
 import { describe, expect, it } from "vitest";
 import { ExpansionDissolveMaterial } from "../../src/index.js";
-import { initScene } from "../CommonScene.js";
+import { initScene } from "../Common.js";
 
 describe("ExpansionDissolveMaterial", () => {
   it("should be able to create a material instance", () => {

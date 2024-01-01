@@ -1,7 +1,7 @@
 import { Color, Mesh, PlaneGeometry } from "three";
 import { describe, expect, it, beforeEach } from "vitest";
 import { HexDissolveMaterial } from "../../src/index.js";
-import { initScene } from "../CommonScene.js";
+import { initScene } from "../Common.js";
 
 describe("HexDissolveMaterial", () => {
   let material: HexDissolveMaterial;

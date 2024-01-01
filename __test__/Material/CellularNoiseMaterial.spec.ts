@@ -1,7 +1,7 @@
 import { Mesh, PlaneGeometry, Vector2 } from "three";
 import { describe, expect, it } from "vitest";
 import { CellularNoiseMaterial } from "../../src/index.js";
-import { initScene } from "../CommonScene.js";
+import { initScene, testAnimateProperty } from "../Common.js";
 
 describe("CellularNoiseMaterial", () => {
   it("should be able to create a material instance", () => {
@@ -22,14 +22,7 @@ describe("CellularNoiseMaterial", () => {
 
   it("should get and set isAnimate correctly", () => {
     const material = new CellularNoiseMaterial();
-
-    const setAnimate = (isAnimate: boolean) => {
-      material.isAnimate = isAnimate;
-      const retrievedIsAnimate = material.isAnimate;
-      expect(retrievedIsAnimate).toEqual(isAnimate);
-    };
-    setAnimate(true);
-    setAnimate(false);
+    testAnimateProperty(material);
   });
 
   it("should get and set grid correctly", () => {

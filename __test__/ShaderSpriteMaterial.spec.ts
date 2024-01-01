@@ -1,7 +1,7 @@
 import { Sprite, Color, Vector2, Matrix3, Texture } from "three";
 import { describe, expect, it } from "vitest";
 import { ShaderSpriteMaterial } from "../src/index.js";
-import { initScene } from "./CommonScene.js";
+import { initScene } from "./Common.js";
 
 describe("ShaderSpriteMaterial", () => {
   it("should be able to create a material instance", () => {

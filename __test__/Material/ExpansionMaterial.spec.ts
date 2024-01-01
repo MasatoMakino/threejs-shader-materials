@@ -1,7 +1,7 @@
 import { Mesh, PlaneGeometry } from "three";
 import { describe, expect, it } from "vitest";
 import { ExpansionMaterial } from "../../src/index.js";
-import { initScene } from "../CommonScene.js";
+import { initScene } from "../Common.js";
 
 describe("ExpansionMaterial", () => {
   it("should be able to create a material instance", () => {

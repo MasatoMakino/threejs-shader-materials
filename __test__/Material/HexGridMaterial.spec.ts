@@ -1,7 +1,7 @@
 import { Color, Mesh, PlaneGeometry } from "three";
 import { describe, expect, it, beforeEach } from "vitest";
 import { HexGridMaterial } from "../../src/index.js";
-import { initScene } from "../CommonScene.js";
+import { initScene } from "../Common.js";
 
 describe("HexGridMaterial", () => {
   let material: HexGridMaterial;

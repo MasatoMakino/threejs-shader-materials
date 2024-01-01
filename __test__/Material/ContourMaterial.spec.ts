@@ -1,7 +1,7 @@
-import { Mesh, PlaneGeometry, TorusGeometry, FrontSide } from "three";
+import { TorusGeometry, FrontSide } from "three";
 import { describe, expect, it } from "vitest";
 import { ContourMaterial } from "../../src/index.js";
-import { initScene } from "../CommonScene.js";
+import { testRendering } from "../Common.js";
 import { TestImage } from "../TestImage.js";
 
 describe("ContourMaterial", () => {
@@ -18,19 +18,13 @@ describe("ContourMaterial", () => {
   });
 
   it("should handle glsl inclusion and render correctly", () => {
-    const { scene, camera, renderer } = initScene(1, 1);
-
-    const material = new ContourMaterial();
-    const mesh = new Mesh(new PlaneGeometry(), material);
-    scene.add(mesh);
-
-    renderer.render(scene, camera);
+    testRendering(new ContourMaterial());
   });
 
   it("should load map correctly", async () => {
     const geo = new TorusGeometry(10, 4, 32, 32);
     const material = new ContourMaterial();
-    await material.loadMap(TestImage, geo);
+    material.loadMap(TestImage, geo);
     expect(material.map).toBeTruthy();
   });
 });

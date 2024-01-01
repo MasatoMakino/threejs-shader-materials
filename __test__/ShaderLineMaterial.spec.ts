@@ -1,7 +1,7 @@
 import { Line, BufferGeometry, Color } from "three";
 import { describe, expect, it } from "vitest";
 import { ShaderLineMaterial } from "../src/index.js";
-import { initScene } from "./CommonScene.js";
+import { initScene } from "./Common.js";
 
 describe("ShaderLineMaterial", () => {
   it("should be able to create a material instance", () => {
