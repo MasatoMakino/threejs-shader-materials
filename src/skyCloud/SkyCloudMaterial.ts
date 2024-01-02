@@ -19,9 +19,6 @@ export class SkyCloudMaterial
   /*
    * implements IAnimatable
    */
-  private animationID: number;
-  private lastAnimatedTimestamp: number;
-
   addTime(delta: number): void {
     AnimationChunk.addTime(this, delta);
   }

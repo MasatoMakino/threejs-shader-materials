@@ -22,10 +22,7 @@ import {
  * @see https://github.com/mrdoob/three.js/blob/76c64b23d422dcfb36a28353f45b1effa1f68c5a/src/renderers/shaders/ShaderLib.js#L53
  */
 
-export abstract class ShaderPhongMaterial
-  extends ShaderMaterial
-  implements IMap
-{
+export class ShaderPhongMaterial extends ShaderMaterial implements IMap {
   /**
    * コンストラクタ。
    * @param vertexShader
@@ -33,8 +30,8 @@ export abstract class ShaderPhongMaterial
    * @param parameters
    */
   constructor(
-    vertexShader: string,
-    fragmentShader: string,
+    vertexShader: string | null | undefined,
+    fragmentShader: string | null | undefined,
     parameters?: ShaderMaterialParameters,
   ) {
     super(parameters);
@@ -123,10 +120,11 @@ export abstract class ShaderPhongMaterial
   protected initDefaultSetting(parameters?: ShaderMaterialParameters): void {
     this.uniformOpacity = this._opacity;
     this.lights = true; //FIXME シェーダーがエラーを起こすのでlights設定は強制でON
+
+    // パラメータでtransparentフラグが指定されていない場合、デフォルトで透明にします。
+    // これは、フラグメントシェーダー内でalphaを利用してパターンの描画を行うためです。
     if (parameters?.transparent == null) {
       this.transparent = true;
-    } else {
-      this.transparent = parameters.transparent;
     }
   }
 

@@ -75,13 +75,6 @@ export class FBMFireMaterial
     this.uniforms.bloom.value = value;
   }
 
-  get transformSpeed(): number {
-    return this.uniforms.transformSpeed.value;
-  }
-  set transformSpeed(value: number) {
-    this.uniforms.transformSpeed.value = value;
-  }
-
   get rimPow(): number {
     return this.uniforms.rimPow.value;
   }

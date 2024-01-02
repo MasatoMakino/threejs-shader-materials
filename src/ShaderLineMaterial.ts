@@ -11,9 +11,9 @@ export class ShaderLineMaterial extends ShaderMaterial {
   protected _opacity: number = 1.0;
 
   constructor(
-    vertexShader: string,
-    fragmentShader: string,
-    parameters?: ShaderMaterialParameters
+    vertexShader: string | null | undefined,
+    fragmentShader: string | null | undefined,
+    parameters?: ShaderMaterialParameters,
   ) {
     super(parameters);
 

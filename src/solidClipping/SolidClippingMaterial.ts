@@ -12,10 +12,10 @@ import {
 } from "three";
 
 export class SolidClippingMaterial extends ShaderPhongMaterial {
-  get cutSectionColor(): Vector3 {
+  get cutSectionColor(): Color {
     return this.uniforms.cutSectionColor.value;
   }
-  set cutSectionColor(value: Vector3) {
+  set cutSectionColor(value: Color) {
     this.uniforms.cutSectionColor.value = value;
   }
 

@@ -10,7 +10,19 @@ import {
   Vector2,
 } from "three";
 
-export abstract class ShaderSpriteMaterial extends ShaderMaterial {
+export class ShaderSpriteMaterial extends ShaderMaterial {
+  /**
+   * Read-only flag to check if a given object is of type {@link SpriteMaterial}.
+   * @remarks This is a _constant_ value
+   * @defaultValue `true`
+   */
+  readonly isSpriteMaterial: true;
+
+  /**
+   * @default true
+   */
+  sizeAttenuation: boolean = true;
+
   /**
    * コンストラクタ。
    * @param vertexShader
@@ -18,8 +30,8 @@ export abstract class ShaderSpriteMaterial extends ShaderMaterial {
    * @param parameters
    */
   constructor(
-    vertexShader: string,
-    fragmentShader: string,
+    vertexShader: string | null | undefined,
+    fragmentShader: string | null | undefined,
     parameters?: ShaderMaterialParameters,
   ) {
     super(parameters);
@@ -47,7 +59,12 @@ export abstract class ShaderSpriteMaterial extends ShaderMaterial {
    * uniformsを初期化する。
    */
   protected initUniforms(): void {
-    this.uniforms = UniformsUtils.merge([SpriteChunk.getUniform(), {}]);
+    this.uniforms = UniformsUtils.merge([
+      SpriteChunk.getUniform(),
+      {
+        uvTransform: { value: new Matrix3() },
+      },
+    ]);
   }
 
   /**
@@ -145,5 +162,12 @@ export abstract class ShaderSpriteMaterial extends ShaderMaterial {
   }
   set map(value: Texture) {
     this.uniforms.map.value = value;
+  }
+
+  get alphaMap(): Texture {
+    return this.uniforms.alphaMap.value;
+  }
+  set alphaMap(value: Texture) {
+    this.uniforms.alphaMap.value = value;
   }
 }
