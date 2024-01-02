@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import { Color, Mesh, PlaneGeometry } from "three";
+import { Color } from "three";
 import { SolidClippingMaterial } from "../../src/index.js";
-import { initScene, testRendering } from "../Common.js";
+import { testRendering } from "../Common.js";
 
 describe("SolidClippingMaterial", () => {
   let material: SolidClippingMaterial;
