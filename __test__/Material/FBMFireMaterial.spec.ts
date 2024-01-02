@@ -19,6 +19,7 @@ describe("FBMFireMaterial", () => {
 
     renderer.render(scene, camera);
   });
+
   it("should get and set tiles correctly", () => {
     const material = new FBMFireMaterial();
     const value = 2;

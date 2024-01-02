@@ -45,7 +45,7 @@ export class SwirlMaterial extends ShaderPhongMaterial implements IAnimatable {
    * リピートモードは強制的にRepeatWrappingに
    * @param value
    */
-  private setRepeat(value: Texture) {
+  private setRepeat(value?: Texture) {
     if (value) {
       value.wrapS = RepeatWrapping;
       value.wrapT = RepeatWrapping;

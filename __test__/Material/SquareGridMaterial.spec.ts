@@ -16,4 +16,10 @@ describe("SquareGridMaterial", () => {
   it("should handle glsl inclusion and render correctly", () => {
     testRendering(material);
   });
+
+  it("should get and set gridWeight correctly", () => {
+    const value = 0.123;
+    material.gridWeight = value;
+    expect(material.gridWeight).toEqual(value);
+  });
 });

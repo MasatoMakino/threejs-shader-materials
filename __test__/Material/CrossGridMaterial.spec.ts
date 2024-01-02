@@ -1,5 +1,5 @@
-import { Mesh, PlaneGeometry } from "three";
-import { describe, expect, it } from "vitest";
+import { Mesh, PlaneGeometry, Texture } from "three";
+import { describe, expect, it, beforeEach } from "vitest";
 import { CrossGridMaterial, Directions } from "../../src/index.js";
 import { initScene } from "../Common.js";
 
@@ -38,6 +38,37 @@ describe("CrossGridMaterial", () => {
     const retrievedRadius = material.radius;
 
     expect(retrievedRadius).toEqual(radius);
+  });
+});
+
+describe("GridMaterial", () => {
+  let material: CrossGridMaterial;
+  beforeEach(() => {
+    material = new CrossGridMaterial();
+  });
+
+  it("should get and set division correctly", () => {
+    const value = 7; // Assuming default is not 7
+    material.division = value;
+    expect(material.division).toEqual(value);
+  });
+
+  it("should get and set divisionScaleX correctly", () => {
+    const value = 0.123;
+    material.divisionScaleX = value;
+    expect(material.divisionScaleX).toEqual(value);
+  });
+
+  it("should get and set isReversed correctly", () => {
+    const value = true; // Assuming default is false
+    material.isReversed = value;
+    expect(material.isReversed).toEqual(value);
+  });
+
+  it("should get and set maskTexture correctly", () => {
+    const value = new Texture();
+    material.maskTexture = value;
+    expect(material.maskTexture).toEqual(value);
   });
 });
 
