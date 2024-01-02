@@ -11,6 +11,9 @@ export class SkyCloudMaterial extends ShaderPhongMaterial {
     set scale(value) {
         this.uniforms.scale.value = value;
     }
+    /*
+     * implements IAnimatable
+     */
     addTime(delta) {
         AnimationChunk.addTime(this, delta);
     }

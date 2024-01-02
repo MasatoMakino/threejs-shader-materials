@@ -1,5 +1,5 @@
 import { ShaderPhongMaterial } from "./ShaderPhongMaterial.js";
-import { MaskMapChunk, ReversibleChunk, } from "./chunk/index.js";
+import { MaskMapChunk, RepeatPatternChunk, ReversibleChunk, } from "./chunk/index.js";
 import { UniformsUtils } from "three";
 /**
  * グリッド状に分割されたマテリアル。
@@ -39,12 +39,7 @@ export class GridMaterial extends ShaderPhongMaterial {
             ShaderPhongMaterial.getBasicUniforms(),
             ReversibleChunk.getUniform(),
             MaskMapChunk.getUniform(),
+            RepeatPatternChunk.getUniform(),
         ]);
-    }
-    initDefaultSetting(parameters) {
-        super.initDefaultSetting(parameters);
-        if (parameters.transparent == null) {
-            this.transparent = true;
-        }
     }
 }

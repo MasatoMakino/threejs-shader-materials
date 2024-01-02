@@ -1,12 +1,22 @@
 import { Color, Matrix3, ShaderMaterial, ShaderMaterialParameters, Texture, Vector2 } from "three";
-export declare abstract class ShaderSpriteMaterial extends ShaderMaterial {
+export declare class ShaderSpriteMaterial extends ShaderMaterial {
+    /**
+     * Read-only flag to check if a given object is of type {@link SpriteMaterial}.
+     * @remarks This is a _constant_ value
+     * @defaultValue `true`
+     */
+    readonly isSpriteMaterial: true;
+    /**
+     * @default true
+     */
+    sizeAttenuation: boolean;
     /**
      * コンストラクタ。
      * @param vertexShader
      * @param fragmentShader
      * @param parameters
      */
-    constructor(vertexShader: string, fragmentShader: string, parameters?: ShaderMaterialParameters);
+    constructor(vertexShader: string | null | undefined, fragmentShader: string | null | undefined, parameters?: ShaderMaterialParameters);
     /**
      * ShaderChunkにこのマテリアルに必要なChunkを追加する。
      */
@@ -64,5 +74,7 @@ export declare abstract class ShaderSpriteMaterial extends ShaderMaterial {
     set uvTransform(value: Matrix3);
     get map(): Texture;
     set map(value: Texture);
+    get alphaMap(): Texture;
+    set alphaMap(value: Texture);
 }
 //# sourceMappingURL=ShaderSpriteMaterial.d.ts.map

@@ -56,12 +56,6 @@ export class FBMFireMaterial extends ShaderPhongMaterial {
     set bloom(value) {
         this.uniforms.bloom.value = value;
     }
-    get transformSpeed() {
-        return this.uniforms.transformSpeed.value;
-    }
-    set transformSpeed(value) {
-        this.uniforms.transformSpeed.value = value;
-    }
     get rimPow() {
         return this.uniforms.rimPow.value;
     }

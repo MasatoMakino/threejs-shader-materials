@@ -10,13 +10,7 @@ export class SpriteChunk extends GLSLChunk {
         SpriteDiffuseColorChunk.registerChunk();
         SpriteMVPositionChunk.registerChunk();
     }
-    static getDefines() {
-        return {
-            USE_SIZEATTENUATION: true,
-        };
-    }
     static getUniform() {
-        //TODO : PR, UniformsLib.sprite in UniformsLib.d.ts
         return UniformsUtils.merge([
             UniformsLib.sprite,
             UniformsLib.fog,

@@ -1,6 +1,6 @@
 import { vertex, fragment } from "./ShaderSpriteMaterial.glsl.js";
 import { SpriteChunk } from "./chunk/index.js";
-import { ShaderMaterial, UniformsUtils, } from "three";
+import { Matrix3, ShaderMaterial, UniformsUtils, } from "three";
 export class ShaderSpriteMaterial extends ShaderMaterial {
     /**
      * コンストラクタ。
@@ -10,6 +10,10 @@ export class ShaderSpriteMaterial extends ShaderMaterial {
      */
     constructor(vertexShader, fragmentShader, parameters) {
         super(parameters);
+        /**
+         * @default true
+         */
+        this.sizeAttenuation = true;
         this._opacity = 1.0;
         parameters ??= {};
         vertexShader ??= vertex;
@@ -31,7 +35,12 @@ export class ShaderSpriteMaterial extends ShaderMaterial {
      * uniformsを初期化する。
      */
     initUniforms() {
-        this.uniforms = UniformsUtils.merge([SpriteChunk.getUniform(), {}]);
+        this.uniforms = UniformsUtils.merge([
+            SpriteChunk.getUniform(),
+            {
+                uvTransform: { value: new Matrix3() },
+            },
+        ]);
     }
     /**
      * definesを初期化する。
@@ -117,5 +126,11 @@ export class ShaderSpriteMaterial extends ShaderMaterial {
     }
     set map(value) {
         this.uniforms.map.value = value;
+    }
+    get alphaMap() {
+        return this.uniforms.alphaMap.value;
+    }
+    set alphaMap(value) {
+        this.uniforms.alphaMap.value = value;
     }
 }

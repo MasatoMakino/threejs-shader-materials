@@ -1,6 +1,6 @@
 import { ShaderPhongMaterial } from "./ShaderPhongMaterial.js";
 import { IMaskable, IReversible } from "./chunk/index.js";
-import { ShaderMaterialParameters, Texture } from "three";
+import { Texture } from "three";
 /**
  * グリッド状に分割されたマテリアル。
  */
@@ -15,6 +15,5 @@ export declare abstract class GridMaterial extends ShaderPhongMaterial implement
     set maskTexture(val: Texture);
     protected initChunks(): void;
     static getBasicUniforms(): any;
-    protected initDefaultSetting(parameters?: ShaderMaterialParameters): void;
 }
 //# sourceMappingURL=GridMaterial.d.ts.map

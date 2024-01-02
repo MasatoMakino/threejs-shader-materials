@@ -9,7 +9,7 @@ export declare class ShaderBasicMaterial extends ShaderMaterial {
      * @param fragmentShader
      * @param parameters
      */
-    constructor(vertexShader: string, fragmentShader: string, parameters?: ShaderMaterialParameters);
+    constructor(vertexShader: string | undefined | null, fragmentShader: string | undefined | null, parameters?: ShaderMaterialParameters);
     /**
      * このMaterialに必要なuniformsを生成する。
      *

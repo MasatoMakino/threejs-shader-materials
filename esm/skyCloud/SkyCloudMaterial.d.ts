@@ -4,8 +4,6 @@ import { Color, ShaderMaterialParameters } from "three";
 export declare class SkyCloudMaterial extends ShaderPhongMaterial implements IAnimatable {
     get scale(): number;
     set scale(value: number);
-    private animationID;
-    private lastAnimatedTimestamp;
     addTime(delta: number): void;
     get isAnimate(): boolean;
     set isAnimate(value: boolean);

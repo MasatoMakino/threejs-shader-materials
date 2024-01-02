@@ -13,7 +13,7 @@ export declare class RimBasicMaterial extends ShaderBasicMaterial {
     set insideStrength(value: number);
     get insideColor(): Color;
     set insideColor(value: Color);
-    constructor(param: ShaderMaterialParameters);
+    constructor(param?: ShaderMaterialParameters);
     static getRimUniforms(): {
         [uniform: string]: import("three").IUniform<any>;
     };

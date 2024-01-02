@@ -1,7 +1,7 @@
 import { Color, ShaderMaterial, ShaderMaterialParameters } from "three";
 export declare class ShaderLineMaterial extends ShaderMaterial {
     protected _opacity: number;
-    constructor(vertexShader: string, fragmentShader: string, parameters?: ShaderMaterialParameters);
+    constructor(vertexShader: string | null | undefined, fragmentShader: string | null | undefined, parameters?: ShaderMaterialParameters);
     get color(): Color;
     set color(value: Color);
     get uniformOpacity(): number;

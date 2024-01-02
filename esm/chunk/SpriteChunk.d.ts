@@ -4,7 +4,6 @@ import { GLSLChunk } from "./GLSLChunk.js";
  */
 export declare class SpriteChunk extends GLSLChunk {
     static registerChunk(): void;
-    static getDefines(): Object;
     static getUniform(): any;
 }
 //# sourceMappingURL=SpriteChunk.d.ts.map

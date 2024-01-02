@@ -88,11 +88,10 @@ export class ShaderPhongMaterial extends ShaderMaterial {
     initDefaultSetting(parameters) {
         this.uniformOpacity = this._opacity;
         this.lights = true; //FIXME シェーダーがエラーを起こすのでlights設定は強制でON
+        // パラメータでtransparentフラグが指定されていない場合、デフォルトで透明にします。
+        // これは、フラグメントシェーダー内でalphaを利用してパターンの描画を行うためです。
         if (parameters?.transparent == null) {
             this.transparent = true;
-        }
-        else {
-            this.transparent = parameters.transparent;
         }
     }
     /**

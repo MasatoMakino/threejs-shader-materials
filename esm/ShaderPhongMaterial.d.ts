@@ -5,14 +5,14 @@ import { Color, ShaderMaterial, ShaderMaterialParameters, Texture } from "three"
  *
  * @see https://github.com/mrdoob/three.js/blob/76c64b23d422dcfb36a28353f45b1effa1f68c5a/src/renderers/shaders/ShaderLib.js#L53
  */
-export declare abstract class ShaderPhongMaterial extends ShaderMaterial implements IMap {
+export declare class ShaderPhongMaterial extends ShaderMaterial implements IMap {
     /**
      * コンストラクタ。
      * @param vertexShader
      * @param fragmentShader
      * @param parameters
      */
-    constructor(vertexShader: string, fragmentShader: string, parameters?: ShaderMaterialParameters);
+    constructor(vertexShader: string | null | undefined, fragmentShader: string | null | undefined, parameters?: ShaderMaterialParameters);
     /**
      * このMaterialに必要なuniformsを生成する。
      */

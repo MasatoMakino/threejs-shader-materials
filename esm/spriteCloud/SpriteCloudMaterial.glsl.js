@@ -42,10 +42,10 @@ void main() {
     bottom *= bottomStrength;
   #endif
     
-  float rim = 0.0;
+  float edge = 0.0;
   #ifdef USE_MAP
     float a = texture2D( map, vUv ).a ;
-    float edge = 
+    edge = 
         smoothstep( rimCenter-rimRange, rimCenter, a )
       - smoothstep( rimCenter, rimCenter+rimRange, a );
   #endif
