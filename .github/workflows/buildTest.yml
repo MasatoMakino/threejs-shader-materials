@@ -35,3 +35,4 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: npm run buildTS
+      - run: xvfb-run --auto-servernum npx vitest --run
