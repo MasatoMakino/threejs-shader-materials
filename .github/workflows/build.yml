@@ -30,8 +30,11 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "18"
           cache: "npm"
+      - run: sudo apt-get update
+      - name: Install dependencies for headless-gl
+        run: sudo apt-get install -y build-essential libxi-dev libglu1-mesa-dev libglew-dev pkg-config
       - run: npm ci
       - name: build binary
         run: npm run buildTS
