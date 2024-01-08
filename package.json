@@ -20,7 +20,7 @@
   "license": "MIT",
   "peerDependencies": {
     "three": "^0.160.0",
-    "@masatomakino/raf-ticker": "0.5.3 - 0.6.0"
+    "@masatomakino/raf-ticker": "0.5.3 - 0.6.x"
   },
   "devDependencies": {
     "@masatomakino/gulptask-demo-page": "^0.8.0",
@@ -51,7 +51,9 @@
     "server": "npx browser-sync ./docs/demo -w",
     "watch:demo": "npm run demo -- -W",
     "watch:tsc": "tsc -W",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "preversion": "git checkout main && git pull && npm ci && npx vitest --run",
+    "postversion": "git add package.json package-lock.json && git checkout -b version/$(git describe --tags --abbrev=0)"
   },
   "lint-staged": {
     "*.{js,ts,css,md}": "prettier --write"
