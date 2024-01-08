@@ -19,7 +19,8 @@
   "author": "MasatoMakino <unagiinu.g@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
-    "three": "^0.160.0"
+    "three": "^0.160.0",
+    "@masatomakino/raf-ticker": "0.5.3 - 0.6.0"
   },
   "devDependencies": {
     "@masatomakino/gulptask-demo-page": "^0.8.0",
@@ -51,9 +52,6 @@
     "watch:demo": "npm run demo -- -W",
     "watch:tsc": "tsc -W",
     "prepare": "husky install"
-  },
-  "dependencies": {
-    "@masatomakino/raf-ticker": "^0.4.2"
   },
   "lint-staged": {
     "*.{js,ts,css,md}": "prettier --write"
