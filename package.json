@@ -29,7 +29,7 @@
     "@vitest/browser": "^1.4.0",
     "@vitest/coverage-istanbul": "^1.4.0",
     "browser-sync": "^3.0.2",
-    "husky": "^8.0.3",
+    "husky": "^9.0.11",
     "lil-gui": "^0.18.0",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
