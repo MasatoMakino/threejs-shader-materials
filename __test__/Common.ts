@@ -12,7 +12,6 @@ import { IAnimatable } from "../src";
 
 export const initScene = (W: number, H: number, far = 400) => {
   const canvas = document.createElement("canvas");
-  const gl = require("gl")(1, 1);
 
   const scene = new Scene();
   const ambientLight = new AmbientLight(0xffffff, Math.PI);
@@ -23,7 +22,7 @@ export const initScene = (W: number, H: number, far = 400) => {
   camera.updateMatrixWorld(false);
   scene.add(camera);
 
-  const renderer = new WebGLRenderer({ context: gl, canvas: canvas });
+  const renderer = new WebGLRenderer({ canvas: canvas });
   renderer.setSize(W, H);
 
   return { scene, ambientLight, camera, renderer };
