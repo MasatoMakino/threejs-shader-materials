@@ -26,18 +26,17 @@
     "@masatomakino/gulptask-demo-page": "^0.8.0",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/three": "^0.160.0",
-    "@vitest/coverage-istanbul": "^1.1.0",
+    "@vitest/browser": "^1.4.0",
+    "@vitest/coverage-istanbul": "^1.4.0",
     "browser-sync": "^3.0.2",
-    "canvas": "^2.11.2",
-    "gl": "^6.0.2",
     "husky": "^8.0.3",
-    "jsdom": "^23.0.1",
     "lil-gui": "^0.18.0",
     "lint-staged": "^15.2.0",
     "prettier": "^3.1.1",
     "typedoc": "^0.25.4",
     "typescript": "^5.3.3",
-    "vitest": "^1.1.0"
+    "vitest": "^1.4.0",
+    "webdriverio": "^8.35.1"
   },
   "scripts": {
     "test": "vitest",
