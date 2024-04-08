@@ -23,7 +23,7 @@
     "@masatomakino/raf-ticker": "0.5.3 - 0.6.x"
   },
   "devDependencies": {
-    "@masatomakino/gulptask-demo-page": "^0.8.0",
+    "@masatomakino/gulptask-demo-page": "^0.8.2",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/three": "^0.163.0",
     "@vitest/browser": "^1.4.0",
