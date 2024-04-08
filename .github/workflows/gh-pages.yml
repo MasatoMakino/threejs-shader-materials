@@ -8,7 +8,6 @@ on:
 
 jobs:
   publish:
-    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -19,9 +18,6 @@ jobs:
         with:
           node-version: "18"
           cache: "npm"
-      - run: sudo apt-get update
-      - name: Install dependencies for headless-gl
-        run: sudo apt-get install -y build-essential libxi-dev libglu1-mesa-dev libglew-dev pkg-config
       - run: npm ci
       - run: npm run build
       - name: Deploy Github pages
