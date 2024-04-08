@@ -3,20 +3,12 @@ name: Build test
 on:
   push:
     branches: [main]
-    paths:
-      - "src/**"
-      - "__test__/**"
-      - ".github/**"
-      - "package.json"
-      - "tsconfig*.json"
+    paths-ignore:
+      - "esm/**"
   pull_request:
     branches: [main]
-    paths:
-      - "src/**"
-      - "__test__/**"
-      - ".github/**"
-      - "package.json"
-      - "tsconfig*.json"
+    paths-ignore:
+      - "esm/**"
 
 jobs:
   build:

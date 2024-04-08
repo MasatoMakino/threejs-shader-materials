@@ -12,12 +12,8 @@ name: Build JavaScript binary
 on:
   push:
     branches: [main]
-    paths:
-      - "src/**"
-      - "package.json"
-      - "README.md"
-      - "tsconfig**.json"
-      - ".github/**"
+    paths-ignore:
+      - "esm/**"
 
 permissions:
   contents: write
