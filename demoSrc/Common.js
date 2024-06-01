@@ -7,6 +7,7 @@ import {
   Mesh,
   MeshBasicMaterial,
   PerspectiveCamera,
+  REVISION,
   Scene,
   SphereGeometry,
   WebGLRenderer,
@@ -57,6 +58,7 @@ export class Common {
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.domElement.style.backgroundColor = convertRGBToHex(color);
     document.body.appendChild(renderer.domElement);
+    console.log("three.js revision: ", REVISION);
     return renderer;
   }
 
