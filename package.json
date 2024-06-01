@@ -36,7 +36,7 @@
     "three": "^0.165.0",
     "typedoc": "^0.25.13",
     "typescript": "^5.4.5",
-    "webdriverio": "^8.36.1"
+    "webdriverio": "^8.38.0"
   },
   "scripts": {
     "test": "vitest",
