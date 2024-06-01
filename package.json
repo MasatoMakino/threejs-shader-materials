@@ -31,7 +31,7 @@
     "browser-sync": "^3.0.2",
     "husky": "^9.0.11",
     "lil-gui": "^0.19.2",
-    "lint-staged": "^15.2.2",
+    "lint-staged": "^15.2.5",
     "prettier": "^3.2.5",
     "three": "^0.165.0",
     "typedoc": "^0.25.13",
