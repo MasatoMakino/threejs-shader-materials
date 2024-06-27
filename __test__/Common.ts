@@ -9,8 +9,14 @@ import {
   PlaneGeometry,
 } from "three";
 import { IAnimatable } from "../src";
+import WebGPURenderer from "three/examples/jsm/renderers/webgpu/WebGPURenderer.js";
 
-export const initScene = (W: number, H: number, far = 400) => {
+export const initScene = (
+  W: number,
+  H: number,
+  far = 400,
+  isWebGPU: boolean = false,
+) => {
   const canvas = document.createElement("canvas");
 
   const scene = new Scene();
@@ -22,7 +28,13 @@ export const initScene = (W: number, H: number, far = 400) => {
   camera.updateMatrixWorld(false);
   scene.add(camera);
 
-  const renderer = new WebGLRenderer({ canvas: canvas });
+  const getRenderer = () => {
+    if (isWebGPU) {
+      return new WebGPURenderer({ canvas: canvas });
+    }
+    return new WebGLRenderer({ canvas: canvas });
+  };
+  const renderer = getRenderer();
   renderer.setSize(W, H);
 
   return { scene, ambientLight, camera, renderer };
