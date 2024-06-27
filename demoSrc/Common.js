@@ -14,6 +14,7 @@ import {
 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { Sky } from "three/examples/jsm/objects/Sky.js";
+import WebGPURenderer from "three/examples/jsm/renderers/webgpu/WebGPURenderer.js";
 
 export class Common {
   static initScene() {
@@ -45,14 +46,23 @@ export class Common {
     return control;
   }
 
-  static initRenderer(W, H, color = 0x000000, antialias = true) {
+  static initRenderer(W, H, color = 0x000000, antialias = true, isGPU = false) {
     const convertRGBToHex = (rgb) => {
       const hex = rgb.toString(16);
       return "#" + hex.padStart(6, "0");
     };
-    const renderer = new WebGLRenderer({
-      antialias: antialias,
-    });
+
+    const getRenderer = () => {
+      if (isGPU) {
+        return new WebGPURenderer({
+          antialias: antialias,
+        });
+      }
+      return new WebGLRenderer({
+        antialias: antialias,
+      });
+    };
+    const renderer = getRenderer();
     renderer.setClearColor(new Color(color));
     renderer.setSize(W, H);
     renderer.setPixelRatio(window.devicePixelRatio);

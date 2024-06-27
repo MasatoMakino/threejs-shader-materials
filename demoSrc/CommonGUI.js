@@ -12,6 +12,16 @@ export class CommonGUI {
     return prop;
   }
 
+  static initColorNodeGUI(folder, mat, propName = "color") {
+    const prop = {};
+    const targetColor = mat[propName];
+    prop[propName] = targetColor.value.getHex();
+    folder.addColor(prop, propName).onChange((val) => {
+      targetColor.value.setHex(val);
+    });
+    return prop;
+  }
+
   static initBasicMaterialGUI(gui, mat, folderName = "Material") {
     const folder = gui.addFolder(folderName);
     this.initMaterialFolder(folder, mat);
@@ -24,10 +34,11 @@ export class CommonGUI {
     this.initColorGUI(folder, mat, "emissive");
   }
 
-  static initMaterialFolder(folder, mat) {
+  static initMaterialFolder(folder, mat, isNode = false) {
     this.initColorGUI(folder, mat);
     folder.add(mat, "transparent");
-    folder.add(mat, "uniformOpacity", 0.0, 1.0);
+    const opacityName = isNode ? "opacity" : "uniformOpacity";
+    folder.add(mat, opacityName, 0.0, 1.0);
   }
 
   static initSpriteMaterialGUI(gui, mat, folderName = "Material") {

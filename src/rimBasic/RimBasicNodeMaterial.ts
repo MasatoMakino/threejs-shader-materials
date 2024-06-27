@@ -23,8 +23,8 @@ export class RimBasicNodeMaterial extends MeshBasicNodeMaterial {
         this.rimPow,
         this.rimStrength,
         this.insideColor,
-        this.insideStrength,
         this.insidePow,
+        this.insideStrength,
       ),
     );
   }

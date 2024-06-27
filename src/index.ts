@@ -14,6 +14,7 @@ export * from "./skyCloud/SkyCloudMaterial.js";
 export * from "./fbmDissolve/FBMDissolveMaterial.js";
 export * from "./fbmFire/FBMFireMaterial.js";
 export * from "./rimBasic/RimBasicMaterial.js";
+export * from "./rimBasic/RimBasicNodeMaterial.js";
 export * from "./rimEffect/RimEffectMaterial.js";
 export * from "./rimEffect/OuterGlowMaterial.js";
 export * from "./expansion/ExpansionMaterial.js";
