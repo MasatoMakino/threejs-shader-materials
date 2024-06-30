@@ -2,9 +2,10 @@ import {
   MeshPhongNodeMaterial,
   materialOpacity,
   positionWorld,
-  sin,
+  cos,
   uniform,
 } from "three/examples/jsm/nodes/Nodes.js";
+import { ShaderMaterialParameters } from "three";
 
 export class ContourNodeMaterial extends MeshPhongNodeMaterial {
   readonly scaleY = uniform(2.0);
@@ -15,8 +16,9 @@ export class ContourNodeMaterial extends MeshPhongNodeMaterial {
 
     this.transparent = true;
     this.side = 2;
+
     this.opacityNode = materialOpacity.mul(
-      sin(positionWorld.y.mul(this.scaleY)).smoothstep(
+      cos(positionWorld.y.mul(this.scaleY)).smoothstep(
         this.smoothMin,
         this.smoothMax,
       ),

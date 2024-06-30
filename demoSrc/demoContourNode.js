@@ -9,6 +9,8 @@ import {
   PointLightHelper,
   TorusGeometry,
 } from "three";
+import GUI from "lil-gui";
+import { CommonGUI } from "./CommonGUI.js";
 
 export class StudyContourMap {
   constructor() {
@@ -29,11 +31,11 @@ export class StudyContourMap {
   }
 
   initObject(scene) {
-    // const spot = new PointLight(0xffffff, 30_000);
-    // spot.position.set(10, 20, 30);
-    // scene.add(spot);
-    // const helper = new PointLightHelper(spot);
-    // scene.add(helper);
+    const spot = new PointLight(0xffffff, 30_000);
+    spot.position.set(10, 20, 30);
+    scene.add(spot);
+    const helper = new PointLightHelper(spot);
+    scene.add(helper);
 
     const geo = new TorusGeometry(10, 4, 32, 32);
 
@@ -42,10 +44,32 @@ export class StudyContourMap {
       fog: scene.fog !== undefined,
     });
     mat.color = new Color(0xff0000);
-    // mat.emissive = new Color(0xffff00);
 
     const mesh = new Mesh(geo, mat);
     scene.add(mesh);
+
+    this.initGUI(mat);
+  }
+
+  initGUI(mat) {
+    const gui = new GUI();
+    CommonGUI.initMaterialFolder(gui, mat, true);
+
+    const prop = {
+      scaleY: mat.scaleY.value,
+      smoothMin: mat.smoothMin.value,
+      smoothMax: mat.smoothMax.value,
+    };
+    const onUpdate = () => {
+      mat.scaleY.value = prop.scaleY;
+      mat.smoothMin.value = prop.smoothMin;
+      mat.smoothMax.value = prop.smoothMax;
+    };
+
+    const folder = gui.addFolder("ContourNodeMaterial");
+    folder.add(prop, "scaleY", 0.0, 4.0).onChange(onUpdate);
+    folder.add(prop, "smoothMin", 0.0, 1.0).onChange(onUpdate);
+    folder.add(prop, "smoothMax", 0.0, 1.0).onChange(onUpdate);
   }
 }
 
