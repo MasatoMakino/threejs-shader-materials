@@ -4,6 +4,7 @@ export * from "./ShaderBasicMaterial.js";
 export * from "./ShaderLineMaterial.js";
 export * from "./chunk/index.js";
 export * from "./contour/ContourMaterial.js";
+export * from "./contour/ContourNodeMaterial.js";
 export * from "./crossGrid/CrossGridMaterial.js";
 export * from "./halftoneGrid/HalftoneGridMaterial.js";
 export * from "./hexGrid/HexGridMaterial.js";
