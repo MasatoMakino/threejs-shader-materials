@@ -23,7 +23,7 @@
     "three": "0.163.0 - 0.165.x"
   },
   "devDependencies": {
-    "@masatomakino/gulptask-demo-page": "^0.8.2",
+    "@masatomakino/gulptask-demo-page": "^0.8.3",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/three": "^0.165.0",
     "@vitest/browser": "^1.6.0",
