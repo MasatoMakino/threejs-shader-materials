@@ -3,7 +3,7 @@ import {
   MeshBasicNodeMaterial,
   materialColor,
   uniform,
-} from "three/examples/jsm/nodes/Nodes.js";
+} from "three/src/nodes/Nodes.js";
 import { rimEffect } from "../tsl/RimFunction.js";
 
 export class RimBasicNodeMaterial extends MeshBasicNodeMaterial {

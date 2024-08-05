@@ -19,18 +19,18 @@ export class StudyContourMap {
 
     const scene = Common.initScene();
     scene.fog = new Fog(0x000000, 80, 160);
-    Common.initLight(scene);
+    const light = Common.initLight(scene);
     const camera = Common.initCamera(scene, W, H);
     const renderer = Common.initRenderer(W, H, 0x000000, true, true);
     const control = Common.initControl(camera, renderer);
     Common.initHelper(scene);
-    this.initObject(scene);
+    this.initObject(scene, light);
     RAFTicker.on("tick", (e) => {
       renderer.renderAsync(scene, camera);
     });
   }
 
-  initObject(scene) {
+  initObject(scene, light) {
     const spot = new PointLight(0xffffff, 30_000);
     spot.position.set(10, 20, 30);
     scene.add(spot);

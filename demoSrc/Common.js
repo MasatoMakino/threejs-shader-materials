@@ -14,7 +14,7 @@ import {
 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { Sky } from "three/examples/jsm/objects/Sky.js";
-import WebGPURenderer from "three/examples/jsm/renderers/webgpu/WebGPURenderer.js";
+import WebGPURenderer from "three/src/renderers/webgpu/WebGPURenderer.js";
 
 export class Common {
   static initScene() {
