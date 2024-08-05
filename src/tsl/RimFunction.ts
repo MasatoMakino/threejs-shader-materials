@@ -10,7 +10,7 @@ import {
   transformedNormalView,
   tslFn,
   vec3,
-} from "three/examples/jsm/nodes/Nodes.js";
+} from "three/src/nodes/Nodes.js";
 
 type UniformType<T> = ShaderNodeObject<UniformNode<T>>;
 

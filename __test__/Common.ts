@@ -9,7 +9,7 @@ import {
   PlaneGeometry,
 } from "three";
 import { IAnimatable } from "../src";
-import WebGPURenderer from "three/examples/jsm/renderers/webgpu/WebGPURenderer.js";
+import WebGPURenderer from "three/src/renderers/webgpu/WebGPURenderer.js";
 
 export const initScene = (
   W: number,
