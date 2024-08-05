@@ -1,5 +1,5 @@
 // Three.js Transpiler r165
-import { max, pow, sub, transformedNormalView, tslFn, vec3, } from "three/examples/jsm/nodes/Nodes.js";
+import { max, pow, sub, transformedNormalView, tslFn, vec3, } from "three/src/nodes/Nodes.js";
 export const rimEffect = tslFn(([rimColor, rimPow, rimStrength, insideColor, insidePow, insideStrength]) => {
     return rimAngleEffect(rimColor, rimPow, rimStrength, insideColor, insidePow, insideStrength, vec3(0.0, 0.0, 1.0));
 });
