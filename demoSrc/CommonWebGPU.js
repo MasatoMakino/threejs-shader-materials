@@ -10,8 +10,8 @@ import {
   REVISION,
   Scene,
   SphereGeometry,
-  WebGLRenderer,
-} from "three";
+  WebGPURenderer,
+} from "three/webgpu";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { Sky } from "three/examples/jsm/objects/Sky.js";
 
@@ -21,8 +21,8 @@ export class Common {
     return scene;
   }
 
-  static initLight(scene) {
-    const ambientLight = new AmbientLight(0xffffff, Math.PI);
+  static initLight(scene, intencity = Math.PI) {
+    const ambientLight = new AmbientLight(0xffffff, intencity);
     scene.add(ambientLight);
     return ambientLight;
   }
@@ -52,7 +52,7 @@ export class Common {
     };
 
     const getRenderer = () => {
-      return new WebGLRenderer({
+      return new WebGPURenderer({
         antialias: antialias,
       });
     };
