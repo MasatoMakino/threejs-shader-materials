@@ -1,8 +1,7 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { Mesh, PlaneGeometry } from "three";
 import { RimBasicNodeMaterial } from "../../src/index.js";
-import { initScene } from "../Common.js";
-import WebGPURenderer from "three/examples/jsm/renderers/webgpu/WebGPURenderer.js";
+import { initScene } from "../CommonWebGPU.js";
 
 describe("RimBasicMaterial", () => {
   let material: RimBasicNodeMaterial;
@@ -16,9 +15,9 @@ describe("RimBasicMaterial", () => {
   });
 
   it("should handle glsl inclusion and render correctly", () => {
-    const { scene, camera, renderer } = initScene(1, 1, 400, true);
+    const { scene, camera, renderer } = initScene(1, 1, 400);
     const mesh = new Mesh(new PlaneGeometry(), material);
     scene.add(mesh);
-    (renderer as WebGPURenderer).renderAsync(scene, camera);
+    renderer.renderAsync(scene, camera);
   });
 });

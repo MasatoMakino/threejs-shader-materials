@@ -11,7 +11,7 @@ export class ContourNodeMaterial extends MeshPhongNodeMaterial {
   readonly scaleY = uniform(2.0);
   readonly smoothMin = uniform(0.93);
   readonly smoothMax = uniform(1.0);
-  constructor(param: MeshPhongMaterialParameters) {
+  constructor(param?: MeshPhongMaterialParameters) {
     super(param);
 
     this.transparent = true;

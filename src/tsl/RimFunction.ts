@@ -10,7 +10,7 @@ import {
   transformedNormalView,
   tslFn,
   vec3,
-} from "three/src/nodes/Nodes.js";
+} from "three/webgpu";
 
 type UniformType<T> = ShaderNodeObject<UniformNode<T>>;
 

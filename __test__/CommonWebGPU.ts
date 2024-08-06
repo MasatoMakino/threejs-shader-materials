@@ -3,20 +3,14 @@ import {
   Scene,
   AmbientLight,
   PerspectiveCamera,
-  WebGLRenderer,
   Material,
   Mesh,
   PlaneGeometry,
-} from "three";
+  WebGPURenderer,
+} from "three/webgpu";
 import { IAnimatable } from "../src";
-import { WebGPURenderer } from "three/webgpu";
 
-export const initScene = (
-  W: number,
-  H: number,
-  far = 400,
-  isWebGPU: boolean = false,
-) => {
+export const initScene = (W: number, H: number, far = 400) => {
   const canvas = document.createElement("canvas");
 
   const scene = new Scene();
@@ -29,10 +23,7 @@ export const initScene = (
   scene.add(camera);
 
   const getRenderer = () => {
-    if (isWebGPU) {
-      return new WebGPURenderer({ canvas: canvas });
-    }
-    return new WebGLRenderer({ canvas: canvas });
+    return new WebGPURenderer({ canvas: canvas });
   };
   const renderer = getRenderer();
   renderer.setSize(W, H);
