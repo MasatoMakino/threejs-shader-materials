@@ -1,14 +1,13 @@
 import { ContourNodeMaterial } from "../esm/index.js";
-import { Common } from "./Common.js";
+import { Common } from "./CommonWebGPU.js";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import {
-  Color,
   Fog,
   Mesh,
   PointLight,
   PointLightHelper,
   TorusGeometry,
-} from "three";
+} from "three/webgpu";
 import GUI from "lil-gui";
 import { CommonGUI } from "./CommonGUI.js";
 
@@ -19,7 +18,7 @@ export class StudyContourMap {
 
     const scene = Common.initScene();
     scene.fog = new Fog(0x000000, 80, 160);
-    const light = Common.initLight(scene);
+    const light = Common.initLight(scene, Math.PI);
     const camera = Common.initCamera(scene, W, H);
     const renderer = Common.initRenderer(W, H, 0x000000, true, true);
     const control = Common.initControl(camera, renderer);
@@ -30,20 +29,19 @@ export class StudyContourMap {
     });
   }
 
-  initObject(scene, light) {
-    const spot = new PointLight(0xffffff, 30_000);
-    spot.position.set(10, 20, 30);
+  initObject(scene) {
+    const spot = new PointLight(0xffffff);
+    spot.power = 30_000;
+    spot.position.set(5, 10, 6);
     scene.add(spot);
     const helper = new PointLightHelper(spot);
     scene.add(helper);
 
     const geo = new TorusGeometry(10, 4, 32, 32);
-
     const mat = new ContourNodeMaterial({
       opacity: 0.75,
-      fog: scene.fog !== undefined,
+      color: 0xff0000,
     });
-    mat.color = new Color(0xff0000);
 
     const mesh = new Mesh(geo, mat);
     scene.add(mesh);
