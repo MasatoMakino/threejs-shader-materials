@@ -1,8 +1,8 @@
-import { MeshBasicNodeMaterial } from "three/src/nodes/Nodes.js";
-export declare class ContourNodeMaterial extends MeshBasicNodeMaterial {
-    readonly scaleY: import("three/src/nodes/Nodes.js").ShaderNodeObject<import("three/src/nodes/Nodes.js").UniformNode<number>>;
-    readonly smoothMin: import("three/src/nodes/Nodes.js").ShaderNodeObject<import("three/src/nodes/Nodes.js").UniformNode<number>>;
-    readonly smoothMax: import("three/src/nodes/Nodes.js").ShaderNodeObject<import("three/src/nodes/Nodes.js").UniformNode<number>>;
-    constructor();
+import { MeshPhongNodeMaterial, MeshPhongMaterialParameters } from "three/webgpu";
+export declare class ContourNodeMaterial extends MeshPhongNodeMaterial {
+    readonly scaleY: import("three/webgpu").ShaderNodeObject<import("three/webgpu").UniformNode<number>>;
+    readonly smoothMin: import("three/webgpu").ShaderNodeObject<import("three/webgpu").UniformNode<number>>;
+    readonly smoothMax: import("three/webgpu").ShaderNodeObject<import("three/webgpu").UniformNode<number>>;
+    constructor(param?: MeshPhongMaterialParameters);
 }
 //# sourceMappingURL=ContourNodeMaterial.d.ts.map

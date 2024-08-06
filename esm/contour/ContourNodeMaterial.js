@@ -1,7 +1,7 @@
-import { materialOpacity, positionWorld, cos, uniform, MeshBasicNodeMaterial, } from "three/src/nodes/Nodes.js";
-export class ContourNodeMaterial extends MeshBasicNodeMaterial {
-    constructor() {
-        super();
+import { materialOpacity, positionWorld, cos, uniform, MeshPhongNodeMaterial, } from "three/webgpu";
+export class ContourNodeMaterial extends MeshPhongNodeMaterial {
+    constructor(param) {
+        super(param);
         this.scaleY = uniform(2.0);
         this.smoothMin = uniform(0.93);
         this.smoothMax = uniform(1.0);
