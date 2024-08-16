@@ -32,7 +32,7 @@
     "husky": "^9.1.4",
     "lil-gui": "^0.19.2",
     "lint-staged": "^15.2.7",
-    "prettier": "^3.3.2",
+    "prettier": "^3.3.3",
     "three": "^0.167.1",
     "typedoc": "^0.26.5",
     "typescript": "^5.4.5",
