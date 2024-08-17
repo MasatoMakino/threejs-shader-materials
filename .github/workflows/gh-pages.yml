@@ -5,7 +5,11 @@ on:
     branches: [main]
     paths-ignore:
       - "esm/**"
-
+  pull_request:
+    branches: [main]
+    paths-ignore:
+      - "esm/**"
+ 
 jobs:
   publish:
     runs-on: ubuntu-latest
