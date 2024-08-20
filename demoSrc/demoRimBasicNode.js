@@ -1,5 +1,5 @@
 import { RimBasicNodeMaterial } from "../esm/index.js";
-import { Common } from "./Common.js";
+import { Common } from "./CommonWebGPU.js";
 import { CommonGUI } from "./CommonGUI.js";
 import { RAFTicker } from "@masatomakino/raf-ticker";
 import GUI from "lil-gui";
@@ -22,7 +22,7 @@ export class Study {
     Common.initLight(scene);
 
     const camera = Common.initCamera(scene, W, H);
-    const renderer = Common.initRenderer(W, H, 0x000000, true, true);
+    const renderer = Common.initRenderer(W, H, 0x000000, true);
     Common.initControl(camera, renderer);
     Common.initHelper(scene);
 
