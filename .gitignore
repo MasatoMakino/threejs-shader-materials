@@ -65,3 +65,4 @@ typings/
 
 docs
 lib/**/*
+esm/**/*

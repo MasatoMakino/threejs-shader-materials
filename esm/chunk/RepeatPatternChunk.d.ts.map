@@ -1,1 +1,0 @@
-{"version":3,"file":"RepeatPatternChunk.d.ts","sourceRoot":"","sources":["../../src/chunk/RepeatPatternChunk.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,MAAM,gBAAgB,CAAC;AAE3C;;;;;GAKG;AACH,MAAM,WAAW,kBAAkB;IACjC,QAAQ,EAAE,MAAM,CAAC;IACjB,cAAc,EAAE,MAAM,CAAC;CACxB;AAED,qBAAa,kBAAmB,SAAQ,SAAS;WACjC,aAAa,IAAI,IAAI;WAKrB,UAAU,IAAI,GAAG;CAMhC"}
