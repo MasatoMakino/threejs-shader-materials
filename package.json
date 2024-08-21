@@ -1,5 +1,5 @@
 {
-  "name": "threejs-shader-materials",
+  "name": "@masatomakino/threejs-shader-materials",
   "version": "0.8.0",
   "type": "module",
   "exports": {
@@ -15,7 +15,10 @@
     "esm"
   ],
   "description": "Collection of shader materials for three.js",
-  "repository": "https://MasatoMakino@github.com/MasatoMakino/threejs-shader-materials.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://MasatoMakino@github.com/MasatoMakino/threejs-shader-materials.git"
+  },
   "author": "MasatoMakino <unagiinu.g@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
@@ -57,5 +60,16 @@
   },
   "lint-staged": {
     "*.{js,ts,css,md}": "prettier --write"
-  }
+  },
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "keywords": [
+    "three.js"
+  ],
+  "bugs": {
+    "url": "https://github.com/MasatoMakino/threejs-shader-materials/issues"
+  },
+  "homepage": "https://github.com/MasatoMakino/threejs-shader-materials#readme"
 }
