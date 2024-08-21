@@ -3,12 +3,8 @@ name: Publish github pages
 on:
   push:
     branches: [main]
-    paths-ignore:
-      - "esm/**"
   pull_request:
     branches: [main]
-    paths-ignore:
-      - "esm/**"
  
 jobs:
   publish:

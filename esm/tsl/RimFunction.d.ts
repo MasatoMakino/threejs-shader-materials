@@ -1,7 +1,0 @@
-import { Color, Vector3 } from "three";
-import { ShaderNodeObject, UniformNode } from "three/webgpu";
-type UniformType<T> = ShaderNodeObject<UniformNode<T>>;
-export declare const rimEffect: (args_0: import("three/webgpu").NodeRepresentation<UniformType<Color>>, args_1: import("three/webgpu").NodeRepresentation<UniformType<number>>, args_2: import("three/webgpu").NodeRepresentation<UniformType<number>>, args_3: import("three/webgpu").NodeRepresentation<UniformType<Color>>, args_4: import("three/webgpu").NodeRepresentation<UniformType<number>>, args_5: import("three/webgpu").NodeRepresentation<UniformType<number>>) => ShaderNodeObject<import("three/webgpu").VarNode>;
-export declare const rimAngleEffect: (args_0: import("three/webgpu").NodeRepresentation<UniformType<Color>>, args_1: import("three/webgpu").NodeRepresentation<UniformType<number>>, args_2: import("three/webgpu").NodeRepresentation<UniformType<number>>, args_3: import("three/webgpu").NodeRepresentation<UniformType<Color>>, args_4: import("three/webgpu").NodeRepresentation<UniformType<number>>, args_5: import("three/webgpu").NodeRepresentation<UniformType<number>>, args_6: Vector3 | import("three/webgpu").NodeRepresentation<UniformType<Vector3>>) => ShaderNodeObject<import("three/webgpu").VarNode>;
-export {};
-//# sourceMappingURL=RimFunction.d.ts.map
