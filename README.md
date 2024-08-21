@@ -15,7 +15,7 @@
 ### Install
 
 ```bash
-npm install MasatoMakino/threejs-shader-materials --save-dev
+npm install @masatomakino/threejs-shader-materials --save-dev
 ```
 
 ### Import
