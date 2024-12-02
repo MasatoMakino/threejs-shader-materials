@@ -42,7 +42,8 @@
     "webdriverio": "^9.0.6"
   },
   "scripts": {
-    "test": "vitest",
+    "test": "vitest --run",
+    "test:watch": "vitest",
     "test:coverage": "vitest --coverage --run",
     "coverage:watch": "npx browser-sync ./coverage/lcov-report -w",
     "start:dev": "npm run server & npm run watch:tsc & npm run watch:demo",

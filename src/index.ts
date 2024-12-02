@@ -6,7 +6,7 @@ export * from "./ShaderLineMaterial.js";
 export * from "./chunk/index.js";
 
 export * from "./contour/ContourMaterial.js";
-export * from "./contour/ContourNodeMaterial.js";
+// export * from "./contour/ContourNodeMaterial.js";
 export * from "./crossGrid/CrossGridMaterial.js";
 export * from "./halftoneGrid/HalftoneGridMaterial.js";
 export * from "./hexGrid/HexGridMaterial.js";
@@ -15,7 +15,7 @@ export * from "./skyCloud/SkyCloudMaterial.js";
 export * from "./fbmDissolve/FBMDissolveMaterial.js";
 export * from "./fbmFire/FBMFireMaterial.js";
 export * from "./rimBasic/RimBasicMaterial.js";
-export * from "./rimBasic/RimBasicNodeMaterial.js";
+// export * from "./rimBasic/RimBasicNodeMaterial.js";
 export * from "./rimEffect/RimEffectMaterial.js";
 export * from "./rimEffect/OuterGlowMaterial.js";
 export * from "./expansion/ExpansionMaterial.js";
