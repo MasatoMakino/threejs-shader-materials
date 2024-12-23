@@ -28,7 +28,7 @@
   "devDependencies": {
     "@masatomakino/gulptask-demo-page": "^0.8.3",
     "@masatomakino/release-helper": "^0.1.6",
-    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.0",
     "@types/three": "^0.171.0",
     "@vitest/browser": "*",
     "@vitest/coverage-istanbul": "^2.0.5",
