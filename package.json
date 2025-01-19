@@ -31,7 +31,7 @@
     "@trivago/prettier-plugin-sort-imports": "^5.2.0",
     "@types/three": "^0.172.0",
     "@vitest/browser": "*",
-    "@vitest/coverage-istanbul": "^2.0.5",
+    "@vitest/coverage-istanbul": "^3.0.2",
     "browser-sync": "^3.0.2",
     "husky": "^9.1.5",
     "lil-gui": "^0.20.0",
