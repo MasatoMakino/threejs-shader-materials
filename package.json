@@ -29,7 +29,7 @@
     "@masatomakino/gulptask-demo-page": "^0.8.3",
     "@masatomakino/release-helper": "^0.1.6",
     "@trivago/prettier-plugin-sort-imports": "^5.2.0",
-    "@types/three": "^0.172.0",
+    "@types/three": "^0.173.0",
     "@vitest/browser": "*",
     "@vitest/coverage-istanbul": "^3.0.2",
     "browser-sync": "^3.0.2",
