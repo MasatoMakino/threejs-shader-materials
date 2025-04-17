@@ -29,7 +29,7 @@
     "@masatomakino/gulptask-demo-page": "^0.8.3",
     "@masatomakino/release-helper": "^0.1.6",
     "@trivago/prettier-plugin-sort-imports": "^5.2.0",
-    "@types/three": "^0.174.0",
+    "@types/three": "^0.175.0",
     "@vitest/browser": "*",
     "@vitest/coverage-istanbul": "^3.0.2",
     "browser-sync": "^3.0.2",
@@ -37,7 +37,7 @@
     "lil-gui": "^0.20.0",
     "lint-staged": "^15.2.9",
     "prettier": "^3.3.3",
-    "three": "^0.174.0",
+    "three": "^0.175.0",
     "typedoc": "^0.28.0",
     "typescript": "^5.5.4",
     "webdriverio": "^9.0.6"
