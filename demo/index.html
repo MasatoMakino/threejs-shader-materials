@@ -21,6 +21,9 @@
              * init menu items
              */
             var menuItems = document.getElementsByClassName('pure-menu-item');
+            // data属性からdemoPathsを取得
+            var demoPathsElement = document.querySelector('.pure-menu-list');
+            var demoPaths = JSON.parse(demoPathsElement.dataset.demoPaths);
 
             function init() {
                 for( var i = 0 ; i < menuItems.length; i++ ){
@@ -29,19 +32,91 @@
                         selectMenu(e.currentTarget);
                     })
                 }
-                selectMenu( menuItems[0] );
+                // 初期表示デモの決定と選択
+                var initialDemoPath = getInitialDemoPath(demoPaths);
+                setIframeSrc(initialDemoPath);
+                selectInitialMenuItem(initialDemoPath);
             }
 
             function selectMenu( item ){
                 removeAllClass(menuItems);
                 item.classList.add('pure-menu-selected');
+
+                // URLバーの更新
+                var demoPath = item.querySelector('.pure-menu-link').getAttribute('href');
+                var demoName = getDemoNameFromPath(demoPath);
+                if (demoName) {
+                    history.pushState({}, '', '?demo=' + demoName);
+                } else {
+                    // デモ名が取得できない場合はパラメーターなしのURLに戻すか、適切な処理を行う
+                    // ここではシンプルにパラメーターなしに戻します
+                     history.pushState({}, '', window.location.pathname);
+                }
             }
+
             function removeAllClass(items){
                 for( var i = 0 ; i < items.length; i++ ){
                     var item = menuItems[i];
                     item.classList.remove('pure-menu-selected');
                 }
             }
+
+            /**
+             * URLパラメーターから初期表示デモのパスを取得
+             */
+            function getInitialDemoPath(paths) {
+                var params = new URLSearchParams(window.location.search);
+                var demoName = params.get('demo');
+
+                if (demoName) {
+                    // デモ名から対応するパスを検索
+                    for (var i = 0; i < paths.length; i++) {
+                        if (getDemoNameFromPath(paths[i]) === demoName) {
+                            return paths[i];
+                        }
+                    }
+                }
+                // パラメーターがない、または対応するデモが見つからない場合は最初のデモを返す
+                return paths[0];
+            }
+
+            /**
+             * iframeのsrcを設定
+             */
+            function setIframeSrc(path) {
+                var iframe = document.getElementById('demo-frame');
+                if (iframe) {
+                    iframe.src = path;
+                }
+            }
+
+            /**
+             * 初期表示デモに対応するメニューアイテムを選択状態にする
+             */
+            function selectInitialMenuItem(initialPath) {
+                 for( var i = 0 ; i < menuItems.length; i++ ){
+                    var item = menuItems[i];
+                    var demoPath = item.querySelector('.pure-menu-link').getAttribute('href');
+                    if (demoPath === initialPath) {
+                        selectMenu(item);
+                        break;
+                    }
+                }
+            }
+
+            /**
+             * デモパスからデモ名を抽出 (例: "demo/demoTypeScript.html" -> "demoTypeScript")
+             */
+            function getDemoNameFromPath(path) {
+                if (!path) return null;
+                var parts = path.split('/');
+                var fileName = parts[parts.length - 1];
+                if (fileName.endsWith('.html')) {
+                    return fileName.substring(0, fileName.length - '.html'.length);
+                }
+                return null;
+            }
+
 
             init();
 
@@ -104,7 +179,7 @@
     <div id="menu">
         <div class="pure-menu">
             <a class="pure-menu-heading" href="https://MasatoMakino@github.com/MasatoMakino/threejs-shader-materials.git">@masatomakino/threejs-shader-materials</a>
-            <ul class="pure-menu-list">
+            <ul class="pure-menu-list" data-demo-paths="[&#34;demoCellular.html&#34;,&#34;demoContour.html&#34;,&#34;demoCrossGrid.html&#34;,&#34;demoExpansion.html&#34;,&#34;demoExpansionDissolve.html&#34;,&#34;demoFBMDissolve.html&#34;,&#34;demoFBMFire.html&#34;,&#34;demoHalftoneGrid.html&#34;,&#34;demoHexDissolve.html&#34;,&#34;demoHexGrid.html&#34;,&#34;demoLineDashed.html&#34;,&#34;demoMeshBasic.html&#34;,&#34;demoOuterGlow.html&#34;,&#34;demoRimBasic.html&#34;,&#34;demoRimEffect.html&#34;,&#34;demoSkyCloud.html&#34;,&#34;demoSolidClipping.html&#34;,&#34;demoSpriteCloud.html&#34;,&#34;demoSquareGrid.html&#34;,&#34;demoSwirl.html&#34;]">
                 <li class="pure-menu-item"><a class="pure-menu-link" href="demoCellular.html" target="demo-frame">demoCellular.html</a></li>
                 <li class="pure-menu-item"><a class="pure-menu-link" href="demoContour.html" target="demo-frame">demoContour.html</a></li>
                 <li class="pure-menu-item"><a class="pure-menu-link" href="demoCrossGrid.html" target="demo-frame">demoCrossGrid.html</a></li>
@@ -129,7 +204,7 @@
             </ul>
         </div>
     </div>
-    <iframe name="demo-frame" id="demo-frame" src="demoCellular.html"></iframe>
+    <iframe name="demo-frame" id="demo-frame" src=""></iframe>
 </div>
 </body>
 </html>
