@@ -6,18 +6,49 @@ changelog:
     - title: "🚨 Breaking Changes"
       labels:
         - major
-    - title : "🪛 Changes"
+    - title: "🪛 Changes"
       labels:
         - "*"
       exclude:
         labels:
           - major
           - dependencies
+          - documentation
+          - enhancement
+          - chores
+          - bug
           - release
           - CICD
+    - title: "❇️ Enhancement / New Features"
+      labels:
+        - enhancement
+      exclude:
+        labels:
+          - major
+    - title: "🐞 Bug Fixes"
+      labels:
+        - bug
+      exclude:
+        labels:
+          - major
+    - title: "🧹 Chores"
+      labels:
+        - chores
+      exclude:
+        labels:
+          - major
+    - title: "📄 Documentation"
+      labels:
+        - documentation
+      exclude:
+        labels:
+          - major
     - title: "🤖 CI / CD"
       labels:
         - CICD
+      exclude:
+        labels:
+          - major
     - title: "🔧 Dependencies"
       labels:
         - dependencies
