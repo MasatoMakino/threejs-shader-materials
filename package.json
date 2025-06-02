@@ -37,7 +37,7 @@
     "lil-gui": "^0.20.0",
     "lint-staged": "^16.1.0",
     "prettier": "^3.3.3",
-    "three": "^0.176.0",
+    "three": "^0.177.0",
     "typedoc": "^0.28.0",
     "typescript": "^5.5.4",
     "webdriverio": "^9.0.6"
